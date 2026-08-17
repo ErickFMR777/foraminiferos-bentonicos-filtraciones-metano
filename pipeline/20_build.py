@@ -18,6 +18,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import caribe_referencia as CAR  # noqa: E402
 import localidades as LOC  # noqa: E402
 import taxonomy as T  # noqa: E402
+import tipologia as TIP  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 PRIV = ROOT / "data" / "private"
@@ -59,7 +60,9 @@ def main() -> int:
                     loc = v
                     break
         fiable = doi and doi != "10.1021/acsestwater.3c00740.s001"
-        tipo = loc.get("tipo", "frio")
+        tip = TIP.TIPOLOGIA.get(doi, TIP.DEFECTO)
+        tipo = loc.get("tipo", tip["fluido"])
+        recuperado = any(r.get("recuperado") for r in bib if r["estudio"] == titulo)
         estudios.append({
             "id": e.get("id"),
             "titulo": e.get("titulo_limpio") or titulo,
@@ -71,6 +74,11 @@ def main() -> int:
             "n_registros": n,
             "tipo_filtracion": tipo,
             "es_filtracion": tipo != "no_filtracion",
+            "morfologia": tip["morfologia"],
+            "morfologia_label": TIP.MORFOLOGIAS.get(tip["morfologia"] or ""),
+            "tipologia_confianza": tip["confianza"],
+            "tipologia_fuente": tip["fuente"],
+            "recuperado": recuperado,
             "sitios": loc.get("sitios"),
             **{k: loc.get(k) for k in
                ("localidad", "region", "lat", "lon", "prof_m", "confianza", "fuente")},
@@ -88,25 +96,43 @@ def main() -> int:
     }
     seep = [r for r in bib if r["estudio"] not in titulos_no_seep]
     n_no_seep = len(bib) - len(seep)
+
+    # Dos vistas de la base: la que curó el autor y la ampliada con los
+    # estudios recuperados. El dashboard ofrece la curada por defecto — es la
+    # que sustenta la tesis — y la ampliada como alternativa explícita.
+    seep_curada = [r for r in seep if not r.get("recuperado")]
+    seep_ampliada = seep
     (DERIV / "estudios.json").write_text(
         json.dumps(estudios, ensure_ascii=False, indent=1), encoding="utf-8")
 
     # ------------------------------------------------- matriz latitud x profundidad
     # La matriz describe filtraciones, así que se construye sólo con los
     # estudios que efectivamente las documentan.
-    celdas = []
-    for la in LATS:
-        for pr in PROFS:
-            sub = [r for r in seep if r["lat_banda"] == la and r["prof_banda"] == pr]
-            celdas.append({
-                "lat": la, "prof": pr,
-                "registros": len(sub),
-                "taxones": len({r["taxon"] for r in sub}),
-                "estudios": len({r["estudio"] for r in sub}),
-            })
+    def construir_celdas(registros: list[dict]) -> list[dict]:
+        out = []
+        for la in LATS:
+            for pr in PROFS:
+                sub = [r for r in registros
+                       if r["lat_banda"] == la and r["prof_banda"] == pr]
+                out.append({
+                    "lat": la, "prof": pr,
+                    "registros": len(sub),
+                    "taxones": len({r["taxon"] for r in sub}),
+                    "estudios": len({r["estudio"] for r in sub}),
+                })
+        return out
+
+    celdas = construir_celdas(seep_curada)
     (DERIV / "matriz_lat_prof.json").write_text(
         json.dumps({
             "celdas": celdas,
+            "celdas_ampliada": construir_celdas(seep_ampliada),
+            "n_curada": len(seep_curada),
+            "n_ampliada": len(seep_ampliada),
+            "nota_ampliada":
+                "La base ampliada reincorpora dos estudios que el filtrado "
+                "original descartó y que sí cumplen el criterio declarado en la "
+                "metodología. Ver el registro de correcciones.",
             "registros_no_filtracion": n_no_seep,
             "nota_no_filtracion":
                 "Se excluyen los registros de estudios que no documentan "
@@ -146,13 +172,24 @@ def main() -> int:
         t["familia"] = r["familia"]
         t["aphia"] = r["aphia_id"]
         t["verificado"] = t["verificado"] and r["verificado_worms"]
+    # Recuentos separados para la base curada por el autor y para la ampliada,
+    # de modo que el dashboard pueda cambiar de una a otra sin recalcular.
+    cur_reg, cur_est = Counter(), defaultdict(set)
+    for r in seep_curada:
+        cur_reg[r["taxon"]] += 1
+        cur_est[r["taxon"]].add(r["estudio"])
+
     # Ordenado por nº de ESTUDIOS, no de registros: es la métrica robusta para
     # «el taxón más reportado». El recuento de registros depende de cuántas
     # bandas o microhábitats desglose cada artículo, y por tanto premia a los
     # estudios más detallados en lugar de a los taxones más frecuentes.
     taxones = sorted(
-        [{"taxon": k, "rango": v["rango"], "registros": v["registros"],
-          "n_estudios": len(v["estudios"]),
+        [{"taxon": k, "rango": v["rango"],
+          "registros": cur_reg.get(k, 0),
+          "n_estudios": len(cur_est.get(k, ())),
+          "registros_ampliada": v["registros"],
+          "n_estudios_ampliada": len(v["estudios"]),
+          "solo_en_recuperados": cur_reg.get(k, 0) == 0,
           "lats": sorted(v["lats"]), "profs": sorted(v["profs"]),
           "microhabitats": sorted(v["micro"]), "pared": v["pared"],
           "subtipo": v["subtipo"], "genero": v["genero_label"],
@@ -167,7 +204,7 @@ def main() -> int:
     pared_banda = []
     for eje, valores, campo in (("latitud", LATS, "lat_banda"), ("profundidad", PROFS, "prof_banda")):
         for v in valores:
-            sub = [r for r in bib if r[campo] == v]
+            sub = [r for r in seep_curada if r[campo] == v]
             c = Counter(r["pared"] for r in sub)
             s = sum(c.values())
             pared_banda.append({

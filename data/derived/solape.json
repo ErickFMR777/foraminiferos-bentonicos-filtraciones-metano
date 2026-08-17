@@ -2,6 +2,8 @@
  "especies": {
   "compartidas": [
    "Ammonia beccarii",
+   "Ammonia tepida",
+   "Bigenerina irregularis",
    "Bolivina lowmani",
    "Bulimina",
    "Cassidulina laevigata",
@@ -12,14 +14,15 @@
    "Lobatula wuellerstorfi",
    "Melonis affinis",
    "Miliolinella subrotunda",
+   "Nonionella",
    "Pullenia bulloides",
    "Quinqueloculina",
    "Rosalina globularis",
    "Uvigerina"
   ],
   "n_msh": 52,
-  "n_global": 160,
-  "n_compartidas": 15
+  "n_global": 196,
+  "n_compartidas": 18
  },
  "generos": {
   "compartidos": [
@@ -41,6 +44,7 @@
    "Pullenia",
    "Quinqueloculina",
    "Rosalina",
+   "Siphonina",
    "Textularia",
    "Uvigerina"
   ],
@@ -63,13 +67,12 @@
    "Plotnikovina",
    "Sagrina",
    "Sahulia",
-   "Siphonina",
    "Spirillina",
    "Spiroplectinella"
   ],
   "n_msh": 41,
-  "n_global": 88,
-  "n_compartidos": 20,
-  "pct_abundancia_compartida": 55.7
+  "n_global": 95,
+  "n_compartidos": 21,
+  "pct_abundancia_compartida": 56.8
  }
 }

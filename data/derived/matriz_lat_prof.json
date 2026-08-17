@@ -85,6 +85,95 @@
    "estudios": 5
   }
  ],
+ "celdas_ampliada": [
+  {
+   "lat": "0-15",
+   "prof": "< 150 m",
+   "registros": 0,
+   "taxones": 0,
+   "estudios": 0
+  },
+  {
+   "lat": "0-15",
+   "prof": "150-500 m",
+   "registros": 0,
+   "taxones": 0,
+   "estudios": 0
+  },
+  {
+   "lat": "0-15",
+   "prof": "> 500 m",
+   "registros": 20,
+   "taxones": 20,
+   "estudios": 2
+  },
+  {
+   "lat": "15-30",
+   "prof": "< 150 m",
+   "registros": 22,
+   "taxones": 22,
+   "estudios": 1
+  },
+  {
+   "lat": "15-30",
+   "prof": "150-500 m",
+   "registros": 7,
+   "taxones": 7,
+   "estudios": 1
+  },
+  {
+   "lat": "15-30",
+   "prof": "> 500 m",
+   "registros": 56,
+   "taxones": 47,
+   "estudios": 9
+  },
+  {
+   "lat": "30-60",
+   "prof": "< 150 m",
+   "registros": 37,
+   "taxones": 35,
+   "estudios": 5
+  },
+  {
+   "lat": "30-60",
+   "prof": "150-500 m",
+   "registros": 15,
+   "taxones": 14,
+   "estudios": 4
+  },
+  {
+   "lat": "30-60",
+   "prof": "> 500 m",
+   "registros": 135,
+   "taxones": 84,
+   "estudios": 18
+  },
+  {
+   "lat": "60-90",
+   "prof": "< 150 m",
+   "registros": 0,
+   "taxones": 0,
+   "estudios": 0
+  },
+  {
+   "lat": "60-90",
+   "prof": "150-500 m",
+   "registros": 0,
+   "taxones": 0,
+   "estudios": 0
+  },
+  {
+   "lat": "60-90",
+   "prof": "> 500 m",
+   "registros": 17,
+   "taxones": 8,
+   "estudios": 5
+  }
+ ],
+ "n_curada": 257,
+ "n_ampliada": 309,
+ "nota_ampliada": "La base ampliada reincorpora dos estudios que el filtrado original descartó y que sí cumplen el criterio declarado en la metodología. Ver el registro de correcciones.",
  "registros_no_filtracion": 18,
  "nota_no_filtracion": "Se excluyen los registros de estudios que no documentan filtraciones (fauna de referencia de márgenes normales).",
  "lats": [

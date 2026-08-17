@@ -152,6 +152,68 @@ def clean_bibliografia(rows: list[dict], tmap: dict) -> list[dict]:
     return out
 
 
+def recuperar_del_borrador(borrador: list[dict], maestra: list[dict],
+                           tmap: dict) -> list[dict]:
+    """Reincorpora los estudios descartados que sí cumplen el criterio.
+
+    La hoja borrador carece de columna de tipo de pared, así que aquí se
+    DERIVA de la posición sistemática del género. Es una propiedad taxonómica
+    estable, no una observación de campo, por lo que derivarla es legítimo —
+    pero queda marcado con pared_derivada para no confundirla con un dato
+    leído del original.
+    """
+    en_maestra = {(r["titulo"] or "")[:60].lower() for r in maestra}
+    out = []
+    for clave, meta in C.RECUPERAR.items():
+        filas = [r for r in borrador
+                 if clave.lower() in (r["titulo"] or "").lower()
+                 and (r["titulo"] or "")[:60].lower() not in en_maestra]
+        if not filas:
+            continue
+        for r in filas:
+            raw = (r.get("especie_raw") or "").strip()
+            if not raw or raw in (C.EXCLUIR_PLANCTONICOS | C.EXCLUIR_PLACEHOLDER):
+                continue
+            tx = tmap.get(raw, {"nombre": raw, "verificado": False,
+                                "confianza": "sin_verificar"})
+            pared, sub = T.expected_wall(tx["nombre"])
+            if pared == "PLANCTONICO":
+                continue
+            if pared is None:            # sin regla de género: hialino por defecto
+                pared, sub = "Calcareo", "Hialino"
+            disc = r.get("discriminacion")
+            disc_cod, disc_lbl = C.DISCRIMINACION_VOCAB.get(disc, (None, None))
+            out.append({
+                "estudio": r.get("titulo"),
+                "taxon_original": raw,
+                "taxon": tx["nombre"],
+                "aphia_id": tx.get("aphia"),
+                "verificado_worms": tx.get("verificado", False),
+                "confianza": tx.get("confianza", "alta"),
+                "genero": T.genus_of(tx["nombre"]),
+                "genero_label": T.genus_label(tx["nombre"]),
+                "rango": T.rango(tx["nombre"]),
+                "familia": tx.get("family"),
+                "orden": tx.get("order"),
+                "pared": pared,
+                "subtipo": sub if pared == "Calcareo" else None,
+                "pared_derivada": True,
+                "lat_banda": r.get("lat_banda"),
+                "prof_banda": r.get("prof_banda"),
+                "discriminacion": disc,
+                "microhabitat": disc_cod,
+                "microhabitat_label": disc_lbl,
+                "recuperado": True,
+                "recuperado_confianza": meta["confianza"],
+                "recuperado_reparo": meta.get("reparo"),
+            })
+        log("recuperacion", "A", clave, "reincorporado", meta["motivo"],
+            "Revisión de las exclusiones del filtrado original",
+            f"Añade {len(filas)} registros a la base ampliada.",
+            confianza=meta["confianza"], n=len(filas))
+    return out
+
+
 def clean_msh(rows: list[dict], tmap: dict) -> list[dict]:
     out = []
     pared_idx = {(n, a): (p, s, m) for n, a, p, s, m in C.PARED}
@@ -247,7 +309,18 @@ def main() -> int:
         log("aritmetica", a["archivo"], a["donde"], None, a["detalle"], "", a["efecto"])
 
     bib = clean_bibliografia(raw_bib["maestra"], tmap)
+    for r in bib:
+        r.setdefault("recuperado", False)
+        r.setdefault("pared_derivada", False)
+    recuperados = recuperar_del_borrador(raw_bib["borrador"], raw_bib["maestra"], tmap)
+    bib = bib + recuperados
     msh = clean_msh(raw_msh["especies"], tmap)
+
+    # exclusiones que se mantienen: se registran para dejar trazable la curación
+    for clave, motivo in C.EXCLUSIONES_CONFIRMADAS.items():
+        log("exclusion_confirmada", "A", clave, None, motivo,
+            "Revisión de las exclusiones del filtrado original",
+            "Se mantiene fuera de la base.", n=0)
 
     # --- efecto medible de las correcciones ---
     def wall_split(rows, weight=None):

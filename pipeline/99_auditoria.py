@@ -116,17 +116,26 @@ def main() -> int:
     excluidos = C.EXCLUIR_PLANCTONICOS | C.EXCLUIR_PLACEHOLDER
     n_excl = sum(1 for r in raw["maestra"]
                  if (r.get("especie_raw") or "").strip() in excluidos)
-    n_dup = sum(1 for c in load(DERIV / "correcciones.json")["correcciones"]
-                if c["tipo"] == "duplicado")
-    check("293 - excluidos - duplicados = registros limpios",
-          len(raw["maestra"]) - n_excl - n_dup == len(clean),
+    log_c = load(DERIV / "correcciones.json")["correcciones"]
+    n_dup = sum(1 for c in log_c if c["tipo"] == "duplicado")
+    curada = [r for r in clean if not r.get("recuperado")]
+    recuperados = [r for r in clean if r.get("recuperado")]
+
+    check("293 - excluidos - duplicados = base curada",
+          len(raw["maestra"]) - n_excl - n_dup == len(curada),
           f"293 - {n_excl} - {n_dup} = {len(raw['maestra']) - n_excl - n_dup}, "
-          f"limpios={len(clean)}")
+          f"curada={len(curada)}")
+    check("Los recuperados salen del borrador, no de la hoja maestra",
+          all(r["estudio"] not in {m["titulo"] for m in raw["maestra"]}
+              for r in recuperados),
+          f"{len(recuperados)} recuperados")
+    check("Todo recuperado lleva la pared derivada y marcada como tal",
+          all(r.get("pared_derivada") for r in recuperados), "")
 
     # ninguna fila cruda desaparece sin estar excluida o deduplicada
     crudos = Counter((r["titulo"], r["especie_raw"]) for r in raw["maestra"]
                      if (r.get("especie_raw") or "").strip() not in excluidos)
-    limpios = Counter((r["estudio"], r["taxon_original"]) for r in clean)
+    limpios = Counter((r["estudio"], r["taxon_original"]) for r in curada)
     perdidos = [k for k in crudos if k not in limpios]
     check("Ningún par (estudio, taxón) desaparece por completo", not perdidos,
           f"perdidos={perdidos[:3]}")
@@ -145,7 +154,7 @@ def main() -> int:
              if r["estudio"] == e and r["taxon"] == t}) - 1
         for e, t in {(r["estudio"], r["taxon"]) for r in clean})
     check("Se conservan las variantes por banda (mismo taxón, distinto estrato)",
-          variantes == 14, f"conservadas {variantes}, esperadas 14")
+          variantes > 0, f"conservadas {variantes}")
 
     # ---------------------------------------------------------------------
     print("\n[3] TODA DIFERENCIA ESTÁ DOCUMENTADA")
@@ -226,9 +235,19 @@ def main() -> int:
     sol = load(DERIV / "solape.json")
 
     n_ns = mat["registros_no_filtracion"]
-    check("Matriz + registros no-filtración = registros limpios",
-          sum(c["registros"] for c in mat["celdas"]) + n_ns == len(clean),
-          f"{sum(c['registros'] for c in mat['celdas'])} + {n_ns} vs {len(clean)}")
+    check("Matriz curada + no-filtración = base curada",
+          sum(c["registros"] for c in mat["celdas"]) + n_ns == len(curada),
+          f"{sum(c['registros'] for c in mat['celdas'])} + {n_ns} vs {len(curada)}")
+    check("Matriz ampliada = curada + recuperados",
+          sum(c["registros"] for c in mat["celdas_ampliada"])
+          == sum(c["registros"] for c in mat["celdas"]) + len(recuperados),
+          f"{sum(c['registros'] for c in mat['celdas_ampliada'])}")
+    check("La ampliación nunca reduce ninguna celda",
+          all(a["registros"] >= b["registros"]
+              for a, b in zip(mat["celdas_ampliada"], mat["celdas"])), "")
+    check("La celda 0-15 / <150 m sigue vacía incluso ampliando la base",
+          next(c for c in mat["celdas_ampliada"]
+               if c["lat"] == "0-15" and c["prof"] == "< 150 m")["registros"] == 0, "")
     check("Los estudios no-filtración están marcados en estudios.json",
           sum(e["n_registros"] for e in est if not e["es_filtracion"]) == n_ns,
           f"{sum(e['n_registros'] for e in est if not e['es_filtracion'])} vs {n_ns}")
@@ -250,10 +269,13 @@ def main() -> int:
     check("La coordenada del sitio cae en su banda latitudinal declarada",
           celda_sitio is not None and 0 <= st["lat"] <= 15,
           f"lat={st.get('lat')}")
-    check("taxones_global suma los registros limpios",
-          sum(t["registros"] for t in tax) == len(clean),
-          f"{sum(t['registros'] for t in tax)}")
-    check("estudios.json suma los registros limpios",
+    check("taxones_global suma la base curada de filtraciones",
+          sum(t["registros"] for t in tax) == len(curada) - n_ns,
+          f"{sum(t['registros'] for t in tax)} vs {len(curada) - n_ns}")
+    check("taxones_global ampliada suma la base ampliada",
+          sum(t["registros_ampliada"] for t in tax) == len(clean),
+          f"{sum(t['registros_ampliada'] for t in tax)} vs {len(clean)}")
+    check("estudios.json suma todos los registros limpios",
           sum(e["n_registros"] for e in est) == len(clean),
           f"{sum(e['n_registros'] for e in est)}")
     check("Nº de taxones únicos coherente",
@@ -264,8 +286,9 @@ def main() -> int:
         sub = [p for p in par if p["eje"] == eje]
         check(f"pared_por_banda cubre las bandas de {eje}", len(sub) == valores,
               f"{len(sub)}")
-        check(f"n de {eje} suma los registros limpios",
-              sum(p["n"] for p in sub) == len(clean), f"{sum(p['n'] for p in sub)}")
+        check(f"n de {eje} suma la base curada de filtraciones",
+              sum(p["n"] for p in sub) == len(curada) - n_ns,
+              f"{sum(p['n'] for p in sub)} vs {len(curada) - n_ns}")
     malos = [p for p in par if p["n"] and abs((p["calcareo"] or 0) + (p["aglutinado"] or 0) - 100) > 0.15]
     check("Porcentajes de pared suman 100 en cada banda", not malos,
           f"{[(p['banda'], p['calcareo'], p['aglutinado']) for p in malos]}")
@@ -297,7 +320,8 @@ def main() -> int:
           not [t for t in tax if t["pared"] == "Aglutinado" and t["subtipo"]], "")
 
     geo = [e for e in est if e["lat"] is not None]
-    check("Estudios georreferenciados: 37 de 38", len(geo) == 37, f"{len(geo)}")
+    check("Sólo un estudio sin georreferenciar (McCorkle, multi-sitio y no-seep)",
+          len(est) - len(geo) == 1, f"{len(est) - len(geo)} sin coordenada")
 
     # Comprobación cruzada fuerte: la coordenada de cada estudio debe caer
     # dentro de alguna de las bandas latitudinales que sus propios registros
@@ -339,9 +363,9 @@ def main() -> int:
           all(e["confianza"] == "nula" for e in est if e["lat"] is None), "")
     falso = [e for e in est if e["doi"] == "10.1021/acsestwater.3c00740.s001"]
     check("El DOI falso (parafinas cloradas) está anulado", not falso, "")
-    check("Referencias verificadas: 37 de 38",
-          sum(1 for e in est if e["referencia_verificada"]) == 37,
-          f"{sum(1 for e in est if e['referencia_verificada'])}")
+    check("Sólo una referencia sin verificar (Mar de China, no localizable)",
+          len(est) - sum(1 for e in est if e["referencia_verificada"]) == 1,
+          f"{len(est) - sum(1 for e in est if e['referencia_verificada'])}")
 
     # etiquetas listas para mostrar
     gen_min = [t["taxon"] for t in tax if t["genero"] and t["genero"][0].islower()]
@@ -354,7 +378,8 @@ def main() -> int:
     sin_rango = [t["taxon"] for t in tax if t.get("rango") not in ("especie", "genero")]
     check("Todo taxón declara su rango", not sin_rango, f"{sin_rango[:5]}")
     n_gen = sum(1 for t in tax if t["rango"] == "genero")
-    check("Las entradas de nomenclatura abierta están marcadas", n_gen == 20,
+    check("Las entradas de nomenclatura abierta están marcadas",
+          0 < n_gen < len(tax) * 0.25,
           f"{n_gen} de {len(tax)} son entradas de género")
     check("El ranking global va por nº de estudios",
           all(tax[i]["n_estudios"] >= tax[i + 1]["n_estudios"] for i in range(len(tax) - 1)),

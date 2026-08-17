@@ -121,6 +121,58 @@ NO_VERIFICADOS = {
 DEDUPLICAR = True
 CLAVE_DUPLICADO = ("estudio", "taxon", "lat_banda", "prof_banda", "discriminacion")
 
+# --- Estudios recuperados del borrador -----------------------------------
+# Seis estudios del libro borrador no pasaron a la hoja filtrada. Revisadas
+# sus condiciones, tres exclusiones son metodológicamente correctas según el
+# criterio que declara la propia tesis («condiciones oceánicas actuales y
+# foraminíferos recientes superficiales») y dos son discutibles.
+#
+# Se recuperan marcados con recuperado=True, de modo que el dashboard pueda
+# mostrar la base tal como la curó el autor o la base ampliada, y la decisión
+# quede a la vista en lugar de enterrada en el proceso.
+#
+# ATENCIÓN: la hoja borrador no tiene columna de tipo de pared. Para estos
+# registros la pared se DERIVA de la posición sistemática del género
+# (taxonomy.py), no se lee del original. Van marcados pared_derivada=True.
+RECUPERAR = {
+    "Benthic foraminifera from the deep-water Niger delta": dict(
+        motivo="Estudio de pockmarks de hidratos con actividad actual "
+               "(«present-day activity») y discriminación vivos/muertos, es decir "
+               "fauna reciente teñida. Cumple el criterio declarado en la "
+               "metodología de la tesis. Aporta 22 registros a la banda tropical "
+               "0-15°, que sin ellos se sostiene sobre un único registro.",
+        confianza="alta",
+    ),
+    "Natural and anthropogenic oil impacts on benthic foraminifera": dict(
+        motivo="Exclusión inconsistente: la base sí incluye otros estudios de "
+               "filtración de hidrocarburos del Golfo de México (Sen Gupta & "
+               "Aharon 1994; Sen Gupta et al. 1997; Lobegeier & Sen Gupta 2008). "
+               "La diferencia defendible es el componente antropogénico, que "
+               "confunde la señal natural. Se recupera marcado con ese reparo: "
+               "aporta 29 registros someros (<500 m), donde la base es más débil.",
+        confianza="media",
+        reparo="Mezcla filtraciones naturales con contaminación por petróleo; "
+               "la señal no es atribuible sólo a la filtración.",
+    ),
+}
+
+# Exclusiones que SÍ se mantienen, con su razón. Se documentan para que la
+# curación quede trazable y no parezca arbitraria.
+EXCLUSIONES_CONFIRMADAS = {
+    "Stable carbon isotope records of carbonates tracing fossil seep activity":
+        "Actividad de filtración FÓSIL. La tesis restringe el análisis a "
+        "condiciones oceánicas actuales.",
+    "Relationships between the stable isotopic signatures of living and fossil":
+        "Incluye fauna fósil junto a la viva; no separable desde la hoja.",
+    "The benthic foraminiferal δ34S records flux and timing of paleo methane":
+        "Emisiones de PALEO-metano. Fuera del alcance temporal declarado.",
+    "GISCHLER": "No es un estudio de filtración sino de ambientes deposicionales "
+                "carbonatados. Sus taxones (Amphistegina gibbosa, Archaias "
+                "angulatus, Homotrema rubrum) son fauna arrecifal caribeña: sirve "
+                "como referencia regional comparable con MSH-BC-21, no como "
+                "fauna de seep.",
+}
+
 # --- Vocabulario controlado de microhábitat ------------------------------
 # La columna 'Discriminacion Adicional' del libro borrador usa etiquetas
 # libres y con erratas para conceptos que se repiten. Se normalizan sin

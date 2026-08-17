@@ -15,6 +15,11 @@
   "n_registros": 36,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": null,
+  "morfologia_label": null,
+  "tipologia_confianza": "nula",
+  "tipologia_fuente": "sin declarar en el título; requiere consultar el artículo",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Cuenca del río Eel, margen norte de California",
   "region": "Pacífico NE",
@@ -26,6 +31,44 @@
  },
  {
   "id": "E02",
+  "titulo": "Natural and anthropogenic oil impacts on benthic foraminifera in the southern Gulf of Mexico",
+  "autores": [
+   "Machain-Castillo, M.",
+   "Ruiz-Fernández, A.",
+   "Gracia, A.",
+   "Sanchez-Cabeza, J.",
+   "Rodríguez-Ramírez, A.",
+   "Alexander-Valdés, H.",
+   "Pérez-Bernal, L.",
+   "Nava-Fernández, X.",
+   "Gómez-Lizárraga, L.",
+   "Almaraz-Ruiz, L.",
+   "Schwing, P.",
+   "Hollander, D."
+  ],
+  "anio": 2019,
+  "revista": "Marine Environmental Research",
+  "doi": "10.1016/j.marenvres.2019.06.006",
+  "referencia_verificada": true,
+  "n_registros": 33,
+  "tipo_filtracion": "termogenico",
+  "es_filtracion": true,
+  "morfologia": null,
+  "morfologia_label": null,
+  "tipologia_confianza": "alta",
+  "tipologia_fuente": "filtraciones naturales de petróleo; el título declara además un componente antropogénico que confunde la señal",
+  "recuperado": true,
+  "sitios": null,
+  "localidad": "Golfo de México meridional (Bahía de Campeche)",
+  "region": "Atlántico NW",
+  "lat": 19.5,
+  "lon": -92.5,
+  "prof_m": 150,
+  "confianza": "media",
+  "fuente": "Sur del Golfo de México; los registros abarcan un transecto de profundidad de <150 m a >500 m. Coordenada representativa del área."
+ },
+ {
+  "id": "E03",
   "titulo": "Foraminiferal response to an active methane seep environment: A case study from the Adriatic Sea",
   "autores": [
    "Panieri, G."
@@ -37,6 +80,11 @@
   "n_registros": 20,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": "pockmark",
+  "morfologia_label": "Pockmark",
+  "tipologia_confianza": "media",
+  "tipologia_fuente": "mismo sitio adriático que Panieri et al. (2000), descrito allí como pockmark",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Pockmark del Adriático central",
   "region": "Mediterráneo",
@@ -48,6 +96,46 @@
  },
  {
   "id": "E04",
+  "titulo": "Benthic foraminifera from the deep-water Niger delta (Gulf of Guinea): Assessing present-day and past activity of hydrate pockmarks",
+  "autores": [
+   "Fontanier, C.",
+   "Koho, K.",
+   "Goñi-Urriza, M.",
+   "Deflandre, B.",
+   "Galaup, S.",
+   "Ivanovsky, A.",
+   "Gayet, N.",
+   "Dennielou, B.",
+   "Grémare, A.",
+   "Bichon, S.",
+   "Gassie, C.",
+   "Anschutz, P.",
+   "Duran, R.",
+   "Reichart, G."
+  ],
+  "anio": 2014,
+  "revista": "Deep Sea Research Part I: Oceanographic Research Papers",
+  "doi": "10.1016/j.dsr.2014.08.011",
+  "referencia_verificada": true,
+  "n_registros": 19,
+  "tipo_filtracion": "frio",
+  "es_filtracion": true,
+  "morfologia": "pockmark",
+  "morfologia_label": "Pockmark",
+  "tipologia_confianza": "alta",
+  "tipologia_fuente": "el título dice «hydrate pockmarks»",
+  "recuperado": true,
+  "sitios": null,
+  "localidad": "Delta profundo del Níger, Golfo de Guinea",
+  "region": "Atlántico tropical E",
+  "lat": 4.0,
+  "lon": 6.0,
+  "prof_m": 1200,
+  "confianza": "media",
+  "fuente": "Provincia profunda del delta del Níger (aprox. 3-5° N, 4-8° E, 1100-1300 m). Coordenada representativa de la provincia, no del pockmark concreto."
+ },
+ {
+  "id": "E05",
   "titulo": "The influence of microhabitats on the carbon isotopic composition of deep-sea benthic foraminifera",
   "autores": [
    "McCorkle, D.C.",
@@ -62,6 +150,11 @@
   "n_registros": 18,
   "tipo_filtracion": "no_filtracion",
   "es_filtracion": false,
+  "morfologia": "no_aplica",
+  "morfologia_label": "No aplica",
+  "tipologia_confianza": "alta",
+  "tipologia_fuente": "estudio de microhábitats en márgenes continentales normales",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Márgenes continentales del Atlántico y el Pacífico (multi-sitio)",
   "region": "Multi-sitio",
@@ -72,7 +165,7 @@
   "fuente": "NO ES UN ESTUDIO DE FILTRACIÓN. Testigos de caja en márgenes continentales normales; documenta el gradiente δ13C entre taxones infaunales y epifaunales, que es la línea base frente a la que se mide una señal de metano, no la señal misma. Verificado en el resumen del artículo (Paleoceanography 5(2), 161-185)."
  },
  {
-  "id": "E03",
+  "id": "E06",
   "titulo": "MELISSA K. LOBEGEIER1,3 AND BARUN K. SEN GUPTA (2008) Foraminifera of hydrocarbon seeps, Gulf of Mexico",
   "autores": [
    "Lobegeier, M.K.",
@@ -83,8 +176,13 @@
   "doi": "10.2113/gsjfr.38.2.93",
   "referencia_verificada": true,
   "n_registros": 18,
-  "tipo_filtracion": "frio",
+  "tipo_filtracion": "termogenico",
   "es_filtracion": true,
+  "morfologia": null,
+  "morfologia_label": null,
+  "tipologia_confianza": "alta",
+  "tipologia_fuente": "el título dice «hydrocarbon seeps»",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Talud de Luisiana (Green Canyon), Golfo de México",
   "region": "Atlántico NW",
@@ -95,7 +193,7 @@
   "fuente": "título"
  },
  {
-  "id": "E05",
+  "id": "E07",
   "titulo": "The effects of anaerobic methane oxidation on benthic foraminiferal assemblages and stable isotopes on the Hikurangi Margin of eastern New Zealand",
   "autores": [
    "Martin, R.A.",
@@ -109,6 +207,11 @@
   "n_registros": 17,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": null,
+  "morfologia_label": null,
+  "tipologia_confianza": "nula",
+  "tipologia_fuente": "sin declarar en el título; requiere consultar el artículo",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Margen de Hikurangi, Nueva Zelanda",
   "region": "Pacífico SW",
@@ -119,7 +222,7 @@
   "fuente": "título"
  },
  {
-  "id": "E06",
+  "id": "E08",
   "titulo": "Is methane venting at the seafloor recorded by δ13C of benthic foraminifera shells?",
   "autores": [
    "Torres, M.E.",
@@ -137,6 +240,11 @@
   "n_registros": 14,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": "monticulo_hidratos",
+  "morfologia_label": "Montículo de hidratos",
+  "tipologia_confianza": "media",
+  "tipologia_fuente": "Hydrate Ridge: montículo de hidratos con pavimentos carbonatados",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Hydrate Ridge, Oregón",
   "region": "Pacífico NE",
@@ -147,7 +255,7 @@
   "fuente": "resumen CrossRef"
  },
  {
-  "id": "E07",
+  "id": "E09",
   "titulo": "Distribution and isotopic composition of foraminifera at cold-seep Site 973-4 in the Dongsha area, northeastern South China Sea",
   "autores": [
    "Zhang, B.",
@@ -162,6 +270,11 @@
   "n_registros": 12,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": null,
+  "morfologia_label": null,
+  "tipologia_confianza": "nula",
+  "tipologia_fuente": "sin declarar en el título; requiere consultar el artículo",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Área de Dongsha, Mar de China Meridional NE",
   "region": "Pacífico NW",
@@ -187,6 +300,11 @@
   "n_registros": 9,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": "monticulo_hidratos",
+  "morfologia_label": "Montículo de hidratos",
+  "tipologia_confianza": "media",
+  "tipologia_fuente": "Hydrate Ridge",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Hydrate Ridge, margen de Cascadia",
   "region": "Pacífico NE",
@@ -197,7 +315,7 @@
   "fuente": "grupo de investigación y continuidad con Torres et al. 2003"
  },
  {
-  "id": "E12",
+  "id": "E11",
   "titulo": "Living (stained) deep-sea foraminifera from the Sea of Marmara: A preliminary study",
   "autores": [
    "Fontanier, C.",
@@ -224,6 +342,11 @@
   "n_registros": 8,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": null,
+  "morfologia_label": null,
+  "tipologia_confianza": "nula",
+  "tipologia_fuente": "sin declarar en el título; requiere consultar el artículo",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Mar de Mármara",
   "region": "Mediterráneo",
@@ -234,7 +357,7 @@
   "fuente": "título"
  },
  {
-  "id": "E13",
+  "id": "E12",
   "titulo": "Macro- and micro-fauna from cold seeps in the Palmahim Disturbance (Israeli off-shore), with description of Waisiuconcha corsellii n.sp. (Bivalvia, Vesicomyidae)",
   "autores": [
    "Basso, D.",
@@ -253,6 +376,11 @@
   "n_registros": 8,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": null,
+  "morfologia_label": null,
+  "tipologia_confianza": "nula",
+  "tipologia_fuente": "sin declarar en el título; requiere consultar el artículo",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Perturbación de Palmahim, costa afuera de Israel",
   "region": "Mediterráneo",
@@ -263,7 +391,7 @@
   "fuente": "título"
  },
  {
-  "id": "E08",
+  "id": "E13",
   "titulo": "Faunal and stable isotopic analyses of benthic foraminifera from the Southeast Seep on Kimki Ridge offshore southern California, USA",
   "autores": [
    "McGann, M.",
@@ -276,6 +404,11 @@
   "n_registros": 8,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": null,
+  "morfologia_label": null,
+  "tipologia_confianza": "nula",
+  "tipologia_fuente": "sin declarar en el título; requiere consultar el artículo",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Kimki Ridge, borderland del sur de California",
   "region": "Pacífico NE",
@@ -300,6 +433,11 @@
   "n_registros": 7,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": "pockmark",
+  "morfologia_label": "Pockmark",
+  "tipologia_confianza": "alta",
+  "tipologia_fuente": "el título dice «Adriatic Sea Pockmark»",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Pockmark del Mar Adriático",
   "region": "Mediterráneo",
@@ -321,8 +459,13 @@
   "doi": "10.1007/bf01203719",
   "referencia_verificada": true,
   "n_registros": 6,
-  "tipo_filtracion": "frio",
+  "tipo_filtracion": "termogenico",
   "es_filtracion": true,
+  "morfologia": null,
+  "morfologia_label": null,
+  "tipologia_confianza": "alta",
+  "tipologia_fuente": "el título dice «bathyal hydrocarbon vents»",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Escapes batiales de hidrocarburos, Golfo de México",
   "region": "Atlántico NW",
@@ -346,8 +489,13 @@
   "doi": "10.2113/gsjfr.27.4.292",
   "referencia_verificada": true,
   "n_registros": 6,
-  "tipo_filtracion": "frio",
+  "tipo_filtracion": "termogenico",
   "es_filtracion": true,
+  "morfologia": "tapete_bacteriano",
+  "morfologia_label": "Tapete bacteriano",
+  "tipologia_confianza": "alta",
+  "tipologia_fuente": "el título dice «hydrocarbon-seep bacterial mats»",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Talud del Golfo de México (tapetes bacterianos)",
   "region": "Atlántico NW",
@@ -358,7 +506,7 @@
   "fuente": "título"
  },
  {
-  "id": "E09",
+  "id": "E17",
   "titulo": "Relationships between the distribution and stable isotopic composition of living benthic foraminifera and cold methane seep biogeochemistry in Monterey Bay, California",
   "autores": [
    "Rathburn, A.E.",
@@ -378,6 +526,11 @@
   "n_registros": 6,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": null,
+  "morfologia_label": null,
+  "tipologia_confianza": "nula",
+  "tipologia_fuente": "sin declarar en el título; requiere consultar el artículo",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Bahía de Monterey, California",
   "region": "Pacífico NE",
@@ -388,7 +541,7 @@
   "fuente": "título"
  },
  {
-  "id": "E11",
+  "id": "E18",
   "titulo": "Benthic Foraminifera of the Blake Ridge hydrate mound, Western North Atlantic Ocean",
   "autores": [
    "Panieri, G.",
@@ -401,6 +554,11 @@
   "n_registros": 6,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": "monticulo_hidratos",
+  "morfologia_label": "Montículo de hidratos",
+  "tipologia_confianza": "alta",
+  "tipologia_fuente": "el título dice «Blake Ridge hydrate mound»",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Montículo de hidratos de Blake Ridge",
   "region": "Atlántico NW",
@@ -411,7 +569,7 @@
   "fuente": "título"
  },
  {
-  "id": "E17",
+  "id": "E19",
   "titulo": "Combined carbonate carbon isotopic and cellular ultrastructural studies of individual benthic foraminifera: 2. Toward an understanding of apparent disequilibrium in hydrocarbon seeps",
   "autores": [
    "Bernhard, J.M.",
@@ -425,6 +583,11 @@
   "n_registros": 6,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": "banco_bivalvos",
+  "morfologia_label": "Banco de bivalvos",
+  "tipologia_confianza": "alta",
+  "tipologia_fuente": "Clam Flats, Bahía de Monterey (dato del autor)",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Clam Flats, Bahía de Monterey, California",
   "region": "Pacífico NE",
@@ -435,7 +598,7 @@
   "fuente": "Coordenadas exactas del artículo: 36°44,7'N 122°16,6'W, ~1003 m. Incluye un área adyacente sin filtración como control."
  },
  {
-  "id": "E18",
+  "id": "E20",
   "titulo": "Bernhard, J. M., Buck, K. R., & Barry, J. P. (2001). Monterey Bay cold-seep biota: Assemblages, abundance, and ultrastructure of living foraminifera. Deep Sea Research Part I: Oceanographic Research Papers, 48(10), 2233–2249",
   "autores": [
    "Bernhard, J.M.",
@@ -449,6 +612,11 @@
   "n_registros": 6,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": null,
+  "morfologia_label": null,
+  "tipologia_confianza": "nula",
+  "tipologia_fuente": "sin declarar en el título; requiere consultar el artículo",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Bahía de Monterey, California",
   "region": "Pacífico NE",
@@ -459,7 +627,7 @@
   "fuente": "título"
  },
  {
-  "id": "E19",
+  "id": "E21",
   "titulo": "Geological and biological heterogeneity of the Aleutian margin (1965–4822 m)",
   "autores": [
    "Rathburn, A.",
@@ -484,6 +652,11 @@
   "n_registros": 5,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": null,
+  "morfologia_label": null,
+  "tipologia_confianza": "nula",
+  "tipologia_fuente": "sin declarar en el título; requiere consultar el artículo",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Margen de las Aleutianas",
   "region": "Pacífico N",
@@ -494,7 +667,7 @@
   "fuente": "título"
  },
  {
-  "id": "E20",
+  "id": "E22",
   "titulo": "Jones, R. W. (1993). Preliminary Observations on Benthonic Foramininera Associated with Biogenic Gas Seep in the North Sea. Applied Micropalaeontology, 69–91",
   "autores": [
    "Jones, R.W."
@@ -504,8 +677,13 @@
   "doi": "10.1007/978-94-017-0763-3_3",
   "referencia_verificada": true,
   "n_registros": 5,
-  "tipo_filtracion": "frio",
+  "tipo_filtracion": "biogenico",
   "es_filtracion": true,
+  "morfologia": null,
+  "morfologia_label": null,
+  "tipologia_confianza": "alta",
+  "tipologia_fuente": "el título dice «Biogenic Gas Seep»; morfología sin declarar",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Mar del Norte (escape de gas biogénico)",
   "region": "Atlántico NE",
@@ -516,7 +694,7 @@
   "fuente": "título"
  },
  {
-  "id": "E21",
+  "id": "E23",
   "titulo": "Dessandier, P.-A., Borrelli, C., Yao, H., Sauer, S., Hong, W.-L., & Panieri, G. (2020). Foraminiferal δ18O reveals gas hydrate dissociation in Arctic and North Atlantic ocean sediments. Geo-Marine Letters",
   "autores": [
    "Dessandier, P.",
@@ -533,6 +711,11 @@
   "n_registros": 5,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": null,
+  "morfologia_label": null,
+  "tipologia_confianza": "nula",
+  "tipologia_fuente": "sin declarar en el título; requiere consultar el artículo",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Ártico y Atlántico Norte (Vestnesa / Storfjordrenna)",
   "region": "Ártico",
@@ -543,7 +726,7 @@
   "fuente": "título; el estudio abarca varios sitios árticos"
  },
  {
-  "id": "E22",
+  "id": "E24",
   "titulo": "Benthic Foraminifera in Arctic Methane Hydrate Bearing Sediments",
   "autores": [
    "Dessandier, P.",
@@ -558,6 +741,11 @@
   "n_registros": 5,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": "pingo_hidratos",
+  "morfologia_label": "Pingo de hidratos",
+  "tipologia_confianza": "alta",
+  "tipologia_fuente": "Storfjordrenna: campo de pingos de hidratos de gas",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Pingos de hidratos de Storfjordrenna, Mar de Barents",
   "region": "Ártico",
@@ -568,7 +756,7 @@
   "fuente": "título y resumen"
  },
  {
-  "id": "E23",
+  "id": "E25",
   "titulo": "Limits to the sensitivity of living benthic foraminifera to pore water carbon isotope anomalies in methane vent environments",
   "autores": [
    "Herguera, J.C.",
@@ -584,6 +772,11 @@
   "n_registros": 4,
   "tipo_filtracion": "hidrotermal",
   "es_filtracion": true,
+  "morfologia": "respiradero_hidrotermal",
+  "morfologia_label": "Respiradero hidrotermal",
+  "tipologia_confianza": "alta",
+  "tipologia_fuente": "respiradero Pinkies, Cuenca de Guaymas (dato del autor)",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Respiradero Pinkies, Cuenca de Guaymas, Golfo de California",
   "region": "Pacífico NE",
@@ -594,7 +787,7 @@
   "fuente": "Centroide de 8 testigos alrededor del respiradero Pinkies (27,5899-27,5914 N; -111,4735 a -111,4758 W), profundidad 1462-1594 m. Es un escape de metano HIDROTERMAL, no una filtración fría: la Cuenca de Guaymas es un sistema hidrotermal."
  },
  {
-  "id": "E24",
+  "id": "E26",
   "titulo": "Diversity and Characteristics of Benthic Foraminifera in Cold Seep Areas in the Active Margin of the northeastern South China Sea",
   "autores": null,
   "anio": null,
@@ -604,6 +797,11 @@
   "n_registros": 4,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": null,
+  "morfologia_label": null,
+  "tipologia_confianza": "nula",
+  "tipologia_fuente": "sin declarar en el título; requiere consultar el artículo",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Margen activo del Mar de China Meridional NE",
   "region": "Pacífico NW",
@@ -614,7 +812,7 @@
   "fuente": "título; referencia no localizable en CrossRef ni en búsqueda web"
  },
  {
-  "id": "E25",
+  "id": "E27",
   "titulo": "A thermogenic hydrocarbon seep in shallow Adriatic Sea (Italy): Gas origin, sediment contamination and benthic foraminifera",
   "autores": [
    "Etiope, G.",
@@ -631,8 +829,13 @@
   "doi": "10.1016/j.marpetgeo.2014.06.006",
   "referencia_verificada": true,
   "n_registros": 4,
-  "tipo_filtracion": "frio",
+  "tipo_filtracion": "termogenico",
   "es_filtracion": true,
+  "morfologia": null,
+  "morfologia_label": null,
+  "tipologia_confianza": "alta",
+  "tipologia_fuente": "el título dice «thermogenic hydrocarbon seep»; morfología sin declarar",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Adriático somero frente a Italia",
   "region": "Mediterráneo",
@@ -643,7 +846,7 @@
   "fuente": "título"
  },
  {
-  "id": "E26",
+  "id": "E28",
   "titulo": "Hill, T., Kennett, J ., Spero, H . (2003). Foraminifera as indicators of methane-rich environments: A study of modern methane seeps in Santa Barbara Channel, California. Marine Micropaleontology, 49(1-2), 123–138",
   "autores": [
    "Hill, T.",
@@ -657,6 +860,11 @@
   "n_registros": 4,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": null,
+  "morfologia_label": null,
+  "tipologia_confianza": "nula",
+  "tipologia_fuente": "sin declarar en el título; requiere consultar el artículo",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Canal de Santa Bárbara, California",
   "region": "Pacífico NE",
@@ -667,7 +875,7 @@
   "fuente": "título"
  },
  {
-  "id": "E27",
+  "id": "E29",
   "titulo": "Benthic foraminifera associated with a hydrocarbon seep in the Rockall Trough (NE Atlantic)",
   "autores": [
    "Panieri, G."
@@ -677,8 +885,13 @@
   "doi": "10.1016/j.geobios.2003.10.004",
   "referencia_verificada": true,
   "n_registros": 4,
-  "tipo_filtracion": "frio",
+  "tipo_filtracion": "termogenico",
   "es_filtracion": true,
+  "morfologia": null,
+  "morfologia_label": null,
+  "tipologia_confianza": "alta",
+  "tipologia_fuente": "el título dice «hydrocarbon seep»",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Depresión de Rockall, Atlántico NE",
   "region": "Atlántico NE",
@@ -689,7 +902,7 @@
   "fuente": "título"
  },
  {
-  "id": "E28",
+  "id": "E30",
   "titulo": "Late Holocene foraminifera of Blake Ridge diapir: Assemblage variation and stable-isotope record in gas-hydrate bearing sediments",
   "autores": [
    "Panieri, G.",
@@ -706,6 +919,11 @@
   "n_registros": 3,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": "diapiro",
+  "morfologia_label": "Diapiro",
+  "tipologia_confianza": "alta",
+  "tipologia_fuente": "el título dice «Blake Ridge diapir»",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Diapiro de Blake Ridge",
   "region": "Atlántico NW",
@@ -716,7 +934,7 @@
   "fuente": "título"
  },
  {
-  "id": "E29",
+  "id": "E31",
   "titulo": "Meiobenthos from an active methane seepage area in the NW Black Sea",
   "autores": [
    "Sergeeva, N.G.",
@@ -729,6 +947,11 @@
   "n_registros": 3,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": null,
+  "morfologia_label": null,
+  "tipologia_confianza": "nula",
+  "tipologia_fuente": "sin declarar en el título; requiere consultar el artículo",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Mar Negro noroccidental",
   "region": "Mar Negro",
@@ -739,7 +962,7 @@
   "fuente": "título"
  },
  {
-  "id": "E30",
+  "id": "E32",
   "titulo": "Gieskes, J., Rathburn, A. E., Martin, J. B., Pérez, M. E., Mahn, C., Bernhard, J. M., & Day, S. (2011). Cold seeps in Monterey Bay, California: Geochemistry of pore waters and relationship to benthic foraminiferal calcite. Applied Geochemistry, 26(5), 738–746",
   "autores": [
    "Gieskes, J.",
@@ -757,6 +980,11 @@
   "n_registros": 3,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": null,
+  "morfologia_label": null,
+  "tipologia_confianza": "nula",
+  "tipologia_fuente": "sin declarar en el título; requiere consultar el artículo",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Bahía de Monterey, California",
   "region": "Pacífico NE",
@@ -767,7 +995,7 @@
   "fuente": "título"
  },
  {
-  "id": "E31",
+  "id": "E33",
   "titulo": "Hill, T. M., Kennett, J. P., & Valentine, D. L. (2004). Isotopic evidence for the incorporation of methane-derived carbon into foraminifera from modern methane seeps, Hydrate Ridge, Northeast Pacific. Geochimica et Cosmochimica Acta, 68(22), 4619–4627",
   "autores": [
    "Hill, T.",
@@ -781,6 +1009,11 @@
   "n_registros": 3,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": "monticulo_hidratos",
+  "morfologia_label": "Montículo de hidratos",
+  "tipologia_confianza": "media",
+  "tipologia_fuente": "Hydrate Ridge",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Hydrate Ridge, Pacífico NE",
   "region": "Pacífico NE",
@@ -791,7 +1024,7 @@
   "fuente": "título"
  },
  {
-  "id": "E32",
+  "id": "E34",
   "titulo": "Low δ13C in tests of live epibenthic and endobenthic foraminifera at a site of active methane seepage",
   "autores": [
    "Mackensen, A.",
@@ -805,6 +1038,11 @@
   "n_registros": 3,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": "volcan_lodo",
+  "morfologia_label": "Volcán de lodo",
+  "tipologia_confianza": "alta",
+  "tipologia_fuente": "el resumen sitúa el estudio en el volcán de lodo Håkon Mosby",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Volcán de lodo Håkon Mosby, norte de Noruega",
   "region": "Ártico",
@@ -815,7 +1053,7 @@
   "fuente": "resumen CrossRef"
  },
  {
-  "id": "E33",
+  "id": "E35",
   "titulo": "Influence of methane seepage on isotopic signatures in living deep-sea benthic foraminifera, 79° N",
   "autores": [
    "Melaniuk, K.",
@@ -831,6 +1069,11 @@
   "n_registros": 3,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": "pockmark",
+  "morfologia_label": "Pockmark",
+  "tipologia_confianza": "media",
+  "tipologia_fuente": "Vestnesa Ridge, 79° N: campo de pockmarks",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Vestnesa Ridge, 79° N, Svalbard",
   "region": "Ártico",
@@ -841,7 +1084,7 @@
   "fuente": "título"
  },
  {
-  "id": "E34",
+  "id": "E36",
   "titulo": "Influences of thermal and fluid characteristics of methane and hydrothermal seeps on the stable oxygen isotopes of living benthic foraminifera",
   "autores": [
    "Burkett, A.M.",
@@ -856,6 +1099,11 @@
   "n_registros": 2,
   "tipo_filtracion": "mixto",
   "es_filtracion": true,
+  "morfologia": null,
+  "morfologia_label": null,
+  "tipologia_confianza": "alta",
+  "tipologia_fuente": "el título contrasta filtraciones de metano con hidrotermales",
+  "recuperado": false,
   "sitios": [
    {
     "nombre": "Montículo 11, Costa Rica",
@@ -915,7 +1163,7 @@
   "fuente": "Centroide de 6 sitios del margen de Costa Rica (8,92-9,13 N; -84,30 a -84,84 W; 993-1714 m). El estudio abarca además Hydrate Ridge, registrado como sitio secundario."
  },
  {
-  "id": "E35",
+  "id": "E37",
   "titulo": "Impact of methane seepage dynamics on the abundance of benthic foraminifera in gas hydrate bearing sediments: New insights from the South China Sea",
   "autores": [
    "Li, N.",
@@ -932,6 +1180,11 @@
   "n_registros": 1,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": null,
+  "morfologia_label": null,
+  "tipologia_confianza": "nula",
+  "tipologia_fuente": "sin declarar en el título; requiere consultar el artículo",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Mar de China Meridional",
   "region": "Pacífico NW",
@@ -942,7 +1195,7 @@
   "fuente": "título; resumen de congreso sin detalle de sitio"
  },
  {
-  "id": "E36",
+  "id": "E38",
   "titulo": "Wang, S., Yan, B., & Yan, W. (2012). Tracing seafloor methane emissions with benthic foraminifera in the Baiyun Sag of the northern South China Sea. Environmental Earth Sciences, 70(3), 1143–1150",
   "autores": [
    "Wang, S.",
@@ -956,6 +1209,11 @@
   "n_registros": 1,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": null,
+  "morfologia_label": null,
+  "tipologia_confianza": "nula",
+  "tipologia_fuente": "sin declarar en el título; requiere consultar el artículo",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Depresión de Baiyun, Mar de China Meridional N",
   "region": "Pacífico NW",
@@ -966,7 +1224,7 @@
   "fuente": "título"
  },
  {
-  "id": "E37",
+  "id": "E39",
   "titulo": "Colonization of over a thousand Cibicidoides wuellerstorfi (foraminifera: Schwager, 1866) on artificial substrates in seep and adjacent off-seep locations in dysoxic, deep-sea environments",
   "autores": [
    "Burkett, A.M.",
@@ -982,6 +1240,11 @@
   "n_registros": 1,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": "monticulo_hidratos",
+  "morfologia_label": "Montículo de hidratos",
+  "tipologia_confianza": "media",
+  "tipologia_fuente": "Hydrate Ridge, sectores norte y sur",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Hydrate Ridge, margen de Oregón",
   "region": "Pacífico NE",
@@ -992,7 +1255,7 @@
   "fuente": "Centroide de 10 despliegues de cubos SEA3: sector norte (44,667-44,670 N; ~595-615 m) y sector sur (44,569-44,570 N; ~772-777 m), con filtración activa y zonas adyacentes sin ella."
  },
  {
-  "id": "E38",
+  "id": "E40",
   "titulo": "Diagenetic alteration of benthic foraminifera from a methane seep site on Vestnesa Ridge (NW Svalbard)",
   "autores": [
    "Schneider, A.",
@@ -1008,6 +1271,11 @@
   "n_registros": 1,
   "tipo_filtracion": "frio",
   "es_filtracion": true,
+  "morfologia": "pockmark",
+  "morfologia_label": "Pockmark",
+  "tipologia_confianza": "media",
+  "tipologia_fuente": "Vestnesa Ridge: campo de pockmarks activos bien documentado",
+  "recuperado": false,
   "sitios": null,
   "localidad": "Vestnesa Ridge, NW de Svalbard",
   "region": "Ártico",

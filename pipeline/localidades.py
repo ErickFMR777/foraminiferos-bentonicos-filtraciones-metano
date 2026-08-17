@@ -180,6 +180,19 @@ LOCALIDADES: dict[str, dict] = {
     "10.1016/j.dsr.2017.03.001": dict(
         localidad="Vestnesa Ridge, NW de Svalbard", region="Ártico",
         lat=79.00, lon=6.90, prof_m=1200, confianza="alta", fuente="título"),
+
+    # --- estudios recuperados del borrador ---
+    "10.1016/j.dsr.2014.08.011": dict(
+        localidad="Delta profundo del Níger, Golfo de Guinea", region="Atlántico tropical E",
+        lat=4.00, lon=6.00, prof_m=1200, confianza="media",
+        fuente="Provincia profunda del delta del Níger (aprox. 3-5° N, 4-8° E, "
+               "1100-1300 m). Coordenada representativa de la provincia, no del "
+               "pockmark concreto."),
+    "10.1016/j.marenvres.2019.06.006": dict(
+        localidad="Golfo de México meridional (Bahía de Campeche)", region="Atlántico NW",
+        lat=19.50, lon=-92.50, prof_m=150, confianza="media",
+        fuente="Sur del Golfo de México; los registros abarcan un transecto de "
+               "profundidad de <150 m a >500 m. Coordenada representativa del área."),
 }
 
 # Estudio sin DOI resuelto de forma fiable: CrossRef devolvió una coincidencia
