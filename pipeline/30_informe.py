@@ -186,15 +186,23 @@ def main() -> int:
           "que alimentan el dashboard.")
 
     pdf.h2("Fuentes")
-    pdf.item("Base bibliográfica de la tesis: libro de cálculo de 9 hojas con 38 "
-             "estudios; la hoja maestra tiene 293 filas.")
-    pdf.item("Conteo de la muestra MSH-BC-21: libro de cálculo de 3 hojas con 52 "
-             "especies de los 2 cm superficiales de un testigo de caja.")
-    pdf.item("El documento de la tesis, 62 páginas.")
-    pdf.item(f"{len(d['manif'])} artículos en PDF, reunidos después para verificar "
-             "localidades y morfología del fondo marino.")
-    pdf.nota("Los tres primeros no se publican ni se versionan: contienen datos "
-             "primarios inéditos del proyecto MSH.")
+    pdf.p("Mendoza Rivero, E. F. (2022). Análisis de las asociaciones de "
+          "foraminíferos bentónicos en filtraciones de metano: comparación entre "
+          "distintas localidades y la plataforma continental del Caribe colombiano. "
+          "Tesis de grado, Ingeniería Geológica, Universidad Nacional de Colombia, "
+          "Facultad de Minas, Medellín. Directora: Ph.D. Gladys Rocío Bernal "
+          "Franco. 62 pp.")
+    pdf.p("Con sus dos anexos de datos:")
+    pdf.item("«BD FORAMS AMBTE FILTRACION-filtros» — 9 hojas. Base bibliográfica "
+             "de 38 estudios; la hoja maestra tiene 293 filas.")
+    pdf.item("«Colección - Clasificación - Conteo MSH-BC-21» — 3 hojas. Conteo de "
+             "52 especies de los 2 cm superficiales de un testigo de caja.")
+    pdf.p(f"A esto se suman {len(d['manif'])} artículos científicos reunidos "
+          "posteriormente para verificar localidades, morfología del fondo marino "
+          "y tipo de fluido. Se listan en el apartado 7.")
+    pdf.nota("La tesis y sus dos anexos de datos se citan pero no se publican: "
+             "contienen datos primarios inéditos del proyecto MSH, previos a su "
+             "publicación académica.")
 
     pdf.h2("Autoridades externas consultadas")
     pdf.item("WoRMS / World Foraminifera Database — resolución taxonómica de los "
@@ -410,6 +418,44 @@ def main() -> int:
     pend = [m for m in d["manif"] if m["estado"] == "pendiente de integrar"]
     for m_ in pend:
         pdf.item(f"Pendiente de integrar: {m_['despues'][:72]}")
+
+    # ---------------------------------------------------------- 7
+    pdf.add_page()
+    pdf.h1("7. Estudios que componen la base")
+    pdf.p("Las 40 referencias, ordenadas por el número de registros que aportan. "
+          "Se indica la localidad reconstruida y el tipo de fluido. Los marcados "
+          "con «R» son los dos reincorporados en esta revisión; el marcado con «X» "
+          "es el que no documenta filtraciones.")
+
+    FL = {"frio": "frío", "termogenico": "termogénico", "biogenico": "biogénico",
+          "hidrotermal": "hidrotermal", "mixto": "mixto",
+          "no_filtracion": "no es filtración"}
+    for e in sorted(d["est"], key=lambda x: -x["n_registros"]):
+        if pdf.get_y() > pdf.h - 40:
+            pdf.add_page()
+        marca = "R " if e.get("recuperado") else ("X " if not e["es_filtracion"] else "")
+        aut = ", ".join((e.get("autores") or [])[:3]) or "(autoría sin resolver)"
+        if len(e.get("autores") or []) > 3:
+            aut += " et al."
+        def linea(texto: str, negrita: bool = False, color=SUAVE, alto: float = 4.4):
+            # multi_cell deja el cursor al margen derecho; hay que devolverlo
+            pdf.set_x(pdf.l_margin)
+            pdf.set_font("D", "B" if negrita else "", 9 if negrita else 8.8)
+            pdf.set_text_color(*color)
+            pdf.multi_cell(pdf.w - pdf.l_margin - pdf.r_margin, alto, texto)
+
+        linea(f"{marca}[{e['n_registros']}] {aut} ({e.get('anio') or 's.f.'})",
+              negrita=True, color=TINTA, alto=4.8)
+        linea(e["titulo"][:150])
+        detalle = e.get("revista") or ""
+        if e.get("doi"):
+            detalle += ("  ·  " if detalle else "") + f"doi:{e['doi']}"
+        if detalle:
+            linea(detalle)
+        loc = e.get("localidad") or "localidad sin determinar"
+        linea(f"{loc}  ·  {FL.get(e['tipo_filtracion'], e['tipo_filtracion'])}"
+              + (f"  ·  {e['morfologia_label']}" if e.get("morfologia_label") else ""))
+        pdf.ln(2.2)
 
     pdf.output(str(SALIDA))
     print(f"Informe generado: {SALIDA}")

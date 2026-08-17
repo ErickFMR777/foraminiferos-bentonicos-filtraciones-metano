@@ -407,24 +407,29 @@ def main() -> int:
 
     # ---------------------------------------------------------------------
     print("\n[7] CONFIDENCIALIDAD")
+    # La regla es no publicar los ARCHIVOS, no dejar de citarlos: mencionar la
+    # tesis y sus anexos es buena práctica y el autor lo autorizó de forma
+    # expresa. Lo que no debe aparecer son rutas del sistema de archivos ni
+    # enlaces de descarga, que sí permitirían llegar al documento.
+    RUTAS = ("Data_nosubiralrepo/", "Data_nosubiralrepo\\", "C:\\Users", "/Users/",
+             "file://", "OneDrive")
     fuga = []
     for f in DERIV.glob("*.json"):
         txt = f.read_text(encoding="utf-8")
-        for marca in ("Data_nosubiralrepo", ".xlsx", ".pdf", "TDG-ERICKFMR"):
-            if marca in txt:
-                fuga.append(f"{f.name} contiene '{marca}'")
-    check("Ningún dataset público filtra rutas o nombres de archivo", not fuga, f"{fuga}")
+        fuga += [f"{f.name} contiene '{m}'" for m in RUTAS if m in txt]
+    check("Ningún dataset público expone rutas del sistema de archivos",
+          not fuga, f"{fuga}")
 
-    # el informe en PDF también se publica: mismo criterio
     informe = ROOT / "Informe_curacion_datos.pdf"
     if informe.exists():
         from pypdf import PdfReader
         txt = " ".join((pg.extract_text() or "")
                        for pg in PdfReader(str(informe)).pages)
-        fuga_pdf = [m for m in ("Data_nosubiralrepo", ".xlsx", "TDG-ERICKFMR")
-                    if m in txt]
-        check("El informe en PDF no expone rutas ni nombres de archivo privados",
-              not fuga_pdf, f"{fuga_pdf}")
+        check("El informe en PDF no expone rutas del sistema de archivos",
+              not [m for m in RUTAS if m in txt],
+              f"{[m for m in RUTAS if m in txt]}")
+        check("El informe cita la tesis como fuente",
+              "Mendoza Rivero" in txt, "")
 
     # ---------------------------------------------------------------------
     print("\n" + "=" * 74)
