@@ -77,20 +77,20 @@ releer la tesis; ningún script del pipeline usa pandas).
 
 ---
 
-## 4. Los datos (data/derived/, 125 KB total)
+## 4. Los datos (data/derived/, 145 KB total)
 
 | Archivo | Qué tiene |
 |---|---|
-| `estudios.json` | 38 estudios: cita, DOI, localidad, lat/lon, confianza |
-| `taxones_global.json` | 160 taxones: registros, estudios, bandas, pared, AphiaID |
-| `matriz_lat_prof.json` | Matriz 4×3 + posición de MSH-BC-21 |
+| `estudios.json` | 38 estudios: cita, DOI, localidad, lat/lon, tipo de filtración, sitios, confianza |
+| `taxones_global.json` | 160 taxones: registros, estudios, bandas, microhábitats, pared, rango, AphiaID |
+| `matriz_lat_prof.json` | Matriz 4×3 (sólo filtraciones) + sitio de la tesis |
 | `pared_por_banda.json` | % calcáreo/aglutinado por banda, con n |
 | `msh_bc21.json` | 52 especies, índices, pared, abundancias por cm/fracción |
 | `solape.json` | Intersección MSH ↔ literatura global |
 | `caribe_referencia.json` | 5 localidades caribeñas + MSH-BC-21 |
-| `correcciones.json` | 67 correcciones documentadas + resumen de impacto |
+| `correcciones.json` | 79 correcciones documentadas + resumen de impacto |
 
-**Volumen decisivo:** 125 KB. Todo va en el bundle estático. NO hace falta
+**Volumen decisivo:** 145 KB. Todo va en el bundle estático. NO hace falta
 base de datos, ni API, ni Supabase.
 
 ---
@@ -142,12 +142,12 @@ base de datos, ni API, ni Supabase.
 3. **Tasa de error real: 8,2%** — 23 entradas de corrección (6 erratas + 5
    reclasificaciones de pared + 12 duplicados) que afectan **24 de los 293
    registros**. Las otras 51 entradas del log no son errores del autor.
-6. **12 filas duplicadas exactas** (mismo estudio, taxón, banda latitudinal,
+4. **12 filas duplicadas exactas** (mismo estudio, taxón, banda latitudinal,
    banda de profundidad y microhábitat). Eliminadas. Se conservan en cambio
    las 14 repeticiones de un taxón dentro de un estudio cuando cambia la
    banda: ahí el artículo reporta la especie en dos estratos distintos y son
    observaciones separadas, no duplicados.
-7. **El ranking por nº de registros estaba sesgado.** Ahora se ordena por nº
+5. **El ranking por nº de registros estaba sesgado.** Ahora se ordena por nº
    de estudios. *Globobulimina affinis* salía en el top-5 con 7 registros
    procedentes de sólo 3 estudios; con la métrica robusta baja de posición.
 4. **`Cassidulina` es homónimo**: WoRMS devuelve un equinoideo. Filtrado por
