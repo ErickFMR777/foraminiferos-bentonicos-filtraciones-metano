@@ -89,7 +89,14 @@ def main() -> int:
         json.dumps({
             "celdas": celdas,
             "lats": LATS, "profs": PROFS,
-            "sitio_tesis": {"lat": "0-15", "prof": "< 150 m", **LOC.MSH_BC_21},
+            # Claves explícitas: 'banda_lat' y 'lat' son cosas distintas (la
+            # banda de la matriz y la coordenada geográfica). Fusionarlas con
+            # un spread hacía que la coordenada pisara la banda en silencio.
+            "sitio_tesis": {
+                "banda_lat": "0-15",
+                "banda_prof": "< 150 m",
+                **LOC.MSH_BC_21,
+            },
         }, ensure_ascii=False, indent=1), encoding="utf-8")
 
     # ------------------------------------------------------------ taxones global

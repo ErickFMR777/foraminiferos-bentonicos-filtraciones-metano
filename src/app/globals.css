@@ -1,0 +1,181 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   SISTEMA DE DISEÑO — «el microscopio»
+   --------------------------------------------------------------------------
+   Los colores de serie NO son una elección estética: pasaron el validador de
+   accesibilidad en ambos modos, sobre las superficies reales de este proyecto
+   (claro #FAF8F5, oscuro #16191B), con el pairlist completo.
+
+     hialino ↔ porcelanáceo   ΔE normal 24,0 claro / 20,9 oscuro  (piso 15)
+     peor par CVD             ΔE  9,2 claro /  9,4 oscuro          (piso  8)
+
+   La paleta desaturada que se probó primero FALLÓ: azul y verde-azulado
+   quedaban a ΔE 10 en visión normal, indistinguibles. No sustituir estos
+   valores sin volver a correr el validador.
+
+   Regla: el color codifica variables. Si no codifica nada, es gris.
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* Superficies e ink */
+  --page: #f2f0eb;
+  --surface: #faf8f5;
+  --surface-2: #ebe8e1;
+  --ink: #14140f;
+  --ink-2: #52514e;
+  --muted: #898781;
+  --grid: #e3e1da;
+  --axis: #c3c2b7;
+  --border: rgb(20 20 15 / 0.12);
+
+  /* Serie categórica: tipo de pared */
+  --pared-hialino: #2a78d6;
+  --pared-porcelanaceo: #1baf7a;
+  --pared-aglutinado: #eb6834;
+  --pared-monocristalino: #eda100;
+
+  /* Secuencial (magnitud): un solo tono, claro→oscuro */
+  --seq-100: #cde2fb;
+  --seq-250: #86b6ef;
+  --seq-400: #3987e5;
+  --seq-550: #1c5cab;
+  --seq-700: #0d366b;
+
+  /* Ausencia de datos: debe leerse VACÍO, nunca como cero */
+  --sin-datos: #e6e3dc;
+  --sin-datos-trama: #cbc7bd;
+
+  /* Marca del sitio de la tesis (forma + rótulo, no un color de serie) */
+  --sitio: #14140f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --page: #0b0d0e;
+    --surface: #16191b;
+    --surface-2: #1f2325;
+    --ink: #ffffff;
+    --ink-2: #c3c2b7;
+    --muted: #898781;
+    --grid: #262a2c;
+    --axis: #383c3e;
+    --border: rgb(255 255 255 / 0.12);
+
+    --pared-hialino: #3987e5;
+    --pared-porcelanaceo: #199e70;
+    --pared-aglutinado: #d95926;
+    --pared-monocristalino: #c98500;
+
+    --seq-100: #0d366b;
+    --seq-250: #184f95;
+    --seq-400: #256abf;
+    --seq-550: #3987e5;
+    --seq-700: #86b6ef;
+
+    --sin-datos: #202426;
+    --sin-datos-trama: #33383a;
+
+    --sitio: #ffffff;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #0b0d0e;
+  --surface: #16191b;
+  --surface-2: #1f2325;
+  --ink: #ffffff;
+  --ink-2: #c3c2b7;
+  --muted: #898781;
+  --grid: #262a2c;
+  --axis: #383c3e;
+  --border: rgb(255 255 255 / 0.12);
+
+  --pared-hialino: #3987e5;
+  --pared-porcelanaceo: #199e70;
+  --pared-aglutinado: #d95926;
+  --pared-monocristalino: #c98500;
+
+  --seq-100: #0d366b;
+  --seq-250: #184f95;
+  --seq-400: #256abf;
+  --seq-550: #3987e5;
+  --seq-700: #86b6ef;
+
+  --sin-datos: #202426;
+  --sin-datos-trama: #33383a;
+
+  --sitio: #ffffff;
+}
+
+@theme inline {
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-grid: var(--grid);
+  --color-axis: var(--axis);
+  --font-serif: var(--fuente-serif), Georgia, serif;
+  --font-sans: var(--fuente-sans), system-ui, sans-serif;
+}
+
+html {
+  background: var(--page);
+  color: var(--ink);
+}
+
+body {
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--fuente-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, .serif {
+  font-family: var(--fuente-serif), Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  letter-spacing: -0.011em;
+}
+
+/* Cifras que se comparan en columna deben alinearse */
+.tabular, table, th, td, .eje-cifra {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Convención taxonómica: los nombres científicos van en cursiva.
+   Un especialista lo nota en el primer segundo. */
+.taxon {
+  font-style: italic;
+}
+
+/* Foco visible en todo elemento interactivo */
+:where(a, button, [tabindex]):focus-visible {
+  outline: 2px solid var(--pared-hialino);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* La trama de «sin datos» sobrevive a forced-colors e impresión, donde el
+   color de relleno se pierde y la celda vacía volvería a parecer un cero. */
+.trama-sin-datos {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0 5px,
+    var(--sin-datos-trama) 5px 6px
+  );
+}

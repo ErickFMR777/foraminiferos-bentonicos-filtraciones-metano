@@ -228,6 +228,24 @@ def main() -> int:
     check("Matriz suma los registros limpios",
           sum(c["registros"] for c in mat["celdas"]) == len(clean),
           f"{sum(c['registros'] for c in mat['celdas'])} vs {len(clean)}")
+
+    # el sitio de la tesis debe apuntar a una celda REAL de la matriz: la banda
+    # y la coordenada son campos distintos y no deben pisarse entre sí
+    st = mat["sitio_tesis"]
+    check("El sitio de la tesis conserva banda y coordenada por separado",
+          isinstance(st.get("banda_lat"), str) and isinstance(st.get("lat"), (int, float)),
+          f"banda_lat={st.get('banda_lat')!r} lat={st.get('lat')!r}")
+    celda_sitio = next((c for c in mat["celdas"]
+                        if c["lat"] == st.get("banda_lat")
+                        and c["prof"] == st.get("banda_prof")), None)
+    check("La banda del sitio corresponde a una celda existente", celda_sitio is not None,
+          f"{st.get('banda_lat')} / {st.get('banda_prof')}")
+    check("La celda del sitio de la tesis está vacía (es el argumento central)",
+          celda_sitio is not None and celda_sitio["registros"] == 0,
+          f"registros={celda_sitio['registros'] if celda_sitio else '?'}")
+    check("La coordenada del sitio cae en su banda latitudinal declarada",
+          celda_sitio is not None and 0 <= st["lat"] <= 15,
+          f"lat={st.get('lat')}")
     check("taxones_global suma los registros limpios",
           sum(t["registros"] for t in tax) == len(clean),
           f"{sum(t['registros'] for t in tax)}")

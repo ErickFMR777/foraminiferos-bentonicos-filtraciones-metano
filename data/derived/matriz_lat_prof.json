@@ -97,10 +97,11 @@
   "> 500 m"
  ],
  "sitio_tesis": {
-  "lat": 9.54,
-  "prof": "< 150 m",
+  "banda_lat": "0-15",
+  "banda_prof": "< 150 m",
   "localidad": "MSH-BC-21, plataforma frente al Golfo de Morrosquillo",
   "region": "Caribe colombiano",
+  "lat": 9.54,
   "lon": -76.23,
   "prof_m": 75,
   "confianza": "alta",
