@@ -294,12 +294,23 @@ def main() -> int:
           f"{[(p['banda'], p['calcareo'], p['aglutinado']) for p in malos]}")
 
     # solape recalculado independientemente
-    gl_bin = {T.binomen(r["taxon"]) for r in clean}
+    # el solape se publica contra la base CURADA de filtraciones: hay que
+    # reproducir esa misma base aquí, no el conjunto completo de registros
+    xr = load(PRIV / "estudios_crossref.json")
+    lim = {x["titulo_original"]: x["titulo_limpio"] for x in xr}
+    titulos_seep = {e["titulo"] for e in est if e["es_filtracion"]}
+    seep_curada = [r for r in curada
+                   if lim.get(r["estudio"]) in titulos_seep]
+    check("La base curada de filtraciones tiene el tamaño esperado",
+          len(seep_curada) == len(curada) - n_ns,
+          f"{len(seep_curada)} vs {len(curada) - n_ns}")
+
+    gl_bin = {T.binomen(r["taxon"]) for r in seep_curada}
     ms_bin = {T.binomen(e["taxon"]) for e in msh["especies"]}
     check("Solape de especies recalculado",
           len(gl_bin & ms_bin) == sol["especies"]["n_compartidas"],
           f"auditoría={len(gl_bin & ms_bin)} publicado={sol['especies']['n_compartidas']}")
-    gl_gen = {r["genero"].lower() for r in clean}
+    gl_gen = {r["genero"].lower() for r in seep_curada}
     ms_gen = {e["genero"].lower() for e in msh["especies"]}
     check("Solape de géneros recalculado",
           len(gl_gen & ms_gen) == sol["generos"]["n_compartidos"],

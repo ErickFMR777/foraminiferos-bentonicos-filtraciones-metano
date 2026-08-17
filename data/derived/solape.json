@@ -2,8 +2,6 @@
  "especies": {
   "compartidas": [
    "Ammonia beccarii",
-   "Ammonia tepida",
-   "Bigenerina irregularis",
    "Bolivina lowmani",
    "Bulimina",
    "Cassidulina laevigata",
@@ -14,15 +12,13 @@
    "Lobatula wuellerstorfi",
    "Melonis affinis",
    "Miliolinella subrotunda",
-   "Nonionella",
-   "Pullenia bulloides",
    "Quinqueloculina",
    "Rosalina globularis",
    "Uvigerina"
   ],
   "n_msh": 52,
-  "n_global": 196,
-  "n_compartidas": 18
+  "n_global": 155,
+  "n_compartidas": 14
  },
  "generos": {
   "compartidos": [
@@ -41,10 +37,8 @@
    "Miliolinella",
    "Nonion",
    "Nonionella",
-   "Pullenia",
    "Quinqueloculina",
    "Rosalina",
-   "Siphonina",
    "Textularia",
    "Uvigerina"
   ],
@@ -65,14 +59,22 @@
    "Planogypsina",
    "Planularia",
    "Plotnikovina",
+   "Pullenia",
    "Sagrina",
    "Sahulia",
+   "Siphonina",
    "Spirillina",
    "Spiroplectinella"
   ],
   "n_msh": 41,
-  "n_global": 95,
-  "n_compartidos": 21,
+  "n_global": 87,
+  "n_compartidos": 19,
+  "pct_abundancia_compartida": 55.2
+ },
+ "base_ampliada": {
+  "especies_compartidas": 18,
+  "generos_compartidos": 21,
   "pct_abundancia_compartida": 56.8
- }
+ },
+ "nota": "Calculado contra la base curada de filtraciones, la que sustenta la tesis. 'base_ampliada' repite el cálculo incluyendo los dos estudios reincorporados."
 }

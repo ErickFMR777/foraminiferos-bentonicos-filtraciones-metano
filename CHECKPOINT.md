@@ -5,11 +5,11 @@
 Documento de continuidad: si la sesión se corta, esto es lo que hace falta
 para retomar sin releer nada.
 
-> **Todas las cifras del §5 fueron verificadas contra `data/derived/` el
-> 2026-08-17.** En esa revisión se corrigieron tres errores de este mismo
-> documento: la lectura de la matriz («3 de 12» → 6 de 12), la tasa de error
-> (3,8% → 4,1%) y una dependencia inexistente (pandas). Si vuelves a citar
-> una cifra de aquí, es fiable; si añades una nueva, verifícala igual.
+> **Cifras verificadas contra `data/derived/` el 2026-08-17**, después de
+> ampliar la base. Este documento ya ha tenido cifras obsoletas tres veces:
+> si cambias el pipeline, **regenera los §4 y §5 desde los datos**, no los
+> edites a mano. `python pipeline/99_auditoria.py` debe salir en 0 antes de
+> dar por buena cualquier cifra de aquí.
 
 ---
 
@@ -81,55 +81,57 @@ releer la tesis; ningún script del pipeline usa pandas).
 
 ---
 
-## 4. Los datos (data/derived/, 145 KB total)
+## 4. Los datos (data/derived/, 191 KB total)
 
 | Archivo | Qué tiene |
 |---|---|
-| `estudios.json` | 38 estudios: cita, DOI, localidad, lat/lon, tipo de filtración, sitios, confianza |
-| `taxones_global.json` | 160 taxones: registros, estudios, bandas, microhábitats, pared, rango, AphiaID |
-| `matriz_lat_prof.json` | Matriz 4×3 (sólo filtraciones) + sitio de la tesis |
+| `estudios.json` | 40 estudios: cita, DOI, localidad, lat/lon, fluido, morfología, sitios, confianza |
+| `taxones_global.json` | 197 taxones: recuentos curado y ampliado, bandas, microhábitats, pared, rango, AphiaID |
+| `matriz_lat_prof.json` | Matriz 4×3 curada y ampliada + sitio de la tesis |
 | `pared_por_banda.json` | % calcáreo/aglutinado por banda, con n |
 | `msh_bc21.json` | 52 especies, índices, pared, abundancias por cm/fracción |
 | `solape.json` | Intersección MSH ↔ literatura global |
 | `caribe_referencia.json` | 5 localidades caribeñas + MSH-BC-21 |
-| `correcciones.json` | 79 correcciones documentadas + resumen de impacto |
+| `correcciones.json` | 85 correcciones documentadas + resumen de impacto |
 
-**Volumen decisivo:** 145 KB. Todo va en el bundle estático. NO hace falta
+**Volumen decisivo:** 191 KB. Todo va en el bundle estático. NO hace falta
 base de datos, ni API, ni Supabase.
 
 ---
 
 ## 5. Cifras clave ya verificadas (úsalas, no las recalcules)
 
-- Base bibliográfica: **275 registros** (293 − 6 excluidos − 12 duplicados
-  exactos), **160 taxones** (140 especies + 20 entradas de género),
-  **38 estudios** (37 de filtración + 1 de fauna de referencia).
-- Matriz de filtraciones: **257 registros** (275 − 18 de McCorkle 1990, que no
-  es un estudio de filtración). **6 de 12 celdas con datos**; **el 80% procede
-  de >500 m**; **3 de las 4 bandas latitudinales no tienen ni un dato somero**.
-- **LA FRANJA TROPICAL (0-15°) SE SOSTIENE SOBRE UN ÚNICO REGISTRO**, de un
-  único estudio (Burkett et al. 2018, margen de Costa Rica, >1000 m). Los
-  otros 8 registros que aparentaban cubrir el trópico venían de McCorkle 1990.
-  La celda 0-15° / <150 m —donde cae el Caribe colombiano— está en **CERO**.
-  Éste es el argumento más fuerte de todo el trabajo.
-- **El ranking global va por nº de ESTUDIOS, no de registros.** El recuento de
-  registros premia a los artículos que desglosan más bandas o microhábitats,
-  no a los taxones más frecuentes. Top: *Uvigerina peregrina* (15 estudios) ·
-  *Lobatula wuellerstorfi* (10) · *Globobulimina pacifica* (9).
+- **40 estudios** (39 de filtración + 1 de fauna de referencia; 2 reincorporados).
+  **197 taxones** (173 especies + 24 entradas de género). **39/40 georreferenciados**.
+- Dos vistas de la base, y el dashboard ofrece la curada por defecto:
+  **curada 257 registros** (la que sustenta la tesis) · **ampliada 309**
+  (con los dos estudios reincorporados).
+- Matriz latitud × profundidad: **6 de 12 celdas** en la curada, **8 de 12** en
+  la ampliada. **El 80% de los registros procede de >500 m.**
+- **LA CELDA 0-15° / <150 m ESTÁ EN CERO EN AMBAS VISTAS.** Ahí cae el Caribe
+  colombiano. Que siga vacía al ampliar la base es la prueba de que el vacío
+  es real y no un artefacto de la curación. Es el argumento más fuerte del
+  trabajo.
+- En la base curada la franja tropical (0-15°) se sostiene sobre **un único
+  registro**; los 8 que aparentaban cubrirla venían de McCorkle 1990, que no
+  es un estudio de filtración.
+- **El ranking va por nº de ESTUDIOS, no de registros.** El recuento de
+  registros premia a los artículos que desglosan más bandas. Top:
+  *Uvigerina peregrina* (14 estudios) · *Lobatula wuellerstorfi* (10) ·
+  *Globobulimina pacifica* (9).
 - MSH-BC-21: S=52, **H'=3,4325**, J'=0,8687, Simpson D=0,0454,
   top-5 = 38,5% de la abundancia.
 - MSH-BC-21 pared: **87,0% calcáreo / 13,0% aglutinado**
   (hialino 70,53 · porcelanáceo 13,13 · monocristalino 3,35 · aglutinado 13,0).
-- Solape: **15/52 especies** y **20/41 géneros** compartidos con la literatura
-  global de seeps. **55,7% de la abundancia** de MSH-BC-21 está en géneros ya
-  reportados en filtraciones.
-- Top global corregido: *Uvigerina peregrina* (15 est/16 reg) ·
-  ***Lobatula wuellerstorfi*** (10/11) · *Globobulimina pacifica* (9/9).
-- Log de correcciones: **79 entradas**. De ellas, **23 son errores reales del
+- Solape con la literatura, **contra la base curada**: 14/52 especies,
+  19/41 géneros, **55,2% de la abundancia** de MSH-BC-21 en géneros ya
+  reportados en filtraciones. Contra la ampliada: 18/52, 21/41, 56,8%.
+- Log de correcciones: **85 entradas**. De ellas, **23 son errores reales del
   manuscrito** (6 erratas + 5 reclasificaciones de pared + 12 duplicados) que
-  afectan **24 de los 293 registros = 8,2%**. Las 51 restantes no son errores
-  del autor: normalización de nomenclatura abierta, actualizaciones de WoRMS
-  posteriores a 2022, taxones no verificables y notas aritméticas.
+  afectan **24 de los 293 registros = 8,2%**. Las 62 restantes no son errores
+  del autor: nomenclatura abierta, actualizaciones de WoRMS posteriores a
+  2022, exclusiones, taxones no verificables, notas aritméticas y las dos
+  reincorporaciones.
 
 ---
 

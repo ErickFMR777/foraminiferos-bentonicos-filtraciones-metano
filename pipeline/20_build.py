@@ -257,8 +257,13 @@ def main() -> int:
     }, ensure_ascii=False, indent=1), encoding="utf-8")
 
     # --------------------------------------------------------------- solape
-    gl_bin = {T.binomen(r["taxon"]) for r in bib}
-    gl_gen = {r["genero"] for r in bib}
+    # Se compara contra la base CURADA de filtraciones, igual que el resto de
+    # agregados: incluir aquí a McCorkle (que no es un estudio de filtración) o
+    # a los estudios reincorporados daría un solape que no es el de la tesis.
+    gl_bin = {T.binomen(r["taxon"]) for r in seep_curada}
+    gl_gen = {r["genero"] for r in seep_curada}
+    gl_bin_amp = {T.binomen(r["taxon"]) for r in seep_ampliada}
+    gl_gen_amp = {r["genero"] for r in seep_ampliada}
     ms_bin = {T.binomen(r["taxon"]) for r in msh}
     ms_gen = {r["genero"] for r in msh}
     peso = defaultdict(float)
@@ -278,6 +283,15 @@ def main() -> int:
             "pct_abundancia_compartida": round(
                 100 * sum(v for k, v in peso.items() if k in gl_gen) / total, 1),
         },
+        "base_ampliada": {
+            "especies_compartidas": len(gl_bin_amp & ms_bin),
+            "generos_compartidos": len(gl_gen_amp & ms_gen),
+            "pct_abundancia_compartida": round(
+                100 * sum(v for k, v in peso.items() if k in gl_gen_amp) / total, 1),
+        },
+        "nota": "Calculado contra la base curada de filtraciones, la que sustenta "
+                "la tesis. 'base_ampliada' repite el cálculo incluyendo los dos "
+                "estudios reincorporados.",
     }, ensure_ascii=False, indent=1), encoding="utf-8")
 
     # ------------------------------------------------------ referencia Caribe
