@@ -111,8 +111,10 @@ LOCALIDADES: dict[str, dict] = {
         localidad="Bahía de Monterey, California", region="Pacífico NE",
         lat=36.77, lon=-122.08, prof_m=950, confianza="alta", fuente="título"),
     "10.1016/j.pocean.2008.12.002": dict(
-        localidad="Margen de las Aleutianas", region="Pacífico N",
-        lat=54.00, lon=-165.00, prof_m=3400, confianza="alta", fuente="título"),
+        localidad="Margen de las Aleutianas, región de Unimak", region="Pacífico N",
+        lat=54.00, lon=-165.00, prof_m=3274, confianza="alta",
+        fuente="PDF: «the first methane seep on the Aleutian slope in the Unimak "
+               "region (3263-3285 m)». Corrige una profundidad estimada de 3400 m."),
     "10.1007/978-94-017-0763-3_3": dict(
         localidad="Mar del Norte (escape de gas biogénico)", region="Atlántico NE",
         lat=57.00, lon=1.50, prof_m=150, confianza="alta", fuente="título"),

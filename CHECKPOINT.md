@@ -1,6 +1,7 @@
 # CHECKPOINT — Dashboard Tesis Foraminíferos
 
 **Última actualización:** 2026-08-17 · Fase 0 COMPLETA · Fase 1 EN CURSO (matriz lista)
+**Novedad:** integrado Barragán y Bernal (2024), que resuelve la tensión de la Historia 2.
 
 Documento de continuidad: si la sesión se corta, esto es lo que hace falta
 para retomar sin releer nada.
@@ -241,9 +242,15 @@ registros procede de >500 m y 3 de las 4 bandas latitudinales carecen por
 completo de datos someros; (b) la celda 0-15° / <150 m está vacía, y es
 justo donde cae el Caribe colombiano. Usar esas dos cifras, no la primera.
 
-**Historia 2 — el nudo narrativo:** 3 de 4 criterios de seep se cumplen y uno
-los contradice (diversidad ALTA, H'=3,43, cuando la literatura predice baja).
-Esa tensión es el mejor material de la pieza; no resolverla artificialmente.
+**Historia 2 — RESUELTA por Barragán y Bernal (2024).** La tesis trató su
+H'=3,43 como una anomalía frente a la literatura, que predice diversidad baja
+en filtraciones. Ese trabajo mide **Shannon de 3,0 a 3,8 en las 18 estaciones
+del mismo campo del Sinú**, incluidas las de actividad alta. Es decir: en esta
+plataforma tropical la diversidad alta es lo normal Y es compatible con
+filtración activa. El valor de la tesis deja de ser una anomalía y pasa a
+estar dentro del rango esperable. Los datos están en `sinu_2024.json`; la
+narrativa correcta ya no es «3 de 4 criterios» sino «los 4 se cumplen una vez
+que existe una línea base local».
 
 ---
 

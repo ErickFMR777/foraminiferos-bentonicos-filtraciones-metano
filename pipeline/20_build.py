@@ -16,6 +16,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import caribe_referencia as CAR  # noqa: E402
+import estudios_nuevos as NUE  # noqa: E402
 import localidades as LOC  # noqa: E402
 import taxonomy as T  # noqa: E402
 import tipologia as TIP  # noqa: E402
@@ -311,6 +312,30 @@ def main() -> int:
     })
     (DERIV / "caribe_referencia.json").write_text(
         json.dumps(car, ensure_ascii=False, indent=1), encoding="utf-8")
+
+    # ------------------------------------------- el estudio del Caribe (2024)
+    msh_indices_H = round(H, 4)
+    bb = NUE.BARRAGAN_BERNAL_2024
+    (DERIV / "sinu_2024.json").write_text(json.dumps({
+        **{k: v for k, v in bb.items() if k != "taxones"},
+        "taxones": [{"taxon": t, "zona_actividad": z, "prof_banda": p}
+                    for t, z, p in bb["taxones"]],
+        "diversidad": NUE.DIVERSIDAD_SINU,
+        "isotopos": NUE.ISOTOPOS_SINU,
+        "comparacion_msh": {
+            "shannon_msh": msh_indices_H,
+            "dentro_del_rango": NUE.DIVERSIDAD_SINU["shannon_min"]
+            <= msh_indices_H <= NUE.DIVERSIDAD_SINU["shannon_max"],
+            "nota": "La tesis trató su H' alto como una anomalía frente a la "
+                    "literatura, que predice diversidad baja en filtraciones. "
+                    "Medido en el mismo campo del Sinú, el rango normal es 3,0-3,8 "
+                    "incluso en estaciones de actividad alta: el valor de la tesis "
+                    "no es anómalo para esta plataforma tropical.",
+        },
+        "taxones_compartidos_con_msh": sorted(
+            {T.binomen(t) for t, _, _ in bb["taxones"]}
+            & {T.binomen(e["taxon"]) for e in especies}),
+    }, ensure_ascii=False, indent=1), encoding="utf-8")
 
     print("DATASETS PÚBLICOS GENERADOS")
     for f in sorted(DERIV.glob("*.json")):

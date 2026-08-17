@@ -1,0 +1,113 @@
+{
+ "doi": "10.1016/j.jsames.2024.105103",
+ "titulo": "Benthic foraminifera as bioindicators of gas seep intensity in the offshore zone of the Sinú fold belt",
+ "autores": [
+  "Barragán-Jacksson, C.M.",
+  "Bernal, G.R."
+ ],
+ "anio": 2024,
+ "revista": "Journal of South American Earth Sciences",
+ "localidad": "Cinturón del Sinú, plataforma externa frente al Golfo de Morrosquillo",
+ "region": "Caribe colombiano",
+ "lat": 9.54,
+ "lon": -76.23,
+ "prof_m": 170,
+ "lat_banda": "0-15",
+ "tipo": "frio",
+ "morfologia": "pockmark",
+ "nota": "Área de 297 km², 18 estaciones, profundidades de 40 a 300 m. El campo se reconoce como de filtración por pockmarks, montículos, tapetes microbianos y flares acústicos, más manchas de petróleo detectadas por satélite. Campañas de mayo y junio de 2022.",
+ "taxones": [
+  {
+   "taxon": "Quinqueloculina candeiana",
+   "zona_actividad": "baja",
+   "prof_banda": "< 150 m"
+  },
+  {
+   "taxon": "Triloculina trigonula",
+   "zona_actividad": "baja",
+   "prof_banda": "< 150 m"
+  },
+  {
+   "taxon": "Lagenammina difflugiformis",
+   "zona_actividad": "baja",
+   "prof_banda": "< 150 m"
+  },
+  {
+   "taxon": "Cribroelphidium poeyanum",
+   "zona_actividad": "baja",
+   "prof_banda": "< 150 m"
+  },
+  {
+   "taxon": "Lobatula ungeriana",
+   "zona_actividad": "moderada",
+   "prof_banda": "< 150 m"
+  },
+  {
+   "taxon": "Cibicidoides mundulus",
+   "zona_actividad": "moderada",
+   "prof_banda": "150-500 m"
+  },
+  {
+   "taxon": "Cibicidoides pseudoungerianus",
+   "zona_actividad": "moderada",
+   "prof_banda": "150-500 m"
+  },
+  {
+   "taxon": "Liebusella soldanii",
+   "zona_actividad": "moderada-alta",
+   "prof_banda": "150-500 m"
+  },
+  {
+   "taxon": "Bigenerina irregularis",
+   "zona_actividad": "moderada-alta",
+   "prof_banda": "150-500 m"
+  },
+  {
+   "taxon": "Reophax agglutinatus",
+   "zona_actividad": "moderada-alta",
+   "prof_banda": "150-500 m"
+  }
+ ],
+ "diversidad": {
+  "fuente": "Barragán-Jacksson y Bernal (2024)",
+  "doi": "10.1016/j.jsames.2024.105103",
+  "n_estaciones": 18,
+  "shannon_min": 3.0,
+  "shannon_max": 3.8,
+  "shannon_min_estacion": "estación 10",
+  "shannon_max_estacion": "estación 19",
+  "nota": "Shannon > 3 en todas las estaciones del campo de filtración del Sinú, incluidas las de actividad alta."
+ },
+ "isotopos": [
+  {
+   "taxon": "Cribroelphidium poeyanum",
+   "d13c_min": -3.85,
+   "d13c_max": 1.91,
+   "media": -1.71,
+   "nota": "Valores por debajo de -3 ‰ en las estaciones 4, 5 y 10."
+  },
+  {
+   "taxon": "Quinqueloculina candeiana",
+   "d13c_min": -1.18,
+   "d13c_max": 0.02,
+   "media": null,
+   "nota": null
+  },
+  {
+   "taxon": "Lobatula ungeriana",
+   "d13c_min": -3.03,
+   "d13c_max": 1.99,
+   "media": null,
+   "nota": null
+  }
+ ],
+ "comparacion_msh": {
+  "shannon_msh": 3.4325,
+  "dentro_del_rango": true,
+  "nota": "La tesis trató su H' alto como una anomalía frente a la literatura, que predice diversidad baja en filtraciones. Medido en el mismo campo del Sinú, el rango normal es 3,0-3,8 incluso en estaciones de actividad alta: el valor de la tesis no es anómalo para esta plataforma tropical."
+ },
+ "taxones_compartidos_con_msh": [
+  "bigenerina irregularis",
+  "cibicidoides mundulus"
+ ]
+}
