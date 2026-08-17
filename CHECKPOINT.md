@@ -56,6 +56,8 @@ python pipeline/07_pdfs.py       # identifica los PDF y extrae evidencia
 python pipeline/08_organizar.py  # renombra y separa «Referencias excluidas»
 python pipeline/09_verificar_pdfs.py  # nombre vs contenido + duplicados
 python pipeline/20_build.py      # -> data/derived/*.json (público)
+python pipeline/40_taxones_pdf.py    # lee los artículos completos (WoRMS)
+python pipeline/50_estadisticas.py   # -> taxones_completo.json
 python pipeline/30_informe.py    # -> Informe_curacion_datos.pdf
 python pipeline/99_auditoria.py  # 76 comprobaciones; código 1 si algo falla
 ```
@@ -94,6 +96,8 @@ releer la tesis; ningún script del pipeline usa pandas).
 | `solape.json` | Intersección MSH ↔ literatura global |
 | `caribe_referencia.json` | 5 localidades caribeñas + MSH-BC-21 |
 | `correcciones.json` | 85 correcciones documentadas + resumen de impacto |
+| `sinu_2024.json` | Barragán y Bernal 2024: 18 estaciones, δ13C, rango Shannon del campo |
+| `taxones_completo.json` | 515 taxones leídos de los artículos; rankings de especies y géneros, dominancia declarada, estadísticas por estudio |
 
 **Volumen decisivo:** 191 KB. Todo va en el bundle estático. NO hace falta
 base de datos, ni API, ni Supabase.

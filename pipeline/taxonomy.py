@@ -75,6 +75,27 @@ PLANCTONICOS = {
 # Todo lo demás calcáreo se asume hialino (Rotaliida, Buliminida, Lagenida…)
 
 
+LIGADURAS = {"ﬁ": "fi", "ﬂ": "fl", "ﬀ": "ff", "ﬃ": "ffi", "ﬄ": "ffl",
+             "ﬅ": "ft", "ﬆ": "st"}
+_LIG = "".join(LIGADURAS)
+
+
+def normalizar_pdf(s: str) -> str:
+    """Repara el texto extraído de un PDF antes de buscar nombres en él.
+
+    Los PDF de editorial usan ligaduras tipográficas y los extractores suelen
+    dejar espacios espurios alrededor: «wuellerstor ﬁ» en vez de
+    «wuellerstorfi», «identi ﬁcation» en vez de «identification». Sin esta
+    reparación, Cibicidoides wuellerstorfi —el segundo taxón más reportado del
+    mundo— aparece truncado 188 veces y se pierde.
+    """
+    s = re.sub(rf"(?<=\w)\s+(?=[{_LIG}])", "", s)
+    s = re.sub(rf"(?<=[{_LIG}])\s+(?=\w)", "", s)
+    for k, v in LIGADURAS.items():
+        s = s.replace(k, v)
+    return re.sub(r"\s+", " ", s)
+
+
 def strip_accents(s: str) -> str:
     return "".join(
         c for c in unicodedata.normalize("NFD", s) if unicodedata.category(c) != "Mn"

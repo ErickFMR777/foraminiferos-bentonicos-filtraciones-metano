@@ -419,9 +419,61 @@ def main() -> int:
     for m_ in pend:
         pdf.item(f"Pendiente de integrar: {m_['despues'][:72]}")
 
+    # ---------------------------------------------------------- 6 bis
+    tc_path = DERIV / "taxones_completo.json"
+    if tc_path.exists():
+        tc = json.loads(tc_path.read_text(encoding="utf-8"))
+        rr = tc["resumen"]
+        pdf.add_page()
+        pdf.h1("7. Lectura completa de los artículos")
+        pdf.p("La base de la tesis recoge «las 5 principales especies» de cada "
+              "filtro, tal como declara su metodología: es una muestra de las "
+              "dominantes, no las asociaciones completas. Para dimensionarlo se "
+              "leyeron los artículos enteros y se extrajo todo taxón mencionado, "
+              "validándolo contra WoRMS.")
+        pdf.tabla([("Indicador", "Valor")] + [
+            ("Artículos leídos", str(rr["articulos_leidos"])),
+            ("Candidatos a nombre científico evaluados", str(rr["candidatos_evaluados"])),
+            ("Taxones validados por WoRMS", str(rr["taxones_validados"])),
+            ("De ellos, especies", str(rr["especies"])),
+            ("Géneros distintos", str(rr["generos"])),
+            ("Taxones en la base de la tesis", str(rr["taxones_base_tesis"])),
+            ("Unión de ambas fuentes", str(rr["union_taxones"])),
+            ("Taxones con dominancia afirmada por el texto",
+             str(rr["taxones_con_dominancia_declarada"])),
+            ("Coincidencias con MSH-BC-21", str(rr["solape_con_msh"])),
+        ], [118, 42])
+        pdf.p(f"La lectura completa multiplica por {rr['factor_ampliacion']} la "
+              f"cobertura taxonómica. Ninguna de las dos fuentes contiene a la "
+              f"otra: {rr['solo_en_base']} taxones sólo aparecen en la base —"
+              "proceden de tablas que el extractor no capta, de un artículo "
+              "escaneado sin capa de texto y de los que no tienen PDF— y "
+              f"{rr['solo_en_pdf']} sólo en los artículos.")
+
+        pdf.h2("Tres señales que no valen lo mismo")
+        pdf.item("Presencia: el taxón aparece en el artículo. Señal sólida.")
+        pdf.item("Menciones: cuántas veces. Proxy DÉBIL de importancia, porque un "
+                 "artículo repite nombres en la introducción, en la discusión y al "
+                 "citar a otros. Ordena dentro de un artículo, no entre artículos "
+                 "de distinta extensión.")
+        pdf.item("Dominancia: sólo cuando el propio texto la afirma. Es la única "
+                 "señal que puede leerse como dominancia.")
+
+        pdf.h2("Las diez especies más reportadas")
+        filas = [("Especie", "Estudios", "Dominante en")]
+        for t in tc["ranking_especies"][:10]:
+            filas.append((t["taxon"], str(t["n_estudios"]),
+                          str(t["n_estudios_dominante"])))
+        pdf.tabla(filas, [104, 28, 28])
+        pdf.nota("Uvigerina peregrina se confirma como el taxón más reportado del "
+                 "mundo en filtraciones, ahora en 22 estudios. Lobatula "
+                 "wuellerstorfi —las tres grafías que la tesis contaba por "
+                 "separado— queda segunda en 17, lo que refuerza la corrección "
+                 "descrita en el apartado 2.")
+
     # ---------------------------------------------------------- 7
     pdf.add_page()
-    pdf.h1("7. Estudios que componen la base")
+    pdf.h1("8. Estudios que componen la base")
     pdf.p("Las 40 referencias, ordenadas por el número de registros que aportan. "
           "Se indica la localidad reconstruida y el tipo de fluido. Los marcados "
           "con «R» son los dos reincorporados en esta revisión; el marcado con «X» "
