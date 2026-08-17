@@ -225,9 +225,13 @@ def main() -> int:
     par = load(DERIV / "pared_por_banda.json")
     sol = load(DERIV / "solape.json")
 
-    check("Matriz suma los registros limpios",
-          sum(c["registros"] for c in mat["celdas"]) == len(clean),
-          f"{sum(c['registros'] for c in mat['celdas'])} vs {len(clean)}")
+    n_ns = mat["registros_no_filtracion"]
+    check("Matriz + registros no-filtración = registros limpios",
+          sum(c["registros"] for c in mat["celdas"]) + n_ns == len(clean),
+          f"{sum(c['registros'] for c in mat['celdas'])} + {n_ns} vs {len(clean)}")
+    check("Los estudios no-filtración están marcados en estudios.json",
+          sum(e["n_registros"] for e in est if not e["es_filtracion"]) == n_ns,
+          f"{sum(e['n_registros'] for e in est if not e['es_filtracion'])} vs {n_ns}")
 
     # el sitio de la tesis debe apuntar a una celda REAL de la matriz: la banda
     # y la coordenada son campos distintos y no deben pisarse entre sí
@@ -293,7 +297,39 @@ def main() -> int:
           not [t for t in tax if t["pared"] == "Aglutinado" and t["subtipo"]], "")
 
     geo = [e for e in est if e["lat"] is not None]
-    check("Estudios georreferenciados: 33 de 38", len(geo) == 33, f"{len(geo)}")
+    check("Estudios georreferenciados: 37 de 38", len(geo) == 37, f"{len(geo)}")
+
+    # Comprobación cruzada fuerte: la coordenada de cada estudio debe caer
+    # dentro de alguna de las bandas latitudinales que sus propios registros
+    # declaran. Detecta a la vez coordenadas mal transcritas y bandas mal
+    # asignadas en la hoja original.
+    bandas = [((0, 15), "0-15"), ((15, 30), "15-30"),
+              ((30, 60), "30-60"), ((60, 90), "60-90")]
+    xref = load(PRIV / "estudios_crossref.json")
+    limpio_de = {x["titulo_original"]: x["titulo_limpio"] for x in xref}
+    por_titulo_limpio = defaultdict(set)
+    for r in clean:
+        por_titulo_limpio[limpio_de.get(r["estudio"])].add(r["lat_banda"])
+
+    incoherentes = []
+    for e in geo:
+        decl = por_titulo_limpio.get(e["titulo"])
+        if not decl:
+            continue
+        # un estudio multi-sitio declara varias bandas; basta que la
+        # coordenada representativa caiga en alguna de ellas
+        banda = next((b for (lo, hi), b in bandas if lo <= abs(e["lat"]) <= hi), None)
+        if banda and banda not in decl:
+            incoherentes.append(
+                f"{e['titulo'][:34]}: {e['lat']:.2f}° = banda {banda}, "
+                f"pero sus registros dicen {sorted(decl)}")
+    check("La coordenada de cada estudio cae en su banda latitudinal declarada",
+          not incoherentes, " | ".join(incoherentes[:3]))
+
+    multi = [e for e in est if e.get("sitios")]
+    malos = [e["titulo"][:40] for e in multi for s in e["sitios"]
+             if not (-90 <= s["lat"] <= 90 and -180 <= s["lon"] <= 180)]
+    check("Sitios secundarios con coordenadas válidas", not malos, f"{malos}")
     fuera = [e["titulo"][:40] for e in geo
              if not (-90 <= e["lat"] <= 90 and -180 <= e["lon"] <= 180)]
     check("Coordenadas dentro de rango válido", not fuera, f"{fuera}")

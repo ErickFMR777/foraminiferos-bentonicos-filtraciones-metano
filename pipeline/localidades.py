@@ -17,6 +17,19 @@ lleva su nivel de confianza:
 
 Los estudios marcados 'nula' aparecen en el dashboard como pendientes, no se
 inventa una posición para ellos.
+
+Campo 'tipo' — qué clase de escape describe el estudio. Por defecto 'frio'
+(filtración fría, el objeto de la tesis):
+
+  frio           filtración fría de metano
+  hidrotermal    escape de metano asociado a un sistema hidrotermal, donde la
+                 temperatura confunde la señal respecto de una filtración fría
+  mixto          el estudio abarca ambos tipos
+  no_filtracion  NO es un estudio de filtración. Sus registros son fauna de
+                 referencia, no fauna de seep, y no deben contarse como tal.
+
+Campo 'sitios' (opcional) — lista de posiciones concretas cuando el estudio
+abarca varias localidades. lat/lon siguen siendo el punto representativo.
 """
 
 from __future__ import annotations
@@ -35,7 +48,12 @@ LOCALIDADES: dict[str, dict] = {
     "10.1029/pa005i002p00161": dict(
         localidad="Márgenes continentales del Atlántico y el Pacífico (multi-sitio)",
         region="Multi-sitio", lat=None, lon=None, prof_m=None, confianza="nula",
-        fuente="resumen CrossRef: no es un estudio de filtración, sino de microhábitats"),
+        tipo="no_filtracion",
+        fuente="NO ES UN ESTUDIO DE FILTRACIÓN. Testigos de caja en márgenes "
+               "continentales normales; documenta el gradiente δ13C entre taxones "
+               "infaunales y epifaunales, que es la línea base frente a la que se "
+               "mide una señal de metano, no la señal misma. Verificado en el "
+               "resumen del artículo (Paleoceanography 5(2), 161-185)."),
     "10.1016/j.margeo.2009.03.024": dict(
         localidad="Margen de Hikurangi, Nueva Zelanda", region="Pacífico SW",
         lat=-40.05, lon=178.15, prof_m=660, confianza="alta", fuente="título"),
@@ -74,9 +92,10 @@ LOCALIDADES: dict[str, dict] = {
         localidad="Talud del Golfo de México (tapetes bacterianos)", region="Atlántico NW",
         lat=27.70, lon=-91.50, prof_m=650, confianza="alta", fuente="título"),
     "10.1029/2010pa001930": dict(
-        localidad="Filtraciones de hidrocarburos (sitio no determinado)", region="No determinada",
-        lat=None, lon=None, prof_m=None, confianza="nula",
-        fuente="el título no nombra localidad; sin resumen en CrossRef"),
+        localidad="Clam Flats, Bahía de Monterey, California", region="Pacífico NE",
+        lat=36.7450, lon=-122.2767, prof_m=1003, confianza="alta",
+        fuente="Coordenadas exactas del artículo: 36°44,7'N 122°16,6'W, ~1003 m. "
+               "Incluye un área adyacente sin filtración como control."),
     "10.1016/s0967-0637(01)00017-6": dict(
         localidad="Bahía de Monterey, California", region="Pacífico NE",
         lat=36.77, lon=-122.08, prof_m=950, confianza="alta", fuente="título"),
@@ -94,9 +113,13 @@ LOCALIDADES: dict[str, dict] = {
         localidad="Pingos de hidratos de Storfjordrenna, Mar de Barents", region="Ártico",
         lat=76.10, lon=16.03, prof_m=380, confianza="alta", fuente="título y resumen"),
     "10.1002/2013pa002457": dict(
-        localidad="Ambientes de escape de metano (sitio no determinado)", region="No determinada",
-        lat=None, lon=None, prof_m=None, confianza="nula",
-        fuente="el título no nombra localidad; sin resumen en CrossRef"),
+        localidad="Respiradero Pinkies, Cuenca de Guaymas, Golfo de California",
+        region="Pacífico NE", lat=27.5908, lon=-111.4749, prof_m=1528,
+        confianza="alta", tipo="hidrotermal",
+        fuente="Centroide de 8 testigos alrededor del respiradero Pinkies "
+               "(27,5899-27,5914 N; -111,4735 a -111,4758 W), profundidad "
+               "1462-1594 m. Es un escape de metano HIDROTERMAL, no una "
+               "filtración fría: la Cuenca de Guaymas es un sistema hidrotermal."),
     "10.1016/j.marpetgeo.2014.06.006": dict(
         localidad="Adriático somero frente a Italia", region="Mediterráneo",
         lat=44.30, lon=12.50, prof_m=20, confianza="alta", fuente="título"),
@@ -125,9 +148,22 @@ LOCALIDADES: dict[str, dict] = {
         localidad="Vestnesa Ridge, 79° N, Svalbard", region="Ártico",
         lat=79.00, lon=6.90, prof_m=1200, confianza="alta", fuente="título"),
     "10.1016/j.marpetgeo.2018.02.037": dict(
-        localidad="Filtraciones de metano e hidrotermales (multi-sitio)", region="No determinada",
-        lat=None, lon=None, prof_m=None, confianza="nula",
-        fuente="el título no nombra localidad; sin resumen en CrossRef"),
+        localidad="Margen de Costa Rica (Jacó, Montículos 11-12, Parita, Quepos)",
+        region="Pacífico tropical E", lat=9.0015, lon=-84.5936, prof_m=1155,
+        confianza="alta", tipo="mixto",
+        fuente="Centroide de 6 sitios del margen de Costa Rica (8,92-9,13 N; "
+               "-84,30 a -84,84 W; 993-1714 m). El estudio abarca además "
+               "Hydrate Ridge, registrado como sitio secundario.",
+        sitios=[
+            dict(nombre="Montículo 11, Costa Rica", lat=8.9236, lon=-84.3043, prof_m=1020),
+            dict(nombre="Montículo 12, Costa Rica", lat=8.9296, lon=-84.3107, prof_m=993),
+            dict(nombre="Jacó 1, Costa Rica", lat=9.1343, lon=-84.8352, prof_m=1131),
+            dict(nombre="Jacó 2, Costa Rica", lat=9.1174, lon=-84.8397, prof_m=1714),
+            dict(nombre="Parita, Costa Rica", lat=8.9439, lon=-84.6365, prof_m=1667),
+            dict(nombre="Quepos, Costa Rica", lat=8.9600, lon=-84.6354, prof_m=1403),
+            dict(nombre="Hydrate Ridge inactivo, Oregón", lat=44.5692, lon=-125.1479, prof_m=777),
+            dict(nombre="Hydrate Ridge activo, Oregón", lat=44.5697, lon=-125.1468, prof_m=774),
+        ]),
     "10.46427/gold2020.1503": dict(
         localidad="Mar de China Meridional", region="Pacífico NW",
         lat=22.00, lon=119.00, prof_m=1100, confianza="media",
@@ -136,9 +172,11 @@ LOCALIDADES: dict[str, dict] = {
         localidad="Depresión de Baiyun, Mar de China Meridional N", region="Pacífico NW",
         lat=20.00, lon=115.50, prof_m=1500, confianza="alta", fuente="título"),
     "10.1016/j.dsr.2016.08.011": dict(
-        localidad="Filtraciones y zonas adyacentes en ambientes disóxicos (no determinada)",
-        region="No determinada", lat=None, lon=None, prof_m=None, confianza="nula",
-        fuente="el título no nombra localidad; sin resumen en CrossRef"),
+        localidad="Hydrate Ridge, margen de Oregón", region="Pacífico NE",
+        lat=44.6091, lon=-125.1293, prof_m=690, confianza="alta",
+        fuente="Centroide de 10 despliegues de cubos SEA3: sector norte "
+               "(44,667-44,670 N; ~595-615 m) y sector sur (44,569-44,570 N; "
+               "~772-777 m), con filtración activa y zonas adyacentes sin ella."),
     "10.1016/j.dsr.2017.03.001": dict(
         localidad="Vestnesa Ridge, NW de Svalbard", region="Ártico",
         lat=79.00, lon=6.90, prof_m=1200, confianza="alta", fuente="título"),

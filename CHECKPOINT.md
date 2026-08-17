@@ -1,6 +1,6 @@
 # CHECKPOINT — Dashboard Tesis Foraminíferos
 
-**Última actualización:** 2026-08-17 · Fase 0 (datos) COMPLETA · Fase 1 (UI) NO INICIADA
+**Última actualización:** 2026-08-17 · Fase 0 COMPLETA · Fase 1 EN CURSO (matriz lista)
 
 Documento de continuidad: si la sesión se corta, esto es lo que hace falta
 para retomar sin releer nada.
@@ -52,7 +52,7 @@ python pipeline/05_worms.py      # resolución taxonómica WoRMS (cacheado)
 python pipeline/06_estudios.py   # resolución bibliográfica CrossRef
 python pipeline/10_clean.py      # aplica correcciones -> *_clean.json
 python pipeline/20_build.py      # -> data/derived/*.json (público)
-python pipeline/99_auditoria.py  # 62 comprobaciones; código 1 si algo falla
+python pipeline/99_auditoria.py  # 69 comprobaciones; código 1 si algo falla
 ```
 
 **Ejecutar `99_auditoria.py` después de cualquier cambio en el pipeline.**
@@ -99,12 +99,15 @@ base de datos, ni API, ni Supabase.
 
 - Base bibliográfica: **275 registros** (293 − 6 excluidos − 12 duplicados
   exactos), **160 taxones** (140 especies + 20 entradas de género),
-  **38 estudios**.
-- Matriz latitud × profundidad: **6 de 12 celdas con datos**. El sesgo real
-  está en la profundidad: **el 81% de los registros (223 de 275) viene de
-  >500 m**, y **3 de las 4 bandas latitudinales sólo tienen datos a >500 m**
-  (todo lo somero procede de una única banda, 30-60°).
+  **38 estudios** (37 de filtración + 1 de fauna de referencia).
+- Matriz de filtraciones: **257 registros** (275 − 18 de McCorkle 1990, que no
+  es un estudio de filtración). **6 de 12 celdas con datos**; **el 80% procede
+  de >500 m**; **3 de las 4 bandas latitudinales no tienen ni un dato somero**.
+- **LA FRANJA TROPICAL (0-15°) SE SOSTIENE SOBRE UN ÚNICO REGISTRO**, de un
+  único estudio (Burkett et al. 2018, margen de Costa Rica, >1000 m). Los
+  otros 8 registros que aparentaban cubrir el trópico venían de McCorkle 1990.
   La celda 0-15° / <150 m —donde cae el Caribe colombiano— está en **CERO**.
+  Éste es el argumento más fuerte de todo el trabajo.
 - **El ranking global va por nº de ESTUDIOS, no de registros.** El recuento de
   registros premia a los artículos que desglosan más bandas o microhábitats,
   no a los taxones más frecuentes. Top: *Uvigerina peregrina* (15 estudios) ·
@@ -157,14 +160,15 @@ base de datos, ni API, ni Supabase.
 
 ## 7. PENDIENTE — requiere respuesta del usuario
 
-### 7.1 Cinco estudios sin localidad (tiene los PDFs)
-- Bernhard, Martin & Rathburn (2010) — *Combined carbonate carbon isotopic…*
-- Herguera et al. (2014) — *Limits to the sensitivity…*
-- Burkett et al. (2016) — *Colonization of over a thousand…*
-- Burkett et al. (2018) — *Influences of thermal and fluid characteristics…*
-- McCorkle et al. (1990) — multi-sitio, ¿marcar como no-seep?
+### 7.1 Localidades — RESUELTO (2026-08-17)
+El usuario aportó las coordenadas exactas. **37 de 38 estudios
+georreferenciados.** El único sin coordenada es McCorkle et al. (1990), y es
+correcto: es multi-sitio y además no documenta filtraciones.
 
-Al resolverlas: editar `pipeline/localidades.py` y re-ejecutar `20_build.py`.
+Añadido el campo `tipo` en `localidades.py`: `frio` (35 estudios),
+`hidrotermal` (Herguera 2014, Cuenca de Guaymas), `mixto` (Burkett 2018,
+Costa Rica + Hydrate Ridge) y `no_filtracion` (McCorkle 1990). Burkett 2018
+lleva además una lista `sitios` con sus 8 posiciones.
 
 ### 7.2 Una referencia no localizable
 *«Diversity and Characteristics of Benthic Foraminifera in Cold Seep Areas in

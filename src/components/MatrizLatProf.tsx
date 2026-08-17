@@ -60,7 +60,11 @@ export default function MatrizLatProf() {
             procede de aguas de más de 500 m
           </strong>
           , y tres de las cuatro bandas latitudinales no tienen ni un solo dato
-          somero.
+          somero. La franja tropical —donde está el Caribe— se sostiene sobre{" "}
+          <strong className="font-semibold text-(--ink)">
+            un único registro de un único estudio
+          </strong>
+          , y procede de más de mil metros de profundidad.
         </p>
       </figcaption>
 
@@ -235,9 +239,13 @@ export default function MatrizLatProf() {
       )}
 
       <p className="mt-4 text-[0.72rem] leading-relaxed text-(--muted) max-w-[62ch]">
-        {TOTAL} registros de {conDatos} de las 12 combinaciones posibles, a
-        partir de 38 estudios revisados. Un «registro» es la mención de un taxón
-        en un estudio para una banda y profundidad dadas.
+        {TOTAL} registros repartidos en {conDatos} de las 12 combinaciones
+        posibles. Un «registro» es la mención de un taxón en un estudio para una
+        banda y profundidad dadas. Se excluyen{" "}
+        {matriz.registros_no_filtracion} registros procedentes de un estudio que
+        no documenta filtraciones sino fauna de referencia de márgenes normales
+        (McCorkle et al., 1990); ocho de ellos caían en la franja tropical y son
+        la razón de que esa banda pareciera mejor cubierta de lo que está.
       </p>
     </figure>
   );

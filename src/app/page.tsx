@@ -24,10 +24,16 @@ export default function Home() {
 
       <section className="mb-16 grid grid-cols-2 gap-x-8 gap-y-7 border-y border-(--border) py-8 md:grid-cols-4">
         {[
-          { cifra: estudios.length, etiqueta: "estudios revisados" },
+          {
+            cifra: estudios.filter((e) => e.es_filtracion).length,
+            etiqueta: "estudios de filtración revisados",
+          },
           { cifra: taxones.length, etiqueta: "taxones registrados" },
           { cifra: msh.indices.riqueza_S, etiqueta: "especies en MSH-BC-21" },
-          { cifra: 0, etiqueta: "estudios previos en estas condiciones" },
+          {
+            cifra: 0,
+            etiqueta: "estudios previos a esta latitud y profundidad",
+          },
         ].map((d) => (
           <div key={d.etiqueta}>
             <div className="text-[2.6rem] font-semibold leading-none">

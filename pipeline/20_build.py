@@ -59,6 +59,7 @@ def main() -> int:
                     loc = v
                     break
         fiable = doi and doi != "10.1021/acsestwater.3c00740.s001"
+        tipo = loc.get("tipo", "frio")
         estudios.append({
             "id": e.get("id"),
             "titulo": e.get("titulo_limpio") or titulo,
@@ -68,17 +69,35 @@ def main() -> int:
             "doi": doi if fiable else None,
             "referencia_verificada": bool(fiable),
             "n_registros": n,
+            "tipo_filtracion": tipo,
+            "es_filtracion": tipo != "no_filtracion",
+            "sitios": loc.get("sitios"),
             **{k: loc.get(k) for k in
                ("localidad", "region", "lat", "lon", "prof_m", "confianza", "fuente")},
         })
+
+    # Estudios que NO documentan filtraciones: sus registros son fauna de
+    # referencia de márgenes normales, no fauna de seep. Se conservan y se
+    # marcan, pero quedan fuera de los agregados que describen filtraciones.
+    # El emparejamiento va por el título original, que es la llave real entre
+    # los registros y la tabla de estudios.
+    titulos_no_seep = {
+        e["titulo_original"] for e in xref
+        if LOC.LOCALIDADES.get(
+            (e.get("crossref") or {}).get("doi"), {}).get("tipo") == "no_filtracion"
+    }
+    seep = [r for r in bib if r["estudio"] not in titulos_no_seep]
+    n_no_seep = len(bib) - len(seep)
     (DERIV / "estudios.json").write_text(
         json.dumps(estudios, ensure_ascii=False, indent=1), encoding="utf-8")
 
     # ------------------------------------------------- matriz latitud x profundidad
+    # La matriz describe filtraciones, así que se construye sólo con los
+    # estudios que efectivamente las documentan.
     celdas = []
     for la in LATS:
         for pr in PROFS:
-            sub = [r for r in bib if r["lat_banda"] == la and r["prof_banda"] == pr]
+            sub = [r for r in seep if r["lat_banda"] == la and r["prof_banda"] == pr]
             celdas.append({
                 "lat": la, "prof": pr,
                 "registros": len(sub),
@@ -88,6 +107,10 @@ def main() -> int:
     (DERIV / "matriz_lat_prof.json").write_text(
         json.dumps({
             "celdas": celdas,
+            "registros_no_filtracion": n_no_seep,
+            "nota_no_filtracion":
+                "Se excluyen los registros de estudios que no documentan "
+                "filtraciones (fauna de referencia de márgenes normales).",
             "lats": LATS, "profs": PROFS,
             # Claves explícitas: 'banda_lat' y 'lat' son cosas distintas (la
             # banda de la matriz y la coordenada geográfica). Fusionarlas con

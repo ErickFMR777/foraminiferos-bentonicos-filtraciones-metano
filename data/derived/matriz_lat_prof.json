@@ -17,9 +17,9 @@
   {
    "lat": "0-15",
    "prof": "> 500 m",
-   "registros": 9,
-   "taxones": 9,
-   "estudios": 2
+   "registros": 1,
+   "taxones": 1,
+   "estudios": 1
   },
   {
    "lat": "15-30",
@@ -59,9 +59,9 @@
   {
    "lat": "30-60",
    "prof": "> 500 m",
-   "registros": 145,
-   "taxones": 87,
-   "estudios": 19
+   "registros": 135,
+   "taxones": 84,
+   "estudios": 18
   },
   {
    "lat": "60-90",
@@ -85,6 +85,8 @@
    "estudios": 5
   }
  ],
+ "registros_no_filtracion": 18,
+ "nota_no_filtracion": "Se excluyen los registros de estudios que no documentan filtraciones (fauna de referencia de márgenes normales).",
  "lats": [
   "0-15",
   "15-30",
