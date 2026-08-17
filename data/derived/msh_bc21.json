@@ -1,0 +1,721 @@
+{
+ "sitio": {
+  "localidad": "MSH-BC-21, plataforma frente al Golfo de Morrosquillo",
+  "region": "Caribe colombiano",
+  "lat": 9.54,
+  "lon": -76.23,
+  "prof_m": 75,
+  "confianza": "alta",
+  "fuente": "Área de estudio declarada en la tesis (cap. 3): W 76°08'–76°20', N 9°30'–9°35'8\""
+ },
+ "especies": [
+  {
+   "taxon": "Cibicides pachyderma",
+   "taxon_original": "Cibicides pachyderma",
+   "conteo": 125.0,
+   "abundancia_rel": 10.295,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "cibicides",
+   "familia": "Cibicididae",
+   "aphia_id": 723134
+  },
+  {
+   "taxon": "Ehrenbergina trigona",
+   "taxon_original": "Ehrenbergina trigona",
+   "conteo": 111.0,
+   "abundancia_rel": 9.142,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "ehrenbergina",
+   "familia": "Cassidulinidae",
+   "aphia_id": 113089
+  },
+  {
+   "taxon": "Lobatula lobatula",
+   "taxon_original": "Lobatula lobatula",
+   "conteo": 93.75,
+   "abundancia_rel": 7.722,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "lobatula",
+   "familia": "Cibicididae",
+   "aphia_id": 113118
+  },
+  {
+   "taxon": "Uvigerina",
+   "taxon_original": "Uvigerina spp.",
+   "conteo": 68.75,
+   "abundancia_rel": 5.663,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "uvigerina",
+   "familia": "Uvigerinidae",
+   "aphia_id": 112281
+  },
+  {
+   "taxon": "Lobatula wuellerstorfi",
+   "taxon_original": "Cibicidoides wuellerstorfi",
+   "conteo": 68.75,
+   "abundancia_rel": 5.663,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "lobatula",
+   "familia": "Cibicididae",
+   "aphia_id": 1746350
+  },
+  {
+   "taxon": "Cibicidoides mundulus",
+   "taxon_original": "Cibicidoides mundulus",
+   "conteo": 59.375,
+   "abundancia_rel": 4.89,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "cibicidoides",
+   "familia": "Cibicididae",
+   "aphia_id": 418067
+  },
+  {
+   "taxon": "Quinqueloculina polygona",
+   "taxon_original": "Quinqueloculina polygona",
+   "conteo": 48.4375,
+   "abundancia_rel": 3.989,
+   "pared": "Calcareo",
+   "subtipo": "Porcelanaceo",
+   "genero": "quinqueloculina",
+   "familia": "Hauerinidae",
+   "aphia_id": 112664
+  },
+  {
+   "taxon": "Amphistegina gibbosa",
+   "taxon_original": "Amphistegina gibbosa",
+   "conteo": 43.75,
+   "abundancia_rel": 3.603,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "amphistegina",
+   "familia": "Amphisteginidae",
+   "aphia_id": 112863
+  },
+  {
+   "taxon": "Spirillina",
+   "taxon_original": "Spirillina sp.",
+   "conteo": 40.625,
+   "abundancia_rel": 3.346,
+   "pared": "Calcareo",
+   "subtipo": "Monocristalino",
+   "genero": "spirillina",
+   "familia": "Spirillinidae",
+   "aphia_id": 112273
+  },
+  {
+   "taxon": "Quinqueloculina",
+   "taxon_original": "Quinqueloculina sp.",
+   "conteo": 34.375,
+   "abundancia_rel": 2.831,
+   "pared": "Calcareo",
+   "subtipo": "Porcelanaceo",
+   "genero": "quinqueloculina",
+   "familia": "Hauerinidae",
+   "aphia_id": 112040
+  },
+  {
+   "taxon": "Amphistegina lessonii",
+   "taxon_original": "Amphistegina lessonii",
+   "conteo": 34.375,
+   "abundancia_rel": 2.831,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "amphistegina",
+   "familia": "Amphisteginidae",
+   "aphia_id": 112864
+  },
+  {
+   "taxon": "Bigenerina irregularis",
+   "taxon_original": "Bigenerina irregularis",
+   "conteo": 31.25,
+   "abundancia_rel": 2.574,
+   "pared": "Aglutinado",
+   "subtipo": null,
+   "genero": "bigenerina",
+   "familia": "Textulariidae",
+   "aphia_id": 417653
+  },
+  {
+   "taxon": "Plotnikovina transversaria",
+   "taxon_original": "Plotnikovina transversaria",
+   "conteo": 26.5625,
+   "abundancia_rel": 2.188,
+   "pared": "Aglutinado",
+   "subtipo": null,
+   "genero": "plotnikovina",
+   "familia": "Pseudogaudryinidae",
+   "aphia_id": 723256
+  },
+  {
+   "taxon": "Spiroplectinella wrighti",
+   "taxon_original": "Spiroplectinella wrighti",
+   "conteo": 26.5625,
+   "abundancia_rel": 2.188,
+   "pared": "Aglutinado",
+   "subtipo": null,
+   "genero": "spiroplectinella",
+   "familia": "Spiroplectamminidae",
+   "aphia_id": 114231
+  },
+  {
+   "taxon": "Quinqueloculina laevigata",
+   "taxon_original": "Quinqueloculina laevigata",
+   "conteo": 26.5625,
+   "abundancia_rel": 2.188,
+   "pared": "Calcareo",
+   "subtipo": "Porcelanaceo",
+   "genero": "quinqueloculina",
+   "familia": "Hauerinidae",
+   "aphia_id": 112642
+  },
+  {
+   "taxon": "Melonis affinis",
+   "taxon_original": "Melonis affinis",
+   "conteo": 26.5625,
+   "abundancia_rel": 2.188,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "melonis",
+   "familia": "Melonidae",
+   "aphia_id": 418046
+  },
+  {
+   "taxon": "Bolivina lowmani",
+   "taxon_original": "Bolivina lowmani",
+   "conteo": 25.0,
+   "abundancia_rel": 2.059,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "bolivina",
+   "familia": "Bolivinitidae",
+   "aphia_id": 112976
+  },
+  {
+   "taxon": "Textularia agglutinans",
+   "taxon_original": "Textularia agglutinans",
+   "conteo": 25.0,
+   "abundancia_rel": 2.059,
+   "pared": "Aglutinado",
+   "subtipo": null,
+   "genero": "textularia",
+   "familia": "Textulariidae",
+   "aphia_id": 114264
+  },
+  {
+   "taxon": "Cribroelphidium",
+   "taxon_original": "Cribroelphidium sp.",
+   "conteo": 23.4375,
+   "abundancia_rel": 1.93,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "cribroelphidium",
+   "familia": "Cribroelphidiidae",
+   "aphia_id": 112159
+  },
+  {
+   "taxon": "Ammodiscus",
+   "taxon_original": "Ammodiscus sp. Reuss, 1862",
+   "conteo": 21.875,
+   "abundancia_rel": 1.802,
+   "pared": "Aglutinado",
+   "subtipo": null,
+   "genero": "ammodiscus",
+   "familia": "Ammodiscidae",
+   "aphia_id": 112290
+  },
+  {
+   "taxon": "Miliolinella subrotunda",
+   "taxon_original": "Miliolinella subrotunda",
+   "conteo": 20.3125,
+   "abundancia_rel": 1.673,
+   "pared": "Calcareo",
+   "subtipo": "Porcelanaceo",
+   "genero": "miliolinella",
+   "familia": "Hauerinidae",
+   "aphia_id": 112564
+  },
+  {
+   "taxon": "Karrerotextularia curta",
+   "taxon_original": "Karrerotextularia curta",
+   "conteo": 18.75,
+   "abundancia_rel": 1.544,
+   "pared": "Aglutinado",
+   "subtipo": null,
+   "genero": "karrerotextularia",
+   "familia": "Textulariidae",
+   "aphia_id": 849859
+  },
+  {
+   "taxon": "Quinqueloculina lamarckiana",
+   "taxon_original": "Quinqueloculina lamarckiana",
+   "conteo": 17.1875,
+   "abundancia_rel": 1.416,
+   "pared": "Calcareo",
+   "subtipo": "Porcelanaceo",
+   "genero": "quinqueloculina",
+   "familia": "Hauerinidae",
+   "aphia_id": 112643
+  },
+  {
+   "taxon": "Lagena",
+   "taxon_original": "Lagena sp.",
+   "conteo": 12.5,
+   "abundancia_rel": 1.03,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "lagena",
+   "familia": "Lagenidae",
+   "aphia_id": 112215
+  },
+  {
+   "taxon": "Siphonina jacksonensis",
+   "taxon_original": "Siphonina jacksonensis",
+   "conteo": 12.5,
+   "abundancia_rel": 1.03,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "siphonina",
+   "familia": "Siphoninidae",
+   "aphia_id": 525657
+  },
+  {
+   "taxon": "Planogypsina acervalis",
+   "taxon_original": "Planogypsina acervalis",
+   "conteo": 12.5,
+   "abundancia_rel": 1.03,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "planogypsina",
+   "familia": "Acervulinidae",
+   "aphia_id": 113632
+  },
+  {
+   "taxon": "Nonionella",
+   "taxon_original": "Nonionella sp.",
+   "conteo": 12.5,
+   "abundancia_rel": 1.03,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "nonionella",
+   "familia": "Nonionidae",
+   "aphia_id": 112233
+  },
+  {
+   "taxon": "Peneroplis planatus",
+   "taxon_original": "Peneroplis planatus",
+   "conteo": 12.5,
+   "abundancia_rel": 1.03,
+   "pared": "Calcareo",
+   "subtipo": "Porcelanaceo",
+   "genero": "peneroplis",
+   "familia": "Peneroplidae",
+   "aphia_id": 112817
+  },
+  {
+   "taxon": "Cancris auricula",
+   "taxon_original": "Cancris auricula",
+   "conteo": 12.5,
+   "abundancia_rel": 1.03,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "cancris",
+   "familia": "Cancrisidae",
+   "aphia_id": 582554
+  },
+  {
+   "taxon": "Bulimina",
+   "taxon_original": "Bulimina sp.",
+   "conteo": 9.375,
+   "abundancia_rel": 0.772,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "bulimina",
+   "familia": "Buliminidae",
+   "aphia_id": 112110
+  },
+  {
+   "taxon": "Cassidulina laevigata",
+   "taxon_original": "Cassidulina laevigata",
+   "conteo": 9.375,
+   "abundancia_rel": 0.772,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "cassidulina",
+   "familia": "Cassidulinidae",
+   "aphia_id": 113077
+  },
+  {
+   "taxon": "Ammonia tepida",
+   "taxon_original": "Ammonia tepida",
+   "conteo": 9.375,
+   "abundancia_rel": 0.772,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "ammonia",
+   "familia": "Ammoniidae",
+   "aphia_id": 112857
+  },
+  {
+   "taxon": "Ammonia beccarii",
+   "taxon_original": "Ammonia beccarii",
+   "conteo": 9.375,
+   "abundancia_rel": 0.772,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "ammonia",
+   "familia": "Ammoniidae",
+   "aphia_id": 112849
+  },
+  {
+   "taxon": "Lagena semistriata",
+   "taxon_original": "Lagena semistriata",
+   "conteo": 6.25,
+   "abundancia_rel": 0.515,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "lagena",
+   "familia": "Lagenidae",
+   "aphia_id": 113504
+  },
+  {
+   "taxon": "Lagena sulcata",
+   "taxon_original": "Lagena sulcata",
+   "conteo": 6.25,
+   "abundancia_rel": 0.515,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "lagena",
+   "familia": "Lagenidae",
+   "aphia_id": 113509
+  },
+  {
+   "taxon": "Nonionoides grateloupii",
+   "taxon_original": "Nonionoides grateloupii",
+   "conteo": 6.25,
+   "abundancia_rel": 0.515,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "nonionoides",
+   "familia": "Nonionidae",
+   "aphia_id": 418051
+  },
+  {
+   "taxon": "Asterigerina",
+   "taxon_original": "Asterigerina sp.",
+   "conteo": 6.25,
+   "abundancia_rel": 0.515,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "asterigerina",
+   "familia": "Asterigerinidae",
+   "aphia_id": 415085
+  },
+  {
+   "taxon": "Nonionella auris",
+   "taxon_original": "Nonionella auris",
+   "conteo": 6.25,
+   "abundancia_rel": 0.515,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "nonionella",
+   "familia": "Nonionidae",
+   "aphia_id": 466467
+  },
+  {
+   "taxon": "Acervulina inhaerens",
+   "taxon_original": "Acervulina inhaerens",
+   "conteo": 6.25,
+   "abundancia_rel": 0.515,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "acervulina",
+   "familia": "Acervulinidae",
+   "aphia_id": 112827
+  },
+  {
+   "taxon": "Sagrina pulchella",
+   "taxon_original": "Sagrina pulchella",
+   "conteo": 6.25,
+   "abundancia_rel": 0.515,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "sagrina",
+   "familia": "Bolivinitidae",
+   "aphia_id": 417936
+  },
+  {
+   "taxon": "Sahulia conica",
+   "taxon_original": "Sahulia conica",
+   "conteo": 6.25,
+   "abundancia_rel": 0.515,
+   "pared": "Aglutinado",
+   "subtipo": null,
+   "genero": "sahulia",
+   "familia": "Textulariidae",
+   "aphia_id": 114253
+  },
+  {
+   "taxon": "Nonion commune",
+   "taxon_original": "Nonion commune",
+   "conteo": 6.25,
+   "abundancia_rel": 0.515,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "nonion",
+   "familia": "Nonionidae",
+   "aphia_id": 113585
+  },
+  {
+   "taxon": "Pullenia bulloides",
+   "taxon_original": "Pullenia bulloides",
+   "conteo": 6.25,
+   "abundancia_rel": 0.515,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "pullenia",
+   "familia": "Pulleniidae",
+   "aphia_id": 113110
+  },
+  {
+   "taxon": "Fissurina",
+   "taxon_original": "Fissurina sp.",
+   "conteo": 3.125,
+   "abundancia_rel": 0.257,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "fissurina",
+   "familia": "Ellipsolagenidae",
+   "aphia_id": 112154
+  },
+  {
+   "taxon": "Rosalina globularis",
+   "taxon_original": "Rosalina globularis",
+   "conteo": 3.125,
+   "abundancia_rel": 0.257,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "rosalina",
+   "familia": "Rosalinidae",
+   "aphia_id": 113171
+  },
+  {
+   "taxon": "Planularia",
+   "taxon_original": "Planularia sp. (?)",
+   "conteo": 3.125,
+   "abundancia_rel": 0.257,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "planularia",
+   "familia": "Vaginulinidae",
+   "aphia_id": 415826
+  },
+  {
+   "taxon": "Lenticulina convergens",
+   "taxon_original": "Lenticulina convergens",
+   "conteo": 3.125,
+   "abundancia_rel": 0.257,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "lenticulina",
+   "familia": "Vaginulinidae",
+   "aphia_id": 417835
+  },
+  {
+   "taxon": "Lenticulina orbicularis",
+   "taxon_original": "Lenticulina orbicularis",
+   "conteo": 3.125,
+   "abundancia_rel": 0.257,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "lenticulina",
+   "familia": "Vaginulinidae",
+   "aphia_id": 113790
+  },
+  {
+   "taxon": "Amphicoryna",
+   "taxon_original": "Amphicoryna sp. (?)",
+   "conteo": 1.5625,
+   "abundancia_rel": 0.129,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "amphicoryna",
+   "familia": "Vaginulinidae",
+   "aphia_id": 112282
+  },
+  {
+   "taxon": "Karreriella",
+   "taxon_original": "Karreriella sp.",
+   "conteo": 1.5625,
+   "abundancia_rel": 0.129,
+   "pared": "Aglutinado",
+   "subtipo": null,
+   "genero": "karreriella",
+   "familia": "Eggerellidae",
+   "aphia_id": 112327
+  },
+  {
+   "taxon": "Rosalina columbiensis",
+   "taxon_original": "Rosalina columbiensis",
+   "conteo": 1.5625,
+   "abundancia_rel": 0.129,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "rosalina",
+   "familia": "Rosalinidae",
+   "aphia_id": 418031
+  },
+  {
+   "taxon": "Dyocibicides",
+   "taxon_original": "Dyocibicides sp.",
+   "conteo": 1.5625,
+   "abundancia_rel": 0.129,
+   "pared": "Calcareo",
+   "subtipo": "Hialino",
+   "genero": "dyocibicides",
+   "familia": "Cibicididae",
+   "aphia_id": 465930
+  }
+ ],
+ "total_ponderado": 1214.125,
+ "indices": {
+  "riqueza_S": 52,
+  "shannon_H": 3.4325,
+  "equidad_J": 0.8687,
+  "simpson_D": 0.0454,
+  "dominancia_top5": 38.5
+ },
+ "pared": {
+  "Calcareo": 87.0,
+  "Aglutinado": 13.0
+ },
+ "subtipo": {
+  "Hialino": 70.53,
+  "Porcelanaceo": 13.13,
+  "Aglutinado": 13.0,
+  "Monocristalino": 3.35
+ },
+ "pared_n_especies": {
+  "Calcareo": 44,
+  "Aglutinado": 8
+ },
+ "abundancias": {
+  "MSH_21_BC_01": {
+   "Pesos iniciales": {
+    "125": 4.7752,
+    "250": 1.8853,
+    "500": 1.2055,
+    "TOTAL": 7.866
+   },
+   "Porcentaje": {
+    "125": 60.7068,
+    "250": 23.9677,
+    "500": 15.3255,
+    "TOTAL": 100.0
+   },
+   "# Forams B por fracc.": {
+    "125": 182.0,
+    "250": 72.0,
+    "500": 46.0,
+    "TOTAL": 300.0
+   },
+   "Forams B extraidos": {
+    "125": 780.0,
+    "250": 90.0,
+    "500": 10.0,
+    "TOTAL": 880.0
+   },
+   "Forams P extraidos": {
+    "125": 224.0,
+    "250": 78.0,
+    "500": 4.0,
+    "TOTAL": 306.0
+   },
+   "Peso después picking (g)": {
+    "125": 4.6593,
+    "250": 1.8471,
+    "500": 1.1404,
+    "TOTAL": 7.6468
+   },
+   "Peso picado (g)": {
+    "125": 0.1159,
+    "250": 0.0382,
+    "500": 0.0651,
+    "TOTAL": 0.2192
+   },
+   "Abundancia F.B": {
+    "125": 6729.94,
+    "250": 2356.02,
+    "500": 153.61,
+    "TOTAL": 4014.6
+   },
+   "Abundancia F.P": {
+    "125": 1932.7,
+    "250": 2041.88,
+    "500": 61.44,
+    "TOTAL": 1395.99
+   }
+  },
+  "MSH_21_BC_02": {
+   "Pesos iniciales": {
+    "125": 5.0958,
+    "250": 2.5625,
+    "500": 2.0296,
+    "TOTAL": 9.6879
+   },
+   "Porcentaje": {
+    "125": 52.5996,
+    "250": 26.4505,
+    "500": 20.9498,
+    "TOTAL": 100.0
+   },
+   "# Forams B por fracc.": {
+    "125": 158.0,
+    "250": 79.0,
+    "500": 63.0,
+    "TOTAL": 300.0
+   },
+   "Forams B extraidos": {
+    "125": 309.0,
+    "250": 23.0,
+    "500": 2.0,
+    "TOTAL": 334.0
+   },
+   "Forams P extraidos": {
+    "125": 145.0,
+    "250": 33.0,
+    "500": 1.0,
+    "TOTAL": 179.0
+   },
+   "Peso después picking (g)": {
+    "125": 5.0623,
+    "250": 2.5406,
+    "500": 1.9755,
+    "TOTAL": 9.5784
+   },
+   "Peso picado (g)": {
+    "125": 0.0335,
+    "250": 0.0219,
+    "500": 0.0541,
+    "TOTAL": 0.1095
+   },
+   "Abundancia F.B": {
+    "125": 9223.88,
+    "250": 1050.23,
+    "500": 36.97,
+    "TOTAL": 3050.23
+   },
+   "Abundancia F.P": {
+    "125": 4328.36,
+    "250": 1506.85,
+    "500": 18.48,
+    "TOTAL": 1634.7
+   }
+  }
+ }
+}

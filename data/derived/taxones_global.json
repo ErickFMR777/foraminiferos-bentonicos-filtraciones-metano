@@ -1,0 +1,2759 @@
+[
+ {
+  "taxon": "Uvigerina peregrina",
+  "registros": 17,
+  "n_estudios": 15,
+  "lats": [
+   "0-15",
+   "15-30",
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m",
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "uvigerina",
+  "familia": "Uvigerinidae",
+  "aphia_id": 113773,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Lobatula wuellerstorfi",
+  "registros": 11,
+  "n_estudios": 10,
+  "lats": [
+   "0-15",
+   "15-30",
+   "30-60",
+   "60-90"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "lobatula",
+  "familia": "Cibicididae",
+  "aphia_id": 1746350,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Globobulimina pacifica",
+  "registros": 10,
+  "n_estudios": 9,
+  "lats": [
+   "15-30",
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "globobulimina",
+  "familia": "Globobuliminidae",
+  "aphia_id": 417928,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Melonis affinis",
+  "registros": 7,
+  "n_estudios": 6,
+  "lats": [
+   "0-15",
+   "15-30",
+   "30-60",
+   "60-90"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "melonis",
+  "familia": "Melonidae",
+  "aphia_id": 418046,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Globobulimina affinis",
+  "registros": 7,
+  "n_estudios": 3,
+  "lats": [
+   "0-15",
+   "30-60"
+  ],
+  "profs": [
+   "150-500 m",
+   "< 150 m",
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "globobulimina",
+  "familia": "Globobuliminidae",
+  "aphia_id": 113060,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Chilostomella oolina",
+  "registros": 6,
+  "n_estudios": 4,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "150-500 m",
+   "< 150 m",
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "chilostomella",
+  "familia": "Chilostomellidae",
+  "aphia_id": 113553,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Bulimina striata",
+  "registros": 6,
+  "n_estudios": 5,
+  "lats": [
+   "15-30",
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "bulimina",
+  "familia": "Buliminidae",
+  "aphia_id": 113047,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Chilostomella ovoidea",
+  "registros": 6,
+  "n_estudios": 5,
+  "lats": [
+   "15-30",
+   "30-60"
+  ],
+  "profs": [
+   "150-500 m",
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "chilostomella",
+  "familia": "Chilostomellidae",
+  "aphia_id": 113554,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Globocassidulina subglobosa",
+  "registros": 6,
+  "n_estudios": 5,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m",
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "globocassidulina",
+  "familia": "Cassidulinidae",
+  "aphia_id": 113091,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Pseudoparrella pacifica",
+  "registros": 6,
+  "n_estudios": 5,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m",
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "pseudoparrella",
+  "familia": "Pseudoparrellidae",
+  "aphia_id": 593332,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Bulimina marginata",
+  "registros": 5,
+  "n_estudios": 5,
+  "lats": [
+   "15-30",
+   "30-60"
+  ],
+  "profs": [
+   "150-500 m",
+   "< 150 m",
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "bulimina",
+  "familia": "Buliminidae",
+  "aphia_id": 113042,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Cassidulina neoteretis",
+  "registros": 5,
+  "n_estudios": 5,
+  "lats": [
+   "60-90"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "cassidulina",
+  "familia": "Cassidulinidae",
+  "aphia_id": 556408,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Eubuliminella exilis",
+  "registros": 4,
+  "n_estudios": 4,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "eubuliminella",
+  "familia": "Turrilinidae",
+  "aphia_id": 417980,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Cibicidoides mundulus",
+  "registros": 3,
+  "n_estudios": 2,
+  "lats": [
+   "0-15",
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "cibicidoides",
+  "familia": "Cibicididae",
+  "aphia_id": 418067,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Pyrgo",
+  "registros": 3,
+  "n_estudios": 3,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Porcelanaceo",
+  "genero": "pyrgo",
+  "familia": "Hauerinidae",
+  "aphia_id": 112037,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Bulimina aculeata",
+  "registros": 3,
+  "n_estudios": 3,
+  "lats": [
+   "15-30",
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "bulimina",
+  "familia": "Buliminidae",
+  "aphia_id": 113030,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Cassidulina carinata",
+  "registros": 3,
+  "n_estudios": 3,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m",
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "cassidulina",
+  "familia": "Cassidulinidae",
+  "aphia_id": 183041,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Nonion",
+  "registros": 3,
+  "n_estudios": 2,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "nonion",
+  "familia": "Nonionidae",
+  "aphia_id": 112232,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Hoeglundina elegans",
+  "registros": 2,
+  "n_estudios": 2,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Aragonito",
+  "genero": "hoeglundina",
+  "familia": "Epistominidae",
+  "aphia_id": 113341,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Bulimina",
+  "registros": 2,
+  "n_estudios": 2,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m",
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "bulimina",
+  "familia": "Buliminidae",
+  "aphia_id": 112110,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Uvigerina",
+  "registros": 2,
+  "n_estudios": 2,
+  "lats": [
+   "0-15",
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "uvigerina",
+  "familia": "Uvigerinidae",
+  "aphia_id": 112281,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Gyroidina altiformis",
+  "registros": 2,
+  "n_estudios": 2,
+  "lats": [
+   "15-30",
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "gyroidina",
+  "familia": "Gavelinellidae",
+  "aphia_id": 112894,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Bolivina ordinaria",
+  "registros": 2,
+  "n_estudios": 2,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "bolivina",
+  "familia": "Bolivinitidae",
+  "aphia_id": 112978,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Gavelinopsis translucens",
+  "registros": 2,
+  "n_estudios": 2,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "gavelinopsis",
+  "familia": "Rosalinidae",
+  "aphia_id": 113160,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Paracassidulina neocarinata",
+  "registros": 2,
+  "n_estudios": 2,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "paracassidulina",
+  "familia": "Cassidulinidae",
+  "aphia_id": 113097,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Bolivina albatrossi",
+  "registros": 2,
+  "n_estudios": 2,
+  "lats": [
+   "15-30",
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "bolivina",
+  "familia": "Bolivinitidae",
+  "aphia_id": 112965,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Parvigenerina arenacea",
+  "registros": 2,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Aglutinado",
+  "subtipo": null,
+  "genero": "parvigenerina",
+  "familia": "Pseudobolivinidae",
+  "aphia_id": 465997,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Elphidium crispum",
+  "registros": 2,
+  "n_estudios": 2,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "elphidium",
+  "familia": "Elphidiidae",
+  "aphia_id": 113262,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Bolivina vadescens",
+  "registros": 2,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "150-500 m",
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "bolivina",
+  "familia": "Bolivinitidae",
+  "aphia_id": 522820,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Virgulinella fragilis",
+  "registros": 2,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "150-500 m",
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "virgulinella",
+  "familia": "Virgulinellidae",
+  "aphia_id": 466393,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Bolivina",
+  "registros": 2,
+  "n_estudios": 2,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m",
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "bolivina",
+  "familia": "Bolivinitidae",
+  "aphia_id": 112101,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Lobatula lobatula",
+  "registros": 2,
+  "n_estudios": 2,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m",
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "lobatula",
+  "familia": "Cibicididae",
+  "aphia_id": 113118,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Nonionella stella",
+  "registros": 2,
+  "n_estudios": 2,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "nonionella",
+  "familia": "Nonionidae",
+  "aphia_id": 113604,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Nonionella globosa",
+  "registros": 2,
+  "n_estudios": 2,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "nonionella",
+  "familia": "Nonionidae",
+  "aphia_id": 528341,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Spiroplectammina biformis",
+  "registros": 2,
+  "n_estudios": 2,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Aglutinado",
+  "subtipo": null,
+  "genero": "spiroplectammina",
+  "familia": "Spiroplectamminidae",
+  "aphia_id": 114226,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Bolivina subargentea",
+  "registros": 2,
+  "n_estudios": 2,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "bolivina",
+  "familia": "Bolivinitidae",
+  "aphia_id": 522129,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Bolivina spissa",
+  "registros": 2,
+  "n_estudios": 2,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "bolivina",
+  "familia": "Bolivinitidae",
+  "aphia_id": 814781,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Globobulimina auriculata",
+  "registros": 2,
+  "n_estudios": 2,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "globobulimina",
+  "familia": "Globobuliminidae",
+  "aphia_id": 293027,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Cibicidoides mckannai",
+  "registros": 2,
+  "n_estudios": 2,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "cibicidoides",
+  "familia": "Cibicididae",
+  "aphia_id": 1311388,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Pseudononion basispinatum",
+  "registros": 2,
+  "n_estudios": 2,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "pseudononion",
+  "familia": "Nonionidae",
+  "aphia_id": 1484298,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Globobulimina pseudospinescens",
+  "registros": 2,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "150-500 m",
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "globobulimina",
+  "familia": "Globobuliminidae",
+  "aphia_id": 113061,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Oridorsalis umbonatus",
+  "registros": 2,
+  "n_estudios": 2,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m",
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "oridorsalis",
+  "familia": "Alabaminidae",
+  "aphia_id": 254690,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Sigmoilopsis schlumbergeri",
+  "registros": 2,
+  "n_estudios": 2,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Porcelanaceo",
+  "genero": "sigmoilopsis",
+  "familia": "Sigmoilopsidae",
+  "aphia_id": 112704,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Trifarina angulosa",
+  "registros": 2,
+  "n_estudios": 2,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "trifarina",
+  "familia": "Uvigerinidae",
+  "aphia_id": 113756,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Takayanagia delicata",
+  "registros": 2,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "takayanagia",
+  "familia": "Cassidulinidae",
+  "aphia_id": 526531,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Cassidulina translucens",
+  "registros": 2,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "cassidulina",
+  "familia": "Cassidulinidae",
+  "aphia_id": 764032,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Bolivinita minuta",
+  "registros": 2,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "bolivinita",
+  "familia": "Bolivinitidae",
+  "aphia_id": 1551292,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Paracassidulina minuta",
+  "registros": 2,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "paracassidulina",
+  "familia": "Cassidulinidae",
+  "aphia_id": 526529,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Bolivina lowmani",
+  "registros": 2,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "bolivina",
+  "familia": "Bolivinitidae",
+  "aphia_id": 112976,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Praeglobobulimina spinescens",
+  "registros": 2,
+  "n_estudios": 2,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "praeglobobulimina",
+  "familia": "Buliminidae",
+  "aphia_id": 113063,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Nonionellina labradorica",
+  "registros": 2,
+  "n_estudios": 2,
+  "lats": [
+   "30-60",
+   "60-90"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "nonionellina",
+  "familia": "Nonionidae",
+  "aphia_id": 113606,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Cassidulina reniformis",
+  "registros": 2,
+  "n_estudios": 2,
+  "lats": [
+   "60-90"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "cassidulina",
+  "familia": "Cassidulinidae",
+  "aphia_id": 1827523,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Pullenia",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "pullenia",
+  "familia": "Pulleniidae",
+  "aphia_id": 112132,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Cribroelphidium excavatum",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "cribroelphidium",
+  "familia": "Cribroelphidiidae",
+  "aphia_id": 254680,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Pullenia bulloides",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "0-15"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "pullenia",
+  "familia": "Pulleniidae",
+  "aphia_id": 113110,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Robertina",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "0-15"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Aragonito",
+  "genero": "robertina",
+  "familia": "Robertinidae",
+  "aphia_id": 112259,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Pyrgo murrhina",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "0-15"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Porcelanaceo",
+  "genero": "pyrgo",
+  "familia": "Hauerinidae",
+  "aphia_id": 112593,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Lenticulina inornata",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "lenticulina",
+  "familia": "Vaginulinidae",
+  "aphia_id": 484664,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Miliolinella subrotunda",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Porcelanaceo",
+  "genero": "miliolinella",
+  "familia": "Hauerinidae",
+  "aphia_id": 112564,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Cribrostomoides subglobosus",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Aglutinado",
+  "subtipo": null,
+  "genero": "cribrostomoides",
+  "familia": "Ammosphaeroidinidae",
+  "aphia_id": 254681,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Siphouvigerina proboscidea",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "siphouvigerina",
+  "familia": "Uvigerinidae",
+  "aphia_id": 580069,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Epistominella naraensis",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "epistominella",
+  "familia": "Pseudoparrellidae",
+  "aphia_id": 113337,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Spiroglutina asperula",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Porcelanaceo",
+  "genero": "spiroglutina",
+  "familia": "Rzehakinidae",
+  "aphia_id": 594407,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Textularia sagittula",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Aglutinado",
+  "subtipo": null,
+  "genero": "textularia",
+  "familia": "Textulariidae",
+  "aphia_id": 114285,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Fissurina laevigata",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "fissurina",
+  "familia": "Ellipsolagenidae",
+  "aphia_id": 113205,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Bolivina subaenariensis",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "bolivina",
+  "familia": "Bolivinitidae",
+  "aphia_id": 112990,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Uvigerina laevis",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "uvigerina",
+  "familia": "Uvigerinidae",
+  "aphia_id": 758669,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Osangularielloides rugosus",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "osangularielloides",
+  "familia": "Alabaminidae",
+  "aphia_id": 815827,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Trifarina bradyi",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "trifarina",
+  "familia": "Uvigerinidae",
+  "aphia_id": 113757,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Ammomarginulina catenulata",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Aglutinado",
+  "subtipo": null,
+  "genero": "ammomarginulina",
+  "familia": "Lituolidae",
+  "aphia_id": 816190,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Barbourinella atlantica",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Aglutinado",
+  "subtipo": null,
+  "genero": "barbourinella",
+  "familia": "Reophacellidae",
+  "aphia_id": 757097,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Cribromiliolinella subvalvularis",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Porcelanaceo",
+  "genero": "cribromiliolinella",
+  "familia": "Hauerinidae",
+  "aphia_id": 466041,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Fissurina fissa",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "fissurina",
+  "familia": "Ellipsolagenidae",
+  "aphia_id": 1539640,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Glomospira irregularis",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Aglutinado",
+  "subtipo": null,
+  "genero": "glomospira",
+  "familia": null,
+  "aphia_id": null,
+  "verificado_worms": false
+ },
+ {
+  "taxon": "Glandulina chrysalis",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "glandulina",
+  "familia": "Lagenidae",
+  "aphia_id": 1900551,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Lagenammina laguncula",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Aglutinado",
+  "subtipo": null,
+  "genero": "lagenammina",
+  "familia": "Saccamminidae",
+  "aphia_id": 114168,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Lagenammina tubulata",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Aglutinado",
+  "subtipo": null,
+  "genero": "lagenammina",
+  "familia": "Saccamminidae",
+  "aphia_id": 254689,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Lenticulina pliocaena",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "lenticulina",
+  "familia": "Vaginulinidae",
+  "aphia_id": 484661,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Nonionella iridea",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "nonionella",
+  "familia": "Nonionidae",
+  "aphia_id": 113602,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Orectostomina camposi",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Aglutinado",
+  "subtipo": null,
+  "genero": "orectostomina",
+  "familia": "Spiroplectamminidae",
+  "aphia_id": 1044579,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Fissurina staphyllearia",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "fissurina",
+  "familia": null,
+  "aphia_id": null,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Portatrochammina antarctica subsp. antarctica",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Aglutinado",
+  "subtipo": null,
+  "genero": "portatrochammina",
+  "familia": "Trochamminidae",
+  "aphia_id": 397234,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Pseudoclavulina serventyi",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Aglutinado",
+  "subtipo": null,
+  "genero": "pseudoclavulina",
+  "familia": "Pseudogaudryinidae",
+  "aphia_id": 466031,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Robertina subcylindrica",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Aragonito",
+  "genero": "robertina",
+  "familia": "Robertinidae",
+  "aphia_id": 146268,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Saccammina helenae",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Aglutinado",
+  "subtipo": null,
+  "genero": "saccammina",
+  "familia": "Saccamminidae",
+  "aphia_id": 689348,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Saracenaria altifrons",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "15-30"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "saracenaria",
+  "familia": "Vaginulinidae",
+  "aphia_id": 466181,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Ammonia beccarii",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "ammonia",
+  "familia": "Ammoniidae",
+  "aphia_id": 112849,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Quinqueloculina padana",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Porcelanaceo",
+  "genero": "quinqueloculina",
+  "familia": "Hauerinidae",
+  "aphia_id": 112656,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Quinqueloculina poeyana",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Porcelanaceo",
+  "genero": "quinqueloculina",
+  "familia": "Hauerinidae",
+  "aphia_id": 417712,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Gyroidina laevigata",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "gyroidina",
+  "familia": "Gavelinellidae",
+  "aphia_id": 112895,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Cribroelphidium decipiens",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "cribroelphidium",
+  "familia": "Elphidiidae",
+  "aphia_id": 1545640,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Elphidium granosum",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "elphidium",
+  "familia": "Elphidiidae",
+  "aphia_id": 113269,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Gavelinopsis praegeri",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "gavelinopsis",
+  "familia": "Rosalinidae",
+  "aphia_id": 113159,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Bigenerina nodosaria",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m"
+  ],
+  "pared": "Aglutinado",
+  "subtipo": null,
+  "genero": "bigenerina",
+  "familia": "Textulariidae",
+  "aphia_id": 113862,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Nodulina dentaliniformis",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m"
+  ],
+  "pared": "Aglutinado",
+  "subtipo": null,
+  "genero": "nodulina",
+  "familia": "Reophacidae",
+  "aphia_id": 113988,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Reophax nana",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m"
+  ],
+  "pared": "Aglutinado",
+  "subtipo": null,
+  "genero": "reophax",
+  "familia": "Reophacidae",
+  "aphia_id": 114011,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Reophax scorpiurus",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m"
+  ],
+  "pared": "Aglutinado",
+  "subtipo": null,
+  "genero": "reophax",
+  "familia": "Reophacidae",
+  "aphia_id": 114016,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Leptohalysis scottii",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m"
+  ],
+  "pared": "Aglutinado",
+  "subtipo": null,
+  "genero": "leptohalysis",
+  "familia": "Reophacidae",
+  "aphia_id": 578704,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Rosalina bradyi",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "rosalina",
+  "familia": "Rosalinidae",
+  "aphia_id": 113167,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Rosalina globularis",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "rosalina",
+  "familia": "Rosalinidae",
+  "aphia_id": 113171,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Bolivina aenariensis",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "bolivina",
+  "familia": "Bolivinitidae",
+  "aphia_id": 710281,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Bolivina dilatata",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "bolivina",
+  "familia": "Bolivinitidae",
+  "aphia_id": 112973,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Bolivina spathulata",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "bolivina",
+  "familia": "Bolivinitidae",
+  "aphia_id": 112988,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Bolivina pseudoplicata",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "bolivina",
+  "familia": "Bolivinitidae",
+  "aphia_id": 112982,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Asterigerinata mamilla",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "asterigerinata",
+  "familia": "Asterigerinatidae",
+  "aphia_id": 112933,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Biasterigerina planorbis",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "biasterigerina",
+  "familia": "Asterigerinatidae",
+  "aphia_id": 761923,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Neoconorbina terquemi",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "neoconorbina",
+  "familia": "Rosalinidae",
+  "aphia_id": 113697,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Buccella granulata",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "buccella",
+  "familia": "Notorotaliidae",
+  "aphia_id": 113137,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Bulimina elegans",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "bulimina",
+  "familia": "Buliminidae",
+  "aphia_id": 991841,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Planulina",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "planulina",
+  "familia": "Planulinidae",
+  "aphia_id": 112091,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Elphidium",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "elphidium",
+  "familia": "Elphidiidae",
+  "aphia_id": 112162,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Ammonia batava",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "150-500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "ammonia",
+  "familia": "Ammoniidae",
+  "aphia_id": 112847,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Cryptoelphidiella bartletti",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "150-500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "cryptoelphidiella",
+  "familia": "Elphidiidae",
+  "aphia_id": 1844959,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Glomospira gordialis",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "150-500 m"
+  ],
+  "pared": "Aglutinado",
+  "subtipo": null,
+  "genero": "glomospira",
+  "familia": "Ammodiscidae",
+  "aphia_id": 113830,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Cibicidoides",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "cibicidoides",
+  "familia": "Cibicididae",
+  "aphia_id": 112084,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Bolivina argentea",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "bolivina",
+  "familia": "Bolivinitidae",
+  "aphia_id": 852154,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Bolivina subadvena",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "bolivina",
+  "familia": "Bolivinitidae",
+  "aphia_id": 525519,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Buliminella",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "buliminella",
+  "familia": "Buliminellidae",
+  "aphia_id": 112277,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Cassidulina reflexa",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "cassidulina",
+  "familia": null,
+  "aphia_id": null,
+  "verificado_worms": false
+ },
+ {
+  "taxon": "Protoglobobulimina pupoides",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "protoglobobulimina",
+  "familia": "Buliminidae",
+  "aphia_id": 526554,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Uvigerina cocoaensis",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "uvigerina",
+  "familia": null,
+  "aphia_id": null,
+  "verificado_worms": false
+ },
+ {
+  "taxon": "Bolivina tumida",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "< 150 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "bolivina",
+  "familia": null,
+  "aphia_id": null,
+  "verificado_worms": false
+ },
+ {
+  "taxon": "Toddinella incerta",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "150-500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "toddinella",
+  "familia": "Cribroelphidiidae",
+  "aphia_id": 1845130,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Haynesina depressula",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "150-500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "haynesina",
+  "familia": "Haynesinidae",
+  "aphia_id": 113293,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Stainforthia fusiformis",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "150-500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "stainforthia",
+  "familia": "Stainforthiidae",
+  "aphia_id": 113070,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Islandiella norcrossi",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "150-500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "islandiella",
+  "familia": "Cassidulinidae",
+  "aphia_id": 113095,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Bolivinita quadrilatera",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "bolivinita",
+  "familia": "Bolivinitidae",
+  "aphia_id": 417917,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Laevidentalina elegans",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Porcelanaceo",
+  "genero": "laevidentalina",
+  "familia": "Nodosariidae",
+  "aphia_id": 466112,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Cuneata arctica",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "cuneata",
+  "familia": "Hormosinidae",
+  "aphia_id": 113975,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Laticarinina altocamerata",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "laticarinina",
+  "familia": "Discorbinellidae",
+  "aphia_id": 466416,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Bolivina seminuda",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "bolivina",
+  "familia": "Bolivinitidae",
+  "aphia_id": 417913,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Fursenkoina complanata",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "fursenkoina",
+  "familia": "Bolivinitidae",
+  "aphia_id": 466392,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Gyroidinoides",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "gyroidinoides",
+  "familia": "Cancrisidae",
+  "aphia_id": 112189,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Gyroidinoides turgidus",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "gyroidinoides",
+  "familia": null,
+  "aphia_id": null,
+  "verificado_worms": false
+ },
+ {
+  "taxon": "Cassidulina laevigata",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "cassidulina",
+  "familia": "Cassidulinidae",
+  "aphia_id": 113077,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Gyroidina polia",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "gyroidina",
+  "familia": "Gavelinellidae",
+  "aphia_id": 112900,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Rosalina floridensis",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "rosalina",
+  "familia": "Rosalinidae",
+  "aphia_id": 113170,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Bolivina pacifica",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "bolivina",
+  "familia": "Bolivinitidae",
+  "aphia_id": 112979,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Cushmanina feildeniana",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Porcelanaceo",
+  "genero": "cushmanina",
+  "familia": "Ellipsolagenidae",
+  "aphia_id": 417863,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Dentalina",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Porcelanaceo",
+  "genero": "dentalina",
+  "familia": "Nodosariidae",
+  "aphia_id": 112217,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Epistominella smithi",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "epistominella",
+  "familia": "Pseudoparrellidae",
+  "aphia_id": 862706,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Epistominella",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "epistominella",
+  "familia": "Pseudoparrellidae",
+  "aphia_id": 112168,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Eponides leviculus",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "eponides",
+  "familia": null,
+  "aphia_id": null,
+  "verificado_worms": false
+ },
+ {
+  "taxon": "Fissurina",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "fissurina",
+  "familia": "Ellipsolagenidae",
+  "aphia_id": 112154,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Fursenkoina bramlettei",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "fursenkoina",
+  "familia": "Bolivinitidae",
+  "aphia_id": 417964,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Globocassidulina braziliensis",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "globocassidulina",
+  "familia": null,
+  "aphia_id": null,
+  "verificado_worms": false
+ },
+ {
+  "taxon": "Procerolagena distoma",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "procerolagena",
+  "familia": "Lagenidae",
+  "aphia_id": 723261,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Lagena striata",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "lagena",
+  "familia": "Lagenidae",
+  "aphia_id": 113507,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Lagena sulcata",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "lagena",
+  "familia": "Lagenidae",
+  "aphia_id": 113509,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Lenticulina",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "lenticulina",
+  "familia": "Vaginulinidae",
+  "aphia_id": 112284,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Euloxostomum pseudobeyrichi",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "euloxostomum",
+  "familia": null,
+  "aphia_id": null,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Favulina hexagona",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Porcelanaceo",
+  "genero": "favulina",
+  "familia": "Ellipsolagenidae",
+  "aphia_id": 113193,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Quinqueloculina",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Porcelanaceo",
+  "genero": "quinqueloculina",
+  "familia": "Hauerinidae",
+  "aphia_id": 112040,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Triloculina",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Porcelanaceo",
+  "genero": "triloculina",
+  "familia": "Hauerinidae",
+  "aphia_id": 112047,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Valvulineria araucana",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "valvulineria",
+  "familia": null,
+  "aphia_id": null,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Globobulimina",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "globobulimina",
+  "familia": "Globobuliminidae",
+  "aphia_id": 112112,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Rutherfordoides rotundatus",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "30-60"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "rutherfordoides",
+  "familia": "Bolivinitidae",
+  "aphia_id": 1540267,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Trifarina earlandi",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "60-90"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "trifarina",
+  "familia": "Uvigerinidae",
+  "aphia_id": 413728,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Buccella frigida",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "60-90"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "buccella",
+  "familia": "Notorotaliidae",
+  "aphia_id": 113136,
+  "verificado_worms": true
+ },
+ {
+  "taxon": "Cassidulina",
+  "registros": 1,
+  "n_estudios": 1,
+  "lats": [
+   "60-90"
+  ],
+  "profs": [
+   "> 500 m"
+  ],
+  "pared": "Calcareo",
+  "subtipo": "Hialino",
+  "genero": "cassidulina",
+  "familia": "Cassidulinidae",
+  "aphia_id": 112120,
+  "verificado_worms": true
+ }
+]

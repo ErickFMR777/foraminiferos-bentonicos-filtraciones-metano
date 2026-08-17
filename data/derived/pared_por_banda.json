@@ -1,0 +1,81 @@
+[
+ {
+  "eje": "latitud",
+  "banda": "0-15",
+  "n": 9,
+  "calcareo": 100.0,
+  "aglutinado": 0.0,
+  "subtipos": {
+   "Hialino": 7,
+   "Aragonito": 1,
+   "Porcelanaceo": 1
+  }
+ },
+ {
+  "eje": "latitud",
+  "banda": "15-30",
+  "n": 53,
+  "calcareo": 75.5,
+  "aglutinado": 24.5,
+  "subtipos": {
+   "Hialino": 36,
+   "Porcelanaceo": 3,
+   "Aragonito": 1
+  }
+ },
+ {
+  "eje": "latitud",
+  "banda": "30-60",
+  "n": 208,
+  "calcareo": 96.2,
+  "aglutinado": 3.8,
+  "subtipos": {
+   "Hialino": 185,
+   "Aragonito": 2,
+   "Porcelanaceo": 13
+  }
+ },
+ {
+  "eje": "latitud",
+  "banda": "60-90",
+  "n": 17,
+  "calcareo": 100.0,
+  "aglutinado": 0.0,
+  "subtipos": {
+   "Hialino": 17
+  }
+ },
+ {
+  "eje": "profundidad",
+  "banda": "< 150 m",
+  "n": 37,
+  "calcareo": 86.5,
+  "aglutinado": 13.5,
+  "subtipos": {
+   "Hialino": 30,
+   "Porcelanaceo": 2
+  }
+ },
+ {
+  "eje": "profundidad",
+  "banda": "150-500 m",
+  "n": 15,
+  "calcareo": 93.3,
+  "aglutinado": 6.7,
+  "subtipos": {
+   "Hialino": 14
+  }
+ },
+ {
+  "eje": "profundidad",
+  "banda": "> 500 m",
+  "n": 235,
+  "calcareo": 93.6,
+  "aglutinado": 6.4,
+  "subtipos": {
+   "Hialino": 201,
+   "Aragonito": 4,
+   "Porcelanaceo": 15
+  }
+ }
+]

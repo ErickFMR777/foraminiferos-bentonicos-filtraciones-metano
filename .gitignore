@@ -1,0 +1,38 @@
+# ============================================================
+#  CONFIDENCIALIDAD — NO TOCAR SIN LEER
+#  Datos primarios inéditos del proyecto MSH (Methane Seep Hunting).
+#  Nada de lo siguiente puede llegar nunca a GitHub ni a Vercel.
+# ============================================================
+Data_nosubiralrepo/
+*.xlsx
+*.xls
+*.pdf
+data/raw/
+data/private/
+
+# Credenciales y entorno
+.env
+.env.*
+!.env.example
+.vercel
+
+# Node / Next
+node_modules/
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+next-env.d.ts
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log

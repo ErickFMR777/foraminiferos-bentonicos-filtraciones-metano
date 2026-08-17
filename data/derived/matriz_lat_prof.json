@@ -1,0 +1,109 @@
+{
+ "celdas": [
+  {
+   "lat": "0-15",
+   "prof": "< 150 m",
+   "registros": 0,
+   "taxones": 0,
+   "estudios": 0
+  },
+  {
+   "lat": "0-15",
+   "prof": "150-500 m",
+   "registros": 0,
+   "taxones": 0,
+   "estudios": 0
+  },
+  {
+   "lat": "0-15",
+   "prof": "> 500 m",
+   "registros": 9,
+   "taxones": 9,
+   "estudios": 2
+  },
+  {
+   "lat": "15-30",
+   "prof": "< 150 m",
+   "registros": 0,
+   "taxones": 0,
+   "estudios": 0
+  },
+  {
+   "lat": "15-30",
+   "prof": "150-500 m",
+   "registros": 0,
+   "taxones": 0,
+   "estudios": 0
+  },
+  {
+   "lat": "15-30",
+   "prof": "> 500 m",
+   "registros": 53,
+   "taxones": 44,
+   "estudios": 8
+  },
+  {
+   "lat": "30-60",
+   "prof": "< 150 m",
+   "registros": 37,
+   "taxones": 35,
+   "estudios": 5
+  },
+  {
+   "lat": "30-60",
+   "prof": "150-500 m",
+   "registros": 15,
+   "taxones": 14,
+   "estudios": 4
+  },
+  {
+   "lat": "30-60",
+   "prof": "> 500 m",
+   "registros": 156,
+   "taxones": 87,
+   "estudios": 19
+  },
+  {
+   "lat": "60-90",
+   "prof": "< 150 m",
+   "registros": 0,
+   "taxones": 0,
+   "estudios": 0
+  },
+  {
+   "lat": "60-90",
+   "prof": "150-500 m",
+   "registros": 0,
+   "taxones": 0,
+   "estudios": 0
+  },
+  {
+   "lat": "60-90",
+   "prof": "> 500 m",
+   "registros": 17,
+   "taxones": 8,
+   "estudios": 5
+  }
+ ],
+ "lats": [
+  "0-15",
+  "15-30",
+  "30-60",
+  "60-90"
+ ],
+ "profs": [
+  "< 150 m",
+  "150-500 m",
+  "> 500 m"
+ ],
+ "sitio_tesis": {
+  "lat": 9.54,
+  "prof": "< 150 m",
+  "localidad": "MSH-BC-21, plataforma frente al Golfo de Morrosquillo",
+  "region": "Caribe colombiano",
+  "lon": -76.23,
+  "prof_m": 75,
+  "confianza": "alta",
+  "fuente": "Área de estudio declarada en la tesis (cap. 3): W 76°08'–76°20', N 9°30'–9°35'8\""
+ }
+}
