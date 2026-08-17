@@ -94,6 +94,9 @@ def clean_bibliografia(rows: list[dict], tmap: dict) -> list[dict]:
         if fix:
             pared, sub = fix[0], fix[1]
 
+        disc = r.get("discriminacion")
+        disc_cod, disc_lbl = C.DISCRIMINACION_VOCAB.get(disc, (None, None))
+
         out.append({
             "estudio": r.get("titulo"),
             "taxon_original": raw,
@@ -102,14 +105,38 @@ def clean_bibliografia(rows: list[dict], tmap: dict) -> list[dict]:
             "verificado_worms": tx.get("verificado", False),
             "confianza": tx.get("confianza", "alta"),
             "genero": T.genus_of(tx["nombre"]),
+            "genero_label": T.genus_label(tx["nombre"]),
+            "rango": T.rango(tx["nombre"]),
             "familia": tx.get("family"),
             "orden": tx.get("order"),
             "pared": pared,
             "subtipo": sub if pared == "Calcareo" else None,
             "lat_banda": r.get("lat_banda"),
             "prof_banda": r.get("prof_banda"),
-            "discriminacion": r.get("discriminacion"),
+            "discriminacion": disc,
+            "microhabitat": disc_cod,
+            "microhabitat_label": disc_lbl,
         })
+
+    # --- deduplicación de filas idénticas -------------------------------
+    if C.DEDUPLICAR:
+        vistos: set[tuple] = set()
+        unicos, dups = [], []
+        for r in out:
+            k = tuple(r[c] for c in C.CLAVE_DUPLICADO)
+            if k in vistos:
+                dups.append(r)
+            else:
+                vistos.add(k)
+                unicos.append(r)
+        for r in dups:
+            log("duplicado", "A", f"{r['taxon']} — {(r['estudio'] or '')[:45]}", None,
+                "Fila idéntica en estudio, taxón, banda latitudinal, banda de "
+                "profundidad y microhábitat. Contar dos veces la misma observación "
+                "infla el ranking global de taxones.",
+                "Detección automática por clave compuesta",
+                "Reduce el total de registros; no altera el nº de estudios por taxón.")
+        out = unicos
 
     for k, n in excl.items():
         kind, name = k.split(":", 1)
@@ -142,6 +169,8 @@ def clean_msh(rows: list[dict], tmap: dict) -> list[dict]:
             "aphia_id": tx.get("aphia"),
             "verificado_worms": tx.get("verificado", False),
             "genero": T.genus_of(tx["nombre"]),
+            "genero_label": T.genus_label(tx["nombre"]),
+            "rango": T.rango(tx["nombre"]),
             "familia": tx.get("family"),
             "orden": tx.get("order"),
             "pared": pared,

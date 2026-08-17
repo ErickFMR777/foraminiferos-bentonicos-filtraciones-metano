@@ -52,7 +52,14 @@ python pipeline/05_worms.py      # resolución taxonómica WoRMS (cacheado)
 python pipeline/06_estudios.py   # resolución bibliográfica CrossRef
 python pipeline/10_clean.py      # aplica correcciones -> *_clean.json
 python pipeline/20_build.py      # -> data/derived/*.json (público)
+python pipeline/99_auditoria.py  # 62 comprobaciones; código 1 si algo falla
 ```
+
+**Ejecutar `99_auditoria.py` después de cualquier cambio en el pipeline.**
+Re-lee los Excel originales y verifica de forma independiente: conservación
+de registros, que toda diferencia esté documentada en el log, la aritmética
+recalculada desde cero, la coherencia entre datasets, la validez de los
+campos que alimentan gráficos y que ningún dataset público filtre rutas.
 
 Dependencias: `pip install openpyxl` únicamente (pypdf sólo si hace falta
 releer la tesis; ningún script del pipeline usa pandas).
@@ -90,13 +97,18 @@ base de datos, ni API, ni Supabase.
 
 ## 5. Cifras clave ya verificadas (úsalas, no las recalcules)
 
-- Base bibliográfica: **287 registros** (tras excluir 5 planctónicos + 1
-  placeholder), **160 taxones**, **38 estudios**.
+- Base bibliográfica: **275 registros** (293 − 6 excluidos − 12 duplicados
+  exactos), **160 taxones** (140 especies + 20 entradas de género),
+  **38 estudios**.
 - Matriz latitud × profundidad: **6 de 12 celdas con datos**. El sesgo real
-  está en la profundidad: **el 82% de los registros (235 de 287) viene de
+  está en la profundidad: **el 81% de los registros (223 de 275) viene de
   >500 m**, y **3 de las 4 bandas latitudinales sólo tienen datos a >500 m**
   (todo lo somero procede de una única banda, 30-60°).
   La celda 0-15° / <150 m —donde cae el Caribe colombiano— está en **CERO**.
+- **El ranking global va por nº de ESTUDIOS, no de registros.** El recuento de
+  registros premia a los artículos que desglosan más bandas o microhábitats,
+  no a los taxones más frecuentes. Top: *Uvigerina peregrina* (15 estudios) ·
+  *Lobatula wuellerstorfi* (10) · *Globobulimina pacifica* (9).
 - MSH-BC-21: S=52, **H'=3,4325**, J'=0,8687, Simpson D=0,0454,
   top-5 = 38,5% de la abundancia.
 - MSH-BC-21 pared: **87,0% calcáreo / 13,0% aglutinado**
@@ -104,8 +116,13 @@ base de datos, ni API, ni Supabase.
 - Solape: **15/52 especies** y **20/41 géneros** compartidos con la literatura
   global de seeps. **55,7% de la abundancia** de MSH-BC-21 está en géneros ya
   reportados en filtraciones.
-- Top global corregido: *Uvigerina peregrina* (17 reg/15 est) ·
-  ***Lobatula wuellerstorfi*** (11/10) · *Globobulimina pacifica* (10/9).
+- Top global corregido: *Uvigerina peregrina* (15 est/16 reg) ·
+  ***Lobatula wuellerstorfi*** (10/11) · *Globobulimina pacifica* (9/9).
+- Log de correcciones: **79 entradas**. De ellas, **23 son errores reales del
+  manuscrito** (6 erratas + 5 reclasificaciones de pared + 12 duplicados) que
+  afectan **24 de los 293 registros = 8,2%**. Las 51 restantes no son errores
+  del autor: normalización de nomenclatura abierta, actualizaciones de WoRMS
+  posteriores a 2022, taxones no verificables y notas aritméticas.
 
 ---
 
@@ -119,11 +136,17 @@ base de datos, ni API, ni Supabase.
 2. **FBC/FBA 88,8% → 87,0%**, por reclasificar `Ammodiscus` (aglutinado, no
    porcelanáceo). El texto de la tesis dice «cerca de un 80%»: es incorrecto
    en ambos sentidos. Se publica el valor calculado (decisión del autor).
-3. **Tasa de error real: 4,1%** — 11 entradas de corrección (6 erratas + 5
-   reclasificaciones de pared) que afectan **12 de los 293 registros**
-   originales. Las otras 56 entradas del log son normalización de
-   nomenclatura abierta, actualizaciones de WoRMS posteriores a 2022,
-   exclusiones y notas aritméticas: no son errores del autor.
+3. **Tasa de error real: 8,2%** — 23 entradas de corrección (6 erratas + 5
+   reclasificaciones de pared + 12 duplicados) que afectan **24 de los 293
+   registros**. Las otras 51 entradas del log no son errores del autor.
+6. **12 filas duplicadas exactas** (mismo estudio, taxón, banda latitudinal,
+   banda de profundidad y microhábitat). Eliminadas. Se conservan en cambio
+   las 14 repeticiones de un taxón dentro de un estudio cuando cambia la
+   banda: ahí el artículo reporta la especie en dos estratos distintos y son
+   observaciones separadas, no duplicados.
+7. **El ranking por nº de registros estaba sesgado.** Ahora se ordena por nº
+   de estudios. *Globobulimina affinis* salía en el top-5 con 7 registros
+   procedentes de sólo 3 estudios; con la métrica robusta baja de posición.
 4. **`Cassidulina` es homónimo**: WoRMS devuelve un equinoideo. Filtrado por
    phylum en `05_worms.py::pick_foram`. No quitar ese filtro.
 5. **`McCorkle et al. 1990` no es un estudio de filtración** (microhábitats,

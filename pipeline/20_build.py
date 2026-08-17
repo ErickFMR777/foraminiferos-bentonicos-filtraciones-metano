@@ -94,8 +94,9 @@ def main() -> int:
 
     # ------------------------------------------------------------ taxones global
     tx = defaultdict(lambda: {"registros": 0, "estudios": set(), "lats": set(),
-                              "profs": set(), "pared": None, "subtipo": None,
-                              "genero": None, "familia": None, "aphia": None,
+                              "profs": set(), "micro": set(), "pared": None,
+                              "subtipo": None, "genero": None, "genero_label": None,
+                              "rango": None, "familia": None, "aphia": None,
                               "verificado": True})
     for r in bib:
         t = tx[r["taxon"]]
@@ -105,19 +106,30 @@ def main() -> int:
             t["lats"].add(r["lat_banda"])
         if r["prof_banda"]:
             t["profs"].add(r["prof_banda"])
+        if r.get("microhabitat"):
+            t["micro"].add(r["microhabitat"])
         t["pared"] = r["pared"]
         t["subtipo"] = r["subtipo"]
         t["genero"] = r["genero"]
+        t["genero_label"] = r["genero_label"]
+        t["rango"] = r["rango"]
         t["familia"] = r["familia"]
         t["aphia"] = r["aphia_id"]
         t["verificado"] = t["verificado"] and r["verificado_worms"]
+    # Ordenado por nº de ESTUDIOS, no de registros: es la métrica robusta para
+    # «el taxón más reportado». El recuento de registros depende de cuántas
+    # bandas o microhábitats desglose cada artículo, y por tanto premia a los
+    # estudios más detallados en lugar de a los taxones más frecuentes.
     taxones = sorted(
-        [{"taxon": k, "registros": v["registros"], "n_estudios": len(v["estudios"]),
-          "lats": sorted(v["lats"]), "profs": sorted(v["profs"]), "pared": v["pared"],
-          "subtipo": v["subtipo"], "genero": v["genero"], "familia": v["familia"],
-          "aphia_id": v["aphia"], "verificado_worms": v["verificado"]}
+        [{"taxon": k, "rango": v["rango"], "registros": v["registros"],
+          "n_estudios": len(v["estudios"]),
+          "lats": sorted(v["lats"]), "profs": sorted(v["profs"]),
+          "microhabitats": sorted(v["micro"]), "pared": v["pared"],
+          "subtipo": v["subtipo"], "genero": v["genero_label"],
+          "familia": v["familia"], "aphia_id": v["aphia"],
+          "verificado_worms": v["verificado"]}
          for k, v in tx.items()],
-        key=lambda d: -d["registros"])
+        key=lambda d: (-d["n_estudios"], -d["registros"], d["taxon"]))
     (DERIV / "taxones_global.json").write_text(
         json.dumps(taxones, ensure_ascii=False, indent=1), encoding="utf-8")
 
@@ -141,8 +153,9 @@ def main() -> int:
     total = sum(r["conteo"] for r in msh)
     especies = sorted(
         [{"taxon": r["taxon"], "taxon_original": r["taxon_original"],
+          "rango": r["rango"],
           "conteo": r["conteo"], "abundancia_rel": round(100 * r["conteo"] / total, 3),
-          "pared": r["pared"], "subtipo": r["subtipo"], "genero": r["genero"],
+          "pared": r["pared"], "subtipo": r["subtipo"], "genero": r["genero_label"],
           "familia": r["familia"], "aphia_id": r["aphia_id"]}
          for r in msh], key=lambda d: -d["conteo"])
     cnt = [r["conteo"] for r in msh]
@@ -184,14 +197,15 @@ def main() -> int:
     peso = defaultdict(float)
     for r in msh:
         peso[r["genero"]] += r["conteo"]
+    cap = str.capitalize
     (DERIV / "solape.json").write_text(json.dumps({
         "especies": {
-            "compartidas": sorted(gl_bin & ms_bin),
+            "compartidas": sorted(cap(b) for b in gl_bin & ms_bin),
             "n_msh": len(ms_bin), "n_global": len(gl_bin), "n_compartidas": len(gl_bin & ms_bin),
         },
         "generos": {
-            "compartidos": sorted(gl_gen & ms_gen),
-            "exclusivos_msh": sorted(ms_gen - gl_gen),
+            "compartidos": sorted(cap(g) for g in gl_gen & ms_gen),
+            "exclusivos_msh": sorted(cap(g) for g in ms_gen - gl_gen),
             "n_msh": len(ms_gen), "n_global": len(gl_gen),
             "n_compartidos": len(gl_gen & ms_gen),
             "pct_abundancia_compartida": round(

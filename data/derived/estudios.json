@@ -41,26 +41,6 @@
   "fuente": "título"
  },
  {
-  "id": "E03",
-  "titulo": "MELISSA K. LOBEGEIER1,3 AND BARUN K. SEN GUPTA (2008) Foraminifera of hydrocarbon seeps, Gulf of Mexico",
-  "autores": [
-   "Lobegeier, M.K.",
-   "Sen Gupta, B.K."
-  ],
-  "anio": 2008,
-  "revista": "The Journal of Foraminiferal Research",
-  "doi": "10.2113/gsjfr.38.2.93",
-  "referencia_verificada": true,
-  "n_registros": 19,
-  "localidad": "Talud de Luisiana (Green Canyon), Golfo de México",
-  "region": "Atlántico NW",
-  "lat": 27.78,
-  "lon": -91.5,
-  "prof_m": 550,
-  "confianza": "alta",
-  "fuente": "título"
- },
- {
   "id": "E04",
   "titulo": "The influence of microhabitats on the carbon isotopic composition of deep-sea benthic foraminifera",
   "autores": [
@@ -81,6 +61,26 @@
   "prof_m": null,
   "confianza": "nula",
   "fuente": "resumen CrossRef: no es un estudio de filtración, sino de microhábitats"
+ },
+ {
+  "id": "E03",
+  "titulo": "MELISSA K. LOBEGEIER1,3 AND BARUN K. SEN GUPTA (2008) Foraminifera of hydrocarbon seeps, Gulf of Mexico",
+  "autores": [
+   "Lobegeier, M.K.",
+   "Sen Gupta, B.K."
+  ],
+  "anio": 2008,
+  "revista": "The Journal of Foraminiferal Research",
+  "doi": "10.2113/gsjfr.38.2.93",
+  "referencia_verificada": true,
+  "n_registros": 18,
+  "localidad": "Talud de Luisiana (Green Canyon), Golfo de México",
+  "region": "Atlántico NW",
+  "lat": 27.78,
+  "lon": -91.5,
+  "prof_m": 550,
+  "confianza": "alta",
+  "fuente": "título"
  },
  {
   "id": "E05",
@@ -151,53 +151,6 @@
   "fuente": "título"
  },
  {
-  "id": "E08",
-  "titulo": "Faunal and stable isotopic analyses of benthic foraminifera from the Southeast Seep on Kimki Ridge offshore southern California, USA",
-  "autores": [
-   "McGann, M.",
-   "Conrad, J.E."
-  ],
-  "anio": 2018,
-  "revista": "Deep Sea Research Part II: Topical Studies in Oceanography",
-  "doi": "10.1016/j.dsr2.2018.01.011",
-  "referencia_verificada": true,
-  "n_registros": 12,
-  "localidad": "Kimki Ridge, borderland del sur de California",
-  "region": "Pacífico NE",
-  "lat": 32.9,
-  "lon": -118.9,
-  "prof_m": 500,
-  "confianza": "alta",
-  "fuente": "título"
- },
- {
-  "id": "E09",
-  "titulo": "Relationships between the distribution and stable isotopic composition of living benthic foraminifera and cold methane seep biogeochemistry in Monterey Bay, California",
-  "autores": [
-   "Rathburn, A.E.",
-   "Pérez, M.E.",
-   "Martin, J.B.",
-   "Day, S.A.",
-   "Mahn, C.",
-   "Gieskes, J.",
-   "Ziebis, W.",
-   "Williams, D.",
-   "Bahls, A."
-  ],
-  "anio": 2003,
-  "revista": "Geochemistry, Geophysics, Geosystems",
-  "doi": "10.1029/2003gc000595",
-  "referencia_verificada": true,
-  "n_registros": 10,
-  "localidad": "Bahía de Monterey, California",
-  "region": "Pacífico NE",
-  "lat": 36.77,
-  "lon": -122.08,
-  "prof_m": 950,
-  "confianza": "alta",
-  "fuente": "título"
- },
- {
   "id": "E10",
   "titulo": "Post depositional alteration of foraminiferal shells in cold seep settings: New insights from flow-through time-resolved analyses of biogenic and inorganic seep carbonates",
   "autores": [
@@ -218,26 +171,6 @@
   "prof_m": 800,
   "confianza": "media",
   "fuente": "grupo de investigación y continuidad con Torres et al. 2003"
- },
- {
-  "id": "E11",
-  "titulo": "Benthic Foraminifera of the Blake Ridge hydrate mound, Western North Atlantic Ocean",
-  "autores": [
-   "Panieri, G.",
-   "Sen Gupta, B.K."
-  ],
-  "anio": 2008,
-  "revista": "Marine Micropaleontology",
-  "doi": "10.1016/j.marmicro.2007.08.002",
-  "referencia_verificada": true,
-  "n_registros": 9,
-  "localidad": "Montículo de hidratos de Blake Ridge",
-  "region": "Atlántico NW",
-  "lat": 32.49,
-  "lon": -76.19,
-  "prof_m": 2155,
-  "confianza": "alta",
-  "fuente": "título"
  },
  {
   "id": "E12",
@@ -296,6 +229,26 @@
   "lat": 32.0,
   "lon": 34.35,
   "prof_m": 1000,
+  "confianza": "alta",
+  "fuente": "título"
+ },
+ {
+  "id": "E08",
+  "titulo": "Faunal and stable isotopic analyses of benthic foraminifera from the Southeast Seep on Kimki Ridge offshore southern California, USA",
+  "autores": [
+   "McGann, M.",
+   "Conrad, J.E."
+  ],
+  "anio": 2018,
+  "revista": "Deep Sea Research Part II: Topical Studies in Oceanography",
+  "doi": "10.1016/j.dsr2.2018.01.011",
+  "referencia_verificada": true,
+  "n_registros": 8,
+  "localidad": "Kimki Ridge, borderland del sur de California",
+  "region": "Pacífico NE",
+  "lat": 32.9,
+  "lon": -118.9,
+  "prof_m": 500,
   "confianza": "alta",
   "fuente": "título"
  },
@@ -359,6 +312,53 @@
   "lat": 27.7,
   "lon": -91.5,
   "prof_m": 650,
+  "confianza": "alta",
+  "fuente": "título"
+ },
+ {
+  "id": "E09",
+  "titulo": "Relationships between the distribution and stable isotopic composition of living benthic foraminifera and cold methane seep biogeochemistry in Monterey Bay, California",
+  "autores": [
+   "Rathburn, A.E.",
+   "Pérez, M.E.",
+   "Martin, J.B.",
+   "Day, S.A.",
+   "Mahn, C.",
+   "Gieskes, J.",
+   "Ziebis, W.",
+   "Williams, D.",
+   "Bahls, A."
+  ],
+  "anio": 2003,
+  "revista": "Geochemistry, Geophysics, Geosystems",
+  "doi": "10.1029/2003gc000595",
+  "referencia_verificada": true,
+  "n_registros": 6,
+  "localidad": "Bahía de Monterey, California",
+  "region": "Pacífico NE",
+  "lat": 36.77,
+  "lon": -122.08,
+  "prof_m": 950,
+  "confianza": "alta",
+  "fuente": "título"
+ },
+ {
+  "id": "E11",
+  "titulo": "Benthic Foraminifera of the Blake Ridge hydrate mound, Western North Atlantic Ocean",
+  "autores": [
+   "Panieri, G.",
+   "Sen Gupta, B.K."
+  ],
+  "anio": 2008,
+  "revista": "Marine Micropaleontology",
+  "doi": "10.1016/j.marmicro.2007.08.002",
+  "referencia_verificada": true,
+  "n_registros": 6,
+  "localidad": "Montículo de hidratos de Blake Ridge",
+  "region": "Atlántico NW",
+  "lat": 32.49,
+  "lon": -76.19,
+  "prof_m": 2155,
   "confianza": "alta",
   "fuente": "título"
  },

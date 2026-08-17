@@ -1,0 +1,340 @@
+"""
+99_auditoria.py — Auditoría independiente del pipeline.
+
+No confía en las salidas intermedias: vuelve a leer los Excel originales y
+verifica, etapa por etapa, que nada se perdió, se duplicó ni se alteró sin
+quedar registrado en el log de correcciones.
+
+Cada comprobación imprime OK o FALLA. Si algo falla, el script termina con
+código 1. Ejecutar después de cualquier cambio en el pipeline.
+"""
+
+from __future__ import annotations
+
+import json
+import math
+import os
+import sys
+from collections import Counter, defaultdict
+from pathlib import Path
+
+import openpyxl
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+import corrections as C  # noqa: E402
+import taxonomy as T  # noqa: E402
+
+ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = Path(os.environ.get("THESIS_DATA_DIR", ROOT / "Data_nosubiralrepo"))
+PRIV = ROOT / "data" / "private"
+DERIV = ROOT / "data" / "derived"
+
+FALLAS: list[str] = []
+N_OK = 0
+
+
+def check(nombre: str, cond: bool, detalle: str = "") -> None:
+    global N_OK
+    if cond:
+        N_OK += 1
+        print(f"  OK    {nombre}" + (f"  ({detalle})" if detalle else ""))
+    else:
+        FALLAS.append(nombre)
+        print(f"  FALLA {nombre}  -> {detalle}")
+
+
+def load(p: Path):
+    return json.loads(p.read_text(encoding="utf-8"))
+
+
+def main() -> int:
+    print("=" * 74)
+    print("AUDITORÍA DEL PIPELINE")
+    print("=" * 74)
+
+    # ---------------------------------------------------------------------
+    print("\n[1] LECTURA INDEPENDIENTE DE LOS EXCEL ORIGINALES")
+    wb = openpyxl.load_workbook(
+        DATA_DIR / "BD FORAMS AMBTE FILTRACION-filtros (1).xlsx", data_only=True)
+
+    # conteo crudo de la hoja maestra, sin ninguna lógica del pipeline
+    ws = wb["Biblio filtrada"]
+    filas_con_especie = 0
+    lat_vals, prof_vals, pared_vals = Counter(), Counter(), Counter()
+    for row in ws.iter_rows(min_row=2, values_only=True):
+        if row[1] and str(row[1]).strip():
+            filas_con_especie += 1
+            lat_vals[str(row[4]).strip() if row[4] else None] += 1
+            prof_vals[str(row[5]).strip() if row[5] else None] += 1
+            pared_vals[str(row[2]).strip() if row[2] else None] += 1
+    check("Hoja maestra tiene 293 filas con especie", filas_con_especie == 293,
+          f"contadas {filas_con_especie}")
+    check("Ninguna fila de la maestra sin latitud", None not in lat_vals,
+          f"nulos={lat_vals.get(None, 0)}")
+    check("Ninguna fila de la maestra sin profundidad", None not in prof_vals,
+          f"nulos={prof_vals.get(None, 0)}")
+    check("Tipo de pared original: 274 calcáreo / 19 aglutinado",
+          pared_vals.get("Calcareo") == 274 and pared_vals.get("Aglutinado") == 19,
+          f"{dict(pared_vals)}")
+
+    # las 7 hojas de filtro deben ser subconjuntos exactos de la maestra
+    total_lat = total_prof = 0
+    for name in wb.sheetnames:
+        if not name.startswith(("Lat ", "Prof ")):
+            continue
+        n = sum(1 for r in wb[name].iter_rows(min_row=2, values_only=True)
+                if r[1] and str(r[1]).strip())
+        if name.startswith("Lat "):
+            total_lat += n
+        else:
+            total_prof += n
+    check("Hojas de filtro por latitud suman 293", total_lat == 293, f"suman {total_lat}")
+    check("Hojas de filtro por profundidad suman 293", total_prof == 293, f"suman {total_prof}")
+
+    wb2 = openpyxl.load_workbook(
+        DATA_DIR / "Colección -Clasificacion - Conteo MSH-BC-21 (1).xlsx", data_only=True)
+    ws = wb2["Clasificacion"]
+    msh_raw = []
+    for row in ws.iter_rows(min_row=2, max_row=53, values_only=True):
+        if row[2] and row[4] is not None:
+            msh_raw.append((str(row[2]).strip(), str(row[0]).strip(), float(row[4])))
+    check("MSH-BC-21 tiene 52 especies", len(msh_raw) == 52, f"contadas {len(msh_raw)}")
+    tot_raw = sum(x[2] for x in msh_raw)
+    check("Total ponderado MSH = 1214,125", abs(tot_raw - 1214.125) < 1e-6, f"{tot_raw}")
+    check("MSH original: 45 calcáreas / 7 aglutinadas (coincide con la tesis, p.31)",
+          Counter(x[1] for x in msh_raw).get("Calcareo") == 45,
+          f"{dict(Counter(x[1] for x in msh_raw))}")
+
+    # ---------------------------------------------------------------------
+    print("\n[2] CONSERVACIÓN DE REGISTROS A TRAVÉS DEL PIPELINE")
+    raw = load(PRIV / "bibliografia_raw.json")
+    clean = load(PRIV / "bibliografia_clean.json")
+    check("Extracción conserva las 293 filas", len(raw["maestra"]) == 293,
+          f"{len(raw['maestra'])}")
+
+    excluidos = C.EXCLUIR_PLANCTONICOS | C.EXCLUIR_PLACEHOLDER
+    n_excl = sum(1 for r in raw["maestra"]
+                 if (r.get("especie_raw") or "").strip() in excluidos)
+    n_dup = sum(1 for c in load(DERIV / "correcciones.json")["correcciones"]
+                if c["tipo"] == "duplicado")
+    check("293 - excluidos - duplicados = registros limpios",
+          len(raw["maestra"]) - n_excl - n_dup == len(clean),
+          f"293 - {n_excl} - {n_dup} = {len(raw['maestra']) - n_excl - n_dup}, "
+          f"limpios={len(clean)}")
+
+    # ninguna fila cruda desaparece sin estar excluida o deduplicada
+    crudos = Counter((r["titulo"], r["especie_raw"]) for r in raw["maestra"]
+                     if (r.get("especie_raw") or "").strip() not in excluidos)
+    limpios = Counter((r["estudio"], r["taxon_original"]) for r in clean)
+    perdidos = [k for k in crudos if k not in limpios]
+    check("Ningún par (estudio, taxón) desaparece por completo", not perdidos,
+          f"perdidos={perdidos[:3]}")
+    check("La reducción de filas se explica sólo por duplicados",
+          sum(crudos.values()) - sum(limpios.values()) == n_dup,
+          f"diferencia={sum(crudos.values()) - sum(limpios.values())}, duplicados={n_dup}")
+
+    # tras deduplicar no debe quedar ninguna fila idéntica
+    resid = [k for k, v in Counter(
+        tuple(r[c] for c in C.CLAVE_DUPLICADO) for r in clean).items() if v > 1]
+    check("No quedan duplicados exactos", not resid, f"{len(resid)} residuales")
+
+    # las variantes legítimas (mismo taxón, distinta banda) deben sobrevivir
+    variantes = sum(
+        len({(r["lat_banda"], r["prof_banda"]) for r in clean
+             if r["estudio"] == e and r["taxon"] == t}) - 1
+        for e, t in {(r["estudio"], r["taxon"]) for r in clean})
+    check("Se conservan las variantes por banda (mismo taxón, distinto estrato)",
+          variantes == 14, f"conservadas {variantes}, esperadas 14")
+
+    # ---------------------------------------------------------------------
+    print("\n[3] TODA DIFERENCIA ESTÁ DOCUMENTADA")
+    log = load(DERIV / "correcciones.json")["correcciones"]
+    documentados = {c["desde"] for c in log}
+    cambios = {r["taxon_original"] for r in clean if r["taxon"] != r["taxon_original"]}
+    check("Todo cambio de nombre está en el log", cambios <= documentados,
+          f"sin documentar: {sorted(cambios - documentados)}")
+
+    pared_cambiada = set()
+    idx_raw = {(r["titulo"], r["especie_raw"]): r for r in raw["maestra"]}
+    for r in clean:
+        orig = idx_raw.get((r["estudio"], r["taxon_original"]))
+        if orig and T.canon_wall(orig["pared_raw"]) != r["pared"]:
+            pared_cambiada.add(r["taxon_original"])
+    check("Todo cambio de pared está en el log", pared_cambiada <= documentados,
+          f"sin documentar: {sorted(pared_cambiada - documentados)}")
+    check("Los excluidos están declarados en el log",
+          all(e in documentados for e in excluidos),
+          f"faltan: {sorted(e for e in excluidos if e not in documentados)}")
+
+    # ---------------------------------------------------------------------
+    print("\n[4] ARITMÉTICA RECALCULADA DESDE CERO")
+    msh = load(DERIV / "msh_bc21.json")
+    cnt = [e["conteo"] for e in msh["especies"]]
+    tot = sum(cnt)
+    H = -sum((c / tot) * math.log(c / tot) for c in cnt if c > 0)
+    check("Total MSH coincide con el Excel", abs(tot - tot_raw) < 1e-6, f"{tot}")
+    check("Shannon H' recalculado", abs(H - msh["indices"]["shannon_H"]) < 1e-4,
+          f"auditoría={H:.4f} publicado={msh['indices']['shannon_H']}")
+    check("Shannon coincide con el valor de la hoja original (3,4327)",
+          abs(H - 3.432749200140165) < 1e-3, f"{H:.4f}")
+    J = H / math.log(len(cnt))
+    check("Equidad J' recalculada", abs(J - msh["indices"]["equidad_J"]) < 1e-4, f"{J:.4f}")
+    D = sum((c / tot) ** 2 for c in cnt)
+    check("Simpson D recalculado", abs(D - msh["indices"]["simpson_D"]) < 1e-4, f"{D:.4f}")
+    check("Abundancias relativas suman 100%",
+          abs(sum(e["abundancia_rel"] for e in msh["especies"]) - 100) < 0.05,
+          f"{sum(e['abundancia_rel'] for e in msh['especies']):.3f}%")
+    check("Porcentajes de pared suman 100%",
+          abs(sum(msh["pared"].values()) - 100) < 0.05, f"{sum(msh['pared'].values())}")
+    check("Subtipos suman 100%",
+          abs(sum(msh["subtipo"].values()) - 100) < 0.05, f"{sum(msh['subtipo'].values())}")
+    check("Calcáreo = hialino + porcelanáceo + monocristalino",
+          abs(msh["pared"]["Calcareo"] - (msh["subtipo"]["Hialino"]
+              + msh["subtipo"]["Porcelanaceo"] + msh["subtipo"]["Monocristalino"])) < 0.05,
+          f"{msh['pared']['Calcareo']}")
+
+    # efecto declarado de la corrección de Ammodiscus
+    amod = next((e for e in msh["especies"]
+                 if e["genero"].lower() == "ammodiscus"), None)
+    check("Ammodiscus quedó como aglutinado", amod and amod["pared"] == "Aglutinado",
+          f"{amod['pared'] if amod else 'no encontrado'}")
+    fba_sin = 100 * sum(e["conteo"] for e in msh["especies"]
+                        if e["pared"] == "Aglutinado"
+                        and e["genero"].lower() != "ammodiscus") / tot
+    check("Sin la corrección el FBA sería 11,2% (valor original)",
+          abs(fba_sin - 11.2) < 0.1, f"{fba_sin:.2f}%")
+
+    # abundancias: ind/g = extraídos / peso picado
+    ab = msh["abundancias"]
+    errs = []
+    for m, v in ab.items():
+        for frac in ("125", "250", "500", "TOTAL"):
+            ext = v["Forams B extraidos"][frac]
+            peso = v["Peso picado (g)"][frac]
+            pub = v["Abundancia F.B"][frac]
+            if ext and peso and pub and abs(ext / peso - pub) > 1.0:
+                errs.append(f"{m}/{frac}: {ext}/{peso}={ext/peso:.1f} vs {pub}")
+    check("Abundancias = extraídos / peso picado (ind/g)", not errs, "; ".join(errs))
+
+    # ---------------------------------------------------------------------
+    print("\n[5] COHERENCIA ENTRE LOS DATASETS PÚBLICOS")
+    mat = load(DERIV / "matriz_lat_prof.json")
+    tax = load(DERIV / "taxones_global.json")
+    est = load(DERIV / "estudios.json")
+    par = load(DERIV / "pared_por_banda.json")
+    sol = load(DERIV / "solape.json")
+
+    check("Matriz suma los registros limpios",
+          sum(c["registros"] for c in mat["celdas"]) == len(clean),
+          f"{sum(c['registros'] for c in mat['celdas'])} vs {len(clean)}")
+    check("taxones_global suma los registros limpios",
+          sum(t["registros"] for t in tax) == len(clean),
+          f"{sum(t['registros'] for t in tax)}")
+    check("estudios.json suma los registros limpios",
+          sum(e["n_registros"] for e in est) == len(clean),
+          f"{sum(e['n_registros'] for e in est)}")
+    check("Nº de taxones únicos coherente",
+          len(tax) == len({r["taxon"] for r in clean}), f"{len(tax)}")
+    check("Nº de estudios coherente",
+          len(est) == len({r["estudio"] for r in clean}), f"{len(est)}")
+    for eje, valores in (("latitud", 4), ("profundidad", 3)):
+        sub = [p for p in par if p["eje"] == eje]
+        check(f"pared_por_banda cubre las bandas de {eje}", len(sub) == valores,
+              f"{len(sub)}")
+        check(f"n de {eje} suma los registros limpios",
+              sum(p["n"] for p in sub) == len(clean), f"{sum(p['n'] for p in sub)}")
+    malos = [p for p in par if p["n"] and abs((p["calcareo"] or 0) + (p["aglutinado"] or 0) - 100) > 0.15]
+    check("Porcentajes de pared suman 100 en cada banda", not malos,
+          f"{[(p['banda'], p['calcareo'], p['aglutinado']) for p in malos]}")
+
+    # solape recalculado independientemente
+    gl_bin = {T.binomen(r["taxon"]) for r in clean}
+    ms_bin = {T.binomen(e["taxon"]) for e in msh["especies"]}
+    check("Solape de especies recalculado",
+          len(gl_bin & ms_bin) == sol["especies"]["n_compartidas"],
+          f"auditoría={len(gl_bin & ms_bin)} publicado={sol['especies']['n_compartidas']}")
+    gl_gen = {r["genero"].lower() for r in clean}
+    ms_gen = {e["genero"].lower() for e in msh["especies"]}
+    check("Solape de géneros recalculado",
+          len(gl_gen & ms_gen) == sol["generos"]["n_compartidos"],
+          f"auditoría={len(gl_gen & ms_gen)} publicado={sol['generos']['n_compartidos']}")
+
+    # ---------------------------------------------------------------------
+    print("\n[6] INTEGRIDAD DE CAMPOS QUE ALIMENTAN GRÁFICOS")
+    sin_pared = [t["taxon"] for t in tax if t["pared"] not in ("Calcareo", "Aglutinado")]
+    check("Todo taxón global tiene pared válida", not sin_pared, f"{sin_pared[:5]}")
+    sin_pared_msh = [e["taxon"] for e in msh["especies"]
+                     if e["pared"] not in ("Calcareo", "Aglutinado")]
+    check("Toda especie de MSH tiene pared válida", not sin_pared_msh, f"{sin_pared_msh[:5]}")
+    sub_malo = [e["taxon"] for e in msh["especies"]
+                if e["pared"] == "Calcareo" and e["subtipo"] not in
+                ("Hialino", "Porcelanaceo", "Aragonito", "Monocristalino")]
+    check("Todo calcáreo de MSH tiene subtipo válido", not sub_malo, f"{sub_malo[:5]}")
+    check("Ningún aglutinado tiene subtipo",
+          not [t for t in tax if t["pared"] == "Aglutinado" and t["subtipo"]], "")
+
+    geo = [e for e in est if e["lat"] is not None]
+    check("Estudios georreferenciados: 33 de 38", len(geo) == 33, f"{len(geo)}")
+    fuera = [e["titulo"][:40] for e in geo
+             if not (-90 <= e["lat"] <= 90 and -180 <= e["lon"] <= 180)]
+    check("Coordenadas dentro de rango válido", not fuera, f"{fuera}")
+    sin_conf = [e["titulo"][:40] for e in est if not e.get("confianza")]
+    check("Toda entrada declara nivel de confianza", not sin_conf, f"{sin_conf}")
+    check("Los no georreferenciados están marcados 'nula'",
+          all(e["confianza"] == "nula" for e in est if e["lat"] is None), "")
+    falso = [e for e in est if e["doi"] == "10.1021/acsestwater.3c00740.s001"]
+    check("El DOI falso (parafinas cloradas) está anulado", not falso, "")
+    check("Referencias verificadas: 37 de 38",
+          sum(1 for e in est if e["referencia_verificada"]) == 37,
+          f"{sum(1 for e in est if e['referencia_verificada'])}")
+
+    # etiquetas listas para mostrar
+    gen_min = [t["taxon"] for t in tax if t["genero"] and t["genero"][0].islower()]
+    check("Géneros capitalizados en taxones_global", not gen_min, f"{gen_min[:5]}")
+    gen_min = [e["taxon"] for e in msh["especies"]
+               if e["genero"] and e["genero"][0].islower()]
+    check("Géneros capitalizados en msh_bc21", not gen_min, f"{gen_min[:5]}")
+    check("Géneros capitalizados en solape",
+          all(g[0].isupper() for g in sol["generos"]["compartidos"]), "")
+    sin_rango = [t["taxon"] for t in tax if t.get("rango") not in ("especie", "genero")]
+    check("Todo taxón declara su rango", not sin_rango, f"{sin_rango[:5]}")
+    n_gen = sum(1 for t in tax if t["rango"] == "genero")
+    check("Las entradas de nomenclatura abierta están marcadas", n_gen == 20,
+          f"{n_gen} de {len(tax)} son entradas de género")
+    check("El ranking global va por nº de estudios",
+          all(tax[i]["n_estudios"] >= tax[i + 1]["n_estudios"] for i in range(len(tax) - 1)),
+          "")
+
+    micro = {r for t in tax for r in t["microhabitats"]}
+    check("Microhábitat usa vocabulario controlado",
+          micro <= {v[0] for v in C.DISCRIMINACION_VOCAB.values()}, f"{micro}")
+
+    car = load(DERIV / "caribe_referencia.json")
+    check("Referencia Caribe: 5 localidades + MSH-BC-21", len(car) == 6, f"{len(car)}")
+    vacias = [c["nombre"] for c in car if not c["taxones"]]
+    check("Toda localidad caribeña tiene taxones", not vacias, f"{vacias}")
+
+    # ---------------------------------------------------------------------
+    print("\n[7] CONFIDENCIALIDAD")
+    fuga = []
+    for f in DERIV.glob("*.json"):
+        txt = f.read_text(encoding="utf-8")
+        for marca in ("Data_nosubiralrepo", ".xlsx", ".pdf", "TDG-ERICKFMR"):
+            if marca in txt:
+                fuga.append(f"{f.name} contiene '{marca}'")
+    check("Ningún dataset público filtra rutas o nombres de archivo", not fuga, f"{fuga}")
+
+    # ---------------------------------------------------------------------
+    print("\n" + "=" * 74)
+    print(f"RESULTADO: {N_OK} comprobaciones OK, {len(FALLAS)} fallas")
+    if FALLAS:
+        print("\nFALLAS:")
+        for f in FALLAS:
+            print(f"  - {f}")
+    print("=" * 74)
+    return 1 if FALLAS else 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

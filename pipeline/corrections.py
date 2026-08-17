@@ -110,6 +110,32 @@ NO_VERIFICADOS = {
     "Glomospira irregularis",
 }
 
+# --- Duplicación de registros -------------------------------------------
+# La hoja maestra repite 12 filas idénticas en estudio, taxón, banda
+# latitudinal, banda de profundidad y microhábitat. Son error de captura y se
+# eliminan: contar dos veces la misma observación infla el ranking global.
+#
+# NO se eliminan las repeticiones de un mismo taxón dentro de un estudio
+# cuando cambia la banda o el microhábitat (14 registros): ahí el artículo
+# reporta la especie en dos estratos distintos y son observaciones separadas.
+DEDUPLICAR = True
+CLAVE_DUPLICADO = ("estudio", "taxon", "lat_banda", "prof_banda", "discriminacion")
+
+# --- Vocabulario controlado de microhábitat ------------------------------
+# La columna 'Discriminacion Adicional' del libro borrador usa etiquetas
+# libres y con erratas para conceptos que se repiten. Se normalizan sin
+# perder el matiz original.
+DISCRIMINACION_VOCAB = {
+    "Vivos": ("biocenosis", "Fauna viva (teñida con rosa de Bengala)"),
+    "Muertos": ("tanatocenosis", "Fauna muerta"),
+    "Infauna": ("infaunal", "Microhábitat infaunal"),
+    "Epifauna": ("epifaunal", "Microhábitat epifaunal"),
+    "Lecho de al mejas": ("banco_bivalvos", "Banco de bivalvos quimiosimbiontes"),
+    "Muestras de bancos de mejillones": ("banco_bivalvos", "Banco de bivalvos quimiosimbiontes"),
+    "Estera bacteriana": ("tapete_bacteriano", "Tapete bacteriano"),
+    "Muestras de tapetes bacterianos": ("tapete_bacteriano", "Tapete bacteriano"),
+}
+
 # --- Inconsistencias aritméticas detectadas (se reportan, no se "arreglan") -
 ARITMETICA = [
     {

@@ -94,8 +94,29 @@ def normalize(name: str) -> str:
 
 
 def genus_of(name: str) -> str:
+    """Género en minúscula, para comparar y agrupar."""
     n = normalize(name)
     return n.split()[0] if n else ""
+
+
+def genus_label(name: str) -> str:
+    """Género con inicial mayúscula, para mostrar en la interfaz.
+
+    Los nombres de género se escriben capitalizados por convención
+    taxonómica; usar la forma normalizada en las etiquetas produciría
+    'uvigerina' en los gráficos.
+    """
+    g = genus_of(name)
+    return g.capitalize() if g else ""
+
+
+def rango(name: str) -> str:
+    """'especie' si el nombre es binomial, 'genero' si es nomenclatura abierta.
+
+    Importa para el ranking: una entrada de género agrupa un conjunto de
+    especies y no es comparable con una especie concreta.
+    """
+    return "especie" if len(normalize(name).split()) >= 2 else "genero"
 
 
 def binomen(name: str) -> str:

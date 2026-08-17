@@ -14,9 +14,9 @@
  {
   "eje": "latitud",
   "banda": "15-30",
-  "n": 53,
-  "calcareo": 75.5,
-  "aglutinado": 24.5,
+  "n": 52,
+  "calcareo": 76.9,
+  "aglutinado": 23.1,
   "subtipos": {
    "Hialino": 36,
    "Porcelanaceo": 3,
@@ -26,11 +26,11 @@
  {
   "eje": "latitud",
   "banda": "30-60",
-  "n": 208,
-  "calcareo": 96.2,
-  "aglutinado": 3.8,
+  "n": 197,
+  "calcareo": 95.9,
+  "aglutinado": 4.1,
   "subtipos": {
-   "Hialino": 185,
+   "Hialino": 174,
    "Aragonito": 2,
    "Porcelanaceo": 13
   }
@@ -69,11 +69,11 @@
  {
   "eje": "profundidad",
   "banda": "> 500 m",
-  "n": 235,
-  "calcareo": 93.6,
-  "aglutinado": 6.4,
+  "n": 223,
+  "calcareo": 93.7,
+  "aglutinado": 6.3,
   "subtipos": {
-   "Hialino": 201,
+   "Hialino": 190,
    "Aragonito": 4,
    "Porcelanaceo": 15
   }
