@@ -1,9 +1,15 @@
 # CHECKPOINT — Dashboard Tesis Foraminíferos
 
-**Última actualización:** 2026-08-16 · Fase 0 (datos) COMPLETA · Fase 1 (UI) NO INICIADA
+**Última actualización:** 2026-08-17 · Fase 0 (datos) COMPLETA · Fase 1 (UI) NO INICIADA
 
 Documento de continuidad: si la sesión se corta, esto es lo que hace falta
 para retomar sin releer nada.
+
+> **Todas las cifras del §5 fueron verificadas contra `data/derived/` el
+> 2026-08-17.** En esa revisión se corrigieron tres errores de este mismo
+> documento: la lectura de la matriz («3 de 12» → 6 de 12), la tasa de error
+> (3,8% → 4,1%) y una dependencia inexistente (pandas). Si vuelves a citar
+> una cifra de aquí, es fiable; si añades una nueva, verifícala igual.
 
 ---
 
@@ -48,7 +54,8 @@ python pipeline/10_clean.py      # aplica correcciones -> *_clean.json
 python pipeline/20_build.py      # -> data/derived/*.json (público)
 ```
 
-Dependencias: `pip install openpyxl pandas` (pypdf sólo para leer la tesis).
+Dependencias: `pip install openpyxl` únicamente (pypdf sólo si hace falta
+releer la tesis; ningún script del pipeline usa pandas).
 `05_worms.py` y `06_estudios.py` requieren red. El caché de WoRMS vive en
 `data/private/worms_cache.json`; borrarlo fuerza la reconsulta.
 
@@ -85,7 +92,10 @@ base de datos, ni API, ni Supabase.
 
 - Base bibliográfica: **287 registros** (tras excluir 5 planctónicos + 1
   placeholder), **160 taxones**, **38 estudios**.
-- Matriz latitud × profundidad: **sólo 3 de 12 celdas con datos**.
+- Matriz latitud × profundidad: **6 de 12 celdas con datos**. El sesgo real
+  está en la profundidad: **el 82% de los registros (235 de 287) viene de
+  >500 m**, y **3 de las 4 bandas latitudinales sólo tienen datos a >500 m**
+  (todo lo somero procede de una única banda, 30-60°).
   La celda 0-15° / <150 m —donde cae el Caribe colombiano— está en **CERO**.
 - MSH-BC-21: S=52, **H'=3,4325**, J'=0,8687, Simpson D=0,0454,
   top-5 = 38,5% de la abundancia.
@@ -109,9 +119,11 @@ base de datos, ni API, ni Supabase.
 2. **FBC/FBA 88,8% → 87,0%**, por reclasificar `Ammodiscus` (aglutinado, no
    porcelanáceo). El texto de la tesis dice «cerca de un 80%»: es incorrecto
    en ambos sentidos. Se publica el valor calculado (decisión del autor).
-3. **Tasa de error real: 3,8%** (11 errores sobre 293 registros). Las otras
-   56 entradas del log son normalización, actualizaciones de WoRMS
-   posteriores a 2022, exclusiones y notas aritméticas.
+3. **Tasa de error real: 4,1%** — 11 entradas de corrección (6 erratas + 5
+   reclasificaciones de pared) que afectan **12 de los 293 registros**
+   originales. Las otras 56 entradas del log son normalización de
+   nomenclatura abierta, actualizaciones de WoRMS posteriores a 2022,
+   exclusiones y notas aritméticas: no son errores del autor.
 4. **`Cassidulina` es homónimo**: WoRMS devuelve un equinoideo. Filtrado por
    phylum en `05_worms.py::pick_foram`. No quitar ese filtro.
 5. **`McCorkle et al. 1990` no es un estudio de filtración** (microhábitats,
@@ -175,6 +187,12 @@ Python 3.14.6 con pandas 3.0.5 y openpyxl.
 | 4 | La firma de la pared (FBC/FBA por banda) | Bajo | `pared_por_banda` |
 | 5 | El Caribe contra sí mismo | Alto | `caribe_referencia` |
 | 6 | Dentro del testigo (2 cm × 3 fracciones) | Bajo | `msh_bc21.abundancias` |
+
+**Historia 1 — encuadre correcto:** el titular NO es «sólo 3 de 12 celdas»
+(eso era un error, son 6). El argumento sólido es doble: (a) el 82% de los
+registros procede de >500 m y 3 de las 4 bandas latitudinales carecen por
+completo de datos someros; (b) la celda 0-15° / <150 m está vacía, y es
+justo donde cae el Caribe colombiano. Usar esas dos cifras, no la primera.
 
 **Historia 2 — el nudo narrativo:** 3 de 4 criterios de seep se cumplen y uno
 los contradice (diversidad ALTA, H'=3,43, cuando la literatura predice baja).
