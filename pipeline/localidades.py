@@ -37,11 +37,17 @@ from __future__ import annotations
 # doi -> (localidad, region, lat, lon, prof_m_aprox, confianza, fuente)
 LOCALIDADES: dict[str, dict] = {
     "10.1016/s0377-8398(00)00005-0": dict(
-        localidad="Cuenca del río Eel, margen norte de California", region="Pacífico NE",
-        lat=40.80, lon=-124.60, prof_m=520, confianza="alta", fuente="título"),
+        localidad="Bancos de almejas del río Eel, norte de California",
+        region="Pacífico NE", lat=40.7833, lon=-124.5933, prof_m=512, confianza="alta",
+        fuente="PDF, Study area: «clam beds (500-525 m) on the margin off the Eel "
+               "River, northern California (40°47.0'N, 124°35.6'W)»."),
     "10.1016/j.marmicro.2006.05.008": dict(
-        localidad="Pockmark del Adriático central", region="Mediterráneo",
-        lat=44.00, lon=13.50, prof_m=80, confianza="alta", fuente="título"),
+        localidad="Tegnue di Chioggia, Adriático norte", region="Mediterráneo",
+        lat=45.20, lon=12.40, prof_m=25, confianza="alta",
+        fuente="PDF, sección Study area: «Tegnue di Chioggia, a region off "
+               "Chioggia, northern Adriatic Sea, at about 25 m water depth». "
+               "CORRIGE una asignación previa que lo situaba en el pockmark de "
+               "Bonaccia: es otro sitio y mucho más somero."),
     "10.2113/gsjfr.38.2.93": dict(
         localidad="Talud de Luisiana (Green Canyon), Golfo de México", region="Atlántico NW",
         lat=27.78, lon=-91.50, prof_m=550, confianza="alta", fuente="título"),
@@ -67,8 +73,10 @@ LOCALIDADES: dict[str, dict] = {
         localidad="Kimki Ridge, borderland del sur de California", region="Pacífico NE",
         lat=32.90, lon=-118.90, prof_m=500, confianza="alta", fuente="título"),
     "10.1029/2003gc000595": dict(
-        localidad="Bahía de Monterey, California", region="Pacífico NE",
-        lat=36.77, lon=-122.08, prof_m=950, confianza="alta", fuente="título"),
+        localidad="Extrovert Cliffs, Bahía de Monterey", region="Pacífico NE",
+        lat=36.7767, lon=-122.0850, prof_m=960, confianza="alta",
+        fuente="PDF, Study Area: «Extrovert Cliffs (36°46.6'N, 122°05.1'W), at 960 m "
+               "water depth», con bancos de Calyptogena y tapetes bacterianos."),
     "10.1016/j.epsl.2010.07.048": dict(
         localidad="Hydrate Ridge, margen de Cascadia", region="Pacífico NE",
         lat=44.57, lon=-125.15, prof_m=800, confianza="media",
@@ -83,8 +91,11 @@ LOCALIDADES: dict[str, dict] = {
         localidad="Perturbación de Palmahim, costa afuera de Israel", region="Mediterráneo",
         lat=32.00, lon=34.35, prof_m=1000, confianza="alta", fuente="título"),
     "10.3997/2214-4609.201406085": dict(
-        localidad="Pockmark del Mar Adriático", region="Mediterráneo",
-        lat=44.00, lon=13.50, prof_m=80, confianza="alta", fuente="título"),
+        localidad="Campo de pockmarks de Bonaccia, Adriático central",
+        region="Mediterráneo", lat=43.583, lon=14.367, prof_m=80, confianza="alta",
+        fuente="PDF (resumen EAGE P-43): «One field of pockmarks (Bonaccia Field) "
+               "located at 43° 35' N and 14° 22' E, ca 35 km SE offshore of the "
+               "Conero». Coordenadas del propio artículo."),
     "10.1007/bf01203719": dict(
         localidad="Escapes batiales de hidrocarburos, Golfo de México", region="Atlántico NW",
         lat=27.70, lon=-91.50, prof_m=650, confianza="alta", fuente="título"),
@@ -106,9 +117,15 @@ LOCALIDADES: dict[str, dict] = {
         localidad="Mar del Norte (escape de gas biogénico)", region="Atlántico NE",
         lat=57.00, lon=1.50, prof_m=150, confianza="alta", fuente="título"),
     "10.1007/s00367-019-00635-6": dict(
-        localidad="Ártico y Atlántico Norte (Vestnesa / Storfjordrenna)", region="Ártico",
-        lat=78.50, lon=9.00, prof_m=900, confianza="media",
-        fuente="título; el estudio abarca varios sitios árticos"),
+        localidad="Vestnesa, Storfjordrenna y margen de Lofoten", region="Ártico",
+        lat=79.00, lon=6.00, prof_m=1200, confianza="alta",
+        fuente="PDF, Study area: tres localidades. Se toma Vestnesa como "
+               "representativa; las otras dos van en 'sitios'.",
+        sitios=[
+            dict(nombre="Vestnesa Ridge, Svalbard oeste", lat=79.0, lon=6.0, prof_m=1200),
+            dict(nombre="Storfjordrenna, Svalbard sur", lat=76.0, lon=16.0, prof_m=390),
+            dict(nombre="Margen noruego al este de Lofoten", lat=68.0, lon=10.0, prof_m=750),
+        ]),
     "10.3389/fmars.2019.00765": dict(
         localidad="Pingos de hidratos de Storfjordrenna, Mar de Barents", region="Ártico",
         lat=76.10, lon=16.03, prof_m=380, confianza="alta", fuente="título y resumen"),

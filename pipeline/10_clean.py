@@ -164,6 +164,7 @@ def recuperar_del_borrador(borrador: list[dict], maestra: list[dict],
     """
     en_maestra = {(r["titulo"] or "")[:60].lower() for r in maestra}
     out = []
+    n_antes = 0
     for clave, meta in C.RECUPERAR.items():
         filas = [r for r in borrador
                  if clave.lower() in (r["titulo"] or "").lower()
@@ -207,10 +208,14 @@ def recuperar_del_borrador(borrador: list[dict], maestra: list[dict],
                 "recuperado_confianza": meta["confianza"],
                 "recuperado_reparo": meta.get("reparo"),
             })
+        añadidos = len(out) - n_antes
+        n_antes = len(out)
         log("recuperacion", "A", clave, "reincorporado", meta["motivo"],
             "Revisión de las exclusiones del filtrado original",
-            f"Añade {len(filas)} registros a la base ampliada.",
-            confianza=meta["confianza"], n=len(filas))
+            f"Añade {añadidos} registros a la base ampliada "
+            f"(de {len(filas)} filas del borrador; el resto eran planctónicos "
+            "o filas sin taxón).",
+            confianza=meta["confianza"], n=añadidos)
     return out
 
 

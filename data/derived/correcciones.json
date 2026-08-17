@@ -888,9 +888,9 @@
    "hacia": "reincorporado",
    "motivo": "Estudio de pockmarks de hidratos con actividad actual («present-day activity») y discriminación vivos/muertos, es decir fauna reciente teñida. Cumple el criterio declarado en la metodología de la tesis. Aporta 22 registros a la banda tropical 0-15°, que sin ellos se sostiene sobre un único registro.",
    "fuente": "Revisión de las exclusiones del filtrado original",
-   "impacto": "Añade 22 registros a la base ampliada.",
+   "impacto": "Añade 19 registros a la base ampliada (de 22 filas del borrador; el resto eran planctónicos o filas sin taxón).",
    "confianza": "alta",
-   "registros_afectados": 22
+   "registros_afectados": 19
   },
   {
    "tipo": "recuperacion",
@@ -899,7 +899,7 @@
    "hacia": "reincorporado",
    "motivo": "Exclusión inconsistente: la base sí incluye otros estudios de filtración de hidrocarburos del Golfo de México (Sen Gupta & Aharon 1994; Sen Gupta et al. 1997; Lobegeier & Sen Gupta 2008). La diferencia defendible es el componente antropogénico, que confunde la señal natural. Se recupera marcado con ese reparo: aporta 29 registros someros (<500 m), donde la base es más débil.",
    "fuente": "Revisión de las exclusiones del filtrado original",
-   "impacto": "Añade 33 registros a la base ampliada.",
+   "impacto": "Añade 33 registros a la base ampliada (de 33 filas del borrador; el resto eran planctónicos o filas sin taxón).",
    "confianza": "media",
    "registros_afectados": 33
   },

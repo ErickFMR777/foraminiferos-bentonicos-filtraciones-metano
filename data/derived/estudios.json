@@ -21,13 +21,13 @@
   "tipologia_fuente": "sin declarar en el título; requiere consultar el artículo",
   "recuperado": false,
   "sitios": null,
-  "localidad": "Cuenca del río Eel, margen norte de California",
+  "localidad": "Bancos de almejas del río Eel, norte de California",
   "region": "Pacífico NE",
-  "lat": 40.8,
-  "lon": -124.6,
-  "prof_m": 520,
+  "lat": 40.7833,
+  "lon": -124.5933,
+  "prof_m": 512,
   "confianza": "alta",
-  "fuente": "título"
+  "fuente": "PDF, Study area: «clam beds (500-525 m) on the margin off the Eel River, northern California (40°47.0'N, 124°35.6'W)»."
  },
  {
   "id": "E02",
@@ -86,13 +86,13 @@
   "tipologia_fuente": "mismo sitio adriático que Panieri et al. (2000), descrito allí como pockmark",
   "recuperado": false,
   "sitios": null,
-  "localidad": "Pockmark del Adriático central",
+  "localidad": "Tegnue di Chioggia, Adriático norte",
   "region": "Mediterráneo",
-  "lat": 44.0,
-  "lon": 13.5,
-  "prof_m": 80,
+  "lat": 45.2,
+  "lon": 12.4,
+  "prof_m": 25,
   "confianza": "alta",
-  "fuente": "título"
+  "fuente": "PDF, sección Study area: «Tegnue di Chioggia, a region off Chioggia, northern Adriatic Sea, at about 25 m water depth». CORRIGE una asignación previa que lo situaba en el pockmark de Bonaccia: es otro sitio y mucho más somero."
  },
  {
   "id": "E04",
@@ -439,13 +439,13 @@
   "tipologia_fuente": "el título dice «Adriatic Sea Pockmark»",
   "recuperado": false,
   "sitios": null,
-  "localidad": "Pockmark del Mar Adriático",
+  "localidad": "Campo de pockmarks de Bonaccia, Adriático central",
   "region": "Mediterráneo",
-  "lat": 44.0,
-  "lon": 13.5,
+  "lat": 43.583,
+  "lon": 14.367,
   "prof_m": 80,
   "confianza": "alta",
-  "fuente": "título"
+  "fuente": "PDF (resumen EAGE P-43): «One field of pockmarks (Bonaccia Field) located at 43° 35' N and 14° 22' E, ca 35 km SE offshore of the Conero». Coordenadas del propio artículo."
  },
  {
   "id": "E15",
@@ -532,13 +532,13 @@
   "tipologia_fuente": "sin declarar en el título; requiere consultar el artículo",
   "recuperado": false,
   "sitios": null,
-  "localidad": "Bahía de Monterey, California",
+  "localidad": "Extrovert Cliffs, Bahía de Monterey",
   "region": "Pacífico NE",
-  "lat": 36.77,
-  "lon": -122.08,
-  "prof_m": 950,
+  "lat": 36.7767,
+  "lon": -122.085,
+  "prof_m": 960,
   "confianza": "alta",
-  "fuente": "título"
+  "fuente": "PDF, Study Area: «Extrovert Cliffs (36°46.6'N, 122°05.1'W), at 960 m water depth», con bancos de Calyptogena y tapetes bacterianos."
  },
  {
   "id": "E18",
@@ -716,14 +716,33 @@
   "tipologia_confianza": "nula",
   "tipologia_fuente": "sin declarar en el título; requiere consultar el artículo",
   "recuperado": false,
-  "sitios": null,
-  "localidad": "Ártico y Atlántico Norte (Vestnesa / Storfjordrenna)",
+  "sitios": [
+   {
+    "nombre": "Vestnesa Ridge, Svalbard oeste",
+    "lat": 79.0,
+    "lon": 6.0,
+    "prof_m": 1200
+   },
+   {
+    "nombre": "Storfjordrenna, Svalbard sur",
+    "lat": 76.0,
+    "lon": 16.0,
+    "prof_m": 390
+   },
+   {
+    "nombre": "Margen noruego al este de Lofoten",
+    "lat": 68.0,
+    "lon": 10.0,
+    "prof_m": 750
+   }
+  ],
+  "localidad": "Vestnesa, Storfjordrenna y margen de Lofoten",
   "region": "Ártico",
-  "lat": 78.5,
-  "lon": 9.0,
-  "prof_m": 900,
-  "confianza": "media",
-  "fuente": "título; el estudio abarca varios sitios árticos"
+  "lat": 79.0,
+  "lon": 6.0,
+  "prof_m": 1200,
+  "confianza": "alta",
+  "fuente": "PDF, Study area: tres localidades. Se toma Vestnesa como representativa; las otras dos van en 'sitios'."
  },
  {
   "id": "E24",

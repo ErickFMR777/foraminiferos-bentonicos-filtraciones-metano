@@ -404,6 +404,17 @@ def main() -> int:
                 fuga.append(f"{f.name} contiene '{marca}'")
     check("Ningún dataset público filtra rutas o nombres de archivo", not fuga, f"{fuga}")
 
+    # el informe en PDF también se publica: mismo criterio
+    informe = ROOT / "Informe_curacion_datos.pdf"
+    if informe.exists():
+        from pypdf import PdfReader
+        txt = " ".join((pg.extract_text() or "")
+                       for pg in PdfReader(str(informe)).pages)
+        fuga_pdf = [m for m in ("Data_nosubiralrepo", ".xlsx", "TDG-ERICKFMR")
+                    if m in txt]
+        check("El informe en PDF no expone rutas ni nombres de archivo privados",
+              not fuga_pdf, f"{fuga_pdf}")
+
     # ---------------------------------------------------------------------
     print("\n" + "=" * 74)
     print(f"RESULTADO: {N_OK} comprobaciones OK, {len(FALLAS)} fallas")

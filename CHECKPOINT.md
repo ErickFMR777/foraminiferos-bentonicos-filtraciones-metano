@@ -51,8 +51,12 @@ python pipeline/00_extract.py    # Excel -> data/private/*_raw.json
 python pipeline/05_worms.py      # resolución taxonómica WoRMS (cacheado)
 python pipeline/06_estudios.py   # resolución bibliográfica CrossRef
 python pipeline/10_clean.py      # aplica correcciones -> *_clean.json
+python pipeline/07_pdfs.py       # identifica los PDF y extrae evidencia
+python pipeline/08_organizar.py  # renombra y separa «Referencias excluidas»
+python pipeline/09_verificar_pdfs.py  # nombre vs contenido + duplicados
 python pipeline/20_build.py      # -> data/derived/*.json (público)
-python pipeline/99_auditoria.py  # 69 comprobaciones; código 1 si algo falla
+python pipeline/30_informe.py    # -> Informe_curacion_datos.pdf
+python pipeline/99_auditoria.py  # 76 comprobaciones; código 1 si algo falla
 ```
 
 **Ejecutar `99_auditoria.py` después de cualquier cambio en el pipeline.**
@@ -170,13 +174,27 @@ Añadido el campo `tipo` en `localidades.py`: `frio` (35 estudios),
 Costa Rica + Hydrate Ridge) y `no_filtracion` (McCorkle 1990). Burkett 2018
 lleva además una lista `sitios` con sus 8 posiciones.
 
-### 7.2 Una referencia no localizable
+### 7.2 Estado de los PDF (2026-08-17)
+45 artículos reunidos. 39 de los 40 estudios de la base tienen su PDF.
+Renombrados a «Autor Año - Título.pdf»; tres movidos a
+`Data_nosubiralrepo/Referencias excluidas/` (McCorkle 1990, no es filtración;
+Gracia 2012, moluscos; Puerres 2022, revisión sin datos primarios).
+Cuatro pendientes de integrar: Barragán y Bernal 2024, Babineaux 2025,
+Fiorini 2015, Li 2021.
+
+**Cuidado con el emparejador**: la firma de título debe buscarse SÓLO en la
+primera página. Buscarla en tres capturó una cita de la bibliografía y
+archivó el resumen P-43 de Panieri (2000) con el nombre de Sen Gupta y
+Aharon (1994). `09_verificar_pdfs.py` existe para detectar eso; ejecutarlo
+siempre después de `08_organizar.py`.
+
+### 7.3 Una referencia no localizable
 *«Diversity and Characteristics of Benthic Foraminifera in Cold Seep Areas in
 the Active Margin of the northeastern South China Sea»* (4 registros).
 No está en CrossRef ni aparece en búsqueda web. CrossRef devolvió una
 coincidencia falsa (parafinas cloradas) que ya está anulada en `20_build.py`.
 
-### 7.3 Ampliar la base de estudios
+### 7.4 Ampliar la base de estudios
 Propuesta hecha, sin respuesta: buscar de forma **dirigida** trabajos en
 **0-15° de latitud y <150 m** (el hueco), en vez de ampliar en general.
 

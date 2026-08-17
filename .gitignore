@@ -7,6 +7,7 @@ Data_nosubiralrepo/
 *.xlsx
 *.xls
 *.pdf
+!Informe_curacion_datos.pdf
 data/raw/
 data/private/
 
