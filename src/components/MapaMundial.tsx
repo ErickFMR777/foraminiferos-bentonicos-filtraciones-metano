@@ -65,14 +65,90 @@ export default function MapaMundial() {
   const puntos = estudios.filter(
     (e) => e.lat !== null && (!filtro || e.tipo_filtracion === filtro),
   );
+
+  /**
+   * Separa en abanico los estudios que caen unos sobre otros.
+   *
+   * Doce de los treinta y nueve comparten coordenada EXACTA —tres estudios en
+   * Hydrate Ridge, tres en Vestnesa Ridge, dos en Monterey…— porque la posición
+   * es la de la localidad, no la del testigo. Dibujados sin más, los de abajo
+   * quedaban tapados y era imposible señalarlos con el cursor.
+   *
+   * Se reparten en un círculo alrededor de su posición real, que se marca con
+   * un punto tenue y una línea a cada uno: así se ve que son un grupo y de
+   * dónde vienen, en vez de fingir que están separados.
+   */
+  const colocados = useMemo(() => {
+    const base = puntos
+      .map((e) => ({ e, p: proyectar(e.lon as number, e.lat as number) }))
+      .filter((d): d is { e: Est; p: [number, number] } => d.p !== null);
+
+    const grupos: { miembros: typeof base; cx: number; cy: number }[] = [];
+    for (const d of base) {
+      const g = grupos.find(
+        (g) => Math.hypot(g.cx - d.p[0], g.cy - d.p[1]) < 11,
+      );
+      if (g) g.miembros.push(d);
+      else grupos.push({ miembros: [d], cx: d.p[0], cy: d.p[1] });
+    }
+
+    const salida = grupos.flatMap(({ miembros, cx, cy }) => {
+      if (miembros.length === 1) {
+        return [{ e: miembros[0].e, x: cx, y: cy, cx, cy, fan: false }];
+      }
+      const r = 8 + 2.2 * miembros.length;
+      return miembros.map((m, i) => {
+        // Se empieza arriba y se reparte en sentido horario: el orden depende
+        // sólo del índice, así que el dibujo es estable entre renders.
+        const a = (i / miembros.length) * 2 * Math.PI - Math.PI / 2;
+        return {
+          e: m.e,
+          x: cx + r * Math.cos(a),
+          y: cy + r * Math.sin(a),
+          cx,
+          cy,
+          fan: true,
+        };
+      });
+    });
+
+    // Dos abanicos vecinos pueden acercar sus miembros entre sí —pasó con
+    // Monterey y Hydrate Ridge, que quedaron a 5,4 px—. Unas pocas pasadas de
+    // separación garantizan que ningún par baje del diámetro de un punto.
+    const MIN = 10;
+    for (let paso = 0; paso < 24; paso++) {
+      let movido = false;
+      for (let i = 0; i < salida.length; i++) {
+        for (let j = i + 1; j < salida.length; j++) {
+          const dx = salida[j].x - salida[i].x;
+          const dy = salida[j].y - salida[i].y;
+          const d = Math.hypot(dx, dy) || 0.01;
+          if (d >= MIN) continue;
+          const empuje = (MIN - d) / 2;
+          const ux = (dx / d) * empuje;
+          const uy = (dy / d) * empuje;
+          salida[i].x -= ux;
+          salida[i].y -= uy;
+          salida[j].x += ux;
+          salida[j].y += uy;
+          salida[i].fan = salida[j].fan = true;
+          movido = true;
+        }
+      }
+      if (!movido) break;
+    }
+    return salida;
+  }, [puntos, proyectar]);
   const sitio = matriz.sitio_tesis;
   const pSitio = proyectar(sitio.lon, sitio.lat);
   const tipos = [...new Set(estudios.map((e) => e.tipo_filtracion))];
 
-  const ptActivo =
-    activo && activo.lat !== null
-      ? proyectar(activo.lon as number, activo.lat as number)
-      : null;
+  // La ficha sigue al punto DIBUJADO, que en un abanico no coincide con su
+  // coordenada: si usara la original, aparecería descolgada del círculo.
+  const dActivo = colocados.find((d) => d.e.id === activo?.id);
+  const ptActivo: [number, number] | null = dActivo
+    ? [dActivo.x, dActivo.y]
+    : null;
 
   return (
     <figure className="m-0">
@@ -102,15 +178,35 @@ export default function MapaMundial() {
             strokeWidth={0.5}
           />
 
-          {puntos.map((e) => {
-            const pt = proyectar(e.lon as number, e.lat as number);
-            if (!pt) return null;
+          {/* Las guías del abanico van debajo de todos los puntos */}
+          {colocados
+            .filter((d) => d.fan)
+            .map((d) => (
+              <g key={"g" + d.e.id}>
+                <line
+                  x1={d.cx}
+                  y1={d.cy}
+                  x2={d.x}
+                  y2={d.y}
+                  stroke="var(--axis)"
+                  strokeWidth={0.7}
+                />
+                <circle cx={d.cx} cy={d.cy} r={1.4} fill="var(--axis)" />
+              </g>
+            ))}
+
+          {/* El punto activo se dibuja el último para que quede encima */}
+          {[...colocados]
+            .sort((a, b) =>
+              a.e.id === activo?.id ? 1 : b.e.id === activo?.id ? -1 : 0,
+            )
+            .map(({ e, x, y }) => {
             const on = activo?.id === e.id;
             return (
               <circle
                 key={e.id}
-                cx={pt[0]}
-                cy={pt[1]}
+                cx={x}
+                cy={y}
                 r={on ? 7 : 4.5}
                 fill={FLUIDO[e.tipo_filtracion]?.color ?? "var(--muted)"}
                 stroke="var(--surface)"
@@ -275,8 +371,8 @@ export default function MapaMundial() {
 
       <ComoSeLee>
         {tx({
-          es: "Cada punto es un estudio, situado en la localidad de filtración que describe. Las coordenadas son la posición representativa de esa localidad, no la del testigo concreto: sirven para situar los trabajos, no para análisis espacial fino. El color codifica el tipo de fluido; pulsa la leyenda para filtrar. El anillo marca la muestra de la tesis.",
-          en: "Each dot is a study, placed at the seep locality it describes. Coordinates are the representative position of that locality, not of the individual core: they place the work, they are not for fine spatial analysis. Colour encodes fluid type; click the legend to filter. The ring marks the thesis sample.",
+          es: "Cada punto es un estudio, situado en la localidad de filtración que describe. Las coordenadas son la posición representativa de esa localidad, no la del testigo concreto: sirven para situar los trabajos, no para análisis espacial fino. Varias localidades reúnen más de un estudio —tres en Hydrate Ridge, tres en Vestnesa Ridge, dos en la bahía de Monterey—, y esos puntos se abren en abanico para poder señalarlos uno a uno: la línea fina los une a su posición real, marcada con un punto tenue. El color codifica el tipo de fluido; pulsa la leyenda para filtrar. El anillo marca la muestra de la tesis.",
+          en: "Each dot is a study, placed at the seep locality it describes. Coordinates are the representative position of that locality, not of the individual core: they place the work, they are not for fine spatial analysis. Several localities hold more than one study — three at Hydrate Ridge, three at Vestnesa Ridge, two in Monterey Bay — and those dots are fanned out so each can be picked individually: the thin line ties them to their true position, marked by a faint dot. Colour encodes fluid type; click the legend to filter. The ring marks the thesis sample.",
         })}
       </ComoSeLee>
 
