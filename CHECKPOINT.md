@@ -30,8 +30,10 @@ reclutadores de tech/datos.
 
 ## 1 bis. Despliegue
 
-**En línea y protegido con contraseña:** https://foraminiferos-caribe.vercel.app
-Proyecto de Vercel `foraminiferos-caribe` (cuenta erickfmr777).
+**En línea y protegido con contraseña:** https://foraminiferos-caribe-colombiano.vercel.app
+Proyecto de Vercel `foraminiferos-caribe-colombiano` (cuenta erickfmr777).
+El proyecto anterior `foraminiferos-caribe` se eliminó: Vercel no permite
+renombrar proyectos desde la CLI, así que hubo que recrearlo.
 
 La autenticación es HTTP básica en `src/middleware.ts`, con las credenciales
 en las variables de entorno `DASHBOARD_USUARIO` y `DASHBOARD_CLAVE` de Vercel
@@ -86,6 +88,7 @@ python pipeline/20_build.py      # -> data/derived/*.json (público)
 python pipeline/40_taxones_pdf.py    # lee los artículos completos (WoRMS)
 python pipeline/50_estadisticas.py   # -> taxones_completo.json
 python pipeline/30_informe.py    # -> Informe_curacion_datos.pdf
+python pipeline/60_excel.py      # -> los dos Excel corregidos (carpeta privada)
 python pipeline/99_auditoria.py  # 76 comprobaciones; código 1 si algo falla
 ```
 
@@ -108,6 +111,23 @@ releer la tesis; ningún script del pipeline usa pandas).
 | `pipeline/corrections.py` | Registro auditable de TODAS las correcciones |
 | `pipeline/localidades.py` | Georreferenciación por DOI + sitio MSH-BC-21 |
 | `pipeline/caribe_referencia.py` | Fauna del Caribe extraída del cap. 4.2 |
+
+---
+
+## 3 bis. Los Excel corregidos
+
+`60_excel.py` devuelve las correcciones al formato original, en dos archivos
+NUEVOS dentro de `Data_nosubiralrepo/` (los originales no se tocan):
+
+- **`BD FORAMS AMBTE FILTRACION - CORREGIDA.xlsx`** — Léeme · Base corregida
+  (327 registros × 27 columnas) · Estudios · Taxones de la base · Taxones
+  leídos de los artículos (515) · Correcciones (85).
+- **`Coleccion MSH-BC-21 - CORREGIDA.xlsx`** — Léeme · Clasificación corregida
+  · Índices recalculados · Abundancias · Correcciones.
+
+Cada libro abre con una hoja «Léeme» que explica qué cambió, qué se añadió y
+**qué no se pudo reconstruir**, para que el archivo se entienda sin el código
+delante.
 
 ---
 
