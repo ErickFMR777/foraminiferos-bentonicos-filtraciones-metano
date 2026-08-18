@@ -1,19 +1,19 @@
 {
  "resumen": {
-  "articulos_leidos": 37,
+  "articulos_leidos": 38,
   "articulos_sin_texto": [],
-  "candidatos_evaluados": 2613,
-  "taxones_validados": 530,
-  "especies": 456,
-  "generos": 228,
+  "candidatos_evaluados": 2635,
+  "taxones_validados": 531,
+  "especies": 457,
+  "generos": 229,
   "taxones_base_tesis": 197,
   "factor_ampliacion": 2.7,
   "taxones_con_dominancia_declarada": 105,
   "solape_con_msh": 28,
   "nota_metodo": "Presencia y menciones se extraen del texto completo de cada artículo y se validan contra WoRMS. Las menciones son un proxy débil de importancia: sirven para ordenar dentro de un artículo, no para comparar entre artículos de distinta extensión. Sólo 'dominante' —afirmado por el propio texto— puede leerse como dominancia.",
-  "union_taxones": 565,
+  "union_taxones": 566,
   "solo_en_base": 35,
-  "solo_en_pdf": 368,
+  "solo_en_pdf": 369,
   "en_ambas": 162
  },
  "taxones": [
@@ -24,9 +24,9 @@
    "familia": "Uvigerinidae",
    "orden": "Rotaliida",
    "aphia_id": 112281,
-   "n_estudios": 27,
-   "menciones": 839,
-   "n_estudios_resultados": 22,
+   "n_estudios": 28,
+   "menciones": 861,
+   "n_estudios_resultados": 23,
    "n_estudios_dominante": 9,
    "en_base_tesis": true,
    "en_msh_bc21": true
@@ -38,8 +38,8 @@
    "familia": "Uvigerinidae",
    "orden": "Rotaliida",
    "aphia_id": 113773,
-   "n_estudios": 23,
-   "menciones": 747,
+   "n_estudios": 24,
+   "menciones": 748,
    "n_estudios_resultados": 18,
    "n_estudios_dominante": 7,
    "en_base_tesis": true,
@@ -214,6 +214,20 @@
    "en_msh_bc21": false
   },
   {
+   "taxon": "Melonis",
+   "rango": "genero",
+   "genero": "Melonis",
+   "familia": "Melonidae",
+   "orden": "Rotaliida",
+   "aphia_id": 112230,
+   "n_estudios": 12,
+   "menciones": 138,
+   "n_estudios_resultados": 7,
+   "n_estudios_dominante": 2,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
    "taxon": "Globocassidulina subglobosa",
    "rango": "especie",
    "genero": "Globocassidulina",
@@ -228,18 +242,18 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Melonis",
-   "rango": "genero",
+   "taxon": "Melonis affinis",
+   "rango": "especie",
    "genero": "Melonis",
-   "familia": "Melonidae",
+   "familia": "Nonionidae",
    "orden": "Rotaliida",
-   "aphia_id": 112230,
+   "aphia_id": 418046,
    "n_estudios": 11,
-   "menciones": 137,
+   "menciones": 135,
    "n_estudios_resultados": 7,
    "n_estudios_dominante": 2,
-   "en_base_tesis": false,
-   "en_msh_bc21": false
+   "en_base_tesis": true,
+   "en_msh_bc21": true
   },
   {
    "taxon": "Bulimina striata",
@@ -268,20 +282,6 @@
    "n_estudios_dominante": 0,
    "en_base_tesis": true,
    "en_msh_bc21": false
-  },
-  {
-   "taxon": "Melonis affinis",
-   "rango": "especie",
-   "genero": "Melonis",
-   "familia": "Nonionidae",
-   "orden": "Rotaliida",
-   "aphia_id": 418046,
-   "n_estudios": 10,
-   "menciones": 134,
-   "n_estudios_resultados": 7,
-   "n_estudios_dominante": 2,
-   "en_base_tesis": true,
-   "en_msh_bc21": true
   },
   {
    "taxon": "Fissurina",
@@ -1740,6 +1740,20 @@
    "en_msh_bc21": false
   },
   {
+   "taxon": "Globigerinoides ruber",
+   "rango": "especie",
+   "genero": "Globigerinoides",
+   "familia": "Globigerinidae",
+   "orden": "Rotaliida",
+   "aphia_id": 113444,
+   "n_estudios": 3,
+   "menciones": 3,
+   "n_estudios_resultados": 2,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
    "taxon": "Haplophragmoides",
    "rango": "genero",
    "genero": "Haplophragmoides",
@@ -2575,20 +2589,6 @@
    "n_estudios": 2,
    "menciones": 2,
    "n_estudios_resultados": 1,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Globigerinoides ruber",
-   "rango": "especie",
-   "genero": "Globigerinoides",
-   "familia": "Globigerinidae",
-   "orden": "Rotaliida",
-   "aphia_id": 113444,
-   "n_estudios": 2,
-   "menciones": 2,
-   "n_estudios_resultados": 2,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
    "en_msh_bc21": false
@@ -7214,6 +7214,20 @@
    "en_msh_bc21": false
   },
   {
+   "taxon": "Trilobatus sacculifer",
+   "rango": "especie",
+   "genero": "Trilobatus",
+   "familia": "Globigerinidae",
+   "orden": "Rotaliida",
+   "aphia_id": 1026286,
+   "n_estudios": 1,
+   "menciones": 1,
+   "n_estudios_resultados": 0,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
    "taxon": "Triloculina adriatica",
    "rango": "especie",
    "genero": "Triloculina",
@@ -7446,8 +7460,8 @@
    "familia": "Uvigerinidae",
    "orden": "Rotaliida",
    "aphia_id": 113773,
-   "n_estudios": 23,
-   "menciones": 747,
+   "n_estudios": 24,
+   "menciones": 748,
    "n_estudios_resultados": 18,
    "n_estudios_dominante": 7,
    "en_base_tesis": true,
@@ -7482,6 +7496,20 @@
    "en_msh_bc21": false
   },
   {
+   "taxon": "Melonis affinis",
+   "rango": "especie",
+   "genero": "Melonis",
+   "familia": "Nonionidae",
+   "orden": "Rotaliida",
+   "aphia_id": 418046,
+   "n_estudios": 11,
+   "menciones": 135,
+   "n_estudios_resultados": 7,
+   "n_estudios_dominante": 2,
+   "en_base_tesis": true,
+   "en_msh_bc21": true
+  },
+  {
    "taxon": "Bulimina striata",
    "rango": "especie",
    "genero": "Bulimina",
@@ -7494,20 +7522,6 @@
    "n_estudios_dominante": 0,
    "en_base_tesis": true,
    "en_msh_bc21": false
-  },
-  {
-   "taxon": "Melonis affinis",
-   "rango": "especie",
-   "genero": "Melonis",
-   "familia": "Nonionidae",
-   "orden": "Rotaliida",
-   "aphia_id": 418046,
-   "n_estudios": 10,
-   "menciones": 134,
-   "n_estudios_resultados": 7,
-   "n_estudios_dominante": 2,
-   "en_base_tesis": true,
-   "en_msh_bc21": true
   },
   {
    "taxon": "Bulimina marginata",
@@ -8616,6 +8630,20 @@
    "en_msh_bc21": false
   },
   {
+   "taxon": "Globigerinoides ruber",
+   "rango": "especie",
+   "genero": "Globigerinoides",
+   "familia": "Globigerinidae",
+   "orden": "Rotaliida",
+   "aphia_id": 113444,
+   "n_estudios": 3,
+   "menciones": 3,
+   "n_estudios_resultados": 2,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
    "taxon": "Haynesina depressula",
    "rango": "especie",
    "genero": "Haynesina",
@@ -9104,26 +9132,12 @@
    "n_estudios_dominante": 0,
    "en_base_tesis": true,
    "en_msh_bc21": false
-  },
-  {
-   "taxon": "Bulimina gibba",
-   "rango": "especie",
-   "genero": "Bulimina",
-   "familia": "Buliminidae",
-   "orden": "Rotaliida",
-   "aphia_id": 113040,
-   "n_estudios": 2,
-   "menciones": 2,
-   "n_estudios_resultados": 1,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": false,
-   "en_msh_bc21": false
   }
  ],
  "generos": [
   {
    "genero": "Uvigerina",
-   "n_estudios": 27,
+   "n_estudios": 28,
    "n_taxones": 9,
    "en_msh_bc21": true
   },
@@ -9213,7 +9227,7 @@
   },
   {
    "genero": "Melonis",
-   "n_estudios": 12,
+   "n_estudios": 13,
    "n_taxones": 3,
    "en_msh_bc21": true
   },
@@ -9656,6 +9670,12 @@
    "en_msh_bc21": false
   },
   {
+   "genero": "Globigerinoides",
+   "n_estudios": 3,
+   "n_taxones": 1,
+   "en_msh_bc21": false
+  },
+  {
    "genero": "Nodosaria",
    "n_estudios": 3,
    "n_taxones": 1,
@@ -9843,12 +9863,6 @@
   },
   {
    "genero": "Biasterigerina",
-   "n_estudios": 2,
-   "n_taxones": 1,
-   "en_msh_bc21": false
-  },
-  {
-   "genero": "Globigerinoides",
    "n_estudios": 2,
    "n_taxones": 1,
    "en_msh_bc21": false
@@ -10472,6 +10486,12 @@
    "en_msh_bc21": false
   },
   {
+   "genero": "Trilobatus",
+   "n_estudios": 1,
+   "n_taxones": 1,
+   "en_msh_bc21": false
+  },
+  {
    "genero": "Triloculinella",
    "n_estudios": 1,
    "n_taxones": 1,
@@ -10491,7 +10511,7 @@
   }
  ],
  "union": {
-  "total": 565,
+  "total": 566,
   "solo_en_base_tesis": [
    "Bigenerina nodosaria",
    "Bolivina tumida",
@@ -10529,7 +10549,7 @@
    "Uvigerina cocoaensis",
    "Uvigerina hispida"
   ],
-  "solo_en_articulos": 368,
+  "solo_en_articulos": 369,
   "nota": "La base de la tesis y la extracción de los artículos no se contienen la una a la otra: el extractor no lee el PDF escaneado ni los artículos sin PDF, y la base recoge taxones de tablas que el extractor no capta."
  },
  "familias": [
@@ -10539,7 +10559,7 @@
   },
   {
    "familia": "Uvigerinidae",
-   "ocurrencias": 94
+   "ocurrencias": 97
   },
   {
    "familia": "Cibicididae",
@@ -10598,16 +10618,16 @@
    "ocurrencias": 30
   },
   {
+   "familia": "Melonidae",
+   "ocurrencias": 28
+  },
+  {
    "familia": "Reophacidae",
    "ocurrencias": 27
   },
   {
    "familia": "Cancrisidae",
    "ocurrencias": 27
-  },
-  {
-   "familia": "Melonidae",
-   "ocurrencias": 26
   },
   {
    "familia": "Textulariidae",
@@ -10682,6 +10702,10 @@
    "ocurrencias": 10
   },
   {
+   "familia": "Globigerinidae",
+   "ocurrencias": 9
+  },
+  {
    "familia": "Anomalinidae",
    "ocurrencias": 9
   },
@@ -10703,10 +10727,6 @@
   },
   {
    "familia": "Ammosphaeroidinidae",
-   "ocurrencias": 7
-  },
-  {
-   "familia": "Globigerinidae",
    "ocurrencias": 7
   },
   {
@@ -10945,7 +10965,7 @@
  "ordenes": [
   {
    "orden": "Rotaliida",
-   "ocurrencias": 1049
+   "ocurrencias": 1056
   },
   {
    "orden": "Miliolida",
@@ -14238,6 +14258,70 @@
     "Lobatula",
     "Cibicides",
     "Cibicidoides"
+   ]
+  },
+  {
+   "estudio_id": "E37",
+   "titulo": "Impact of methane seepage dynamics on the abundance of benthic foraminifera in gas hydrate bearing sediments: New insights from the South China Sea",
+   "autores": "Li, N.",
+   "anio": 2020,
+   "localidad": "Mar de China Meridional",
+   "tipo_filtracion": "frio",
+   "morfologia": null,
+   "n_taxones": 6,
+   "n_especies": 4,
+   "n_generos": 4,
+   "n_en_resultados": 1,
+   "n_en_base_tesis": 1,
+   "asociacion_dominante": [],
+   "destacados_derivados": [
+    "Uvigerina",
+    "Uvigerina"
+   ],
+   "origen_dominancia": "derivada",
+   "top_menciones": [
+    {
+     "taxon": "Uvigerina",
+     "menciones": 20,
+     "dominante": false
+    },
+    {
+     "taxon": "Uvigerina",
+     "menciones": 2,
+     "dominante": false
+    },
+    {
+     "taxon": "Uvigerina peregrina",
+     "menciones": 1,
+     "dominante": false
+    },
+    {
+     "taxon": "Melonis affinis",
+     "menciones": 1,
+     "dominante": false
+    },
+    {
+     "taxon": "Melonis",
+     "menciones": 1,
+     "dominante": false
+    },
+    {
+     "taxon": "Globigerinoides ruber",
+     "menciones": 1,
+     "dominante": false
+    },
+    {
+     "taxon": "Trilobatus sacculifer",
+     "menciones": 1,
+     "dominante": false
+    }
+   ],
+   "dominantes_declarados": [],
+   "generos": [
+    "Uvigerina",
+    "Melonis",
+    "Globigerinoides",
+    "Trilobatus"
    ]
   },
   {

@@ -1,7 +1,8 @@
 # CHECKPOINT — Dashboard Tesis Foraminíferos
 
-**Última actualización:** 2026-08-17 · Fase 0 y Fase 1 COMPLETAS · DESPLEGADO
-**Novedad:** integrado Barragán y Bernal (2024), que resuelve la tensión de la Historia 2.
+**Última actualización:** 2026-08-18 · COMPLETO Y DESPLEGADO · auditoría 89/89
+**Novedad:** auditoría integral del repositorio, limpieza de código muerto y
+README. Ver §12.
 
 Documento de continuidad: si la sesión se corta, esto es lo que hace falta
 para retomar sin releer nada.
@@ -141,6 +142,7 @@ python pipeline/50_estadisticas.py   # -> taxones_completo.json
 python pipeline/30_informe.py    # -> Informe_curacion_datos.pdf
 python pipeline/60_excel.py      # -> los dos Excel corregidos (carpeta privada)
 python pipeline/99_auditoria.py  # 89 comprobaciones; código 1 si algo falla
+# El orden completo, con 07/45, esta en CLAUDE.md y en el README.
 ```
 
 **Ejecutar `99_auditoria.py` después de cualquier cambio en el pipeline.**
@@ -421,3 +423,52 @@ tesis (p. 35: 8 especies × 3 vistas, grises sobre negro, barras de escala).
 - No hay datos de isótopos (δ13C): no se trabajaron.
 - No hay más data cruda: una sola muestra (MSH-BC-21), sin sitios de control.
 - Las referencias SÍ se publican (rectificación explícita).
+
+
+---
+
+## 12. Auditoría integral (2026-08-18)
+
+Revisión completa del repositorio a petición del autor. **Resultado: 89/89 en
+la auditoría, tipos limpios, cero fugas.** Lo que se encontró y se hizo:
+
+### Un hueco real de extracción, corregido
+`Li et al.` estaba en la base como **resumen de Goldschmidt 2020**
+(`10.46427/gold2020.1503`), pero el PDF de la carpeta es el **artículo completo**
+(*Ore Geology Reviews*, 2021, `10.1016/j.oregeorev.2021.104247`). Al no casar
+los DOI, el emparejador lo dejaba fuera y **sus taxones no se extraían de
+ninguna parte**. Se añadió una equivalencia de DOI documentada en `07_pdfs.py`.
+Cobertura: de 37 a **38 artículos leídos**; E37 aporta 7 taxones.
+
+Los dos estudios que siguen sin extracción **no tienen PDF** y es correcto:
+E05 (McCorkle 1990, que además no es de filtración) y E26 (Chiang 2015, resumen
+de congreso de la EGU).
+
+### Código muerto retirado
+- **npm:** `@observablehq/plot`, `d3-array`, `d3-scale` y sus `@types` — cero
+  importaciones. Se planearon en la fase de diseño y todos los gráficos
+  acabaron siendo SVG escrito a mano. `node_modules` baja de 395 a 388 MB.
+- **i18n:** 11 de 15 claves del diccionario estaban muertas, restos del modo
+  narrativa/exploración y de tablas que nunca se construyeron.
+- **Exports:** `normalizaRespuesta` y `HORAS_SESION` se usaban sólo dentro de su
+  módulo.
+- **`package.json`:** el script `lint` (`next lint`) prometía una verificación
+  inexistente —no hay ESLint— y se sustituyó por `npm run verificar`.
+
+### Seguridad, verificada de nuevo
+Cero secretos en los archivos versionados **y en todo el historial**; ningún
+`.xlsx`, `.env` ni ruta privada ha existido jamás en un commit; los **18
+despliegues vivos** revisados uno a uno contra la API: **0 archivos
+confidenciales**; ninguna ruta del sistema ni texto literal de artículos en los
+datos públicos.
+
+### Reproducibilidad
+Se regeneró el pipeline completo y se comparó archivo por archivo con lo
+publicado: **los 11 datasets salen idénticos**. No hay deriva entre el código y
+los datos.
+
+### Datasets sin consumidor (decisión pendiente)
+`caribe_referencia.json` y `cuantitativos.json` se generan pero ningún
+componente los lee. No se borran porque son datos curados y publicables —el
+primero es la Historia 5, «El Caribe contra sí mismo», que nunca se construyó—
+pero **o se usan o se retiran**.

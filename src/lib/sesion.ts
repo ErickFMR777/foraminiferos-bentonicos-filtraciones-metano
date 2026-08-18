@@ -18,7 +18,7 @@
 const enc = new TextEncoder();
 
 export const COOKIE_SESION = "sesion";
-export const HORAS_SESION = 12;
+const HORAS_SESION = 12;
 
 function aB64url(bytes: Uint8Array): string {
   let s = "";

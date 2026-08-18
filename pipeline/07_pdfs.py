@@ -112,17 +112,30 @@ def doi_de(p: Path) -> str | None:
     return None
 
 
+# Un mismo trabajo con DOS DOI: el resumen de congreso que citó la tesis y el
+# artículo completo publicado después. Sin esta equivalencia el PDF del
+# artículo quedaba sin emparejar y sus taxones no se extraían de ninguna parte,
+# aunque el archivo estuviera en la carpeta.
+EQUIVALENTES = {
+    # Li et al.: resumen de Goldschmidt 2020 -> artículo en Ore Geology Reviews
+    "10.1016/j.oregeorev.2021.104247": "10.46427/gold2020.1503",
+}
+
+
 def casa(doi_pdf: str | None, doi_est: str) -> bool:
     if not doi_pdf or not doi_est:
         return False
     a, b = doi_pdf.lower(), doi_est.lower()
+    a = EQUIVALENTES.get(a, a)
     return a == b or a.startswith(b) or b.startswith(a)
 
 
 def main() -> int:
     estudios = json.loads((DERIV / "estudios.json").read_text(encoding="utf-8"))
+    # Se excluyen la tesis y el informe técnico del proyecto: son documentación
+    # propia, no artículos de la base, y colarlos ensucia el emparejamiento.
     pdfs = [p for p in sorted(DATA_DIR.glob("*.pdf"))
-            if not p.name.startswith("TDG-ERICKFMR")]
+            if not p.name.startswith(("TDG-ERICKFMR", "Informe_tecnico"))]
 
     print(f"{len(pdfs)} PDF en la carpeta, {len(estudios)} estudios en la base\n")
 

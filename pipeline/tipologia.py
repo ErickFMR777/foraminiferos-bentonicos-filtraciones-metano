@@ -215,8 +215,9 @@ SIN_MORFOLOGIA = {
     "E26": "Chiang et al. (2015): resumen de congreso de la EGU, sin PDF.",
     "E29": "Panieri (2005): la única mención de tapete bacteriano es el título "
            "de Sen Gupta et al. (1997) en su bibliografía.",
-    "E37": "Li et al. (2020): resumen de Goldschmidt; el artículo completo en "
-           "Ore Geology Reviews figura como entrada aparte.",
+    "E37": "Li et al.: la base cita el resumen de Goldschmidt (2020) y el PDF "
+           "es el artículo completo (Ore Geology Reviews, 2021). Se emparejan "
+           "por equivalencia de DOI en 07_pdfs.py.",
     "E38": "Wang et al. (2013): volcán de lodo y diapiro aparecen sólo en los "
            "títulos de trabajos citados en su bibliografía, no en la "
            "descripción del sitio.",

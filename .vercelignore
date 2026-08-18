@@ -24,6 +24,7 @@ data/private/
 pipeline/
 CHECKPOINT.md
 CLAUDE.md
+README.md
 *.pdf
 
 # Salidas de build y entorno

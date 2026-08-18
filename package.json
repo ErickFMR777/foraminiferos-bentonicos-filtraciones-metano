@@ -2,21 +2,18 @@
   "name": "foraminiferos-seeps-caribe",
   "version": "0.1.0",
   "private": true,
-  "description": "Dashboard interactivo sobre asociaciones de foraminiferos bentonicos en filtraciones de metano del Caribe colombiano",
+  "description": "Dashboard editorial bilingue sobre foraminiferos bentonicos en filtraciones de metano: 40 estudios de todo el mundo frente a una muestra de la plataforma continental del Caribe colombiano",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
     "datos": "python pipeline/00_extract.py && python pipeline/10_clean.py && python pipeline/20_build.py && python pipeline/99_auditoria.py",
-    "auditoria": "python pipeline/99_auditoria.py"
+    "auditoria": "python pipeline/99_auditoria.py",
+    "verificar": "tsc --noEmit"
   },
   "dependencies": {
-    "@observablehq/plot": "^0.6.17",
     "@vercel/blob": "^2.8.0",
-    "d3-array": "^3.2.4",
     "d3-geo": "^3.1.1",
-    "d3-scale": "^4.0.2",
     "next": "^15.5.4",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
@@ -25,9 +22,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.13",
-    "@types/d3-array": "^3.2.1",
     "@types/d3-geo": "^3.1.0",
-    "@types/d3-scale": "^4.0.9",
     "@types/node": "^24.5.2",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",

@@ -77,7 +77,7 @@ function iguales(a: Uint8Array, b: Uint8Array): boolean {
 /** La respuesta se compara TAL CUAL: mayúsculas y minúsculas cuentan. Sólo se
  *  recortan los espacios de los extremos, que suelen venir de un copiado y no
  *  son parte de lo que nadie quiso escribir. */
-export const normalizaRespuesta = (s: string) => s.trim();
+const normalizaRespuesta = (s: string) => s.trim();
 
 export async function nuevas(
   usuario: string,

@@ -100,13 +100,14 @@ contengan rutas del sistema de archivos (`Data_nosubiralrepo/`, `C:\Users`,
 ```bash
 npm run dev              # servidor de desarrollo
 npm run build            # build de producción (prerenderiza todo)
-npx tsc --noEmit         # verificación de tipos — ESTE es el gate
+npm run verificar        # tsc --noEmit — ESTE es el gate
 ```
 
-No hay configuración de ESLint en el repo; el script `lint` de `package.json`
-no está operativo. La comprobación real es `npx tsc --noEmit`, y ha atrapado
-errores que la auditoría no vio (p. ej. una colisión de claves en un spread
-de objeto que silenciaba una banda latitudinal).
+No hay ESLint en el repo. El script `lint` prometía una verificación que no
+existía y se retiró: **la comprobación real es `npm run verificar`**
+(`tsc --noEmit`), y ha atrapado errores que la auditoría no vio — por ejemplo
+una colisión de claves en un spread de objeto que silenciaba una banda
+latitudinal.
 
 ### Pipeline
 
@@ -128,7 +129,7 @@ python pipeline/08_organizar.py       # renombra PDF, separa los excluidos
 python pipeline/09_verificar_pdfs.py  # nombre vs contenido + duplicados
 python pipeline/20_build.py           # -> data/derived/*.json (PÚBLICO)
 python pipeline/40_taxones_pdf.py     # lee los artículos completos
-python pipeline/45_tablas_pdf.py      # TABLAS: d13C, abundancias, indices
+python pipeline/45_tablas_pdf.py      # TABLAS: δ13C, abundancias, índices
 python pipeline/50_estadisticas.py    # -> taxones_completo.json
 python pipeline/30_informe.py         # -> Informe_curacion_datos.pdf
 python pipeline/60_excel.py           # -> los Excel corregidos (carpeta privada)
