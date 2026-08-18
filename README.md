@@ -82,7 +82,7 @@ Nueve secciones en scroll, todas bilingües y con su bloque «Cómo se lee».
 |---|---|
 | Estudios en la base | **40** (39 de filtración + 1 de fauna de referencia) |
 | Georreferenciados | 39 / 40 |
-| Con morfología asignada | 33 / 40 |
+| Con morfología asignada | 32 / 40 |
 | Taxones de la base de la tesis | **197** |
 | Taxones leídos del texto completo | **531** (unión de ambas fuentes: 566) |
 | Artículos leídos íntegros | **38** |
@@ -135,7 +135,7 @@ Data_nosubiralrepo/*.xlsx ──00──▶ data/private/*_raw.json
 | `50_estadisticas` | Rankings, asociaciones dominantes y estadísticas por estudio |
 | `30_informe` | Genera el informe de curación en PDF |
 | `60_excel` | Devuelve las correcciones a los Excel del autor |
-| `99_auditoria` | **89 comprobaciones independientes**; sale con código 1 si algo falla |
+| `99_auditoria` | **91 comprobaciones independientes**; sale con código 1 si algo falla |
 
 Los módulos sin número —`taxonomy`, `corrections`, `localidades`, `tipologia`,
 `caribe_referencia`, `estudios_nuevos`— son tablas de referencia **curadas a
@@ -233,6 +233,21 @@ el solape**, no por comodidad:
   error que ya se corrigió con McCorkle (1990), que figuraba como estudio de
   filtración sin serlo.
 
+### La morfología debe verse en el propio artículo
+
+Cada morfología asignada tiene que aparecer en el **cuerpo** del artículo que la
+justifica —descartando su bibliografía—, y la auditoría lo comprueba. La regla
+nació de dos errores reales: un estudio figuraba como «pingo de hidratos de
+Storfjordrenna» cuando su texto no dice «pingo» ni una vez y estudia los
+pockmarks de Vestnesa, **a 330 km de donde estaba situado en el mapa**; y otro
+figuraba como «pockmark» porque esa palabra aparecía una sola vez… en su propia
+lista de referencias, citando a un tercero.
+
+Las pocas asignaciones que descansan en que la localidad esté documentada en la
+literatura, y no en el texto, van declaradas una a una en
+`tipologia.JUSTIFICADA_POR_LOCALIDAD`. La auditoría las admite pero vigila que
+no se multipliquen.
+
 ### La auditoría no se fía del pipeline
 
 `99_auditoria.py` **vuelve a leer los Excel originales** y verifica de forma
@@ -259,7 +274,7 @@ Un trabajo serio dice lo que **no** puede decir.
   inventa la estructura.
 - **Presencia no es abundancia.** Del texto se extrae qué taxones aparecen, no
   cuánto pesa cada uno.
-- **Dos estudios sin PDF** (E05, E26) y **7 de 40 sin morfología**, porque la
+- **Dos estudios sin PDF** (E05, E26) y **8 de 40 sin morfología**, porque la
   mención estaba en una tabla comparativa de otras localidades y asignarla
   sería inventar.
 - **La fauna de referencia caribeña viene de fuentes secundarias** —la tesis
@@ -300,7 +315,7 @@ npm install
 npm run dev          # servidor de desarrollo
 npm run build        # build de producción
 npm run verificar    # comprobación de tipos — ESTE es el gate
-npm run auditoria    # las 89 comprobaciones del pipeline
+npm run auditoria    # las 91 comprobaciones del pipeline
 ```
 
 El pipeline necesita `openpyxl`, `pypdf`, `fpdf2` y `pdfplumber`, y lee los

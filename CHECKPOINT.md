@@ -141,7 +141,7 @@ python pipeline/45_tablas_pdf.py     # TABLAS: d13C, abundancias, indices
 python pipeline/50_estadisticas.py   # -> taxones_completo.json
 python pipeline/30_informe.py    # -> Informe_curacion_datos.pdf
 python pipeline/60_excel.py      # -> los dos Excel corregidos (carpeta privada)
-python pipeline/99_auditoria.py  # 89 comprobaciones; código 1 si algo falla
+python pipeline/99_auditoria.py  # 91 comprobaciones; código 1 si algo falla
 # El orden completo, con 07/45, esta en CLAUDE.md y en el README.
 ```
 
@@ -500,3 +500,31 @@ abundante no llega al **11 %**. Lo que distingue la muestra no es el elenco de
 especies sino el reparto — que es justo lo que mide su J′ = 0,8687.
 
 El dashboard pasa a **nueve secciones**; Límites es 08 y Cuenta 09.
+
+---
+
+## 14. Errores de morfología y localidad (2026-08-18)
+
+El autor detectó en el mapa que Dessandier (2019) figuraba como **«pingo de
+hidratos»** y le sonó raro. Tenía razón, y al tirar del hilo aparecieron cuatro
+asignaciones mal fundadas.
+
+| ID | Decía | Dice ahora | Por qué |
+|---|---|---|---|
+| **E24** | Pingos de Storfjordrenna, 76,1 N, 380 m | **Vestnesa Ridge**, 79,0 N, 1200 m, pockmark | Su texto no dice «pingo» ni una vez y dice «pockmark» 30. Estaba **a 330 km** de su sitio |
+| **E03** | Pockmark | **Tapete bacteriano** | «Pockmark» salía una vez, y era **en su propia bibliografía** |
+| **E36** | Banco de bivalvos | **Montículo de hidratos** | Describía la fauna, no el fondo: «scarps and mounds», sitios Mounds 11 y 12 |
+| **E10** | Montículo de hidratos | **sin determinar** | Multi-sitio por el margen de Cascadia; no hay morfología única |
+| E25 | (se mantiene) | fuente corregida | El artículo dice «methane vent», nunca «hydrothermal» |
+
+**La causa común: inferencias presentadas como evidencia.** E24 llevaba
+`fuente="título y resumen"` y el título no menciona Storfjordrenna; E03 citaba
+otro artículo del mismo grupo.
+
+**Comprobación nueva en la auditoría (91 en total):** toda morfología asignada
+debe aparecer en el CUERPO de su artículo, descartando la bibliografía. Las
+excepciones legítimas —la localidad documentada en la literatura, como Hydrate
+Ridge— van declaradas en `tipologia.JUSTIFICADA_POR_LOCALIDAD`, y la auditoría
+vigila que no se multipliquen.
+
+Morfologías asignadas: **32 de 40** (antes 33; E10 pasó a sin determinar).

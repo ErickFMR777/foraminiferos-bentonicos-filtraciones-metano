@@ -128,9 +128,18 @@ LOCALIDADES: dict[str, dict] = {
             dict(nombre="Storfjordrenna, Svalbard sur", lat=76.0, lon=16.0, prof_m=390),
             dict(nombre="Margen noruego al este de Lofoten", lat=68.0, lon=10.0, prof_m=750),
         ]),
+    # CORREGIDO: figuraba como «pingos de hidratos de Storfjordrenna» a 76,1 N,
+    # inferido del título («Arctic Methane Hydrate Bearing Sediments») sin
+    # comprobarlo. El artículo no nombra ni Storfjordrenna ni pingos: estudia
+    # «11 push cores collected in two of the most active pockmarks (Lunde and
+    # Lomvi) along Vestnesa Ridge, offshore western Svalbard». El punto estaba
+    # a unos 330 km de donde corresponde.
     "10.3389/fmars.2019.00765": dict(
-        localidad="Pingos de hidratos de Storfjordrenna, Mar de Barents", region="Ártico",
-        lat=76.10, lon=16.03, prof_m=380, confianza="alta", fuente="título y resumen"),
+        localidad="Vestnesa Ridge, oeste de Svalbard (pockmarks Lunde y Lomvi)",
+        region="Ártico", lat=79.00, lon=6.90, prof_m=1200, confianza="alta",
+        fuente="PDF: «11 push cores collected in two of the most active "
+               "pockmarks (Lunde and Lomvi) along Vestnesa Ridge, offshore "
+               "western Svalbard», a 1200 m"),
     "10.1002/2013pa002457": dict(
         localidad="Respiradero Pinkies, Cuenca de Guaymas, Golfo de California",
         region="Pacífico NE", lat=27.5908, lon=-111.4749, prof_m=1528,

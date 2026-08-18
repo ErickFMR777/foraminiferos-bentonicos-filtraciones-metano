@@ -49,9 +49,14 @@ TIPOLOGIA: dict[str, dict] = {
     "10.3997/2214-4609.201406085": dict(
         fluido="frio", morfologia="pockmark", confianza="alta",
         fuente="el título dice «Adriatic Sea Pockmark»"),
+    # CORREGIDO: decía «pockmark» por inferencia a partir de OTRO artículo del
+    # mismo grupo. En este texto «pockmark» aparece una sola vez, y es en su
+    # propia bibliografía citando a Panieri (2003). Lo que el artículo sí
+    # describe en su sitio de muestreo son tapetes de Beggiatoa (13 menciones).
     "10.1016/j.marmicro.2006.05.008": dict(
-        fluido="frio", morfologia="pockmark", confianza="media",
-        fuente="mismo sitio adriático que Panieri et al. (2000), descrito allí como pockmark"),
+        fluido="frio", morfologia="tapete_bacteriano", confianza="alta",
+        fuente="PDF: «Beggiatoa may be a food source for the foraminifera, "
+               "explaining the higher foraminiferal density at the seep site»"),
     "10.1016/j.marmicro.2007.08.002": dict(
         fluido="frio", morfologia="monticulo_hidratos", confianza="alta",
         fuente="el título dice «Blake Ridge hydrate mound»"),
@@ -72,9 +77,13 @@ TIPOLOGIA: dict[str, dict] = {
     "10.1029/2005pa001196": dict(
         fluido="frio", morfologia="volcan_lodo", confianza="alta",
         fuente="el resumen sitúa el estudio en el volcán de lodo Håkon Mosby"),
+    # CORREGIDO: decía «pingo de hidratos» porque la localidad estaba mal
+    # atribuida a Storfjordrenna. El artículo no dice «pingo» ni una vez y dice
+    # «pockmark» treinta: son los pockmarks Lunde y Lomvi de Vestnesa Ridge.
     "10.3389/fmars.2019.00765": dict(
-        fluido="frio", morfologia="pingo_hidratos", confianza="alta",
-        fuente="Storfjordrenna: campo de pingos de hidratos de gas"),
+        fluido="frio", morfologia="pockmark", confianza="alta",
+        fuente="PDF: «two of the most active pockmarks (Lunde and Lomvi) along "
+               "Vestnesa Ridge»"),
     "10.1016/j.dsr.2017.03.001": dict(
         fluido="frio", morfologia="pockmark", confianza="media",
         fuente="Vestnesa Ridge: campo de pockmarks activos bien documentado"),
@@ -83,21 +92,32 @@ TIPOLOGIA: dict[str, dict] = {
         fuente="Vestnesa Ridge, 79° N: campo de pockmarks"),
     "10.1029/2002pa000824": dict(
         fluido="frio", morfologia="monticulo_hidratos", confianza="media",
-        fuente="Hydrate Ridge: montículo de hidratos con pavimentos carbonatados"),
+        fuente="Hydrate Ridge: montículo de hidratos con pavimentos carbonatados. "
+               "JUSTIFICADA POR LA LOCALIDAD: el artículo nombra Hydrate Ridge "
+               "60 veces pero no usa la palabra «mound»"),
     "10.1016/j.gca.2004.07.012": dict(
         fluido="frio", morfologia="monticulo_hidratos", confianza="media",
         fuente="Hydrate Ridge"),
+        # Multi-sitio: recorre el margen de Cascadia (Barkley Canyon, Bulls Eye
+    # Vent, Heceta Bank, Coos Bay, Eel River…) y Hydrate Ridge es uno más entre
+    # ellos. Asignar una sola morfología a ese conjunto sería inventarla.
     "10.1016/j.epsl.2010.07.048": dict(
-        fluido="frio", morfologia="monticulo_hidratos", confianza="media",
-        fuente="Hydrate Ridge"),
+        fluido="frio", morfologia=None, confianza="alta",
+        fuente="artículo multi-sitio del margen de Cascadia; sin morfología "
+               "única atribuible"),
     "10.1016/j.dsr.2016.08.011": dict(
         fluido="frio", morfologia="monticulo_hidratos", confianza="media",
         fuente="Hydrate Ridge, sectores norte y sur"),
 
     # --- aportados por el autor de la tesis ---
+    # El artículo dice «active seafloor methane vent» y NUNCA «hydrothermal»:
+    # el carácter hidrotermal viene de la cuenca de Guaymas, no de su texto.
+    # Se conserva porque el entorno lo justifica, pero la fuente lo declara.
     "10.1002/2013pa002457": dict(
-        fluido="hidrotermal", morfologia="respiradero_hidrotermal", confianza="alta",
-        fuente="respiradero Pinkies, Cuenca de Guaymas (dato del autor)"),
+        fluido="hidrotermal", morfologia="respiradero_hidrotermal", confianza="media",
+        fuente="PDF: «an active seafloor methane vent in 1500 m water depths in "
+               "the NE Guaymas Basin» (Pinkies). El carácter hidrotermal lo "
+               "aporta el entorno de Guaymas, no el texto del artículo"),
     "10.1029/2010pa001930": dict(
         fluido="frio", morfologia="banco_bivalvos", confianza="alta",
         fuente="Clam Flats, Bahía de Monterey (dato del autor)"),
@@ -136,10 +156,14 @@ TIPOLOGIA: dict[str, dict] = {
     "10.1016/s0967-0637(01)00017-6": dict(
         fluido="frio", morfologia="banco_bivalvos", confianza="alta",
         fuente="PDF: muestreo en «the Clam Field and the Clam Flat cold seep sites»"),
+    # CORREGIDO: decía «banco de bivalvos», que describe la FAUNA y no la
+    # expresión del fondo. El propio artículo dice cómo se manifiestan estas
+    # filtraciones, y los sitios se llaman Mounds 11 y 12.
     "10.1016/j.marpetgeo.2018.02.037": dict(
-        fluido="mixto", morfologia="banco_bivalvos", confianza="media",
-        fuente="PDF: vesicomyidos, tubícolas vestimentíferos y carbonatos "
-               "autigénicos; hábitats mixtos, domina el banco de bivalvos"),
+        fluido="mixto", morfologia="monticulo_hidratos", confianza="media",
+        fuente="PDF: «Costa Rican seeps manifest in different ways on the sea "
+               "floor, including, but not limited to scarps and mounds»; los "
+               "sitios muestreados son Mounds 11 y 12 e Hydrate Ridge"),
     "10.1007/s00367-019-00635-6": dict(
         fluido="frio", morfologia="pockmark", confianza="alta",
         fuente="PDF: «an active pockmark currently releasing methane at Vestnesa "
@@ -204,7 +228,20 @@ TIPOLOGIA: dict[str, dict] = {
 # volcanes de lodo, pero al leerlo resulta que la mención está en una tabla
 # comparativa de OTRAS localidades o en la lista de referencias, no en la
 # descripción del sitio muestreado. Asignarla sería inventar.
+# Morfologías que NO salen del texto del artículo sino de que la localidad esté
+# documentada de forma inequívoca en la literatura. Van declaradas aquí para que
+# la auditoría no las dé por buenas en silencio: son una decisión, no un dato
+# leído. Cualquier asignación nueva sin apoyo textual FALLA la comprobación.
+JUSTIFICADA_POR_LOCALIDAD = {
+    "E08": "Hydrate Ridge (60 menciones) es un complejo de montículos de "
+           "hidratos con pavimentos carbonatados documentado desde Suess et "
+           "al. (1999); el artículo no emplea la palabra «mound».",
+}
+
 SIN_MORFOLOGIA = {
+    "E10": "Torres et al. (2010): multi-sitio por el margen de Cascadia "
+           "(Barkley Canyon, Bulls Eye Vent, Heceta Bank, Coos Bay, Eel "
+           "River); Hydrate Ridge es uno más y no hay morfología única.",
     "E02": "Machain-Castillo et al. (2019): el artículo no describe la "
            "morfología del fondo; se centra en el impacto del petróleo.",
     "E09": "Zhang et al. (2018): las menciones de pockmark, diapiro y tapete "

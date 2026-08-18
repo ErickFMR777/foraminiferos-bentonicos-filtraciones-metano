@@ -24,6 +24,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 import corrections as C  # noqa: E402
 import taxonomy as T  # noqa: E402
+import tipologia as TIP  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = Path(os.environ.get("THESIS_DATA_DIR", ROOT / "Data_nosubiralrepo"))
@@ -441,6 +442,57 @@ def main() -> int:
     # Vercel. No estaban servidos en ninguna URL, pero habían salido del
     # equipo. Se detectó consultando la API de despliegues, no razonando sobre
     # el CLI. Esta comprobación existe para que no vuelva a pasar en silencio.
+    # Cada morfología asignada debe poder verse en el CUERPO de su artículo.
+    # Existe porque dos asignaciones eran inferencias disfrazadas de evidencia:
+    # E24 salía como «pingo de hidratos de Storfjordrenna» y su artículo no dice
+    # «pingo» ni una vez —estudia los pockmarks de Vestnesa, a 330 km—, y E03
+    # salía como «pockmark» cuando esa palabra sólo aparecía en su propia
+    # bibliografía, citando a otro trabajo.
+    TERMINO = {
+        "pockmark": r"pockmark",
+        "volcan_lodo": r"mud[\s-]?volcano",
+        "monticulo_hidratos": r"\bmound",
+        "pingo_hidratos": r"\bpingo",
+        "diapiro": r"diapir",
+        "escarpe": r"escarpment|\bscarp",
+        "tapete_bacteriano": r"bacterial mat|microbial mat|Beggiatoa",
+        "banco_bivalvos": r"clam bed|mussel bed|bivalve|vesicomyid|Calyptogena",
+        "respiradero_hidrotermal": r"\bvent\b|hydrotherm",
+        "campo_filtracion": r"seep(?:age)? (?:field|site|area)",
+    }
+    ev_pdf = PRIV / "pdfs_evidencia.json"
+    if ev_pdf.exists() and DATA_DIR.exists():
+        import re as _re
+        from pypdf import PdfReader as _R
+        arch = {x["estudio_id"]: x["archivo"] for x in load(ev_pdf)
+                if x.get("estudio_id")}
+        sin_apoyo = []
+        for e in load(DERIV / "estudios.json"):
+            m, eid = e.get("morfologia"), e["id"]
+            if not m or m not in TERMINO or eid not in arch:
+                continue
+            p = DATA_DIR / arch[eid]
+            if not p.exists():
+                continue
+            try:
+                txt = " ".join((pg.extract_text() or "") for pg in _R(str(p)).pages)
+            except Exception:  # noqa: BLE001
+                continue
+            # se corta la bibliografía: ahí los títulos citados nombran
+            # morfologías de OTROS trabajos
+            corte = txt.lower().rfind("references")
+            cuerpo = txt[:corte] if corte > len(txt) * 0.5 else txt
+            if not _re.search(TERMINO[m], cuerpo, _re.I) \
+                    and eid not in TIP.JUSTIFICADA_POR_LOCALIDAD:
+                sin_apoyo.append(f"{eid}:{m}")
+        check("Toda morfología asignada aparece en el cuerpo de su artículo",
+              not sin_apoyo, f"{sin_apoyo}")
+        # Las excepciones son legítimas, pero no pueden acumularse en silencio.
+        check("Las morfologías justificadas sólo por la localidad son pocas y "
+              "están declaradas",
+              len(TIP.JUSTIFICADA_POR_LOCALIDAD) <= 3,
+              f"{sorted(TIP.JUSTIFICADA_POR_LOCALIDAD)}")
+
     # Lo extraído de las tablas se valida por RANGO FÍSICO: una cifra fuera de
     # rango significa que se leyó la columna equivocada, y eso hay que
     # detectarlo aquí y no en el dashboard.
