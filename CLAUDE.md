@@ -111,11 +111,19 @@ Los scripts leen los originales desde `THESIS_DATA_DIR` (por defecto
 
 ### Despliegue
 
-Vercel, proyecto `foraminiferos-caribe-colombiano`. El sitio va protegido con
-autenticación básica en el edge; las credenciales viven en las variables de
-entorno `DASHBOARD_USUARIO` y `DASHBOARD_CLAVE` de Vercel (definidas en las
-tres environments). Si no están definidas el sitio queda abierto — que es lo
-cómodo en local, y lo peligroso en producción.
+Vercel, proyecto `foraminiferos-caribe-colombiano`. El sitio va cerrado con
+sesión de cookie firmada, comprobada en el edge. **Si falta `SESION_SECRETO`
+el sitio queda abierto** — que es lo cómodo en local, y lo peligroso en
+producción.
+
+La contraseña **no** vive en una variable de entorno, sino en un almacén
+Vercel Blob privado (`auth/credenciales.json`), como derivación PBKDF2-SHA256
+con sal. Una variable de entorno es inmutable en ejecución: cambiarla exige
+redesplegar, y el usuario pide poder rotar la contraseña desde la interfaz.
+
+`DASHBOARD_USUARIO` / `DASHBOARD_CLAVE` sólo siembran el almacén la primera
+vez; después se ignoran. **Son la vía de recuperación**: borrar el blob
+devuelve el control a esas dos variables.
 
 ---
 
@@ -187,6 +195,14 @@ componente de visualización en `<Seccion>`.
 | `Sinu` | Barragán y Bernal (2024): mismo campo, con isótopos |
 | `Explorador` | Modo exploración: buscar, filtrar y ordenar los taxones |
 | `Referencias` | Las 40 referencias |
+| `Cuenta` | Cambiar la contraseña y cerrar sesión |
+
+La autenticación vive en `src/lib/sesion.ts` (firma HMAC, Web Crypto puro, el
+mismo código corre en edge y en Node), `src/lib/credenciales.ts` (almacén
+Blob; sólo desde runtime Node) y las tres rutas de `src/app/api/`. El
+middleware valida la firma de la cookie y **no lee el almacén**: sería una
+petición de red en cada visita. La contrapartida es que un testigo ya emitido
+vale hasta caducar, y por eso la sesión dura 12 horas.
 
 `src/lib/i18n.tsx` — contexto con `idioma` y `modo` (narrativa ↔ exploración),
 persistidos en `localStorage`. `useT()` devuelve `t(clave)` para las cadenas
@@ -211,6 +227,14 @@ explica el caso concreto; esto es el índice.
 - **`next.config.ts` NO lleva `output: "export"`.** Un export estático no
   admite middleware, y una contraseña en cliente sería decorativa. Para abrir
   el sitio al público: borrar `src/middleware.ts` y devolver `output: "export"`.
+- **La página de acceso se sirve como HTML en línea desde el middleware**, no
+  como ruta de Next. Si fuese una ruta habría que dejar pasar sin sesión sus
+  archivos de `/_next/static`, y ahí es donde viaja el dataset: sería reabrir
+  la fuga por la puerta de al lado. Por eso el único punto abierto es
+  `/api/entrar`.
+- **A `/api/*` sin sesión se le responde JSON, no la página de acceso.** Si
+  caduca la sesión con el dashboard abierto, devolver HTML rompe el `r.json()`
+  del componente y el usuario ve «no hay red» en vez de «sesión caducada».
 - **`05_worms.py::pick_foram` filtra por `phylum == "Foraminifera"`.** Varios
   géneros son homónimos entre grupos: `Cassidulina` devuelve un equinoideo. No
   quitar el filtro.

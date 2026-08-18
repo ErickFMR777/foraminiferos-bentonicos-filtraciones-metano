@@ -2,6 +2,7 @@
 
 import Barra from "./Barra";
 import Composicion from "./Composicion";
+import Cuenta from "./Cuenta";
 import Explorador from "./Explorador";
 import MapaMundial from "./MapaMundial";
 import MatrizLatProf from "./MatrizLatProf";
@@ -237,6 +238,18 @@ export default function Pagina() {
             </p>
             <Referencias />
           </div>
+        </Seccion>
+
+        {/* ── 08 ────────────────────────────────────────────────── */}
+        <Seccion
+          n={tx({ es: "08 · Cuenta", en: "08 · Account" })}
+          titulo={tx({ es: "Cambiar la contraseña", en: "Change the password" })}
+          entradilla={tx({
+            es: "El sitio está cerrado mientras la tesis siga sin publicarse. Desde aquí puedes rotar la contraseña sin pasar por el panel de Vercel ni volver a desplegar.",
+            en: "The site stays closed while the thesis remains unpublished. From here you can rotate the password without going through the Vercel dashboard or redeploying.",
+          })}
+        >
+          <Cuenta />
         </Seccion>
 
         <footer className="border-t border-(--border) pt-8 text-[0.8rem] leading-relaxed text-(--muted)">

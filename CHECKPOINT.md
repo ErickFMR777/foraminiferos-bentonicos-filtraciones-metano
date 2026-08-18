@@ -35,10 +35,26 @@ Proyecto de Vercel `foraminiferos-caribe-colombiano` (cuenta erickfmr777).
 El proyecto anterior `foraminiferos-caribe` se eliminó: Vercel no permite
 renombrar proyectos desde la CLI, así que hubo que recrearlo.
 
-La autenticación es HTTP básica en `src/middleware.ts`, con las credenciales
-en las variables de entorno `DASHBOARD_USUARIO` y `DASHBOARD_CLAVE` de Vercel
-(definidas en production, preview y development). Si no están definidas el
-sitio queda abierto, que es lo cómodo en local.
+**Autenticación con sesión de cookie (desde 2026-08-18).** Antes era HTTP
+básica; se cambió porque la básica no admite cambiar la contraseña: el
+navegador cachea las credenciales, no existe cerrar sesión, y la clave vivía
+en una variable de entorno que sólo se toca redesplegando.
+
+- La cookie va firmada con HMAC-SHA256 (`SESION_SECRETO`) y dura 12 horas. El
+  middleware valida la firma en el edge **sin leer el almacén**.
+- La contraseña vive en un almacén **Vercel Blob privado**, como derivación
+  PBKDF2-SHA256 (210.000 iteraciones) con sal. Su token alcanza sólo a ese
+  almacén; se descartó Edge Config y la variable de entorno porque escribir en
+  ellas exige un token con poder sobre TODA la cuenta.
+- Se cambia desde la sección **08 · Cuenta** del dashboard.
+- `DASHBOARD_USUARIO` / `DASHBOARD_CLAVE` sólo siembran el almacén la primera
+  vez. **Recuperación si se olvida la contraseña:** borrar el blob
+  `auth/credenciales.json` y vuelven a mandar esas dos variables.
+- Si falta `SESION_SECRETO` el sitio queda abierto, que es lo cómodo en local.
+
+Probado de extremo a extremo contra producción: contraseña incorrecta,
+demasiado corta, igual a la actual, cambio válido, la antigua deja de entrar,
+la nueva entra, y cambiar la clave sin sesión responde 401.
 
 **Por qué no es `output: "export"`.** Un export puramente estático no admite
 middleware, y una contraseña en el navegador sería decorativa: el dataset
