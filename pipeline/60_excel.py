@@ -16,6 +16,7 @@ que el archivo se entienda sin este código delante.
 from __future__ import annotations
 
 import json
+import math
 import os
 import sys
 from collections import Counter
@@ -107,13 +108,34 @@ def bibliografia() -> Path:
         "· Microhábitat, recuperado de la hoja borrador, donde se había perdido.",
         "· Referencia bibliográfica completa con DOI, resuelta contra CrossRef.",
         "· AphiaID, familia y orden de cada taxón.",
+        "· LA ASOCIACIÓN COMPLETA DE CADA ARTÍCULO, en la hoja «Asociaciones por "
+        "estudio»: 1.527 pares estudio-taxón leídos del texto completo. La base de la "
+        "tesis recogía «las 5 principales especies» de cada filtro, es decir una "
+        "muestra de las dominantes; esto es todo lo que cada artículo nombra.",
+        "· «Resumen por estudio»: cuántos taxones, especies y géneros aporta cada "
+        "artículo, y cuáles declara dominantes.",
         "",
-        "QUÉ NO CONTIENE",
-        "· Abundancias por especie. La base original registra presencia, no cantidad, "
-        "y los artículos publican sus abundancias en tablas que no se pudieron "
-        "extraer de forma fiable.",
-        "· La hoja «Taxones en los artículos» sí recoge todo taxón mencionado en el "
-        "texto completo de cada artículo, pero también es presencia, no abundancia.",
+        "CÓMO SE LEEN LAS TRES SEÑALES, QUE NO VALEN LO MISMO",
+        "· Presencia: el taxón aparece en el artículo. Señal sólida.",
+        "· Menciones: cuántas veces se nombra. Proxy DÉBIL de importancia — un "
+        "artículo repite un nombre en la introducción, en la discusión y al citar a "
+        "otros. Sirve para ordenar dentro de un artículo, no para comparar entre "
+        "artículos de distinta extensión.",
+        "· Dominante declarado: el propio texto lo afirma («dominant», «most "
+        "abundant»…). Es la única señal que puede llamarse dominancia.",
+        "",
+        "QUÉ NO CONTIENE — LÍMITES QUE CONVIENE CONOCER",
+        "· Abundancias numéricas por especie. La base original registra presencia, no "
+        "cantidad. De los 36 artículos legibles, 33 mencionan abundancias relativas, "
+        "25 traen valores de δ13C y 9 reportan índices de diversidad: NADA DE ESO SE "
+        "EXTRAJO. Vive en tablas que el lector de PDF no interpreta de forma fiable, "
+        "y extraerlas mal sería peor que no extraerlas.",
+        "· Un artículo (E13) es un PDF escaneado sin capa de texto: no aporta taxones "
+        "a la hoja de asociaciones.",
+        "· 7 de los 40 estudios no tienen morfología asignada. En varios el texto sí "
+        "menciona pockmarks o volcanes de lodo, pero la mención está en una tabla "
+        "comparativa de otras localidades o en la bibliografía, no en la descripción "
+        "del sitio muestreado. Asignarla sería inventar.",
         "",
         "La hoja «Correcciones» lista una a una todas las diferencias respecto del "
         "archivo original, con su motivo y su fuente.",
@@ -174,16 +196,71 @@ def bibliografia() -> Path:
     ] for t in json.loads((DERIV / "taxones_global.json").read_text(encoding="utf-8"))],
         [32, 10, 20, 22, 10, 10, 10, 22, 24, 24, 14, 16, 16])
 
+    # Qué estudio reporta cada taxón. El recuento solo no permite rastrear la
+    # afirmación hasta su artículo, y esta base existe para poder hacerlo.
+    reg = json.loads(
+        (PRIV / "taxones_pdf.json").read_text(encoding="utf-8"))["registros"]
+    quien: dict[str, list[str]] = {}
+    for r in reg:
+        quien.setdefault(r["taxon"], []).append(r["estudio_id"])
+    dom: dict[str, list[str]] = {}
+    for r in reg:
+        if r["dominante_declarado"]:
+            dom.setdefault(r["taxon"], []).append(r["estudio_id"])
+
     hoja(wb, "Taxones en los artículos", [
         "Taxón", "Rango", "Género", "Familia", "Orden", "AphiaID",
-        "Nº de estudios que lo reportan", "Declarado dominante en",
+        "Nº de estudios que lo reportan", "Reportado en (IDs)",
+        "Declarado dominante en", "Dominante en (IDs)",
         "¿Estaba en la base?", "¿Está en MSH-BC-21?",
     ], [[
         t["taxon"], t["rango"], t["genero"], t["familia"], t["orden"],
-        t["aphia_id"], t["n_estudios"], t["n_estudios_dominante"],
+        t["aphia_id"], t["n_estudios"],
+        ", ".join(sorted(set(quien.get(t["taxon"], [])))),
+        t["n_estudios_dominante"],
+        ", ".join(sorted(set(dom.get(t["taxon"], [])))),
         "sí" if t["en_base_tesis"] else "no",
         "sí" if t["en_msh_bc21"] else "no",
-    ] for t in comp["taxones"]], [32, 10, 20, 22, 16, 10, 16, 16, 16, 16])
+    ] for t in comp["taxones"]],
+        [32, 10, 20, 22, 16, 10, 16, 30, 16, 26, 16, 16])
+
+    # LA ASOCIACIÓN COMPLETA, estudio por estudio. Es el dato que la tesis no
+    # tenía: su base recogía «las 5 principales especies» de cada filtro, de
+    # modo que era una muestra de las dominantes, no la asociación entera.
+    est_por_id = {e["id"]: e for e in
+                  json.loads((DERIV / "estudios.json").read_text(encoding="utf-8"))}
+    en_base = {t["taxon"] for t in
+               json.loads((DERIV / "taxones_global.json").read_text(encoding="utf-8"))}
+    filas_asoc = []
+    for r in sorted(reg, key=lambda x: (x["estudio_id"], -x["menciones"], x["taxon"])):
+        e = est_por_id.get(r["estudio_id"], {})
+        filas_asoc.append([
+            r["estudio_id"], (e.get("autores") or [""])[0], e.get("anio"),
+            e.get("localidad"), e.get("tipo_filtracion"), e.get("morfologia_label"),
+            r["taxon"], r["taxon_texto"], r["rango"], r["genero"], r["familia"],
+            r["orden"], r["aphia_id"], r["menciones"],
+            "sí" if r["dominante_declarado"] else "no",
+            "sí" if r["taxon"] in en_base else "no",
+        ])
+    hoja(wb, "Asociaciones por estudio", [
+        "ID estudio", "Primer autor", "Año", "Localidad", "Tipo de fluido",
+        "Morfología", "Taxón (nombre válido)", "Nombre leído en el texto",
+        "Rango", "Género", "Familia", "Orden", "AphiaID", "Menciones",
+        "¿Dominante declarado?", "¿Estaba en la base de la tesis?",
+    ], filas_asoc,
+        [11, 18, 7, 34, 14, 22, 32, 32, 10, 20, 22, 16, 10, 11, 16, 20])
+
+    hoja(wb, "Resumen por estudio", [
+        "ID", "Autores", "Año", "Título", "Localidad", "Tipo de fluido",
+        "Morfología", "Nº de taxones", "Nº de especies", "Nº de géneros",
+        "Ya estaban en la base", "Dominantes declarados",
+    ], [[
+        p["estudio_id"], p["autores"], p["anio"], p["titulo"], p["localidad"],
+        p["tipo_filtracion"], p["morfologia"], p["n_taxones"], p["n_especies"],
+        p["n_generos"], p["n_en_base_tesis"],
+        ", ".join(p["dominantes_declarados"]) or "—",
+    ] for p in comp["por_estudio"]],
+        [8, 24, 7, 60, 34, 14, 22, 12, 12, 12, 14, 46])
 
     hoja(wb, "Correcciones", [
         "Tipo", "Desde", "Hacia", "Motivo", "Fuente", "Impacto",
@@ -246,15 +323,20 @@ def coleccion() -> Path:
         "directo disponible para esta muestra.",
     ])
 
+    # Se devuelve Pi*Ln(Pi) por especie, que la hoja original sí traía: es el
+    # sumando de Shannon, y sin él no se puede rehacer el índice a mano.
     hoja(wb, "Clasificación corregida", [
         "Taxón (nombre válido)", "Taxón original", "AphiaID", "Género", "Familia",
-        "Orden", "Tipo de pared", "Subtipo", "Conteo ponderado",
-        "Abundancia relativa (%)", "También en el Sinú (2024)",
+        "Tipo de pared", "Subtipo", "Conteo ponderado",
+        "Abundancia relativa (%)", "Pi", "Pi*Ln(Pi)", "También en el Sinú (2024)",
     ], [[
         e["taxon"], e["taxon_original"], e["aphia_id"], e["genero"], e["familia"],
-        None, e["pared"], e["subtipo"], e["conteo"], e["abundancia_rel"],
+        e["pared"], e["subtipo"], e["conteo"], e["abundancia_rel"],
+        round(pi := e["conteo"] / msh["total_ponderado"], 6),
+        round(pi * math.log(pi), 6),
         "sí" if e["taxon"] in compartidos else "",
-    ] for e in msh["especies"]], [32, 32, 10, 20, 24, 16, 14, 16, 16, 18, 20])
+    ] for e in msh["especies"]],
+        [32, 32, 10, 20, 24, 14, 16, 16, 18, 12, 14, 20])
 
     ind = msh["indices"]
     hoja(wb, "Índices y composición", ["Indicador", "Valor", "Nota"], [

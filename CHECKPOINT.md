@@ -169,15 +169,37 @@ releer la tesis; ningún script del pipeline usa pandas).
 `60_excel.py` devuelve las correcciones al formato original, en dos archivos
 NUEVOS dentro de `Data_nosubiralrepo/` (los originales no se tocan):
 
-- **`BD FORAMS AMBTE FILTRACION - CORREGIDA.xlsx`** — Léeme · Base corregida
-  (327 registros × 27 columnas) · Estudios · Taxones de la base · Taxones
-  leídos de los artículos (515) · Correcciones (85).
+- **`BD FORAMS AMBTE FILTRACION - CORREGIDA.xlsx`** (229 KB) — Léeme · Base
+  corregida (327 × 27) · Estudios (40 × 18) · Taxones de la base (197) ·
+  Taxones leídos de los artículos (515, con los IDs de quién los reporta y de
+  quién los declara dominantes) · **Asociaciones por estudio (1.527 pares
+  estudio-taxón)** · **Resumen por estudio (36)** · Correcciones (85).
 - **`Coleccion MSH-BC-21 - CORREGIDA.xlsx`** — Léeme · Clasificación corregida
-  · Índices recalculados · Abundancias · Correcciones.
+  (52, con `Pi` y `Pi*Ln(Pi)` por especie, como el original) · Índices
+  recalculados · Abundancias · Correcciones.
+
+Las **asociaciones por estudio son el aporte que la tesis no tenía**: su base
+recogía «las 5 principales especies» por filtro —una muestra de las
+dominantes—, y esta hoja trae todo lo que cada artículo nombra.
+
+Las tres señales no valen lo mismo y el Léeme lo declara: **presencia**
+(sólida), **menciones** (proxy débil, no comparable entre artículos de
+distinta extensión) y **dominante declarado** (la única que puede llamarse
+dominancia).
 
 Cada libro abre con una hoja «Léeme» que explica qué cambió, qué se añadió y
 **qué no se pudo reconstruir**, para que el archivo se entienda sin el código
 delante.
+
+**Lo que sigue sin extraerse, y está declarado en el Léeme:** de los 36
+artículos legibles, 33 mencionan abundancias relativas, 25 traen δ13C y 9
+índices de diversidad — **ninguna cifra de eso se extrajo**. Vive en tablas
+que pypdf no interpreta de forma fiable. E13 es un PDF escaneado sin capa de
+texto. 7 de 40 estudios siguen sin morfología asignada.
+
+`99_auditoria.py` verifica ahora estos libros si existen: que la hoja de
+asociaciones conserve los 1.527 pares, que las 150 dominancias cuadren con el
+pipeline y que `Pi*Ln(Pi)` reconstruya el Shannon publicado (3,4325).
 
 ---
 

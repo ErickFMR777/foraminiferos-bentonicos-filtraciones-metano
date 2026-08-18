@@ -453,6 +453,41 @@ def main() -> int:
               not faltan, f"faltan {faltan}")
 
     # ---------------------------------------------------------------------
+    # Los Excel corregidos son un producto más del pipeline, y hasta ahora
+    # nadie los verificaba: se comprueban si existen. Que la hoja de
+    # asociaciones cuadre con el pipeline es lo que impide que se quede a
+    # medias sin que nadie lo note.
+    libro = DATA_DIR / "BD FORAMS AMBTE FILTRACION - CORREGIDA.xlsx"
+    if libro.exists():
+        print("\n[8] EXCEL CORREGIDOS")
+        wbc = openpyxl.load_workbook(libro, data_only=True)
+        pdfs = PRIV / "taxones_pdf.json"
+        if "Asociaciones por estudio" in wbc.sheetnames and pdfs.exists():
+            n_xl = wbc["Asociaciones por estudio"].max_row - 1
+            regs = load(pdfs)["registros"]
+            check("La hoja de asociaciones conserva todos los pares estudio-taxón",
+                  n_xl == len(regs), f"Excel {n_xl} vs pipeline {len(regs)}")
+            dom_xl = sum(1 for f in wbc["Asociaciones por estudio"]
+                         .iter_rows(min_row=2, values_only=True) if f[14] == "sí")
+            dom_pp = sum(1 for r in regs if r["dominante_declarado"])
+            check("Las dominancias declaradas cuadran con el pipeline",
+                  dom_xl == dom_pp, f"Excel {dom_xl} vs pipeline {dom_pp}")
+        else:
+            check("El Excel corregido trae la hoja de asociaciones",
+                  False, "falta «Asociaciones por estudio»")
+
+        col = DATA_DIR / "Coleccion MSH-BC-21 - CORREGIDA.xlsx"
+        if col.exists():
+            wsc = openpyxl.load_workbook(col, data_only=True)["Clasificación corregida"]
+            cab = [c.value for c in wsc[1]]
+            if "Pi*Ln(Pi)" in cab:
+                i = cab.index("Pi*Ln(Pi)")
+                suma = -sum(f[i] for f in wsc.iter_rows(min_row=2, values_only=True))
+                h = load(DERIV / "msh_bc21.json")["indices"]["shannon_H"]
+                check("Pi*Ln(Pi) del Excel reconstruye el Shannon publicado",
+                      abs(suma - h) < 1e-3, f"{suma:.4f} vs {h}")
+
+    # ---------------------------------------------------------------------
     print("\n" + "=" * 74)
     print(f"RESULTADO: {N_OK} comprobaciones OK, {len(FALLAS)} fallas")
     if FALLAS:
