@@ -170,7 +170,8 @@ def main() -> int:
         "en geociencias para el sector de hidrocarburos\n"
         "Contrato/convenio Minciencias — Entidad: 80740-143-2021\n"
         "Grupo de investigación OCEÁNICOS\n"
-        "Entidades: UPB · UNAL · GMAS · GEOMARES · ACGGP")
+        "Entidades ejecutoras y beneficiarias:\n"
+        "UPB · UNAL · GMAS · GEOMARES · ACGGP")
     pdf.ln(14)
     pdf.set_font("D", "", 8.6)
     pdf.set_text_color(*SUAVE)

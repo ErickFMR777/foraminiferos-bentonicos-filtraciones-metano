@@ -31,12 +31,23 @@ export default function Pagina() {
       <main className="mx-auto max-w-[68rem] px-6 pb-24">
         {/* ── portada ─────────────────────────────────────────── */}
         <header className="py-16 md:py-24">
-          <p className="mb-4 text-[0.72rem] uppercase tracking-[0.16em] text-(--muted)">
-            {tx({
-              es: "Universidad Nacional de Colombia · Proyecto Methane seep hunting (MSH)",
-              en: "Universidad Nacional de Colombia · Methane seep hunting (MSH) project",
-            })}
-          </p>
+          {/* El nombre del proyecto va COMPLETO, no abreviado: es el que
+              consta en el contrato con Minciencias. */}
+          <div className="mb-5 space-y-1 text-[0.72rem] uppercase tracking-[0.16em] text-(--muted)">
+            <p>
+              {tx({
+                es: "Universidad Nacional de Colombia, sede Medellín · Facultad de Minas",
+                en: "Universidad Nacional de Colombia, Medellín · Facultad de Minas",
+              })}
+            </p>
+            <p className="text-(--ink-2)">
+              {tx({
+                es: "Proyecto Methane seep hunting: A multi-scale and multi method approach",
+                en: "Methane seep hunting: A multi-scale and multi method approach",
+              })}
+            </p>
+            <p>UPB · UNAL · GMAS · GEOMARES · ACGGP</p>
+          </div>
           <h1 className="mb-4 max-w-[20ch] text-[2.5rem] leading-[1.08] md:text-[3.4rem]">
             {tx({
               es: "Foraminíferos bentónicos en filtraciones de metano",

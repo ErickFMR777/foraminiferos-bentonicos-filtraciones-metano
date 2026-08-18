@@ -97,8 +97,9 @@ function paginaAcceso(destino: string, fallo: boolean): string {
      contenido que recorrer. El dashboard sigue alineado a la izquierda,
      que es lo legible en textos largos. */
   .marca,h1,p.sub,footer{text-align:center}
-  .marca{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
-    color:var(--muted);margin:0 0 .9rem}
+  .marca{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
+    line-height:1.6;color:var(--muted);margin:0 0 1rem}
+  .marca .proyecto{display:inline-block;margin-top:.3rem;color:var(--ink-2)}
   h1{font-family:Georgia,"Times New Roman",serif;font-weight:600;
     letter-spacing:-.011em;font-size:1.5rem;line-height:1.25;margin:0 0 .7rem}
   p.sub{margin:0 0 1.6rem;font-size:.86rem;line-height:1.55;color:var(--ink-2)}
@@ -125,7 +126,8 @@ function paginaAcceso(destino: string, fallo: boolean): string {
 </head>
 <body>
 <main>
-  <p class="marca">Universidad Nacional de Colombia · Proyecto Methane seep hunting</p>
+  <p class="marca">Universidad Nacional de Colombia, sede Medellín · Facultad de Minas<br>
+    <span class="proyecto">Proyecto Methane seep hunting: A multi-scale and multi method approach</span></p>
   <h1>Foraminíferos bentónicos en filtraciones de metano</h1>
   <p class="sub">Comparación entre distintas localidades del mundo y la
     plataforma continental del Caribe colombiano.<br>
@@ -152,7 +154,12 @@ function paginaAcceso(destino: string, fallo: boolean): string {
       Proyecto <strong>Methane seep hunting: A multi-scale and multi method
       approach</strong><br>
       Programa Nacional de Ciencia, Tecnología e Innovación en Geociencias<br>
-      Convocatoria 877-2020 · Contrato Minciencias 80740-143-2021
+      Convocatoria 877-2020 · Contrato Minciencias 80740-143-2021<br>
+      Grupo de investigación OCEÁNICOS
+    </span>
+    <span class="sep">
+      Entidades ejecutoras y beneficiarias<br>
+      <strong>UPB · UNAL · GMAS · GEOMARES · ACGGP</strong>
     </span>
   </footer>
 </main>

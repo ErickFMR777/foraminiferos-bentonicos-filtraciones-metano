@@ -132,8 +132,8 @@ export default function Sinu() {
 
       <ComoSeLee>
         {tx({
-          es: "Este trabajo es la continuación directa de la tesis: mismo proyecto MSH, misma directora y el mismo campo de filtración frente al Golfo de Morrosquillo. Donde la tesis analizó un testigo, aquí hay 18 estaciones; y aporta los isótopos que a la tesis le faltaban. Las asociaciones son las que el propio artículo declara para cada nivel de actividad.",
-          en: "This work is the direct continuation of the thesis: same MSH project, same advisor and the same seep field off the Gulf of Morrosquillo. Where the thesis analysed one core, here there are 18 stations; and it supplies the isotopes the thesis lacked. The assemblages are those the article itself states for each activity level.",
+          es: "Cada columna reúne los taxones que el artículo asocia a un nivel de actividad de filtración: baja, moderada y moderada-alta. La intensidad del color acompaña esa gradación y no codifica ninguna magnitud medida. El punto junto a un nombre indica que ese taxón también aparece en MSH-BC-21. Abajo, los rangos de δ13C son los valores mínimo y máximo publicados para cada especie, en por mil frente al estándar PDB: cuanto más negativos, mayor la impronta de carbono derivado del metano.",
+          en: "Each column groups the taxa the article associates with one level of seepage activity: low, moderate and moderate-high. Colour intensity follows that gradation and encodes no measured magnitude. The dot beside a name marks a taxon that also occurs in MSH-BC-21. Below, the δ13C ranges are the minimum and maximum values published for each species, in per mil against the PDB standard: the more negative, the stronger the imprint of methane-derived carbon.",
         })}
       </ComoSeLee>
 
