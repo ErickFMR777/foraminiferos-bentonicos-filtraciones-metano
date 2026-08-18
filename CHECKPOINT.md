@@ -472,3 +472,31 @@ los datos.
 componente los lee. No se borran porque son datos curados y publicables —el
 primero es la Historia 5, «El Caribe contra sí mismo», que nunca se construyó—
 pero **o se usan o se retiran**.
+
+
+---
+
+## 13. Cierre: los datos huérfanos, resueltos (2026-08-18)
+
+Los dos datasets que se generaban sin consumidor ya tienen destino, decidido
+**midiendo el solape con la base curada (309 registros)**:
+
+| Dato | Solape | Destino |
+|---|---|---|
+| δ13C | **73 %** (14/19) | Columnas en la **base principal** del Excel |
+| Abundancias | **17 %** (34/200) | Hoja **«Asociaciones por estudio»** (vista ampliada) |
+| Fauna caribeña | — | **Sección 07**, como contraste. NUNCA fusionada |
+
+**Por qué la fauna caribeña no entra en la base principal.** Las cinco
+localidades (manglar, estuario, arrecife) caen todas en la banda **0-15°** y son
+someras: fusionarlas metería 4-5 entradas en la celda 0-15° / <150 m, que hoy
+está en cero y es el argumento central del trabajo. Serían entradas de fauna
+que **no es de filtración**, igual que McCorkle (1990). El titular «nadie ha
+estudiado esto aquí» se volvería falso por un artefacto de la propia base.
+
+**Lo que aporta puesta como contraste:** en las cinco localidades caribeñas una
+sola especie se lleva del **29 al 61 %** de la asociación; en MSH-BC-21 la más
+abundante no llega al **11 %**. Lo que distingue la muestra no es el elenco de
+especies sino el reparto — que es justo lo que mide su J′ = 0,8687.
+
+El dashboard pasa a **nueve secciones**; Límites es 08 y Cuenta 09.

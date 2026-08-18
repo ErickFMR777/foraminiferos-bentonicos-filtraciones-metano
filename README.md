@@ -39,7 +39,7 @@ UPB · GMAS · GEOMARES · ACGGP**.
 
 ## Qué ofrece
 
-Ocho secciones en scroll, todas bilingües y con su bloque «Cómo se lee».
+Nueve secciones en scroll, todas bilingües y con su bloque «Cómo se lee».
 
 | # | Sección | Qué responde |
 |---|---|---|
@@ -49,8 +49,9 @@ Ocho secciones en scroll, todas bilingües y con su bloque «Cómo se lee».
 | 04 | **El veredicto** | Cuatro criterios de la literatura contrastados con lo que la muestra mide |
 | 05 | **La continuación** | Barragán y Bernal (2024): 18 estaciones del mismo campo, con isótopos |
 | 06 | **El catálogo** | Explorador de los taxones: buscar, filtrar y ordenar |
-| 07 | **Límites** | Lo que estos datos **no** pueden decir |
-| 08 | **Cuenta** | Cambiar la contraseña, protegida por pregunta de seguridad |
+| 07 | **El Caribe contra sí mismo** | La muestra frente a la fauna de fondo regional |
+| 08 | **Límites** | Lo que estos datos **no** pueden decir |
+| 09 | **Cuenta** | Cambiar la contraseña, protegida por pregunta de seguridad |
 
 ### Los hallazgos que sostienen la narrativa
 
@@ -67,6 +68,11 @@ Ocho secciones en scroll, todas bilingües y con su bloque «Cómo se lee».
 - **La diversidad de MSH-BC-21 (H′ = 3,4325) deja de ser una anomalía.**
   Barragán y Bernal miden Shannon de 3,0 a 3,8 en las 18 estaciones del mismo
   campo, incluidas las de actividad alta.
+- **En el Caribe colombiano, una sola especie se lleva entre el 29 y el 61 %
+  de la asociación** —manglares, estuarios, arrecifes—. En MSH-BC-21 la más
+  abundante no llega al 11 %. Lo que distingue la muestra no es *qué* especies
+  hay, sino que **ninguna manda**: es exactamente lo que mide su equidad de
+  Pielou, J′ = 0,8687.
 
 ---
 
@@ -84,6 +90,9 @@ Ocho secciones en scroll, todas bilingües y con su bloque «Cómo se lee».
 | MSH-BC-21 | S = 52 · H′ = 3,4325 · J′ = 0,8687 |
 | Pared de MSH-BC-21 | 87,0 % calcáreo / 13,0 % aglutinado |
 | Solape con la literatura | 14 / 52 especies |
+| δ¹³C extraído de tablas | 19 pares taxón-estudio, 5 estudios |
+| Abundancias extraídas | 200 pares, 6 estudios |
+| Índices de diversidad | 8 valores, 6 estudios |
 | Peso del dataset público | ~554 KB |
 
 ---
@@ -205,6 +214,25 @@ un umbral de **0,80 medido sobre los 87 nombres difusos de esta base**.
   `pdfplumber`, que da la posición de cada palabra: agrupando por coordenada
   vertical se recupera la fila.
 
+### Dónde va cada dato, y por qué
+
+No todo lo extraído entra en el mismo sitio, y la decisión se tomó **midiendo
+el solape**, no por comodidad:
+
+- **δ¹³C → la base principal.** Comparte grano con ella (una medida por taxón
+  dentro de un estudio) y el **73 %** de los valores cae sobre registros que la
+  base ya tiene. Son columnas nuevas, no filas nuevas.
+- **Abundancias → la vista ampliada.** Sólo el **17 %** solapa: la base de la
+  tesis recoge «las 5 principales especies» por filtro y las tablas listan la
+  asociación entera. Meterlas en la base obligaría a tirar el 83 % o a añadir
+  166 filas que la curación excluyó a propósito.
+- **Fauna de referencia del Caribe → dataset de contraste, nunca fusionado.**
+  Las cinco localidades caen en la banda 0-15° y son someras: fusionarlas
+  llenaría con fauna de manglar y arrecife **justamente la celda que el trabajo
+  señala como vacía**, y convertiría en falso el hallazgo central. Es el mismo
+  error que ya se corrigió con McCorkle (1990), que figuraba como estudio de
+  filtración sin serlo.
+
 ### La auditoría no se fía del pipeline
 
 `99_auditoria.py` **vuelve a leer los Excel originales** y verifica de forma
@@ -234,6 +262,9 @@ Un trabajo serio dice lo que **no** puede decir.
 - **Dos estudios sin PDF** (E05, E26) y **7 de 40 sin morfología**, porque la
   mención estaba en una tabla comparativa de otras localidades y asignarla
   sería inventar.
+- **La fauna de referencia caribeña viene de fuentes secundarias** —la tesis
+  citando a terceros— con métodos y fracciones de tamaño distintos entre sí.
+  Ese contraste es indicativo, no cuantitativamente estricto.
 - **El registro mundial está sesgado.** Comparar una plataforma tropical con
   filtraciones profundas de latitudes altas tiene un límite.
 

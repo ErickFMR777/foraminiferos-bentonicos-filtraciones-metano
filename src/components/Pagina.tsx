@@ -1,6 +1,7 @@
 "use client";
 
 import Barra from "./Barra";
+import Caribe from "./Caribe";
 import Composicion from "./Composicion";
 import Cuenta from "./Cuenta";
 import Explorador from "./Explorador";
@@ -214,9 +215,47 @@ export default function Pagina() {
           <Explorador />
         </Seccion>
 
+        {/* ── 07 · el contraste regional ───────────────────────── */}
+        <Seccion
+          n={tx({ es: "07 · El Caribe contra sí mismo", en: "07 · The Caribbean against itself" })}
+          titulo={tx({
+            es: "Lo que distingue la muestra no es qué especies hay",
+            en: "What sets the sample apart is not which species are there",
+          })}
+          entradilla={tx({
+            es: "La tesis reunió, en prosa, las asociaciones publicadas para otras zonas del Caribe colombiano: estuarios, manglares y arrecifes. Ninguna es una filtración. Puestas una al lado de otra aparece un patrón que ninguna de ellas muestra por separado.",
+            en: "The thesis gathered, in prose, the assemblages published for other areas of the Colombian Caribbean: estuaries, mangroves and reefs. None is a seep. Set side by side, a pattern appears that none of them shows alone.",
+          })}
+        >
+          <Caribe />
+
+          <div className="mt-10 border-t border-(--border) pt-8">
+            <div className="max-w-[64ch] space-y-4 text-[0.92rem] leading-relaxed text-(--ink-2)">
+              <p>
+                {tx({
+                  es: "En las cinco localidades caribeñas una sola especie se lleva entre el 29 y el 61 % de la asociación. En MSH-BC-21 la más abundante no llega al 11 %. La diferencia no está en el elenco —hay géneros compartidos— sino en el reparto: aquí no manda nadie.",
+                  en: "At the five Caribbean localities a single species takes between 29 and 61% of the assemblage. In MSH-BC-21 the most abundant does not reach 11%. The difference is not in the cast — there are shared genera — but in the split: here nothing dominates.",
+                })}
+              </p>
+              <p>
+                {tx({
+                  es: "Eso es exactamente lo que mide la equidad de Pielou, que en la muestra vale 0,8687 sobre un máximo de 1. Un ambiente estable y selectivo —un manglar, un banco arrecifal— premia a una especie y la deja crecer sobre las demás. La ausencia de ese ganador es, en sí misma, un dato sobre el ambiente.",
+                  en: "That is precisely what Pielou's evenness measures, and in the sample it is 0.8687 out of a maximum of 1. A stable, selective environment — a mangrove, a reef bank — rewards one species and lets it grow over the rest. The absence of such a winner is itself a fact about the environment.",
+                })}
+              </p>
+              <p>
+                {tx({
+                  es: "Conviene no forzar la lectura: las cifras caribeñas vienen de fuentes secundarias y de métodos distintos, así que el contraste es indicativo. Pero apunta en la misma dirección que el resto del trabajo — y explica por qué la diversidad alta de la muestra, que parecía contradecir la literatura de filtraciones, encaja con su entorno regional.",
+                  en: "The reading should not be forced: the Caribbean figures come from secondary sources and different methods, so the contrast is indicative. But it points the same way as the rest of the work — and explains why the sample's high diversity, which seemed to contradict the seep literature, fits its regional setting.",
+                })}
+              </p>
+            </div>
+          </div>
+        </Seccion>
+
         {/* ── cierre ───────────────────────────────────────────── */}
         <Seccion
-          n={tx({ es: "07 · Límites", en: "07 · Limits" })}
+          n={tx({ es: "08 · Límites", en: "08 · Limits" })}
           titulo={tx({
             es: "Lo que estos datos no pueden decir",
             en: "What these data cannot tell us",
@@ -270,7 +309,7 @@ export default function Pagina() {
 
         {/* ── 08 ────────────────────────────────────────────────── */}
         <Seccion
-          n={tx({ es: "08 · Cuenta", en: "08 · Account" })}
+          n={tx({ es: "09 · Cuenta", en: "09 · Account" })}
           titulo={tx({ es: "Cambiar la contraseña", en: "Change the password" })}
           entradilla={tx({
             es: "El acceso es restringido porque los datos primarios del proyecto son inéditos. Desde aquí se rota la contraseña sin pasar por el panel de Vercel ni volver a desplegar. Hace falta además la respuesta a la pregunta de seguridad: así se puede compartir el acceso para que alguien lo vea, sin que pueda cambiar la clave.",

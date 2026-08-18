@@ -188,9 +188,21 @@ def bibliografia() -> Path:
         "archivo original, con su motivo y su fuente.",
     ])
 
+    # δ13C leído de las tablas, indexado por (estudio, taxón). Va a la BASE
+    # PRINCIPAL y no a una hoja aparte porque comparte su mismo grano —una
+    # medida por taxón dentro de un estudio— y el 73 % de los valores cae sobre
+    # registros que la base ya tiene. Las abundancias, en cambio, sólo solapan
+    # un 17 %: la base recoge «las 5 principales especies» por filtro y las
+    # tablas listan la asociación entera, así que van a la vista ampliada.
+    cuant = json.loads((DERIV / "cuantitativos.json").read_text(encoding="utf-8")) \
+        if (DERIV / "cuantitativos.json").exists() else {"d13C": [], "abundancia_rel": []}
+    d13 = {(x["estudio_id"], x["taxon"]): x for x in cuant["d13C"]}
+    abund = {(x["estudio_id"], x["taxon"]): x for x in cuant["abundancia_rel"]}
+
     filas: list[list] = []
     for r in bib:
         e = est.get(xref.get(r["estudio"], ""), {})
+        iso = d13.get((e.get("id"), r["taxon"]))
         filas.append([
             e.get("id"), (e.get("autores") or [None])[0], e.get("anio"),
             e.get("titulo") or r["estudio"], e.get("doi"),
@@ -203,6 +215,9 @@ def bibliografia() -> Path:
             "sí" if r.get("recuperado") else "no",
             "derivada" if r.get("pared_derivada") else "original",
             "sí" if r["verificado_worms"] else "no",
+            iso["min"] if iso else None,
+            iso["max"] if iso else None,
+            iso["n"] if iso else None,
         ])
     hoja(wb, "Base corregida", [
         "ID estudio", "Primer autor", "Año", "Título", "DOI",
@@ -213,8 +228,8 @@ def bibliografia() -> Path:
         "Tipo de pared", "Subtipo", "Banda latitudinal", "Banda de profundidad",
         "Microhábitat", "Estudio reincorporado", "Origen del tipo de pared",
         "Verificado en WoRMS",
-    ], filas, [10, 18, 7, 46, 26, 34, 16, 10, 10, 12, 16, 22, 30, 30, 10, 10,
-               18, 20, 16, 14, 15, 16, 18, 20, 18, 18, 16])
+        "δ13C mín (‰)", "δ13C máx (‰)", "δ13C nº valores",
+    ], filas, [10, 18, 7, 46, 26, 34, 16, 10, 10, 12, 16, 22, 30, 30, 10, 10, 18, 20, 16, 14, 15, 16, 18, 20, 18, 18, 16, 13, 13, 13])
 
     hoja(wb, "Estudios", [
         "ID", "Autores", "Año", "Título", "Revista", "DOI", "Registros",
@@ -294,6 +309,9 @@ def bibliografia() -> Path:
             "sí" if r["dominante_declarado"] else "no",
             r.get("evidencia_dominancia") or "",
             "sí" if r["taxon"] in en_base else "no",
+            (ab := abund.get((r["estudio_id"], r["taxon"]))) and ab["min"],
+            ab["max"] if ab else None,
+            ab["n"] if ab else None,
         ])
     hoja(wb, "Asociaciones por estudio", [
         "ID estudio", "Primer autor", "Año", "Localidad", "Tipo de fluido",
@@ -302,9 +320,10 @@ def bibliografia() -> Path:
         "Menciones en la bibliografía", "¿Aparece en Resultados?",
         "¿Dominante declarado?", "Frase que lo afirma",
         "¿Estaba en la base de la tesis?",
+        "Abund. mín (%)", "Abund. máx (%)", "Abund. nº valores",
     ], filas_asoc,
         [11, 18, 7, 34, 14, 22, 32, 32, 10, 20, 22, 16, 10, 11, 14, 16, 16,
-         80, 20])
+         80, 20, 14, 14, 15])
 
     # Una fila por estudio con SU asociación dominante. Es la pregunta directa
     # —«qué domina en cada localidad»— y hasta ahora había que reconstruirla

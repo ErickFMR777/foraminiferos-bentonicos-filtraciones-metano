@@ -244,6 +244,7 @@ componente de visualización en `<Seccion>`.
 | `Veredicto` | ¿Qué tan *seep* se ve MSH-BC-21? |
 | `Sinu` | Barragán y Bernal (2024): mismo campo, con isótopos |
 | `Explorador` | Modo exploración: buscar, filtrar y ordenar los taxones |
+| `Caribe` | El contraste con la fauna de fondo regional |
 | `Referencias` | Las 40 referencias |
 | `Cuenta` | Cambiar la contraseña y cerrar sesión |
 
@@ -344,6 +345,24 @@ si cambia el pipeline, **regenerarlos desde `data/derived/`**, no editarlos a
 mano, y con `99_auditoria.py` en verde. La §10 conserva la dirección visual
 acordada, pero sus valores de color son la propuesta inicial, anterior al
 validador: los vigentes son los de `globals.css`.
+
+---
+
+## Dónde va cada dato extraído
+
+Decidido **midiendo el solape**, no por comodidad:
+
+- **δ13C → la base principal** (`Base corregida` del Excel). Mismo grano y el
+  **73 %** cae sobre registros que ya existen: son columnas, no filas.
+- **Abundancias → la vista ampliada** (`Asociaciones por estudio`). Sólo
+  solapan un **17 %**: la base recoge «las 5 principales especies» por filtro
+  y las tablas listan la asociación entera.
+- **`caribe_referencia` → sección de contraste, NUNCA fusionado con la base.**
+  Las cinco localidades caen en la banda 0-15° y son someras: fusionarlas
+  llenaría de fauna de manglar y arrecife **justamente la celda vacía que
+  sostiene el argumento central**, y lo volvería falso. Es el mismo error que
+  ya se corrigió con McCorkle (1990). Si alguien propone «unificar las bases»,
+  esto es lo que hay que responderle.
 
 ---
 
