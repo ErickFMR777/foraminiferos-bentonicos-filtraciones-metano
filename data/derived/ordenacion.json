@@ -1,0 +1,244 @@
+{
+ "metodo": {
+  "matriz": "presencia/ausencia de taxones por estudio",
+  "distancia": "Jaccard",
+  "ordenacion": "PCoA (escalado multidimensional clásico)",
+  "prueba": "PERMANOVA de una vía, 9999 permutaciones",
+  "franja_riqueza": [
+   18,
+   70
+  ],
+  "semilla": 20230601
+ },
+ "n_estudios": 12,
+ "n_taxones": 193,
+ "descartados": [
+  "E02",
+  "E03",
+  "E06",
+  "E07",
+  "E08",
+  "E10",
+  "E12",
+  "E13",
+  "E14",
+  "E18",
+  "E19",
+  "E21",
+  "E23",
+  "E25",
+  "E27",
+  "E30",
+  "E31",
+  "E32",
+  "E33",
+  "E34",
+  "E35",
+  "E36",
+  "E38",
+  "E39",
+  "E40"
+ ],
+ "varianza_explicada": [
+  0.1539,
+  0.1408,
+  0.1144,
+  0.0955,
+  0.0951
+ ],
+ "correlacion_con_riqueza_SIN_rarefaccion": {
+  "eje1_rho": 0.33,
+  "eje1_p": 0.294,
+  "nota": "Ésta es la razón de rarefaccionar: sin corregir, el primer eje era la riqueza y no la composición."
+ },
+ "correlacion_con_riqueza": {
+  "eje1_rho": 0.33,
+  "eje1_p": 0.2942,
+  "eje2_rho": 0.439,
+  "eje2_p": 0.153
+ },
+ "factores": {
+  "tipo_fluido": {
+   "n_grupos": 2,
+   "n_estudios": 12,
+   "pseudo_F": 1.354,
+   "p": 0.066
+  },
+  "morfologia": {
+   "n_grupos": 3,
+   "n_estudios": 10,
+   "pseudo_F": 1.266,
+   "p": 0.046
+  },
+  "banda_profundidad": {
+   "n_grupos": 2,
+   "n_estudios": 12,
+   "pseudo_F": 1.127,
+   "p": 0.196
+  },
+  "banda_latitud": {
+   "n_grupos": 2,
+   "n_estudios": 12,
+   "pseudo_F": 1.479,
+   "p": 0.0087
+  }
+ },
+ "puntos": [
+  {
+   "estudio_id": "E01",
+   "autor": "Rathburn, A.",
+   "anio": 2000,
+   "localidad": "Bancos de almejas del río Eel, norte de California",
+   "tipo_fluido": "frio",
+   "morfologia": "Banco de bivalvos",
+   "lat": 40.7833,
+   "prof_m": 512,
+   "riqueza": 40,
+   "eje1": 0.3133,
+   "eje2": -0.0603
+  },
+  {
+   "estudio_id": "E04",
+   "autor": "Fontanier, C.",
+   "anio": 2014,
+   "localidad": "Delta profundo del Níger, Golfo de Guinea",
+   "tipo_fluido": "frio",
+   "morfologia": "Pockmark",
+   "lat": 4.0,
+   "prof_m": 1200,
+   "riqueza": 19,
+   "eje1": -0.3826,
+   "eje2": 0.0338
+  },
+  {
+   "estudio_id": "E09",
+   "autor": "Zhang, B.",
+   "anio": 2018,
+   "localidad": "Área de Dongsha, Mar de China Meridional NE",
+   "tipo_fluido": "frio",
+   "morfologia": null,
+   "lat": 22.1,
+   "prof_m": 770,
+   "riqueza": 45,
+   "eje1": -0.069,
+   "eje2": 0.0713
+  },
+  {
+   "estudio_id": "E11",
+   "autor": "Fontanier, C.",
+   "anio": 2018,
+   "localidad": "Mar de Mármara",
+   "tipo_fluido": "frio",
+   "morfologia": "Tapete bacteriano",
+   "lat": 40.8,
+   "prof_m": 500,
+   "riqueza": 31,
+   "eje1": -0.1966,
+   "eje2": -0.0675
+  },
+  {
+   "estudio_id": "E15",
+   "autor": "Sen Gupta, B.K.",
+   "anio": 1994,
+   "localidad": "Escapes batiales de hidrocarburos, Golfo de México",
+   "tipo_fluido": "termogenico",
+   "morfologia": "Tapete bacteriano",
+   "lat": 27.7,
+   "prof_m": 650,
+   "riqueza": 45,
+   "eje1": 0.0429,
+   "eje2": 0.3992
+  },
+  {
+   "estudio_id": "E16",
+   "autor": "Sen Gupta, B.K.",
+   "anio": 1997,
+   "localidad": "Talud del Golfo de México (tapetes bacterianos)",
+   "tipo_fluido": "termogenico",
+   "morfologia": "Tapete bacteriano",
+   "lat": 27.7,
+   "prof_m": 650,
+   "riqueza": 51,
+   "eje1": 0.1641,
+   "eje2": 0.4429
+  },
+  {
+   "estudio_id": "E17",
+   "autor": "Rathburn, A.E.",
+   "anio": 2003,
+   "localidad": "Extrovert Cliffs, Bahía de Monterey",
+   "tipo_fluido": "frio",
+   "morfologia": "Banco de bivalvos",
+   "lat": 36.7767,
+   "prof_m": 960,
+   "riqueza": 19,
+   "eje1": 0.2188,
+   "eje2": -0.1952
+  },
+  {
+   "estudio_id": "E20",
+   "autor": "Bernhard, J.M.",
+   "anio": 2001,
+   "localidad": "Bahía de Monterey, California",
+   "tipo_fluido": "frio",
+   "morfologia": "Banco de bivalvos",
+   "lat": 36.77,
+   "prof_m": 950,
+   "riqueza": 43,
+   "eje1": 0.2136,
+   "eje2": -0.2149
+  },
+  {
+   "estudio_id": "E22",
+   "autor": "Jones, R.W.",
+   "anio": 1993,
+   "localidad": "Mar del Norte (escape de gas biogénico)",
+   "tipo_fluido": "biogenico",
+   "morfologia": "Pockmark",
+   "lat": 57.0,
+   "prof_m": 150,
+   "riqueza": 46,
+   "eje1": 0.0181,
+   "eje2": -0.0179
+  },
+  {
+   "estudio_id": "E24",
+   "autor": "Dessandier, P.",
+   "anio": 2019,
+   "localidad": "Pingos de hidratos de Storfjordrenna, Mar de Barents",
+   "tipo_fluido": "frio",
+   "morfologia": "Pingo de hidratos",
+   "lat": 76.1,
+   "prof_m": 380,
+   "riqueza": 21,
+   "eje1": -0.37,
+   "eje2": -0.1646
+  },
+  {
+   "estudio_id": "E28",
+   "autor": "Hill, T.",
+   "anio": 2003,
+   "localidad": "Canal de Santa Bárbara, California",
+   "tipo_fluido": "frio",
+   "morfologia": "Pockmark",
+   "lat": 34.35,
+   "prof_m": 500,
+   "riqueza": 35,
+   "eje1": 0.1609,
+   "eje2": -0.2335
+  },
+  {
+   "estudio_id": "E29",
+   "autor": "Panieri, G.",
+   "anio": 2005,
+   "localidad": "Depresión de Rockall, Atlántico NE",
+   "tipo_fluido": "termogenico",
+   "morfologia": null,
+   "lat": 55.5,
+   "prof_m": 700,
+   "riqueza": 21,
+   "eje1": -0.1135,
+   "eje2": 0.0066
+  }
+ ]
+}

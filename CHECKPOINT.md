@@ -138,6 +138,7 @@ python pipeline/20_build.py      # -> data/derived/*.json (público)
 python pipeline/40_taxones_pdf.py    # lee los artículos completos (WoRMS)
 python pipeline/45_tablas_pdf.py     # TABLAS: d13C, abundancias, indices
 python pipeline/50_estadisticas.py   # -> taxones_completo.json
+python pipeline/70_ordenacion.py     # PCoA + PERMANOVA -> ordenacion.json
 python pipeline/30_informe.py    # -> Informe_curacion_datos.pdf
 python pipeline/60_excel.py      # -> los dos Excel corregidos (carpeta privada)
 python pipeline/99_auditoria.py  # 89 comprobaciones; código 1 si algo falla

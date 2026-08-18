@@ -28,6 +28,7 @@ from __future__ import annotations
 
 import json
 import bisect
+import difflib
 import os
 import re
 import sys
@@ -173,6 +174,29 @@ def expandir_abreviados(t: str, completos: set[str]) -> str:
         return next(iter(cand)) if cand and len(cand) == 1 else m.group(0)
 
     return ABREVIADO.sub(sub, t)
+
+
+def genero_compatible(candidato: str, w: dict) -> bool:
+    """¿La coincidencia difusa de WoRMS respeta el género?
+
+    WoRMS empareja por aproximación, y eso RESCATA erratas de OCR reales
+    —«Sfainforfhia fisiformis» es Stainforthia fusiformis, «Bolivma ordinaria»
+    es Bolivina ordinaria— pero también puede saltar de un género a otro:
+    «Bolivina tenuata» acabó emparejado con *Bulimina* tenuata y archivado como
+    Eubuliminella exilis, que es otra cosa.
+
+    El umbral de 0,80 no es arbitrario: se midió sobre los 87 nombres difusos
+    de esta base y separa exactamente ese único salto de género (0,750) de la
+    errata legítima más extrema (0,800).
+    """
+    if w.get("match_type") in ("exact", "exact_subgenus"):
+        return True
+    emparejado = (w.get("matched") or "").split()
+    partes = candidato.split()
+    if not emparejado or not partes:
+        return False
+    return difflib.SequenceMatcher(
+        None, partes[0].lower(), emparejado[0].lower()).ratio() >= 0.80
 
 
 def dominantes_del_texto(cuerpo: str, nombres: list[str]) -> dict[str, str]:
@@ -325,7 +349,8 @@ def main() -> int:
 
     validos = {k: cache[k] for k in candidatos
                if cache.get(k, {}).get("found")
-               and (cache[k].get("phylum") or "").lower() == "foraminifera"}
+               and (cache[k].get("phylum") or "").lower() == "foraminifera"
+               and genero_compatible(k, cache[k])}
     print(f"    {len(validos)} candidatos son foraminíferos reconocidos")
 
     # --- 3. ocurrencias por estudio ------------------------------------

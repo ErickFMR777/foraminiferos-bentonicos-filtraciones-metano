@@ -130,6 +130,7 @@ python pipeline/20_build.py           # -> data/derived/*.json (PÚBLICO)
 python pipeline/40_taxones_pdf.py     # lee los artículos completos
 python pipeline/45_tablas_pdf.py      # TABLAS: d13C, abundancias, indices
 python pipeline/50_estadisticas.py    # -> taxones_completo.json
+python pipeline/70_ordenacion.py      # PCoA + PERMANOVA -> ordenacion.json
 python pipeline/30_informe.py         # -> Informe_curacion_datos.pdf
 python pipeline/60_excel.py           # -> los Excel corregidos (carpeta privada)
 python pipeline/99_auditoria.py       # sale con código 1 si algo falla
@@ -140,8 +141,8 @@ confía en las salidas intermedias: vuelve a leer los Excel originales y
 verifica de forma independiente la conservación de registros, la aritmética
 recalculada desde cero, la coherencia entre datasets y la ausencia de fugas.
 
-Dependencias: `openpyxl`, `pypdf`, `fpdf2`, `pdfplumber`. **Ningún script
-usa pandas.** `pdfplumber` es sólo para `45_tablas_pdf.py`: `pypdf` devuelve
+Dependencias: `openpyxl`, `pypdf`, `fpdf2`, `pdfplumber`, `numpy`, `scipy`.
+**Ningún script usa pandas.** `pdfplumber` es sólo para `45_tablas_pdf.py`: `pypdf` devuelve
 el texto en orden de lectura y una tabla se vuelve una ristra de números sin
 columnas; `pdfplumber` da la POSICIÓN de cada palabra, y agrupando por
 coordenada vertical se recupera la fila, que es lo que asocia un taxón con
@@ -243,6 +244,7 @@ componente de visualización en `<Seccion>`.
 | `Veredicto` | ¿Qué tan *seep* se ve MSH-BC-21? |
 | `Sinu` | Barragán y Bernal (2024): mismo campo, con isótopos |
 | `Explorador` | Modo exploración: buscar, filtrar y ordenar los taxones |
+| `Ordenacion` | PCoA de las asociaciones + PERMANOVA |
 | `Referencias` | Las 40 referencias |
 | `Cuenta` | Cambiar la contraseña y cerrar sesión |
 
@@ -344,3 +346,32 @@ si cambia el pipeline, **regenerarlos desde `data/derived/`**, no editarlos a
 mano, y con `99_auditoria.py` en verde. La §10 conserva la dirección visual
 acordada, pero sus valores de color son la propuesta inicial, anterior al
 validador: los vigentes son los de `globals.css`.
+
+---
+
+## La ordenación (`70_ordenacion.py`)
+
+**No se hace un PCA con todas las variables, y el motivo es de fondo.** δ13C,
+abundancias e índices de diversidad sólo se pudieron extraer del 12-15 % de
+los estudios: un análisis con el 85 % de la matriz imputado no describe los
+datos, **inventa** la estructura que uno cree luego haber descubierto. Esos
+valores se publican en sus propias hojas, no en el análisis.
+
+Lo que sí tiene cobertura completa es la composición: qué taxones reporta cada
+estudio. Se ordena por PCoA sobre distancia de Jaccard de presencia/ausencia,
+y se prueba con PERMANOVA de una vía.
+
+**El confusor que hay que vigilar siempre: la riqueza.** Los estudios reportan
+de 2 a 318 taxones. Con todos dentro, el eje 1 reproducía la riqueza a
+**rho = −0,95** — era esfuerzo de muestreo, no ecología. La rarefacción **no**
+lo arregla (submuestrear 12 taxones de un artículo que nombra 318 lo convierte
+en un sorteo, y el sorteo se aleja de todos). La franja 18-70 taxones no es un
+recorte cosmético: es la única probada en que la riqueza deja de gobernar el
+eje 1 (rho = +0,33, p = 0,29). **Si se toca `MIN_TAXONES`/`MAX_TAXONES`, hay
+que volver a mirar esa correlación antes de interpretar nada.**
+
+Resultado con n=12: latitud p=0,009; morfología p=0,046; fluido p=0,066;
+profundidad p=0,20. Es **exploratorio**, no confirmatorio, y el dashboard lo
+dice. El hallazgo más transferible es el metodológico: las listas faunísticas
+extraídas del texto arrastran una señal de esfuerzo que domina cualquier
+ordenación.

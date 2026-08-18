@@ -424,20 +424,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Eubuliminella exilis",
-   "rango": "especie",
-   "genero": "Eubuliminella",
-   "familia": "Buliminellidae",
-   "orden": "Rotaliida",
-   "aphia_id": 417980,
-   "n_estudios": 8,
-   "menciones": 61,
-   "n_estudios_resultados": 8,
-   "n_estudios_dominante": 1,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
-  },
-  {
    "taxon": "Oridorsalis umbonatus",
    "rango": "especie",
    "genero": "Oridorsalis",
@@ -531,6 +517,20 @@
    "n_estudios": 7,
    "menciones": 28,
    "n_estudios_resultados": 6,
+   "n_estudios_dominante": 1,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Eubuliminella exilis",
+   "rango": "especie",
+   "genero": "Eubuliminella",
+   "familia": "Buliminellidae",
+   "orden": "Rotaliida",
+   "aphia_id": 417980,
+   "n_estudios": 7,
+   "menciones": 59,
+   "n_estudios_resultados": 7,
    "n_estudios_dominante": 1,
    "en_base_tesis": true,
    "en_msh_bc21": false
@@ -7580,20 +7580,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Eubuliminella exilis",
-   "rango": "especie",
-   "genero": "Eubuliminella",
-   "familia": "Buliminellidae",
-   "orden": "Rotaliida",
-   "aphia_id": 417980,
-   "n_estudios": 8,
-   "menciones": 61,
-   "n_estudios_resultados": 8,
-   "n_estudios_dominante": 1,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
-  },
-  {
    "taxon": "Oridorsalis umbonatus",
    "rango": "especie",
    "genero": "Oridorsalis",
@@ -7645,6 +7631,20 @@
    "n_estudios": 7,
    "menciones": 28,
    "n_estudios_resultados": 6,
+   "n_estudios_dominante": 1,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Eubuliminella exilis",
+   "rango": "especie",
+   "genero": "Eubuliminella",
+   "familia": "Buliminellidae",
+   "orden": "Rotaliida",
+   "aphia_id": 417980,
+   "n_estudios": 7,
+   "menciones": 59,
+   "n_estudios_resultados": 7,
    "n_estudios_dominante": 1,
    "en_base_tesis": true,
    "en_msh_bc21": false
@@ -9248,12 +9248,6 @@
    "en_msh_bc21": false
   },
   {
-   "genero": "Eubuliminella",
-   "n_estudios": 9,
-   "n_taxones": 2,
-   "en_msh_bc21": false
-  },
-  {
    "genero": "Quinqueloculina",
    "n_estudios": 8,
    "n_taxones": 14,
@@ -9269,6 +9263,12 @@
    "genero": "Reophax",
    "n_estudios": 8,
    "n_taxones": 6,
+   "en_msh_bc21": false
+  },
+  {
+   "genero": "Eubuliminella",
+   "n_estudios": 8,
+   "n_taxones": 2,
    "en_msh_bc21": false
   },
   {
@@ -10551,7 +10551,7 @@
   },
   {
    "familia": "Buliminidae",
-   "ocurrencias": 85
+   "ocurrencias": 83
   },
   {
    "familia": "Hauerinidae",
@@ -10945,7 +10945,7 @@
  "ordenes": [
   {
    "orden": "Rotaliida",
-   "ocurrencias": 1051
+   "ocurrencias": 1049
   },
   {
    "orden": "Miliolida",
@@ -13379,10 +13379,10 @@
    "localidad": "Respiradero Pinkies, Cuenca de Guaymas, Golfo de California",
    "tipo_filtracion": "hidrotermal",
    "morfologia": "Respiradero hidrotermal",
-   "n_taxones": 9,
-   "n_especies": 4,
-   "n_generos": 6,
-   "n_en_resultados": 9,
+   "n_taxones": 8,
+   "n_especies": 3,
+   "n_generos": 5,
+   "n_en_resultados": 8,
    "n_en_base_tesis": 4,
    "asociacion_dominante": [],
    "destacados_derivados": [
@@ -13433,11 +13433,6 @@
      "taxon": "Bolivina",
      "menciones": 1,
      "dominante": false
-    },
-    {
-     "taxon": "Eubuliminella exilis",
-     "menciones": 1,
-     "dominante": false
     }
    ],
    "dominantes_declarados": [],
@@ -13446,7 +13441,6 @@
     "Bulimina",
     "Globobulimina",
     "Bolivina",
-    "Eubuliminella",
     "Planulina"
    ]
   },
