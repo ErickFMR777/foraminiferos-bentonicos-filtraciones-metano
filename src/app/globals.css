@@ -1,4 +1,13 @@
-@import "tailwindcss";
+/* `source(none)` apaga la detección automática, y el único origen declarado es
+   src/. No es cosmético: Tailwind v4 escanea TODO el repositorio, y aquí eso
+   significaba leer la documentación y el pipeline. La prosa de CLAUDE.md habla
+   de clases —«font-serif», «tabular-nums»— y `.capitalize()` es un método de
+   Python; Tailwind los tomaba por uso real y emitía CSS que ningún componente
+   pide. Peor que el peso: producción excluye .md y pipeline/ por .vercelignore,
+   así que el build local NO coincidía con el desplegado. Dos builds distintos
+   del mismo commit es justo lo que impide verificar el despliegue contra el
+   código. Las clases sólo pueden venir de src/. */
+@import "tailwindcss" source("../");
 
 /* ==========================================================================
    SISTEMA DE DISEÑO — «el microscopio»

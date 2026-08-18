@@ -337,6 +337,16 @@ explica el caso concreto; esto es el índice.
   cromática deficiente. La paleta desaturada que se probó primero falló. No
   sustituir esos valores a ojo. El color codifica variables; si no codifica
   nada, es gris.
+- **Tailwind sólo puede escanear `src/`**, y por eso `globals.css` abre con
+  `@import "tailwindcss" source("../")`. Con la detección automática, Tailwind
+  v4 lee **todo el repositorio**: tomaba por clases la prosa de la
+  documentación —CLAUDE.md nombra `font-serif` y `tabular-nums` al explicar por
+  qué NO se usan— y el `.capitalize()` de un script de Python. Emitía ~900
+  bytes de CSS que ningún componente pide. Lo grave no era el peso: producción
+  excluye `.md` y `pipeline/` por `.vercelignore`, así que **el build local no
+  coincidía con el desplegado**, y eso impide comprobar el despliegue contra el
+  código. Acotado el origen, ambos dan 29 355 bytes idénticos. Si alguien
+  quita el `source("../")`, la documentación vuelve a inventar CSS.
 - **Ningún componente fija un color en hex.** Un hex no cambia con el tema;
   el fondo sobre el que se pinta, sí. `MatrizLatProf` llevaba la tinta de la
   cifra en hex fijo sobre un fondo `var(--seq-*)`, y en modo oscuro el paso
