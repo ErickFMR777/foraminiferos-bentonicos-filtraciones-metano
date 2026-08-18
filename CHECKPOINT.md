@@ -70,10 +70,19 @@ CLI no sabía renombrar. **Ya sí**: `vercel project rename viejo nuevo` (CLI 57
 
 **Dos cosas que el renombrado NO hace solo**, y costaron un 404 y un 302:
 
-1. **No crea el dominio nuevo.** Renombrar el proyecto deja
-   `<nombre-nuevo>.vercel.app` sin asignar: hay que crearlo con
-   `vercel alias set <deployment> <dominio>`. El dominio viejo sigue vivo
-   apuntando al mismo despliegue, así que ningún enlace ya compartido se rompe.
+1. **No crea el dominio nuevo, y esto tiene más cola de lo que parece.**
+   Renombrar deja `<nombre-nuevo>.vercel.app` sin resolver (404) mientras el
+   **dominio de producción sigue atado al nombre original**. Se comprobó a las
+   malas: `vercel alias set` lo levanta, pero crea un alias ESTÁTICO que no
+   sigue a los despliegues siguientes —el push publicaba y el dominio nuevo
+   seguía sirviendo el build anterior—, mientras el viejo sí se movía solo.
+   Tampoco lo arreglan `vercel domains add` (responde
+   `domain_already_assigned`), ni `vercel project update` (no toca dominios),
+   ni un `vercel redeploy`, que vuelve a aliasar al nombre viejo.
+
+   **Lo único que reasigna de verdad el dominio de producción es recrear el
+   proyecto.** Mientras no se haga, hay que reasignar el alias a mano tras cada
+   despliegue, o quedarse con el dominio viejo, que sí se actualiza solo.
 2. **El proyecto tenía protección SSO** (`ssoProtection.deploymentType =
    all_except_custom_domains`), heredada de la etapa con contraseña. El dominio
    viejo estaba exento por ser el de producción, pero el nuevo alias caía en
