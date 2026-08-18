@@ -68,6 +68,20 @@ dominio.
 Nota histórica que ha caducado: antes hubo que recrear el proyecto porque el
 CLI no sabía renombrar. **Ya sí**: `vercel project rename viejo nuevo` (CLI 57).
 
+**Dos cosas que el renombrado NO hace solo**, y costaron un 404 y un 302:
+
+1. **No crea el dominio nuevo.** Renombrar el proyecto deja
+   `<nombre-nuevo>.vercel.app` sin asignar: hay que crearlo con
+   `vercel alias set <deployment> <dominio>`. El dominio viejo sigue vivo
+   apuntando al mismo despliegue, así que ningún enlace ya compartido se rompe.
+2. **El proyecto tenía protección SSO** (`ssoProtection.deploymentType =
+   all_except_custom_domains`), heredada de la etapa con contraseña. El dominio
+   viejo estaba exento por ser el de producción, pero el nuevo alias caía en
+   ella y devolvía 302 a `vercel.com/sso-api`: el sitio parecía roto estando
+   bien. Se retiró con `vercel project protection disable <proyecto> --sso`.
+   **Si algún día vuelve a cerrarse el sitio, esta es la palanca**, no el
+   middleware.
+
 ### Historial: la etapa con contraseña (retirada el 2026-08-18, ver §16)
 
 Lo que sigue **ya no está en el código**. Se conserva porque describe una

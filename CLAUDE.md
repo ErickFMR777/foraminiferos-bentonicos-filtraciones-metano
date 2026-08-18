@@ -160,8 +160,16 @@ Los scripts leen los originales desde `THESIS_DATA_DIR` (por defecto
 
 ### Despliegue
 
-Vercel, proyecto `foraminiferos-bentonicos-filtraciones-metano`, **desplegado desde GitHub**: cada push a
-`master` publica solo, sin `vercel deploy` a mano. **El sitio es público y
+Vercel, proyecto `foraminiferos-bentonicos-filtraciones-metano`, **desplegado
+desde GitHub**: cada push a `master` publica solo, sin `vercel deploy` a mano.
+El repositorio, el proyecto de Vercel y el dominio llevan el mismo nombre a
+propósito.
+
+Lo que mantiene el sitio abierto **no es el código, es un ajuste de Vercel**:
+`ssoProtection` desactivado. Estuvo en `all_except_custom_domains` de la etapa
+con contraseña, y ahí cualquier dominio nuevo devuelve 302 a `vercel.com/sso-api`
+—el sitio parece roto estando bien—. Se mira con
+`vercel project protection <proyecto>`. **El sitio es público y
 estático**: `output: "export"` en `next.config.ts`, sin servidor, sin variables
 de entorno y sin nada que decidir en runtime. `npm run build` deja el sitio
 entero en `out/`.
