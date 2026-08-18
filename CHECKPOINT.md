@@ -90,15 +90,29 @@ una URL vieja anunciada en GitHub:
 
    Orden correcto, entonces: `alias set` **y luego** `domains add`.
 
-2. **El dominio viejo NO se va solo, y no se puede desregistrar.** Un
-   `.vercel.app` no es un dominio del equipo: `vercel domains rm` responde
-   `Domain not found`, porque esa orden retira la propiedad de dominios
-   propios. La única palanca es `vercel alias rm <dominio>`, y hay que
-   comprobarla **después de un despliegue**: la primera vez que se quitó, el
-   `redeploy` siguiente volvió a crearlo, porque entonces era el dominio de
-   producción del proyecto. Una vez que el nuevo quedó registrado con
-   `domains add`, quitar el viejo sí es definitivo — verificado con un push
-   posterior.
+2. **El dominio viejo NO se va solo, y `vercel alias rm` NO basta.** Es la
+   trampa más cara de todas, porque *parece* que funciona: el alias
+   desaparece, el dominio devuelve 404 y todo se ve bien… hasta el siguiente
+   despliegue, que **lo recrea**. Se comprobó dos veces, y la segunda con el
+   dominio nuevo ya registrado, así que no era eso.
+
+   El motivo es que un dominio de proyecto y un alias son cosas distintas.
+   `alias rm` borra el enlace; el **registro** sigue en el proyecto y cada
+   despliegue de producción lo vuelve a enlazar. Y ese registro no se puede
+   tocar desde el CLI: `vercel domains rm` responde `Domain not found` porque
+   esa orden retira la propiedad de dominios *propios*, y un `.vercel.app` no
+   lo es.
+
+   Lo que sí lo quita es la API REST, con la sesión que el propio CLI ya tiene:
+
+   ```
+   GET    /v9/projects/{projectId}/domains?teamId={teamId}     # ver el registro
+   DELETE /v9/projects/{projectId}/domains/{dominio}?teamId=…  # quitarlo
+   ```
+
+   Tras el DELETE el alias se va con él. **No hizo falta borrar y recrear el
+   proyecto**, que era la otra salida y la que este documento recomendaba
+   antes.
 
 3. **GitHub se queda con la URL vieja.** Al conectar Vercel con el repositorio,
    la integración escribe el *homepage* del repo, y ese campo no se actualiza

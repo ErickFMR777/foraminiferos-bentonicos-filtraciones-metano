@@ -169,11 +169,15 @@ propósito, y **hay un solo dominio vivo**:
 
 Los anteriores (`foraminiferos-caribe`, `foraminiferos-caribe-colombiano`) están
 retirados a conciencia: nombraban sólo el Caribe un trabajo de alcance mundial,
-que es el mismo error que se corrigió en el titular de la página. Si aparecen
-otra vez respondiendo, es que un despliegue los ha recreado — se quitan con
-`vercel alias rm`. Y el *homepage* del repositorio en GitHub lo escribe la
-integración de Vercel al conectarla: **no se actualiza al renombrar** y hay que
-corregirlo a mano con `gh repo edit --homepage`.
+que es el mismo error que se corrigió en el titular de la página.
+
+**`vercel alias rm` no los retira de verdad**: borra el enlace, deja el registro
+en el proyecto y el siguiente despliegue lo recrea — parece resuelto y no lo
+está. Hay que quitar el registro por la API
+(`DELETE /v9/projects/{id}/domains/{dominio}`), y el detalle está en el §1 bis
+del CHECKPOINT. Y el *homepage* del repositorio en GitHub lo escribe la
+integración de Vercel al conectarla: **no se actualiza al renombrar** y se
+corrige con `gh repo edit --homepage`.
 
 Lo que mantiene el sitio abierto **no es el código, es un ajuste de Vercel**:
 `ssoProtection` desactivado. Estuvo en `all_except_custom_domains` de la etapa
