@@ -8,8 +8,6 @@ export type Idioma = "es" | "en";
  *  par {es, en}; aquí sólo lo que se repite. */
 const DIC = {
   es: {
-    modoNarrativa: "Narrativa",
-    modoExploracion: "Exploración",
     verTabla: "Ver como tabla",
     ocultarTabla: "Ocultar tabla",
     sinDatos: "sin datos",
@@ -27,8 +25,6 @@ const DIC = {
     idioma: "Idioma",
   },
   en: {
-    modoNarrativa: "Narrative",
-    modoExploracion: "Explore",
     verTabla: "View as table",
     ocultarTabla: "Hide table",
     sinDatos: "no data",
@@ -52,19 +48,14 @@ type Clave = keyof typeof DIC.es;
 const Ctx = createContext<{
   idioma: Idioma;
   setIdioma: (i: Idioma) => void;
-  modo: "narrativa" | "exploracion";
-  setModo: (m: "narrativa" | "exploracion") => void;
-}>({ idioma: "es", setIdioma: () => {}, modo: "narrativa", setModo: () => {} });
+}>({ idioma: "es", setIdioma: () => {} });
 
 export function Proveedor({ children }: { children: React.ReactNode }) {
   const [idioma, setIdiomaEstado] = useState<Idioma>("es");
-  const [modo, setModoEstado] = useState<"narrativa" | "exploracion">("narrativa");
 
   useEffect(() => {
     const g = localStorage.getItem("idioma");
     if (g === "es" || g === "en") setIdiomaEstado(g);
-    const m = localStorage.getItem("modo");
-    if (m === "narrativa" || m === "exploracion") setModoEstado(m);
   }, []);
 
   const setIdioma = (i: Idioma) => {
@@ -72,13 +63,9 @@ export function Proveedor({ children }: { children: React.ReactNode }) {
     localStorage.setItem("idioma", i);
     document.documentElement.lang = i;
   };
-  const setModo = (m: "narrativa" | "exploracion") => {
-    setModoEstado(m);
-    localStorage.setItem("modo", m);
-  };
 
   return (
-    <Ctx.Provider value={{ idioma, setIdioma, modo, setModo }}>
+    <Ctx.Provider value={{ idioma, setIdioma }}>
       {children}
     </Ctx.Provider>
   );

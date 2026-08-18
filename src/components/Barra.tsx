@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useApp, useT } from "@/lib/i18n";
 
 export default function Barra() {
-  const { idioma, setIdioma, modo, setModo } = useApp();
+  const { idioma, setIdioma } = useApp();
   const { t, tx } = useT();
   const [tema, setTema] = useState<"light" | "dark" | null>(null);
 
@@ -33,20 +33,6 @@ export default function Barra() {
             en: "Benthic foraminifera · Methane seeps",
           })}
         </span>
-
-        <div className="flex gap-1" role="group" aria-label="Modo">
-          {(["narrativa", "exploracion"] as const).map((m) => (
-            <button
-              key={m}
-              type="button"
-              onClick={() => setModo(m)}
-              aria-pressed={modo === m}
-              className={btn + " " + (modo === m ? activo : inactivo)}
-            >
-              {m === "narrativa" ? t("modoNarrativa") : t("modoExploracion")}
-            </button>
-          ))}
-        </div>
 
         <div className="flex gap-1" role="group" aria-label={t("idioma")}>
           {(["es", "en"] as const).map((i) => (

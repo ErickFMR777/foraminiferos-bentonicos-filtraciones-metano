@@ -138,7 +138,6 @@ python pipeline/20_build.py      # -> data/derived/*.json (público)
 python pipeline/40_taxones_pdf.py    # lee los artículos completos (WoRMS)
 python pipeline/45_tablas_pdf.py     # TABLAS: d13C, abundancias, indices
 python pipeline/50_estadisticas.py   # -> taxones_completo.json
-python pipeline/70_ordenacion.py     # PCoA + PERMANOVA -> ordenacion.json
 python pipeline/30_informe.py    # -> Informe_curacion_datos.pdf
 python pipeline/60_excel.py      # -> los dos Excel corregidos (carpeta privada)
 python pipeline/99_auditoria.py  # 89 comprobaciones; código 1 si algo falla
@@ -406,7 +405,8 @@ tesis (p. 35: 8 especies × 3 vistas, grises sobre negro, barras de escala).
 - Serif editorial en titulares (Source Serif 4 / Newsreader), sans neutral en
   cuerpo (Inter), `tabular-nums` en cifras.
 - **Nombres de especies siempre en cursiva** — componente `<Taxon>`.
-- Doble modo: `Narrativa` (una idea por pantalla, jerga glosada) ↔
+- ~~Doble modo `Narrativa` ↔ `Exploración`~~: se implementó y se retiró el
+  2026-08-18 — sólo cambiaba el `n=` de dos barras. Antiguamente:
   `Exploración` (n visible, filtros, tablas, notas de método).
 - Accesibilidad: contraste AA, no depender sólo de color, teclado,
   `prefers-reduced-motion`.

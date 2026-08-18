@@ -2,7 +2,7 @@
 
 import pared from "@datos/pared_por_banda.json";
 import msh from "@datos/msh_bc21.json";
-import { useApp, useT } from "@/lib/i18n";
+import { useT } from "@/lib/i18n";
 import { ComoSeLee, Nota } from "@/lib/ui";
 
 /** Referencia publicada: Chiang et al. (2015) contrastan sitios de filtración
@@ -58,7 +58,6 @@ function Barra({
 
 export default function ParedPorBanda() {
   const { tx } = useT();
-  const { modo } = useApp();
   const lat = pared.filter((p) => p.eje === "latitud" && p.n > 0);
   const prof = pared.filter((p) => p.eje === "profundidad" && p.n > 0);
   const pocos = pared.filter((p) => p.n > 0 && p.n < 10).length;
@@ -74,7 +73,7 @@ export default function ParedPorBanda() {
             <Barra
               key={p.banda}
               calcareo={p.calcareo ?? 0}
-              n={modo === "exploracion" ? p.n : undefined}
+              n={p.n}
               etiqueta={p.banda + "°"}
             />
           ))}
@@ -87,7 +86,7 @@ export default function ParedPorBanda() {
             <Barra
               key={p.banda}
               calcareo={p.calcareo ?? 0}
-              n={modo === "exploracion" ? p.n : undefined}
+              n={p.n}
               etiqueta={p.banda}
             />
           ))}

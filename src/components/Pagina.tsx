@@ -6,8 +6,6 @@ import Cuenta from "./Cuenta";
 import Explorador from "./Explorador";
 import MapaMundial from "./MapaMundial";
 import MatrizLatProf from "./MatrizLatProf";
-import Ordenacion from "./Ordenacion";
-import ordenacion from "@datos/ordenacion.json";
 import ParedPorBanda from "./ParedPorBanda";
 import Referencias from "./Referencias";
 import Sinu from "./Sinu";
@@ -216,68 +214,9 @@ export default function Pagina() {
           <Explorador />
         </Seccion>
 
-        {/* ── 07 bis · ordenación ──────────────────────────────── */}
-        <Seccion
-          n={tx({ es: "07 · La ordenación", en: "07 · The ordination" })}
-          titulo={tx({
-            es: "¿Se parecen entre sí las filtraciones del mismo tipo?",
-            en: "Do seeps of the same kind resemble one another?",
-          })}
-          entradilla={tx({
-            es: "Barragán y Bernal (2024) usan componentes principales para agrupar sus estaciones por la fauna. La misma idea se puede llevar al conjunto de la literatura: situar cada estudio según con quién comparte especies, y preguntar qué variable explica esa disposición. La respuesta más firme, sin embargo, no es ecológica sino metodológica.",
-            en: "Barragán and Bernal (2024) use principal components to group their stations by fauna. The same idea can be taken to the literature as a whole: place each study by whom it shares species with, and ask which variable explains that arrangement. The firmest answer, though, is not ecological but methodological.",
-          })}
-        >
-          <Ordenacion />
-
-          <div className="mt-10 border-t border-(--border) pt-8">
-            <h3 className="mb-3 text-[1rem] font-semibold">
-              {tx({ es: "Qué sale, y qué no", en: "What comes out, and what does not" })}
-            </h3>
-            <div className="max-w-[64ch] space-y-4 text-[0.92rem] leading-relaxed text-(--ink-2)">
-              <p>
-                {tx({
-                  es: "El primer intento no midió ecología: midió cuánto escribe cada autor. Con los 37 estudios, el eje principal reproducía casi exactamente el número de taxones que cada artículo nombra —una correlación de −0,95—, de modo que los trabajos extensos caían a un lado y los breves al otro. Eso es esfuerzo de muestreo, no fauna. Rarefaccionar tampoco lo arregló: quedarse con doce taxones de un artículo que nombra trescientos lo convierte en un sorteo, y el sorteo se aleja de todo el mundo.",
-                  en: "The first attempt did not measure ecology: it measured how much each author writes. Across all 37 studies the main axis reproduced almost exactly how many taxa each article names — a correlation of −0.95 — so long papers fell on one side and short ones on the other. That is sampling effort, not fauna. Rarefying did not fix it either: keeping twelve taxa from an article that names three hundred turns it into a lottery, and the lottery sits far from everyone.",
-                })}
-              </p>
-              <p>
-                {tx({
-                  es: "Sólo dentro de una franja estrecha —entre 18 y 70 taxones, doce estudios— la riqueza deja de gobernar el resultado y la ordenación puede leerse. Ahí, la variable que más separa las asociaciones es la banda de latitud (p = 0,009). La morfología del escape queda al filo (p = 0,046) y ni el tipo de fluido (p = 0,066) ni la profundidad (p = 0,20) separan nada.",
-                  en: "Only within a narrow band — between 18 and 70 taxa, twelve studies — does richness stop governing the result and the ordination become readable. There, the variable that best separates the assemblages is latitude band (p = 0.009). Seep morphology sits on the edge (p = 0.046) and neither fluid type (p = 0.066) nor depth (p = 0.20) separates anything.",
-                })}
-              </p>
-              <p>
-                {tx({
-                  es: "Que la latitud pese más que el tipo de filtración encaja con lo que sostiene esta tesis: la geografía manda sobre la química local, y por eso un vacío geográfico —la celda tropical somera— importa tanto. Pero conviene no adornarlo: con doce estudios y grupos de siete contra tres, esto es exploratorio. Un p de 0,009 aquí es una señal que merece comprobarse, no un hallazgo cerrado.",
-                  en: "That latitude should weigh more than seep type fits what this thesis argues: geography rules over local chemistry, which is why a geographic gap — the shallow tropical cell — matters so much. But it should not be dressed up: with twelve studies and groups of seven against three, this is exploratory. A p of 0.009 here is a signal worth testing, not a settled finding.",
-                })}
-              </p>
-              <p>
-                {tx({
-                  es: "El resultado más transferible es el otro, y es una advertencia: las listas faunísticas extraídas del texto de los artículos arrastran una señal de esfuerzo tan fuerte que domina cualquier ordenación. Quien haga un metaanálisis con listas de literatura debería medir esa correlación antes de interpretar sus ejes.",
-                  en: "The most transferable result is the other one, and it is a caution: faunal lists mined from article text carry a sampling-effort signal so strong that it dominates any ordination. Anyone running a meta-analysis on literature-derived lists should measure that correlation before interpreting their axes.",
-                })}
-              </p>
-              <p className="text-[0.85rem] text-(--muted)">
-                {tx({
-                  es: "Deliberadamente NO entraron al análisis el δ13C, las abundancias ni los índices de diversidad: sólo se pudieron extraer del 12 al 15 % de los estudios, y un análisis con el 85 % de la matriz imputado no describe los datos, inventa la estructura. Esos valores se publican aparte, con su cobertura declarada.",
-                  en: "δ13C, abundances and diversity indices were deliberately kept out of the analysis: they could only be extracted from 12–15% of the studies, and an analysis with 85% of the matrix imputed does not describe the data, it invents the structure. Those values are published separately, with their coverage stated.",
-                })}
-              </p>
-            </div>
-            <Nota>
-              {tx({
-                es: `Método: matriz de presencia/ausencia por estudio, distancia de Jaccard, PCoA y PERMANOVA de una vía con ${ordenacion.metodo.prueba.replace(/^.*?, /, "")}. Semilla fija (${ordenacion.metodo.semilla}) para que el resultado sea reproducible.`,
-                en: `Method: presence/absence matrix by study, Jaccard distance, PCoA and one-way PERMANOVA with ${ordenacion.metodo.prueba.replace(/^.*?, /, "")}. Fixed seed (${ordenacion.metodo.semilla}) so the result is reproducible.`,
-              })}
-            </Nota>
-          </div>
-        </Seccion>
-
         {/* ── cierre ───────────────────────────────────────────── */}
         <Seccion
-          n={tx({ es: "08 · Límites", en: "08 · Limits" })}
+          n={tx({ es: "07 · Límites", en: "07 · Limits" })}
           titulo={tx({
             es: "Lo que estos datos no pueden decir",
             en: "What these data cannot tell us",
@@ -331,7 +270,7 @@ export default function Pagina() {
 
         {/* ── 08 ────────────────────────────────────────────────── */}
         <Seccion
-          n={tx({ es: "09 · Cuenta", en: "09 · Account" })}
+          n={tx({ es: "08 · Cuenta", en: "08 · Account" })}
           titulo={tx({ es: "Cambiar la contraseña", en: "Change the password" })}
           entradilla={tx({
             es: "El acceso es restringido porque los datos primarios del proyecto son inéditos. Desde aquí se rota la contraseña sin pasar por el panel de Vercel ni volver a desplegar. Hace falta además la respuesta a la pregunta de seguridad: así se puede compartir el acceso para que alguien lo vea, sin que pueda cambiar la clave.",
