@@ -69,12 +69,21 @@ export default function MapaMundial() {
   const pSitio = proyectar(sitio.lon, sitio.lat);
   const tipos = [...new Set(estudios.map((e) => e.tipo_filtracion))];
 
+  const ptActivo =
+    activo && activo.lat !== null
+      ? proyectar(activo.lon as number, activo.lat as number)
+      : null;
+
   return (
     <figure className="m-0">
-      <div className="overflow-x-auto">
+      {/* El contenedor es relativo para poder colgar la ficha SOBRE el punto.
+          Antes la información salía debajo del mapa y el usuario no llegaba a
+          enterarse de que el mapa respondía al cursor. */}
+      <div className="relative overflow-x-auto">
+        <div className="relative min-w-[560px]">
         <svg
           viewBox={"0 0 " + W + " " + H}
-          className="w-full min-w-[560px]"
+          className="block w-full"
           role="img"
           aria-label={tx({
             es:
@@ -107,11 +116,22 @@ export default function MapaMundial() {
                 stroke="var(--surface)"
                 strokeWidth={1.5}
                 className="cursor-pointer transition-all"
+                tabIndex={0}
+                role="button"
+                aria-label={
+                  (e.localidad ?? "") +
+                  " — " +
+                  (e.autores ?? ["?"])[0] +
+                  " " +
+                  (e.anio ?? "")
+                }
                 onMouseEnter={() => setActivo(e)}
                 onMouseLeave={() => setActivo(null)}
-              >
-                <title>{e.localidad ?? ""}</title>
-              </circle>
+                // El teclado abre la misma ficha: sin esto, la información
+                // sólo existía para quien usa ratón.
+                onFocus={() => setActivo(e)}
+                onBlur={() => setActivo(null)}
+              />
             );
           })}
 
@@ -137,9 +157,85 @@ export default function MapaMundial() {
             </g>
           )}
         </svg>
+
+        {/* Ficha flotante anclada al punto. Va en HTML y no en SVG porque el
+            texto tiene que fluir y ajustarse; se posiciona en porcentaje, que
+            es lo que sobrevive al escalado del viewBox. */}
+        {activo && ptActivo && (
+          <div
+            className="pointer-events-none absolute z-10 w-[19rem] max-w-[80vw] rounded-[6px] border border-(--border) bg-(--surface) px-3 py-2.5 shadow-lg"
+            style={{
+              left: (ptActivo[0] / W) * 100 + "%",
+              top: (ptActivo[1] / H) * 100 + "%",
+              // Cerca de un borde la ficha se ancla del lado contrario para
+              // no salirse del mapa.
+              transform:
+                "translate(" +
+                (ptActivo[0] < W * 0.22
+                  ? "0"
+                  : ptActivo[0] > W * 0.78
+                    ? "-100%"
+                    : "-50%") +
+                ", " +
+                (ptActivo[1] < H * 0.38 ? "1.4rem" : "calc(-100% - 1.1rem)") +
+                ")",
+            }}
+          >
+            <p className="mb-1 text-[0.9rem] font-semibold leading-snug">
+              {activo.localidad}
+            </p>
+            <p className="mb-2 text-[0.78rem] leading-snug text-(--ink-2)">
+              {(activo.autores ?? ["?"])[0]} {activo.anio ?? ""}
+              {activo.revista ? " · " + activo.revista : ""}
+            </p>
+            <dl className="space-y-0.5 text-[0.76rem] leading-snug">
+              {(
+                [
+                  [
+                    tx({ es: "Fluido", en: "Fluid" }),
+                    activo.tipo_filtracion
+                      ? idioma === "es"
+                        ? FLUIDO[activo.tipo_filtracion]?.es
+                        : FLUIDO[activo.tipo_filtracion]?.en
+                      : null,
+                  ],
+                  [
+                    tx({ es: "Morfología", en: "Morphology" }),
+                    activo.morfologia_label,
+                  ],
+                  [
+                    tx({ es: "Profundidad", en: "Depth" }),
+                    activo.prof_m ? activo.prof_m + " m" : null,
+                  ],
+                  [
+                    tx({ es: "Registros", en: "Records" }),
+                    activo.n_registros,
+                  ],
+                ] as const
+              )
+                .filter(([, v]) => v !== null && v !== undefined && v !== "")
+                .map(([k, v]) => (
+                  <div key={k} className="flex gap-2">
+                    <dt className="w-[5.6rem] shrink-0 text-(--muted)">{k}</dt>
+                    <dd className="m-0 tabular text-(--ink-2)">{v}</dd>
+                  </div>
+                ))}
+            </dl>
+          </div>
+        )}
+        </div>
       </div>
 
-      <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-[0.75rem]">
+      {/* Sin este aviso la interacción no se descubre: el mapa parece
+          estático hasta que alguien pasa por encima de un punto por azar. */}
+      <p className="mt-3 text-[0.75rem] text-(--muted)">
+        {tx({
+          es: "Pasa el cursor —o tabula— por un punto para ver el estudio. Pulsa un color de la leyenda para filtrar.",
+          en: "Hover — or tab — over a dot to see the study. Click a legend colour to filter.",
+        })}
+      </p>
+
+      <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-[0.75rem]">
         {tipos.map((k) => (
           <button
             key={k}
@@ -165,20 +261,17 @@ export default function MapaMundial() {
         ))}
       </div>
 
-      <div className="mt-3 min-h-[3.2rem] text-[0.85rem]" aria-live="polite">
-        {activo && (
-          <div className="inline-block max-w-[62ch] rounded-[5px] border border-(--border) bg-(--surface) px-3 py-2">
-            <strong className="font-semibold">{activo.localidad}</strong>
-            <span className="text-(--ink-2)">
-              {" — "}
-              {(activo.autores ?? ["?"])[0]} {activo.anio ?? ""} ·{" "}
-              {activo.n_registros} {tx({ es: "registros", en: "records" })}
-              {activo.prof_m ? " · " + activo.prof_m + " m" : ""}
-              {activo.morfologia_label ? " · " + activo.morfologia_label : ""}
-            </span>
-          </div>
-        )}
-      </div>
+      {/* La ficha aparece sobre el punto, pero un lector de pantalla no la
+          «ve»: este bloque anuncia lo mismo sin ocupar espacio. */}
+      <p className="sr-only" aria-live="polite">
+        {activo
+          ? activo.localidad +
+            " — " +
+            (activo.autores ?? ["?"])[0] +
+            " " +
+            (activo.anio ?? "")
+          : ""}
+      </p>
 
       <ComoSeLee>
         {tx({
