@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useT } from "@/lib/i18n";
-import { Nota } from "@/lib/ui";
 
 /** El servidor es quien manda sobre este mínimo (`MINIMO_CLAVE` en
  *  `lib/credenciales.ts`). Aquí se repite sólo para avisar antes de enviar. */
@@ -216,12 +215,6 @@ export default function Cuenta() {
         )}
       </div>
 
-      <Nota>
-        {tx({
-          es: "La pregunta de seguridad existe para poder enseñar el dashboard sin ceder el control: quien reciba la contraseña podrá verlo todo, pero no cambiarla. Ni la contraseña ni la respuesta se guardan en claro — se almacena su derivación PBKDF2-SHA256 con sal aleatoria, en un almacén privado que sólo alcanza este proyecto. La sesión dura 12 horas; al cambiar la contraseña, las sesiones abiertas en otros navegadores siguen válidas hasta que caducan.",
-          en: "The security question exists so the dashboard can be shown without handing over control: whoever receives the password can see everything, but cannot change it. Neither the password nor the answer is stored in the clear — what is kept is their PBKDF2-SHA256 derivation with a random salt, in a private store scoped to this project alone. Sessions last 12 hours; when the password changes, sessions already open in other browsers stay valid until they expire.",
-        })}
-      </Nota>
     </div>
   );
 }
