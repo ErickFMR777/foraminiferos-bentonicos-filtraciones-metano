@@ -158,8 +158,15 @@ function paginaAcceso(destino: string, fallo: boolean): string {
       Grupo de investigación OCEÁNICOS
     </span>
     <span class="sep">
+      Financiado con recursos del Convenio 785/668 de 2019, suscrito entre la<br>
+      <strong>Agencia Nacional de Hidrocarburos</strong>, el
+      <strong>Ministerio de Ciencia, Tecnología e Innovación</strong><br>
+      y el <strong>Fondo Nacional de Financiamiento para la Ciencia,
+      la Tecnología y la Innovación Francisco José de Caldas</strong>
+    </span>
+    <span class="sep">
       Entidades ejecutoras y beneficiarias<br>
-      <strong>UPB · UNAL · GMAS · GEOMARES · ACGGP</strong>
+      <strong>UNAL · UPB · GMAS · GEOMARES · ACGGP</strong>
     </span>
   </footer>
 </main>

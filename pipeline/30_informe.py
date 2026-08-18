@@ -168,10 +168,14 @@ def main() -> int:
         "Programa Nacional de Ciencia, Tecnología e Innovación en Geociencias\n"
         "Convocatoria 877-2020 — Financiación de proyectos de investigación\n"
         "en geociencias para el sector de hidrocarburos\n"
-        "Contrato/convenio Minciencias — Entidad: 80740-143-2021\n"
+        "Contrato/convenio Minciencias — Entidad: 80740-143-2021\n\n"
+        "Financiado con recursos del Convenio 785/668 de 2019, suscrito entre\n"
+        "la Agencia Nacional de Hidrocarburos, el Ministerio de Ciencia,\n"
+        "Tecnología e Innovación y el Fondo Nacional de Financiamiento para la\n"
+        "Ciencia, la Tecnología y la Innovación Francisco José de Caldas\n\n"
         "Grupo de investigación OCEÁNICOS\n"
         "Entidades ejecutoras y beneficiarias:\n"
-        "UPB · UNAL · GMAS · GEOMARES · ACGGP")
+        "UNAL · UPB · GMAS · GEOMARES · ACGGP")
     pdf.ln(14)
     pdf.set_font("D", "", 8.6)
     pdf.set_text_color(*SUAVE)
@@ -204,15 +208,25 @@ def main() -> int:
           "de Ingeniero Geólogo. Universidad Nacional de Colombia, sede Medellín, "
           "Facultad de Minas, Departamento de Geociencias y Medio Ambiente. "
           "Directora: Ph.D. Gladys Rocío Bernal Franco. 62 pp.")
+    pdf.nota("Nota sobre la fecha: la portada del manuscrito indica 2022 por un "
+             "error del propio documento. El trabajo de grado (3007442) se "
+             "entregó en el primer período académico de 2023 (2023-1S) en la "
+             "Universidad Nacional de Colombia, sede Medellín. La fecha correcta "
+             "es la que se cita aquí.")
     pdf.p("Realizada en el marco del proyecto «Methane seep hunting: A "
           "multi-scale and multi method approach», del Programa Nacional de "
           "Ciencia, Tecnología e Innovación en Geociencias (Minciencias), "
           "convocatoria 877-2020 —financiación de proyectos de investigación en "
           "geociencias para el sector de hidrocarburos—, contrato 80740-143-2021. "
-          "Grupo de investigación OCEÁNICOS. Entidades ejecutoras y beneficiarias: "
-          "UPB, UNAL, GMAS, GEOMARES y ACGGP. El autor participó mediante "
-          "beca-pasantía del programa Jóvenes Investigadores (2021-2024), bajo la "
-          "tutoría de Gladys Rocío Bernal Franco.")
+          "El proyecto fue financiado con recursos provenientes del Convenio "
+          "785/668 de 2019, suscrito entre la Agencia Nacional de Hidrocarburos, "
+          "el Ministerio de Ciencia, Tecnología e Innovación y el Fondo Nacional "
+          "de Financiamiento para la Ciencia, la Tecnología y la Innovación "
+          "Francisco José de Caldas. Grupo de investigación OCEÁNICOS. Entidades "
+          "ejecutoras y beneficiarias: UNAL, UPB, GMAS, GEOMARES y ACGGP. El "
+          "autor participó mediante beca-pasantía del programa Jóvenes "
+          "Investigadores (2021-2024), bajo la tutoría de Gladys Rocío Bernal "
+          "Franco.")
     pdf.p("Con sus dos anexos de datos:")
     pdf.item("«BD FORAMS AMBTE FILTRACION-filtros» — 9 hojas. Base bibliográfica "
              "de 38 estudios; la hoja maestra tiene 293 filas.")

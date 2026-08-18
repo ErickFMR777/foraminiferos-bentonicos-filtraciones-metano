@@ -29,8 +29,9 @@ beca-pasantía (no inventar ni aproximar estos identificadores):
 | Programa CTeI | Programa Nacional de Ciencia, Tecnología e Innovación en Geociencias |
 | Convocatoria | 877-2020 — financiación de proy. de inv. en geociencias para el sector de hidrocarburos |
 | Contrato / convenio | 80740-143-2021 (Minciencias — Entidad) |
+| **Financiación** | **Convenio 785/668 de 2019**, suscrito entre la **Agencia Nacional de Hidrocarburos (ANH)**, el **Ministerio de Ciencia, Tecnología e Innovación** y el **Fondo Francisco José de Caldas** |
 | Grupo | OCEÁNICOS |
-| Entidades | UPB · UNAL · GMAS · GEOMARES · ACGGP |
+| Entidades ejecutoras y beneficiarias | UNAL · UPB · GMAS · GEOMARES · ACGGP (la UNAL va primero) |
 | Vinculación | Beca-pasantía Jóvenes Investigadores, 21-08-2021 a 31-03-2024 |
 
 **La tesis está entregada a la Universidad Nacional.** No decir que «no está
@@ -39,7 +40,9 @@ MSH. Las cédulas que aparecen en el informe técnico son datos personales y no
 se publican en ningún artefacto.
 
 **La tesis es de 2023.** La portada del PDF dice 2022, pero es un error del
-propio documento que el autor rectificó. Cuidado al corregir años: **no todo
+propio documento que el autor rectificó: el trabajo de grado (3007442) se
+entregó en el primer período académico de 2023 (2023-1S). El dashboard y el
+informe lo aclaran en una nota, en vez de callarlo. Cuidado al corregir años: **no todo
 `2022` del repo es la tesis.** Se quedan como están la fecha de consulta de
 WoRMS (nov-2022, declarada en el manuscrito y de la que depende la distinción
 `errata` / `actualizacion`), el año de Puerres 2022 y las campañas de campo de

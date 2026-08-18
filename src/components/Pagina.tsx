@@ -46,7 +46,14 @@ export default function Pagina() {
                 en: "Methane seep hunting: A multi-scale and multi method approach",
               })}
             </p>
-            <p>UPB · UNAL · GMAS · GEOMARES · ACGGP</p>
+            {/* La ANH y el Ministerio financian el proyecto: van en portada,
+                no enterradas en el pie. */}
+            <p>
+              {tx({
+                es: "Agencia Nacional de Hidrocarburos · Ministerio de Ciencia, Tecnología e Innovación · Fondo Francisco José de Caldas",
+                en: "Agencia Nacional de Hidrocarburos · Ministry of Science, Technology and Innovation · Fondo Francisco José de Caldas",
+              })}
+            </p>
           </div>
           <h1 className="mb-4 max-w-[20ch] text-[2.5rem] leading-[1.08] md:text-[3.4rem]">
             {tx({
@@ -285,6 +292,16 @@ export default function Pagina() {
             })}
           </p>
 
+          {/* La portada del manuscrito lleva 2022 por un error del propio
+              documento. Se aclara aquí en vez de callarlo: quien contraste el
+              dashboard con el PDF va a ver la diferencia. */}
+          <p className="mb-6 text-[0.76rem] italic">
+            {tx({
+              es: "Nota sobre la fecha: la portada del manuscrito indica 2022 por un error del propio documento. El trabajo de grado (3007442) se entregó en el primer período académico de 2023 (2023-1S) en la Universidad Nacional de Colombia, sede Medellín. La fecha correcta es la que se cita aquí.",
+              en: "A note on the date: the manuscript cover reads 2022 owing to an error in the document itself. The thesis (course 3007442) was submitted in the first academic term of 2023 (2023-1S) at Universidad Nacional de Colombia, Medellín campus. The date cited here is the correct one.",
+            })}
+          </p>
+
           {/* Ficha del proyecto. Va completa y con los identificadores
               oficiales porque un dashboard que publica datos de investigación
               financiada tiene que dejar rastro de quién la financió y bajo qué
@@ -304,6 +321,13 @@ export default function Pagina() {
                   v: tx({
                     es: "Proponer un enfoque de múltiples escalas y métodos para detectar rezumaderos de metano, determinar su actividad de filtración actual e identificar su fuente, utilizando tecnología de punta en el Caribe colombiano.",
                     en: "To propose a multi-scale, multi-method approach to detect methane seeps, determine their present seepage activity and identify their source, using state-of-the-art technology in the Colombian Caribbean.",
+                  }),
+                },
+                {
+                  k: tx({ es: "Financiación", en: "Funding" }),
+                  v: tx({
+                    es: "Convenio 785/668 de 2019, suscrito entre la Agencia Nacional de Hidrocarburos (ANH), el Ministerio de Ciencia, Tecnología e Innovación y el Fondo Nacional de Financiamiento para la Ciencia, la Tecnología y la Innovación Francisco José de Caldas.",
+                    en: "Agreement 785/668 of 2019, signed between the Agencia Nacional de Hidrocarburos (ANH), the Ministry of Science, Technology and Innovation and the Fondo Nacional de Financiamiento para la Ciencia, la Tecnología y la Innovación Francisco José de Caldas.",
                   }),
                 },
                 {
@@ -335,11 +359,11 @@ export default function Pagina() {
                   v: "OCEÁNICOS — Universidad Nacional de Colombia, sede Medellín",
                 },
                 {
-                  k: tx({ es: "Entidades", en: "Institutions" }),
-                  v: tx({
-                    es: "UPB · UNAL · GMAS · GEOMARES · ACGGP (ejecutoras y beneficiarias)",
-                    en: "UPB · UNAL · GMAS · GEOMARES · ACGGP (executing and beneficiary)",
+                  k: tx({
+                    es: "Entidades ejecutoras y beneficiarias",
+                    en: "Executing and beneficiary institutions",
                   }),
+                  v: "UNAL · UPB · GMAS · GEOMARES · ACGGP",
                 },
                 {
                   k: tx({ es: "Vinculación", en: "Appointment" }),

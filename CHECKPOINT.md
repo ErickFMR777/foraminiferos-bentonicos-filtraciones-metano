@@ -36,8 +36,9 @@ Marco, verificado contra el informe técnico final de la beca-pasantía
 | Programa CTeI | Programa Nacional de Ciencia, Tecnología e Innovación en Geociencias |
 | Convocatoria | 877-2020 (geociencias para el sector de hidrocarburos) |
 | Contrato / convenio | 80740-143-2021 (Minciencias — Entidad) |
+| **Financiación** | **Convenio 785/668 de 2019**, suscrito entre la **Agencia Nacional de Hidrocarburos (ANH)**, el **Ministerio de Ciencia, Tecnología e Innovación** y el **Fondo Francisco José de Caldas** |
 | Grupo | OCEÁNICOS |
-| Entidades | UPB · UNAL · GMAS · GEOMARES · ACGGP |
+| Entidades ejecutoras y beneficiarias | UNAL · UPB · GMAS · GEOMARES · ACGGP (la UNAL va primero) |
 | Vinculación | Jóvenes Investigadores, 21-08-2021 a 31-03-2024 |
 
 La ficha completa se publica en el pie del dashboard y en el informe en PDF.
