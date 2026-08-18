@@ -9,10 +9,34 @@ y mensajes de commit. Mantener esa convención.
 
 ## Qué es esto
 
-Dashboard editorial bilingüe (ES/EN) sobre la tesis de grado de Erick F.
-Mendoza Rivero (Ing. Geológica, UNAL Medellín, 2022) acerca de foraminíferos
-bentónicos en filtraciones de metano. No es un panel de KPI: cada sección es
-una historia de datos con su método declarado.
+Dashboard editorial bilingüe (ES/EN) sobre la tesis de grado de **Erick
+Francisco Mendoza Rivero, Ingeniero Geólogo** (Universidad Nacional de
+Colombia, sede Medellín, Facultad de Minas, Departamento de Geociencias y
+Medio Ambiente, 2022; directora Ph.D. Gladys Rocío Bernal Franco). No es un
+panel de KPI: cada sección es una historia de datos con su método declarado.
+
+**El alcance es mundial, y el titular debe reflejarlo.** La tesis compara
+localidades de todo el planeta *y* la plataforma continental del Caribe
+colombiano; el Caribe es la localidad propia del autor, no el objeto único.
+Un título que sólo nombre el Caribe representa mal el trabajo.
+
+Datos del proyecto, verificados contra el informe técnico final de la
+beca-pasantía (no inventar ni aproximar estos identificadores):
+
+| | |
+|---|---|
+| Proyecto | Methane Seep Hunting (MSH): A multi-scale and multi method approach |
+| Programa | Programa Nacional de CTeI en Geociencias — Minciencias |
+| Convocatoria | 877 de 2020 (geociencias para el sector de hidrocarburos) |
+| Contrato / convenio | Minciencias 80740-143-2021 |
+| Grupo | OCEÁNICOS |
+| Entidades | UPB · UNAL · GMAS · GEOMARES · ACGGP |
+| Vinculación | Beca-pasantía Jóvenes Investigadores, 21-08-2021 a 31-03-2024 |
+
+**La tesis está entregada a la Universidad Nacional.** No decir que «no está
+publicada»: lo que sigue siendo inédito son los datos primarios del proyecto
+MSH. Las cédulas que aparecen en el informe técnico son datos personales y no
+se publican en ningún artefacto.
 
 Dos mitades independientes:
 

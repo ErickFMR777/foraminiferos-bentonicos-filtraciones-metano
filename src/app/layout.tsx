@@ -16,12 +16,21 @@ const serif = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
-  title: "Foraminíferos y metano en el Caribe colombiano",
+  title: "Foraminíferos bentónicos en filtraciones de metano",
   description:
-    "Asociaciones de foraminíferos bentónicos en filtraciones de metano: " +
-    "38 estudios en todo el mundo frente a una muestra de la plataforma " +
-    "continental del Caribe colombiano.",
-  authors: [{ name: "Erick Francisco Mendoza Rivero" }],
+    "Análisis de las asociaciones de foraminíferos bentónicos en filtraciones " +
+    "de metano: comparación entre distintas localidades del mundo y la " +
+    "plataforma continental del Caribe colombiano. A partir de la tesis de " +
+    "Erick Francisco Mendoza Rivero, Ingeniero Geólogo, Universidad Nacional " +
+    "de Colombia, sede Medellín, Facultad de Minas. Proyecto Methane Seep " +
+    "Hunting (MSH).",
+  authors: [
+    {
+      name: "Erick Francisco Mendoza Rivero, Ingeniero Geólogo — Universidad Nacional de Colombia, sede Medellín, Facultad de Minas",
+    },
+  ],
+  // El sitio es de acceso restringido: no debe acabar indexado.
+  robots: { index: false, follow: false },
 };
 
 export default function RootLayout({

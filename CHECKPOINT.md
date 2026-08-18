@@ -16,12 +16,32 @@ para retomar sin releer nada.
 
 ## 1. Qué es esto
 
-Dashboard interactivo bilingüe (ES/EN) sobre la tesis de grado de Erick
-Francisco Mendoza Rivero (Ing. Geológico, UNAL Medellín, 2022):
-*«Análisis de las asociaciones de foraminíferos bentónicos en filtraciones de
-metano: comparación entre distintas localidades y la plataforma continental
-del Caribe colombiano»*. Directora: Ph.D. Gladys Rocío Bernal Franco.
-Marco: proyecto MSH (*Methane Seep Hunting*).
+Dashboard interactivo bilingüe (ES/EN) sobre la tesis de grado de **Erick
+Francisco Mendoza Rivero, Ingeniero Geólogo** (Universidad Nacional de
+Colombia, sede Medellín, Facultad de Minas, Departamento de Geociencias y
+Medio Ambiente, 2022): *«Análisis de las asociaciones de foraminíferos
+bentónicos en filtraciones de metano: comparación entre distintas localidades
+y la plataforma continental del Caribe colombiano»*. Directora: Ph.D. Gladys
+Rocío Bernal Franco.
+
+**Alcance mundial**, con el Caribe colombiano como localidad propia — no es un
+estudio local, y el titular del dashboard lo dice desde 2026-08-18.
+
+Marco, verificado contra el informe técnico final de la beca-pasantía
+(`Data_nosubiralrepo/Informe_tecnico_avance_final_jovenes_investigadores_UNAL-EFMR.pdf`):
+
+| | |
+|---|---|
+| Proyecto | Methane Seep Hunting (MSH): A multi-scale and multi method approach |
+| Programa | Programa Nacional de CTeI en Geociencias — Minciencias |
+| Convocatoria | 877 de 2020 |
+| Contrato | Minciencias 80740-143-2021 |
+| Grupo | OCEÁNICOS |
+| Entidades | UPB · UNAL · GMAS · GEOMARES · ACGGP |
+| Vinculación | Jóvenes Investigadores, 21-08-2021 a 31-03-2024 |
+
+La ficha completa se publica en el pie del dashboard y en el informe en PDF.
+Las cédulas del informe técnico son datos personales: no se publican.
 
 **Destino:** Vercel. **Públicos:** comunidad académica internacional +
 reclutadores de tech/datos.

@@ -154,13 +154,19 @@ def main() -> int:
     pdf.set_font("D", "", 10)
     pdf.set_text_color(*TINTA)
     pdf.multi_cell(0, 5.4,
-        "A partir de la tesis de grado de Erick Francisco Mendoza Rivero\n"
+        "A partir de la tesis de grado de Erick Francisco Mendoza Rivero,\n"
+        "Ingeniero Geólogo\n"
         "«Análisis de las asociaciones de foraminíferos bentónicos en filtraciones\n"
         "de metano: comparación entre distintas localidades y la plataforma\n"
         "continental del Caribe colombiano»\n\n"
-        "Universidad Nacional de Colombia, Facultad de Minas, 2022\n"
-        "Directora: Ph.D. Gladys Rocío Bernal Franco\n"
-        "Proyecto Methane Seep Hunting (MSH)")
+        "Universidad Nacional de Colombia, sede Medellín\n"
+        "Facultad de Minas, Departamento de Geociencias y Medio Ambiente, 2022\n"
+        "Directora: Ph.D. Gladys Rocío Bernal Franco\n\n"
+        "Proyecto Methane Seep Hunting (MSH):\n"
+        "A multi-scale and multi method approach\n"
+        "Minciencias — convocatoria 877 de 2020, contrato 80740-143-2021\n"
+        "Grupo de investigación OCEÁNICOS\n"
+        "Entidades: UPB · UNAL · GMAS · GEOMARES · ACGGP")
     pdf.ln(14)
     pdf.set_font("D", "", 8.6)
     pdf.set_text_color(*SUAVE)
@@ -189,9 +195,19 @@ def main() -> int:
     pdf.p("Mendoza Rivero, E. F. (2022). Análisis de las asociaciones de "
           "foraminíferos bentónicos en filtraciones de metano: comparación entre "
           "distintas localidades y la plataforma continental del Caribe colombiano. "
-          "Tesis de grado, Ingeniería Geológica, Universidad Nacional de Colombia, "
-          "Facultad de Minas, Medellín. Directora: Ph.D. Gladys Rocío Bernal "
-          "Franco. 62 pp.")
+          "Trabajo de grado presentado como requisito parcial para optar al título "
+          "de Ingeniero Geólogo. Universidad Nacional de Colombia, sede Medellín, "
+          "Facultad de Minas, Departamento de Geociencias y Medio Ambiente. "
+          "Directora: Ph.D. Gladys Rocío Bernal Franco. 62 pp.")
+    pdf.p("Realizada en el marco del proyecto «Methane Seep Hunting (MSH): A "
+          "multi-scale and multi method approach», del Programa Nacional de "
+          "Ciencia, Tecnología e Innovación en Geociencias (Minciencias), "
+          "convocatoria 877 de 2020 —financiación de proyectos de investigación en "
+          "geociencias para el sector de hidrocarburos—, contrato 80740-143-2021. "
+          "Grupo de investigación OCEÁNICOS. Entidades ejecutoras y beneficiarias: "
+          "UPB, UNAL, GMAS, GEOMARES y ACGGP. El autor participó mediante "
+          "beca-pasantía del programa Jóvenes Investigadores (2021-2024), bajo la "
+          "tutoría de Gladys Rocío Bernal Franco.")
     pdf.p("Con sus dos anexos de datos:")
     pdf.item("«BD FORAMS AMBTE FILTRACION-filtros» — 9 hojas. Base bibliográfica "
              "de 38 estudios; la hoja maestra tiene 293 filas.")

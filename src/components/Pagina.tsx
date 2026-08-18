@@ -33,20 +33,30 @@ export default function Pagina() {
         <header className="py-16 md:py-24">
           <p className="mb-4 text-[0.72rem] uppercase tracking-[0.16em] text-(--muted)">
             {tx({
-              es: "Universidad Nacional de Colombia · Proyecto Methane Seep Hunting",
-              en: "Universidad Nacional de Colombia · Methane Seep Hunting project",
+              es: "Universidad Nacional de Colombia · Proyecto Methane Seep Hunting (MSH)",
+              en: "Universidad Nacional de Colombia · Methane Seep Hunting (MSH) project",
             })}
           </p>
-          <h1 className="mb-6 max-w-[19ch] text-[2.5rem] leading-[1.08] md:text-[3.4rem]">
+          <h1 className="mb-4 max-w-[20ch] text-[2.5rem] leading-[1.08] md:text-[3.4rem]">
             {tx({
-              es: "Foraminíferos y metano en el Caribe colombiano",
-              en: "Foraminifera and methane in the Colombian Caribbean",
+              es: "Foraminíferos bentónicos en filtraciones de metano",
+              en: "Benthic foraminifera at methane seeps",
             })}
           </h1>
+          {/* El subtítulo carga el alcance real del trabajo: la comparación es
+              mundial y el Caribe colombiano es una de las localidades, no el
+              objeto único. Sin esta línea el titular se leía como un estudio
+              local. */}
+          <p className="mb-6 max-w-[46ch] text-[1.15rem] leading-snug text-(--ink-2) md:text-[1.3rem]">
+            {tx({
+              es: "Comparación entre distintas localidades del mundo y la plataforma continental del Caribe colombiano",
+              en: "A comparison between localities worldwide and the Colombian Caribbean continental shelf",
+            })}
+          </p>
           <p className="max-w-[58ch] text-[1.08rem] leading-relaxed text-(--ink-2)">
             {tx({
-              es: "Protistas de menos de un milímetro que construyen un caparazón y registran en él las condiciones del fondo marino. Este trabajo contrasta lo que la literatura mundial ha publicado sobre ellos en filtraciones de metano con una muestra de la plataforma continental frente al Golfo de Morrosquillo.",
-              en: "Protists under a millimetre across that build a shell and record the seafloor conditions in it. This work contrasts what the global literature has published about them at methane seeps with a sample from the continental shelf off the Gulf of Morrosquillo.",
+              es: "Protistas de menos de un milímetro que construyen un caparazón y registran en él las condiciones del fondo marino. Este trabajo reúne lo que la literatura mundial ha publicado sobre ellos en filtraciones de metano —40 estudios repartidos por los océanos del planeta— y lo contrasta con una muestra de la plataforma continental frente al Golfo de Morrosquillo.",
+              en: "Protists under a millimetre across that build a shell and record the seafloor conditions in it. This work brings together what the global literature has published about them at methane seeps — 40 studies spread across the world's oceans — and contrasts it with a sample from the continental shelf off the Gulf of Morrosquillo.",
             })}
           </p>
         </header>
@@ -245,28 +255,95 @@ export default function Pagina() {
           n={tx({ es: "08 · Cuenta", en: "08 · Account" })}
           titulo={tx({ es: "Cambiar la contraseña", en: "Change the password" })}
           entradilla={tx({
-            es: "El sitio está cerrado mientras la tesis siga sin publicarse. Desde aquí se rota la contraseña sin pasar por el panel de Vercel ni volver a desplegar. Hace falta además la respuesta a la pregunta de seguridad: así se puede compartir el acceso para que alguien lo vea, sin que pueda cambiar la clave.",
-            en: "The site stays closed while the thesis remains unpublished. From here the password is rotated without going through the Vercel dashboard or redeploying. The answer to the security question is also required: that way access can be shared for someone to look around, without letting them change the password.",
+            es: "El acceso es restringido porque los datos primarios del proyecto son inéditos. Desde aquí se rota la contraseña sin pasar por el panel de Vercel ni volver a desplegar. Hace falta además la respuesta a la pregunta de seguridad: así se puede compartir el acceso para que alguien lo vea, sin que pueda cambiar la clave.",
+            en: "Access is restricted because the project's primary data are unpublished. From here the password is rotated without going through the Vercel dashboard or redeploying. The answer to the security question is also required: that way access can be shared for someone to look around, without letting them change the password.",
           })}
         >
           <Cuenta />
         </Seccion>
 
         <footer className="border-t border-(--border) pt-8 text-[0.8rem] leading-relaxed text-(--muted)">
-          <p className="mb-3 max-w-[64ch]">
+          <p className="mb-5 max-w-[64ch]">
             {tx({ es: "A partir de la tesis de grado de ", en: "Based on the undergraduate thesis of " })}
             <strong className="font-semibold text-(--ink-2)">
               Erick Francisco Mendoza Rivero
             </strong>
             {tx({
-              es: ", «Análisis de las asociaciones de foraminíferos bentónicos en filtraciones de metano: comparación entre distintas localidades y la plataforma continental del Caribe colombiano». Ingeniería Geológica, Facultad de Minas, Universidad Nacional de Colombia, Medellín, 2022. Directora: Ph.D. Gladys Rocío Bernal Franco.",
-              en: ", “Analysis of benthic foraminiferal assemblages at methane seeps: a comparison between localities and the Colombian Caribbean continental shelf”. Geological Engineering, Facultad de Minas, Universidad Nacional de Colombia, Medellín, 2022. Advisor: Ph.D. Gladys Rocío Bernal Franco.",
+              es: ", Ingeniero Geólogo, «Análisis de las asociaciones de foraminíferos bentónicos en filtraciones de metano: comparación entre distintas localidades y la plataforma continental del Caribe colombiano». Trabajo de grado presentado como requisito parcial para optar al título de Ingeniero Geólogo. Universidad Nacional de Colombia, sede Medellín, Facultad de Minas, Departamento de Geociencias y Medio Ambiente, 2022. Directora: Ph.D. Gladys Rocío Bernal Franco.",
+              en: ", Geological Engineer, “Analysis of benthic foraminiferal assemblages at methane seeps: a comparison between localities and the Colombian Caribbean continental shelf”. Undergraduate thesis submitted in partial fulfilment of the requirements for the degree of Geological Engineer. Universidad Nacional de Colombia, Medellín campus, Facultad de Minas, Department of Geosciences and Environment, 2022. Advisor: Ph.D. Gladys Rocío Bernal Franco.",
             })}
           </p>
+
+          {/* Ficha del proyecto. Va completa y con los identificadores
+              oficiales porque un dashboard que publica datos de investigación
+              financiada tiene que dejar rastro de quién la financió y bajo qué
+              convenio. Tomada del informe técnico final de la beca-pasantía. */}
+          <div className="mb-5 max-w-[64ch] border-l-2 border-(--axis) pl-4">
+            <p className="mb-2 font-semibold text-(--ink-2)">
+              {tx({ es: "Marco del proyecto", en: "Project framework" })}
+            </p>
+            <dl className="space-y-1.5">
+              {[
+                {
+                  k: tx({ es: "Proyecto", en: "Project" }),
+                  v: "Methane Seep Hunting (MSH): A multi-scale and multi method approach",
+                },
+                {
+                  k: tx({ es: "Objetivo general", en: "General objective" }),
+                  v: tx({
+                    es: "Proponer un enfoque de múltiples escalas y métodos para detectar rezumaderos de metano, determinar su actividad de filtración actual e identificar su fuente, utilizando tecnología de punta en el Caribe colombiano.",
+                    en: "To propose a multi-scale, multi-method approach to detect methane seeps, determine their present seepage activity and identify their source, using state-of-the-art technology in the Colombian Caribbean.",
+                  }),
+                },
+                {
+                  k: tx({ es: "Programa", en: "Programme" }),
+                  v: tx({
+                    es: "Programa Nacional de Ciencia, Tecnología e Innovación en Geociencias — Minciencias",
+                    en: "National Programme for Science, Technology and Innovation in Geosciences — Minciencias",
+                  }),
+                },
+                {
+                  k: tx({ es: "Convocatoria", en: "Call" }),
+                  v: tx({
+                    es: "877 de 2020 — Financiación de proyectos de investigación en geociencias para el sector de hidrocarburos",
+                    en: "877 of 2020 — Funding for geoscience research projects for the hydrocarbon sector",
+                  }),
+                },
+                {
+                  k: tx({ es: "Contrato / convenio", en: "Contract / agreement" }),
+                  v: "Minciencias 80740-143-2021",
+                },
+                {
+                  k: tx({ es: "Grupo de investigación", en: "Research group" }),
+                  v: "OCEÁNICOS — Universidad Nacional de Colombia, sede Medellín",
+                },
+                {
+                  k: tx({ es: "Entidades", en: "Institutions" }),
+                  v: tx({
+                    es: "UPB · UNAL · GMAS · GEOMARES · ACGGP (ejecutoras y beneficiarias)",
+                    en: "UPB · UNAL · GMAS · GEOMARES · ACGGP (executing and beneficiary)",
+                  }),
+                },
+                {
+                  k: tx({ es: "Vinculación", en: "Appointment" }),
+                  v: tx({
+                    es: "Beca-pasantía del programa Jóvenes Investigadores, 21-08-2021 a 31-03-2024. Tutora: Gladys Rocío Bernal Franco.",
+                    en: "Young Researchers scholarship-internship, 21 Aug 2021 to 31 Mar 2024. Tutor: Gladys Rocío Bernal Franco.",
+                  }),
+                },
+              ].map((d) => (
+                <div key={d.k} className="sm:flex sm:gap-3">
+                  <dt className="shrink-0 font-medium sm:w-[9.5rem]">{d.k}</dt>
+                  <dd className="m-0">{d.v}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
           <p className="max-w-[64ch]">
             {tx({
-              es: "Taxonomía verificada contra WoRMS (World Foraminifera Database). Referencias resueltas con CrossRef. Los datos primarios son inéditos y no se publican.",
-              en: "Taxonomy verified against WoRMS (World Foraminifera Database). References resolved with CrossRef. Primary data are unpublished and not released.",
+              es: "Taxonomía verificada contra WoRMS (World Foraminifera Database). Referencias resueltas con CrossRef. Los datos primarios del proyecto son inéditos y no se publican: aquí sólo se muestran agregados y tablas derivadas.",
+              en: "Taxonomy verified against WoRMS (World Foraminifera Database). References resolved with CrossRef. The project's primary data are unpublished and not released: only aggregates and derived tables are shown here.",
             })}
           </p>
         </footer>

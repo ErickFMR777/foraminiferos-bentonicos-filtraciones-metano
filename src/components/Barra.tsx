@@ -5,7 +5,7 @@ import { useApp, useT } from "@/lib/i18n";
 
 export default function Barra() {
   const { idioma, setIdioma, modo, setModo } = useApp();
-  const { t } = useT();
+  const { t, tx } = useT();
   const [tema, setTema] = useState<"light" | "dark" | null>(null);
 
   useEffect(() => {
@@ -28,7 +28,10 @@ export default function Barra() {
     <div className="sticky top-0 z-50 border-b border-(--border) bg-(--page)/90 backdrop-blur">
       <div className="mx-auto flex max-w-[68rem] flex-wrap items-center gap-x-5 gap-y-2 px-6 py-2.5">
         <span className="mr-auto text-[0.72rem] font-medium tracking-wide text-(--muted)">
-          Foraminíferos · Caribe colombiano
+          {tx({
+            es: "Foraminíferos bentónicos · Filtraciones de metano",
+            en: "Benthic foraminifera · Methane seeps",
+          })}
         </span>
 
         <div className="flex gap-1" role="group" aria-label="Modo">

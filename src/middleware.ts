@@ -5,8 +5,9 @@ import { COOKIE_SESION, verificar } from "@/lib/sesion";
 /**
  * Puerta de acceso al dashboard.
  *
- * Los datos son agregados de una tesis todavía no publicada, así que el sitio
- * no debe quedar abierto. La comprobación va AQUÍ, en el edge, y no en el
+ * La tesis está entregada a la Universidad Nacional, pero los datos primarios
+ * del proyecto MSH siguen siendo inéditos, así que el sitio no debe quedar
+ * abierto. La comprobación va AQUÍ, en el edge, y no en el
  * navegador: el JSON viaja dentro del bundle, de modo que una contraseña en
  * cliente sería decorativa — bastaría abrir el código fuente para leerlo todo.
  *
@@ -78,7 +79,7 @@ function paginaAcceso(destino: string, fallo: boolean): string {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Acceso restringido</title>
+<title>Foraminíferos bentónicos en filtraciones de metano — Acceso</title>
 <style>
   :root{color-scheme:light dark;--page:#f2f0eb;--surface:#faf8f5;--ink:#14140f;
     --ink-2:#52514e;--muted:#898781;--borde:rgb(20 20 15 / .14);--acento:#2a78d6;
@@ -117,11 +118,12 @@ function paginaAcceso(destino: string, fallo: boolean): string {
 </head>
 <body>
 <main>
-  <p class="marca">Universidad Nacional de Colombia · Proyecto MSH</p>
-  <h1>Foraminíferos y metano en el Caribe colombiano</h1>
-  <p class="sub">Datos de una tesis todavía no publicada. El acceso es
-    restringido.<br><span style="color:var(--muted)">Unpublished thesis data.
-    Access is restricted.</span></p>
+  <p class="marca">Universidad Nacional de Colombia · Proyecto Methane Seep Hunting (MSH)</p>
+  <h1>Foraminíferos bentónicos en filtraciones de metano</h1>
+  <p class="sub">Comparación entre distintas localidades del mundo y la
+    plataforma continental del Caribe colombiano.<br>
+    <span style="color:var(--muted)">A comparison between localities worldwide
+    and the Colombian Caribbean continental shelf.</span></p>
   <form method="post" action="/api/entrar">
     ${fallo ? '<p class="error">Usuario o contraseña incorrectos. · Wrong username or password.</p>' : ""}
     <input type="hidden" name="destino" value="${esc(destino)}">
@@ -136,7 +138,9 @@ function paginaAcceso(destino: string, fallo: boolean): string {
     </div>
     <button type="submit">Entrar · Sign in</button>
   </form>
-  <footer>Erick F. Mendoza Rivero — Ingeniería Geológica, Facultad de Minas.</footer>
+  <footer>Erick Francisco Mendoza Rivero, Ingeniero Geólogo.<br>
+    Universidad Nacional de Colombia, sede Medellín — Facultad de Minas.<br>
+    Proyecto MSH · Minciencias, convocatoria 877 de 2020 · contrato 80740-143-2021.</footer>
 </main>
 </body>
 </html>`;
