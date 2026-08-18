@@ -1,6 +1,6 @@
 # CHECKPOINT — Dashboard Tesis Foraminíferos
 
-**Última actualización:** 2026-08-17 · Fase 0 COMPLETA · Fase 1 EN CURSO (matriz lista)
+**Última actualización:** 2026-08-17 · Fase 0 y Fase 1 COMPLETAS · DESPLEGADO
 **Novedad:** integrado Barragán y Bernal (2024), que resuelve la tensión de la Historia 2.
 
 Documento de continuidad: si la sesión se corta, esto es lo que hace falta
@@ -25,6 +25,33 @@ Marco: proyecto MSH (*Methane Seep Hunting*).
 
 **Destino:** Vercel. **Públicos:** comunidad académica internacional +
 reclutadores de tech/datos.
+
+---
+
+## 1 bis. Despliegue
+
+**En línea y protegido con contraseña:** https://foraminiferos-caribe.vercel.app
+Proyecto de Vercel `foraminiferos-caribe` (cuenta erickfmr777).
+
+La autenticación es HTTP básica en `src/middleware.ts`, con las credenciales
+en las variables de entorno `DASHBOARD_USUARIO` y `DASHBOARD_CLAVE` de Vercel
+(definidas en production, preview y development). Si no están definidas el
+sitio queda abierto, que es lo cómodo en local.
+
+**Por qué no es `output: "export"`.** Un export puramente estático no admite
+middleware, y una contraseña en el navegador sería decorativa: el dataset
+viaja dentro del bundle. Las páginas se siguen prerenderizando; sólo se añade
+la puerta en el edge.
+
+**El matcher protege TODO menos el favicon, y eso es deliberado.** Excluir
+`_next/static` parecía inofensivo y no lo era: el dataset viaja en el chunk de
+la página, de modo que `/_next/static/chunks/app/page-*.js` servía los datos
+completos sin pedir credenciales. Se detectó probando el despliegue real, no
+razonando sobre él. **Si alguien vuelve a excluir los assets del matcher,
+reabre la fuga.**
+
+Para abrir el sitio al público: borrar `src/middleware.ts` y devolver
+`output: "export"` a `next.config.ts`.
 
 ---
 

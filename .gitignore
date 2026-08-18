@@ -39,3 +39,5 @@ desktop.ini
 *.log
 
 # Dependencias del atlas cartográfico (se resuelven en build)
+
+.env*
