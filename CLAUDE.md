@@ -86,9 +86,13 @@ Vercel **no lee `.gitignore`**: construye su lista sólo desde `.vercelignore`
 (o `.nowignore`) más unos pocos valores por defecto. Mientras `.vercelignore`
 no existió, `vercel deploy` subió el directorio entero —los dos Excel
 inéditos, los 47 PDF y todo `data/private/`— a los servidores de Vercel. No
-llegaron a servirse en ninguna URL (nada de eso está en `public/` y el
-middleware devolvía 401), pero habían salido del equipo. Borrar
+llegaron a servirse en ninguna URL (nada de eso está en `public/` y por
+entonces el middleware devolvía 401), pero habían salido del equipo. Borrar
 `.vercelignore` reabre la fuga en el siguiente despliegue.
+
+**Al abrir el sitio, este archivo pasó a importar más, no menos.** Ya no hay
+un 401 detrás por si algo se cuela: `.vercelignore` es lo único que separa los
+originales del equipo de los servidores de Vercel.
 
 La auditoría verifica además que ningún dataset público ni el informe
 contengan rutas del sistema de archivos (`Data_nosubiralrepo/`, `C:\Users`,
@@ -156,27 +160,24 @@ Los scripts leen los originales desde `THESIS_DATA_DIR` (por defecto
 
 ### Despliegue
 
-Vercel, proyecto `foraminiferos-caribe-colombiano`. El sitio va cerrado con
-sesión de cookie firmada, comprobada en el edge. **Si falta `SESION_SECRETO`
-el sitio queda abierto** — que es lo cómodo en local, y lo peligroso en
-producción.
+Vercel, proyecto `foraminiferos-caribe-colombiano`. **El sitio es público y
+estático**: `output: "export"` en `next.config.ts`, sin servidor, sin variables
+de entorno y sin nada que decidir en runtime. `npm run build` deja el sitio
+entero en `out/`.
 
-La contraseña **no** vive en una variable de entorno, sino en un almacén
-Vercel Blob privado (`auth/credenciales.json`), como derivación PBKDF2-SHA256
-con sal. Una variable de entorno es inmutable en ejecución: cambiarla exige
-redesplegar, y el usuario pide poder rotar la contraseña desde la interfaz.
+Hasta 2026-08-18 iba cerrado con sesión de cookie firmada. Se abrió a petición
+del autor: la tesis se entregó en 2023 y el dashboard pasa a ser parte de su
+portafolio. **Lo que se abrió es el dashboard, no los datos primarios** — la
+regla de confidencialidad de arriba no se toca, porque lo único que el sitio
+publica son los agregados de `data/derived/`, que ya estaban pensados para
+verse. Por lo mismo `layout.tsx` pasó a `robots: { index: true, follow: true }`:
+antes se pedía no indexar, ahora se busca lo contrario.
 
-`DASHBOARD_USUARIO` / `DASHBOARD_CLAVE` sólo siembran el almacén la primera
-vez; después se ignoran. **Son la vía de recuperación**: borrar el blob
-devuelve el control a esas dos variables.
-
-**Cambiar la contraseña exige además la respuesta a una pregunta de
-seguridad** (`DASHBOARD_RESPUESTA`), y ese es todo su propósito: el autor
-quiere poder enseñar el dashboard dando la contraseña, sin que quien la reciba
-pueda cambiarla y dejarlo fuera. Se compara distinguiendo mayúsculas y se
-guarda derivada, igual que la contraseña. Si no está configurada, cambiar la
-contraseña queda **bloqueado**: ante un fallo de configuración la barrera se
-cierra, no se abre.
+**Si algún día vuelve a cerrarse**, son dos cambios y hacen falta los dos:
+quitar `output: "export"` **y** devolver `src/middleware.ts`. Sólo uno de ellos
+deja el sitio abierto creyéndolo cerrado. El código de la sesión —firma HMAC en
+Web Crypto, almacén Blob con PBKDF2 y pregunta de seguridad— está en el commit
+anterior a su retirada, no hay que reescribirlo.
 
 ---
 
@@ -258,7 +259,7 @@ adivinar se deja en `None` y el dashboard lo muestra como pendiente.
 ### El frontend
 
 `src/app/page.tsx` renderiza un único componente, `src/components/Pagina.tsx`,
-que es la narrativa completa: **nueve** secciones en scroll. Cada una envuelve
+que es la narrativa completa: **ocho** secciones en scroll. Cada una envuelve
 un componente de visualización en `<Seccion>`.
 
 | # | Componente | Historia |
@@ -271,18 +272,10 @@ un componente de visualización en `<Seccion>`.
 | 06 | `Explorador` | Buscar, filtrar y ordenar los taxones |
 | 07 | `Caribe` | El contraste con la fauna de fondo regional |
 | 08 | *(inline)* + `Referencias` | Los límites declarados, y las referencias dentro de ellos |
-| 09 | `Cuenta` | Cambiar la contraseña y cerrar sesión |
 
 `Referencias` **no es una sección**: vive dentro de «08 · Límites», bajo
 «Trazabilidad». Poner las fuentes dentro de los límites es deliberado — es
 donde se sostiene lo que el trabajo puede y no puede afirmar.
-
-La autenticación vive en `src/lib/sesion.ts` (firma HMAC, Web Crypto puro, el
-mismo código corre en edge y en Node), `src/lib/credenciales.ts` (almacén
-Blob; sólo desde runtime Node) y las tres rutas de `src/app/api/`. El
-middleware valida la firma de la cookie y **no lee el almacén**: sería una
-petición de red en cada visita. La contrapartida es que un testigo ya emitido
-vale hasta caducar, y por eso la sesión dura 12 horas.
 
 `src/lib/i18n.tsx` — contexto con `idioma`, persistido en `localStorage`. `useT()` devuelve `t(clave)` para las cadenas
 de interfaz repetidas y `tx({es, en})` para el contenido largo, que vive
@@ -298,26 +291,14 @@ inline en cada componente. **Todo texto visible pasa por uno de los dos.**
 Cada una viene de un fallo real ya ocurrido. El comentario en el código
 explica el caso concreto; esto es el índice.
 
-- **El matcher del middleware protege TODO menos el favicon.** Excluir
-  `_next/static` parecía inofensivo y abría una fuga real: el dataset viaja en
-  el chunk de la página, así que `/_next/static/chunks/app/page-*.js` servía
-  los datos completos sin credenciales. Verificado contra el despliegue, no
-  razonado. Si alguien vuelve a excluir los assets, reabre la fuga.
-- **`next.config.ts` NO lleva `output: "export"`.** Un export estático no
-  admite middleware, y una contraseña en cliente sería decorativa. Para abrir
-  el sitio al público: borrar `src/middleware.ts` y devolver `output: "export"`.
-- **La página de acceso se sirve como HTML en línea desde el middleware**, no
-  como ruta de Next. Si fuese una ruta habría que dejar pasar sin sesión sus
-  archivos de `/_next/static`, y ahí es donde viaja el dataset: sería reabrir
-  la fuga por la puerta de al lado. Por eso el único punto abierto es
-  `/api/entrar`.
-- **A `/api/*` sin sesión se le responde JSON, no la página de acceso.** Si
-  caduca la sesión con el dashboard abierto, devolver HTML rompe el `r.json()`
-  del componente y el usuario ve «no hay red» en vez de «sesión caducada».
-- **`nuevas()` arrastra la respuesta de seguridad de las credenciales
-  anteriores.** Si no se le pasan, el primer cambio de contraseña la borraría
-  y desarmaría la barrera justo cuando se usa. Hay prueba de esto contra
-  producción: tras cambiar la clave, la respuesta se sigue exigiendo.
+- **Lo que protege los datos es `.vercelignore` y la curación, NO una
+  contraseña.** La hubo, y se retiró al abrir el sitio; quien lea código
+  antiguo puede creer que sigue habiendo una barrera. No la hay: **todo lo que
+  entre en `data/derived/` es público desde el momento en que se despliega.**
+  Si un dataset nuevo llevara texto literal de un artículo o una ruta del
+  sistema de archivos, ya no hay un 401 detrás que lo tape — por eso esas dos
+  comprobaciones de `99_auditoria.py` pasaron de red de seguridad a única
+  defensa, y ninguna se puede relajar.
 - **`05_worms.py::pick_foram` filtra por `phylum == "Foraminifera"`.** Varios
   géneros son homónimos entre grupos: `Cassidulina` devuelve un equinoideo. No
   quitar el filtro.

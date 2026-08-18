@@ -30,6 +30,5 @@ README.md
 # Salidas de build y entorno
 out/
 .next/
-.env.example
 __pycache__/
 *.tsbuildinfo

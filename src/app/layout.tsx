@@ -30,8 +30,10 @@ export const metadata: Metadata = {
       name: "Erick Francisco Mendoza Rivero, Ingeniero Geólogo — Universidad Nacional de Colombia, sede Medellín, Facultad de Minas",
     },
   ],
-  // El sitio es de acceso restringido: no debe acabar indexado.
-  robots: { index: false, follow: false },
+  // El sitio es público y forma parte del portafolio del autor: se indexa a
+  // propósito. Lo que sigue sin publicarse son los datos primarios del
+  // proyecto MSH — aquí sólo hay agregados y tablas derivadas.
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({

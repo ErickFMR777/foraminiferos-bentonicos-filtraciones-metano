@@ -8,8 +8,8 @@ No es un panel de indicadores. Cada sección es una historia de datos con su
 método declarado, su tamaño de muestra a la vista y sus límites escritos.
 
 **En línea:** <https://foraminiferos-caribe-colombiano.vercel.app> — acceso
-restringido con contraseña, porque los datos primarios del proyecto son
-inéditos.
+libre. Lo que se publica son agregados y tablas derivadas; los datos primarios
+del proyecto siguen inéditos y no salen de aquí.
 
 ---
 
@@ -39,7 +39,7 @@ UPB · GMAS · GEOMARES · ACGGP**.
 
 ## Qué ofrece
 
-Nueve secciones en scroll, todas bilingües y con su bloque «Cómo se lee».
+Ocho secciones en scroll, todas bilingües y con su bloque «Cómo se lee».
 
 | # | Sección | Qué responde |
 |---|---|---|
@@ -51,7 +51,6 @@ Nueve secciones en scroll, todas bilingües y con su bloque «Cómo se lee».
 | 06 | **El catálogo** | Explorador de los taxones: buscar, filtrar y ordenar |
 | 07 | **El Caribe contra sí mismo** | La muestra frente a la fauna de fondo regional |
 | 08 | **Límites** | Lo que estos datos **no** pueden decir |
-| 09 | **Cuenta** | Cambiar la contraseña, protegida por pregunta de seguridad |
 
 ### Los hallazgos que sostienen la narrativa
 
@@ -309,11 +308,15 @@ Hacen falta **dos** archivos de exclusión y no son intercambiables: el CLI de
 Vercel **no lee `.gitignore`**, sólo `.vercelignore`. Las referencias
 bibliográficas sí se publican; lo que no se publica son los archivos.
 
-El sitio va cerrado con sesión de cookie firmada (HMAC-SHA256) comprobada en el
-edge. La contraseña vive en un almacén privado como derivación PBKDF2-SHA256
-con sal, nunca en claro, y se puede rotar desde la propia interfaz —protegida
-por una pregunta de seguridad, para poder enseñar el dashboard sin ceder el
-control—.
+**El sitio es público.** Lo fue tras una etapa con contraseña: la tesis está
+entregada desde 2023 y el dashboard pasa a ser parte del portafolio del autor.
+Lo que se abrió es el dashboard, no los datos — la tabla de arriba sigue
+gobernando, y `data/derived/` siempre estuvo pensado para verse.
+
+Sin barrera detrás, dos comprobaciones de la auditoría dejan de ser red de
+seguridad y pasan a ser la única defensa: que ningún dataset público lleve
+texto literal de los artículos, y que ninguno exponga rutas del sistema de
+archivos.
 
 ---
 
@@ -332,6 +335,5 @@ originales desde `THESIS_DATA_DIR` (por defecto `./Data_nosubiralrepo`). El
 orden completo de etapas está en [CLAUDE.md](CLAUDE.md); el estado del proyecto
 y las decisiones tomadas, en [CHECKPOINT.md](CHECKPOINT.md).
 
-Variables de entorno en [`.env.example`](.env.example). **Si falta
-`SESION_SECRETO`, el sitio queda abierto** — cómodo en local, peligroso en
-producción.
+No hacen falta variables de entorno para el frontend: `output: "export"` deja
+el sitio entero en `out/`, sin servidor ni consultas en runtime.

@@ -52,12 +52,17 @@ reclutadores de tech/datos.
 
 ## 1 bis. Despliegue
 
-**En línea y protegido con contraseña:** https://foraminiferos-caribe-colombiano.vercel.app
+**En línea y de acceso libre:** https://foraminiferos-caribe-colombiano.vercel.app
 Proyecto de Vercel `foraminiferos-caribe-colombiano` (cuenta erickfmr777).
 El proyecto anterior `foraminiferos-caribe` se eliminó: Vercel no permite
 renombrar proyectos desde la CLI, así que hubo que recrearlo.
 
-**Autenticación con sesión de cookie (desde 2026-08-18).** Antes era HTTP
+### Historial: la etapa con contraseña (retirada el 2026-08-18, ver §16)
+
+Lo que sigue **ya no está en el código**. Se conserva porque describe una
+decisión razonada y porque, si el sitio vuelve a cerrarse, esto es el plano.
+
+**Autenticación con sesión de cookie.** Antes era HTTP
 básica; se cambió porque la básica no admite cambiar la contraseña: el
 navegador cachea las credenciales, no existe cerrar sesión, y la clave vivía
 en una variable de entorno que sólo se toca redesplegando.
@@ -505,7 +510,8 @@ sola especie se lleva del **29 al 61 %** de la asociación; en MSH-BC-21 la más
 abundante no llega al **11 %**. Lo que distingue la muestra no es el elenco de
 especies sino el reparto — que es justo lo que mide su J′ = 0,8687.
 
-El dashboard pasa a **nueve secciones**; Límites es 08 y Cuenta 09.
+El dashboard pasó entonces a **nueve secciones**; Límites es 08 y Cuenta era
+la 09. Al abrir el sitio (§16) desapareció Cuenta y quedaron **ocho**.
 
 ---
 
@@ -558,3 +564,49 @@ Sustituido por lo que pidió, que además es lo correcto:
 
 Verificado contra el despliegue: 8 puntos sueltos + 7 grupos que suman 31 = los
 39 georreferenciados, 0 fuera del marco.
+
+
+---
+
+## 16. El sitio se abre al público (2026-08-18)
+
+Decisión del autor: la tesis se entregó hace más de dos años y aún no ha salido
+como artículo, pero el trabajo de grado está entregado y **el dashboard pasa a
+ser parte de su portafolio**. Se retira la autenticación entera.
+
+**Qué se quitó**
+
+| Ruta | |
+|---|---|
+| `src/middleware.ts` | La puerta en el edge |
+| `src/lib/sesion.ts` | Firma HMAC de la cookie |
+| `src/lib/credenciales.ts` | Almacén Blob, PBKDF2, pregunta de seguridad |
+| `src/app/api/` | Las tres rutas: entrar, salir, clave |
+| `src/components/Cuenta.tsx` | La sección 09 |
+| `.env.example` | Ya no hay variables de entorno que documentar |
+| `@vercel/blob` | La única dependencia que existía por la contraseña |
+
+**Qué cambió con ello**
+
+- `next.config.ts` recupera `output: "export"`. Era lo único que lo impedía:
+  un export estático no admite middleware. `npm run build` deja el sitio en
+  `out/`, sin servidor ni consultas en runtime.
+- `layout.tsx` pasa de `robots: { index: false }` a `index: true`. Antes se
+  pedía no aparecer en buscadores; ahora es lo que se busca.
+- El dashboard queda en **ocho secciones**, de «01 · El vacío» a
+  «08 · Límites».
+
+**Lo que NO cambió, y es lo importante**
+
+Se abrió el dashboard, no los datos. `Data_nosubiralrepo/` y `data/private/`
+siguen sin publicarse, y `.vercelignore` sigue siendo obligatorio — de hecho
+pasa a importar más, porque ya no hay un 401 detrás por si algo se cuela.
+
+Por lo mismo, dos comprobaciones de `99_auditoria.py` dejan de ser red de
+seguridad y pasan a ser **la única defensa**: que ningún dataset público lleve
+texto literal de los artículos y que ninguno exponga rutas del sistema de
+archivos. Las dos siguen en verde.
+
+**Verificado:** `tsc --noEmit` limpio, build con export estático correcto,
+auditoría 91/91, y en el HTML servido cero apariciones de «contraseña» o
+«password», ocho secciones y `<meta name="robots" content="index, follow">`.

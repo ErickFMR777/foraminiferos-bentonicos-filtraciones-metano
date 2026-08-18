@@ -3,7 +3,6 @@
 import Barra from "./Barra";
 import Caribe from "./Caribe";
 import Composicion from "./Composicion";
-import Cuenta from "./Cuenta";
 import Explorador from "./Explorador";
 import MapaMundial from "./MapaMundial";
 import MatrizLatProf from "./MatrizLatProf";
@@ -305,18 +304,6 @@ export default function Pagina() {
             </p>
             <Referencias />
           </div>
-        </Seccion>
-
-        {/* ── 08 ────────────────────────────────────────────────── */}
-        <Seccion
-          n={tx({ es: "09 · Cuenta", en: "09 · Account" })}
-          titulo={tx({ es: "Cambiar la contraseña", en: "Change the password" })}
-          entradilla={tx({
-            es: "El acceso es restringido porque los datos primarios del proyecto son inéditos. Desde aquí se rota la contraseña sin pasar por el panel de Vercel ni volver a desplegar. Hace falta además la respuesta a la pregunta de seguridad: así se puede compartir el acceso para que alguien lo vea, sin que pueda cambiar la clave.",
-            en: "Access is restricted because the project's primary data are unpublished. From here the password is rotated without going through the Vercel dashboard or redeploying. The answer to the security question is also required: that way access can be shared for someone to look around, without letting them change the password.",
-          })}
-        >
-          <Cuenta />
         </Seccion>
 
         <footer className="border-t border-(--border) pt-8 text-[0.8rem] leading-relaxed text-(--muted)">

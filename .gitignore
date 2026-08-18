@@ -11,10 +11,10 @@ Data_nosubiralrepo/
 data/raw/
 data/private/
 
-# Credenciales y entorno
+# Entorno. El sitio es público y no usa variables de entorno, pero la red
+# se deja puesta: un .env que apareciera aquí no debe salir del equipo.
 .env
 .env.*
-!.env.example
 .vercel
 
 # Node / Next
