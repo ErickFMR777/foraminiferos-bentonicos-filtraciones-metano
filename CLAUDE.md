@@ -160,7 +160,8 @@ Los scripts leen los originales desde `THESIS_DATA_DIR` (por defecto
 
 ### Despliegue
 
-Vercel, proyecto `foraminiferos-caribe-colombiano`. **El sitio es público y
+Vercel, proyecto `foraminiferos-bentonicos-filtraciones-metano`, **desplegado desde GitHub**: cada push a
+`master` publica solo, sin `vercel deploy` a mano. **El sitio es público y
 estático**: `output: "export"` en `next.config.ts`, sin servidor, sin variables
 de entorno y sin nada que decidir en runtime. `npm run build` deja el sitio
 entero en `out/`.

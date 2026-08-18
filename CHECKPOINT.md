@@ -52,10 +52,21 @@ reclutadores de tech/datos.
 
 ## 1 bis. Despliegue
 
-**En línea y de acceso libre:** https://foraminiferos-caribe-colombiano.vercel.app
-Proyecto de Vercel `foraminiferos-caribe-colombiano` (cuenta erickfmr777).
-El proyecto anterior `foraminiferos-caribe` se eliminó: Vercel no permite
-renombrar proyectos desde la CLI, así que hubo que recrearlo.
+**En línea y de acceso libre:** https://foraminiferos-bentonicos-filtraciones-metano.vercel.app
+**Repositorio:** https://github.com/ErickFMR777/foraminiferos-bentonicos-filtraciones-metano
+
+Proyecto de Vercel `foraminiferos-bentonicos-filtraciones-metano` (cuenta erickfmr777), **conectado a GitHub**: el
+despliegue lo dispara el push, no `vercel deploy`.
+
+Los nombres anteriores —`foraminiferos-caribe` y luego
+`foraminiferos-caribe-colombiano`— reducían al Caribe un trabajo de alcance
+mundial, el mismo error que ya se corrigió en el titular de la página. El
+nombre actual nombra el organismo y el ambiente, que es lo que el trabajo
+estudia, y es el mismo en el repositorio, en el proyecto de Vercel y en el
+dominio.
+
+Nota histórica que ha caducado: antes hubo que recrear el proyecto porque el
+CLI no sabía renombrar. **Ya sí**: `vercel project rename viejo nuevo` (CLI 57).
 
 ### Historial: la etapa con contraseña (retirada el 2026-08-18, ver §16)
 

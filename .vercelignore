@@ -11,6 +11,12 @@
 #  todo data/private/. Verificado contra la API de despliegues, no supuesto.
 #
 #  Si se borra este archivo, la fuga se reabre en el siguiente despliegue.
+#
+#  DESDE 2026-08-18 el despliegue normal va por GitHub, y ahí Vercel clona el
+#  repositorio: sólo llega lo versionado, que .gitignore ya filtra. Eso NO
+#  vuelve inútil este archivo: sigue siendo la única defensa el día que
+#  alguien ejecute `vercel deploy` desde este equipo, que es exactamente como
+#  ocurrió la fuga.
 # ============================================================
 
 # Datos primarios inéditos y bibliografía en PDF
