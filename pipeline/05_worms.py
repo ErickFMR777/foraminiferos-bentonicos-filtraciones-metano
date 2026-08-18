@@ -27,7 +27,6 @@ import urllib.request
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import taxonomy as T  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 PRIV = ROOT / "data" / "private"

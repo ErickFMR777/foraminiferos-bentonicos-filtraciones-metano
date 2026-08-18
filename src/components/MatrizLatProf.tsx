@@ -20,14 +20,19 @@ const TOTAL = CELDAS.reduce((s, c) => s + c.registros, 0);
 const MAX = Math.max(...CELDAS.map((c) => c.registros));
 
 /** Rampa secuencial de un solo tono. El paso más claro es «poco», no «nada»:
- *  la ausencia de datos se codifica aparte, con trama. */
+ *  la ausencia de datos se codifica aparte, con trama.
+ *
+ *  La tinta va emparejada a su paso COMO VARIABLE, nunca como hex fijo. Con
+ *  el hex el fondo cambiaba de tema y la tinta no: en oscuro el paso 100
+ *  quedaba en contraste 1,00 sobre sí mismo —la cifra desaparecía— y el 250
+ *  en 1,47. Los valores y sus ratios están en globals.css. */
 function paso(n: number): { fondo: string; tinta: string } {
   if (n === 0) return { fondo: "var(--sin-datos)", tinta: "var(--muted)" };
   const r = n / MAX;
-  if (r <= 0.1) return { fondo: "var(--seq-100)", tinta: "#0d366b" };
-  if (r <= 0.25) return { fondo: "var(--seq-250)", tinta: "#0d366b" };
-  if (r <= 0.55) return { fondo: "var(--seq-400)", tinta: "#ffffff" };
-  return { fondo: "var(--seq-550)", tinta: "#ffffff" };
+  if (r <= 0.1) return { fondo: "var(--seq-100)", tinta: "var(--seq-100-tinta)" };
+  if (r <= 0.25) return { fondo: "var(--seq-250)", tinta: "var(--seq-250-tinta)" };
+  if (r <= 0.55) return { fondo: "var(--seq-400)", tinta: "var(--seq-400-tinta)" };
+  return { fondo: "var(--seq-550)", tinta: "var(--seq-550-tinta)" };
 }
 
 const get = (lat: string, prof: string) =>
@@ -126,7 +131,7 @@ export default function MatrizLatProf() {
                           {vacia ? "—" : c.registros}
                         </span>
                         {!vacia && (
-                          <span className="mt-1 text-[0.68rem] opacity-80">
+                          <span className="mt-1 text-[0.68rem] opacity-90">
                             {c.estudios} {c.estudios === 1 ? "estudio" : "estudios"}
                           </span>
                         )}

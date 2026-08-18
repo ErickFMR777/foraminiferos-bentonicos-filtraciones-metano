@@ -12,7 +12,6 @@ lector reconstruir la distancia entre el manuscrito de 2023 y estos datos.
 from __future__ import annotations
 
 import json
-import math
 import sys
 from collections import Counter
 from pathlib import Path

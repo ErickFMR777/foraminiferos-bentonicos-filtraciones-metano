@@ -314,6 +314,22 @@ explica el caso concreto; esto es el índice.
   cromática deficiente. La paleta desaturada que se probó primero falló. No
   sustituir esos valores a ojo. El color codifica variables; si no codifica
   nada, es gris.
+- **Ningún componente fija un color en hex.** Un hex no cambia con el tema;
+  el fondo sobre el que se pinta, sí. `MatrizLatProf` llevaba la tinta de la
+  cifra en hex fijo sobre un fondo `var(--seq-*)`, y en modo oscuro el paso
+  100 quedaba a **contraste 1,00** —tinta y fondo idénticos, la cifra
+  invisible— y el 250 a 1,47. Las tintas viven ahora en `globals.css` como
+  `--seq-*-tinta`, con su ratio anotado y los tres bloques de tema. Hay una
+  comprobación en `99_auditoria.py` que falla si vuelve a aparecer un hex en
+  `src/components/`. Cuidado también con `opacity-*` sobre esas tintas: el
+  subtítulo iba a `opacity-80` y eso solo bajaba el peor caso a 3,88.
+- **El DOI del manifiesto de PDF es el canónico del estudio, no el leído del
+  PDF.** El del PDF llega truncado cuando parte un salto de línea (Fontanier
+  2014 se leía sin el último dígito), y entonces cualquier cruce por ese campo
+  pierde el estudio en silencio — pasó. El leído se conserva aparte, en
+  `doi_leido_del_pdf`. El emparejado por prefijo sigue siendo deliberado, pero
+  exige `MIN_PREFIJO = 12`: por debajo, un prefijo corto emparejaba con el
+  primer estudio que empezara igual.
 - **«Sin datos» debe leerse VACÍO, nunca como cero** — de ahí
   `--sin-datos-trama` y la clase `.trama-sin-datos`, que sobrevive a
   `forced-colors` y a la impresión, donde el relleno de color se pierde.

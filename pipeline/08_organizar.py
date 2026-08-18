@@ -121,12 +121,27 @@ def main() -> int:
             continue
         doi = (r.get("doi_pdf") or "").lower()
 
-        excl = next((v for k, v in EXCLUIDOS.items()
-                     if doi and (doi.startswith(k) or k.startswith(doi))), None)
-        pend = next((v for k, v in PENDIENTES.items()
-                     if doi and (doi.startswith(k) or k.startswith(doi))), None)
-        est = next((e for k, e in estudios.items()
-                    if doi and (doi.startswith(k.lower()) or k.lower().startswith(doi))), None)
+        # El emparejado por prefijo es DELIBERADO: el DOI leído del PDF llega
+        # a menudo truncado por un salto de línea (Fontanier 2014 se leía
+        # `…dsr.2014.08.01`, sin el último dígito). Pero un prefijo corto
+        # emparejaría con el primer estudio que empiece igual, que es la clase
+        # de falso positivo que ya archivó un artículo con el nombre de otro.
+        # De ahí el mínimo: por debajo se exige coincidencia exacta.
+        MIN_PREFIJO = 12
+
+        def casa(k: str) -> bool:
+            k = k.lower()
+            if not doi:
+                return False
+            if doi == k:
+                return True
+            largo = min(len(doi), len(k))
+            return largo >= MIN_PREFIJO and (doi.startswith(k) or k.startswith(doi))
+
+        excl = next((v for k, v in EXCLUIDOS.items() if casa(k)), None)
+        pend = next((v for k, v in PENDIENTES.items() if casa(k)), None)
+        est = next((e for k, e in estudios.items() if casa(k)), None)
+        canonico = next((k for k in estudios if casa(k)), None)
 
         if excl:
             nuevo, destino, estado = nombre(excl["autor"], excl["anio"], excl["titulo"]), \
@@ -158,7 +173,12 @@ def main() -> int:
         manifiesto.append({
             "antes": r["archivo"], "despues": dst.name,
             "carpeta": "Referencias excluidas" if destino == EXCL_DIR else ".",
-            "doi": doi or None, "estado": estado, "motivo": motivo, "accion": accion,
+            # El DOI del manifiesto es el CANÓNICO del estudio, no el que se
+            # leyó del PDF: ese puede venir truncado, y entonces cualquier
+            # cruce posterior por este campo pierde el estudio en silencio.
+            "doi": canonico or doi or None,
+            "doi_leido_del_pdf": doi or None,
+            "estado": estado, "motivo": motivo, "accion": accion,
         })
 
     (PRIV / "manifiesto_pdfs.json").write_text(

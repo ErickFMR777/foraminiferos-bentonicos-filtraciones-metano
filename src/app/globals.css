@@ -44,6 +44,16 @@
   --seq-550: #1c5cab;
   --seq-700: #0d366b;
 
+  /* Tinta de la cifra QUE VA ENCIMA de cada paso. Tiene que ser una variable
+     y no un hex fijo en el componente: el fondo cambia con el tema y la tinta
+     no lo hacía, así que en oscuro el paso 100 quedaba en contraste 1,00
+     —número invisible— y el 250 en 1,47. Ratios verificados sobre el propio
+     fondo, peor caso 5,08 (AA texto normal exige 4,5). */
+  --seq-100-tinta: var(--seq-700);  /*  9,03 */
+  --seq-250-tinta: var(--seq-700);  /*  5,66 */
+  --seq-400-tinta: #14140f;         /*  5,08 */
+  --seq-550-tinta: #ffffff;         /*  6,63 */
+
   /* Ausencia de datos: debe leerse VACÍO, nunca como cero */
   --sin-datos: #e6e3dc;
   --sin-datos-trama: #cbc7bd;
@@ -76,6 +86,11 @@
     --seq-550: #3987e5;
     --seq-700: #86b6ef;
 
+    --seq-100-tinta: #ffffff;       /* 11,95 */
+    --seq-250-tinta: #ffffff;       /*  8,10 */
+    --seq-400-tinta: #ffffff;       /*  5,39 */
+    --seq-550-tinta: #0b0d0e;       /*  5,35 */
+
     --sin-datos: #202426;
     --sin-datos-trama: #33383a;
 
@@ -106,24 +121,20 @@
   --seq-550: #3987e5;
   --seq-700: #86b6ef;
 
+  --seq-100-tinta: #ffffff;         /* 11,95 */
+  --seq-250-tinta: #ffffff;         /*  8,10 */
+  --seq-400-tinta: #ffffff;         /*  5,39 */
+  --seq-550-tinta: #0b0d0e;         /*  5,35 */
+
   --sin-datos: #202426;
   --sin-datos-trama: #33383a;
 
   --sitio: #ffffff;
 }
 
-@theme inline {
-  --color-page: var(--page);
-  --color-surface: var(--surface);
-  --color-surface-2: var(--surface-2);
-  --color-ink: var(--ink);
-  --color-ink-2: var(--ink-2);
-  --color-muted: var(--muted);
-  --color-grid: var(--grid);
-  --color-axis: var(--axis);
-  --font-serif: var(--fuente-serif), Georgia, serif;
-  --font-sans: var(--fuente-sans), system-ui, sans-serif;
-}
+/* Sin bloque @theme: generaba utilidades (bg-page, text-ink, font-serif…) que
+   no usa ni un componente. Aquí se escribe siempre bg-(--page), que lee la
+   variable directamente y por eso responde al cambio de tema. */
 
 html {
   background: var(--page);

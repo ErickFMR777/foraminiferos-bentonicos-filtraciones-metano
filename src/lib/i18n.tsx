@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 
-export type Idioma = "es" | "en";
+type Idioma = "es" | "en";
 
 /** Cadenas de la interfaz. El contenido largo vive en cada componente como
  *  par {es, en}; aquí sólo lo que se repite. */

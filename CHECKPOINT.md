@@ -610,3 +610,89 @@ archivos. Las dos siguen en verde.
 **Verificado:** `tsc --noEmit` limpio, build con export estático correcto,
 auditoría 91/91, y en el HTML servido cero apariciones de «contraseña» o
 «password», ocho secciones y `<meta name="robots" content="index, follow">`.
+
+---
+
+## 17. Depuración e interventoría independiente (2026-08-18)
+
+Barrido completo antes de publicar el repositorio. Lo que salió:
+
+### Bugs encontrados y corregidos
+
+| | Dónde | Qué pasaba |
+|---|---|---|
+| 1 | `MatrizLatProf` | La tinta de la cifra era un **hex fijo** sobre un fondo que sí cambia con el tema. En oscuro, el paso 100 quedaba a **contraste 1,00** (cifra invisible) y el 250 a 1,47 |
+| 2 | `MatrizLatProf` | El subtítulo iba a `opacity-80`: peor caso 3,88, por debajo de AA |
+| 3 | `08_organizar.py` | El manifiesto guardaba el **DOI leído del PDF**, truncado por un salto de línea en Fontanier 2014. Cualquier cruce por ese campo perdía el estudio |
+| 4 | `08_organizar.py` | El emparejado por prefijo **no tenía longitud mínima**: un prefijo corto podía casar con el primer estudio que empezara igual |
+| 5 | `package.json` | `geojson` se importaba como tipo sin estar declarado; llegaba de rebote por `@types/d3-geo` |
+
+Las tintas viven ahora en `globals.css` como `--seq-*-tinta`, con su ratio
+anotado. **Peor caso tras la corrección: 5,08** (AA texto normal exige 4,5), y
+4,58 en el subtítulo con `opacity-90`.
+
+### Código muerto retirado
+
+- El bloque `@theme inline` entero: generaba utilidades (`bg-page`, `text-ink`,
+  `font-serif`) que no usa **ni un** componente. El proyecto escribe siempre
+  `bg-(--page)`, que lee la variable directamente. Verificado tras quitarlo que
+  las dos fuentes siguen aplicándose.
+- El `export` de `Idioma`: nadie lo importaba fuera de `i18n.tsx`.
+- Tres imports muertos: `taxonomy as T` en `05_worms`, `math` en `10_clean`,
+  `Counter` en `60_excel`.
+- `--seq-700` estaba declarado en los tres bloques de tema y sin usar. **No se
+  borró: se usa**, es la tinta de los pasos claros en modo claro.
+
+### Comprobación nueva
+
+`99_auditoria.py` pasa a **92 comprobaciones**. La nueva falla si vuelve a
+aparecer un color en hex dentro de `src/components/` — la clase de error del
+bug 1, que llevaba ahí desde el principio sin que nada lo detectara.
+
+### Frescura de los datos
+
+Se regeneró el pipeline entero desde los Excel originales y se comparó archivo
+por archivo: **los 11 datasets salen byte a byte idénticos**. No hay deriva
+entre el código y lo publicado.
+
+### Verificación inversa de lo extraído
+
+La auditoría comprueba coherencia interna; faltaba la pregunta contraria: *¿está
+cada cifra publicada realmente en su artículo?* Se tomaron los **991 valores**
+de tabla y los **9 índices** y se buscaron en la página que cada uno cita.
+
+**991 de 991 y 9 de 9 aparecen donde dicen.** Las 166 fallidas en la primera
+pasada eran el signo menos Unicode (U+2212) frente al guion ASCII: fallo de la
+sonda, no del dato.
+
+**Cómo NO se puede verificar esto, y conviene recordarlo.** Se probaron antes
+dos sondas independientes —lectura por líneas y `extract_tables()` de
+pdfplumber— y ambas daban cero incluso en los estudios donde el pipeline sí
+extrae. El control positivo falló, así que el resultado intermedio («17
+estudios con tablas sin extraer») **no valía y se descartó**. Estas tablas sólo
+se dejan leer agrupando palabras por coordenada vertical.
+
+### Confidencialidad antes de publicar
+
+- Recorrido **todo el historial de git**, no sólo el árbol actual: ningún
+  `.xlsx`, ningún PDF salvo `Informe_curacion_datos.pdf`, que es la excepción
+  declarada. Nunca hubo un commit con datos primarios.
+- Sin secretos en ningún commit: las plantillas `.env.example` siempre tuvieron
+  los valores vacíos, y la respuesta de seguridad nunca se escribió a disco
+  versionado.
+- Las coincidencias de «cédula», `C:\Users` u `OneDrive` en el historial son
+  **las propias reglas que los prohíben**, no datos.
+
+### Cobertura de la extracción, sin maquillar
+
+| | |
+|---|---|
+| Referencias verificadas | 40/40 |
+| Taxones con AphiaID de WoRMS | **531/531** |
+| Georreferenciados | 39/40 |
+| Con morfología | 32/40 (los 8 restantes se muestran como pendientes) |
+| Estudios con tabla legible por máquina | 8 de 37 con PDF |
+
+Los 29 sin tabla legible están **nominados** en `tablas_pdf.json`. Tablas
+rasterizadas o con columnas entrelazadas: no es una carencia oculta, es una
+carencia declarada.

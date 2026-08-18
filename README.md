@@ -92,7 +92,7 @@ Ocho secciones en scroll, todas bilingües y con su bloque «Cómo se lee».
 | δ¹³C extraído de tablas | 19 pares taxón-estudio, 5 estudios |
 | Abundancias extraídas | 200 pares, 6 estudios |
 | Índices de diversidad | 8 valores, 6 estudios |
-| Peso del dataset público | ~554 KB |
+| Peso del dataset público | 555 KB (~440 KB llegan al navegador) |
 
 ---
 
@@ -134,7 +134,7 @@ Data_nosubiralrepo/*.xlsx ──00──▶ data/private/*_raw.json
 | `50_estadisticas` | Rankings, asociaciones dominantes y estadísticas por estudio |
 | `30_informe` | Genera el informe de curación en PDF |
 | `60_excel` | Devuelve las correcciones a los Excel del autor |
-| `99_auditoria` | **91 comprobaciones independientes**; sale con código 1 si algo falla |
+| `99_auditoria` | **92 comprobaciones independientes**; sale con código 1 si algo falla |
 
 Los módulos sin número —`taxonomy`, `corrections`, `localidades`, `tipologia`,
 `caribe_referencia`, `estudios_nuevos`— son tablas de referencia **curadas a
@@ -261,9 +261,27 @@ no se multipliquen.
 `99_auditoria.py` **vuelve a leer los Excel originales** y verifica de forma
 independiente la conservación de registros, la aritmética recalculada desde
 cero, la coherencia entre datasets, los rangos físicos de lo extraído de las
-tablas y la ausencia de fugas de datos confidenciales. Son **89
+tablas y la ausencia de fugas de datos confidenciales. Son **92
 comprobaciones** y han atrapado errores reales, incluido uno introducido
 mientras se ampliaba el propio Excel.
+
+### Verificación inversa: ningún valor inventado
+
+La auditoría comprueba que lo extraído sea coherente. Falta la pregunta
+contraria —¿está cada cifra publicada realmente en su artículo?—, y se
+respondió al revés: tomando los **991 valores** de tabla y los **9 índices** ya
+extraídos y buscándolos en la página que cada uno cita de su PDF.
+
+**991 de 991 y 9 de 9 se encuentran donde dicen estar.** Las 166 que fallaron
+en la primera pasada eran el signo menos Unicode (`−`, U+2212) que usan las
+revistas frente al guion ASCII: un fallo de la sonda, no del dato.
+
+Conviene decir cómo NO se puede verificar esto. Se intentaron dos sondas
+independientes —lectura por líneas y `extract_tables()` de pdfplumber— y las
+dos daban cero incluso en los estudios donde el pipeline sí extrae datos. Es
+decir: **el control positivo falló y el resultado no valía**. Estas tablas sólo
+se dejan leer agrupando las palabras por coordenada vertical, que es
+precisamente por lo que el pipeline lo hace así.
 
 ---
 
@@ -275,11 +293,13 @@ Un trabajo serio dice lo que **no** puede decir.
   de control propios.
 - **Sin isótopos propios.** La tesis no midió δ¹³C. Los primeros valores del
   área son los de Barragán y Bernal (2024).
-- **Extracción cuantitativa parcial.** δ¹³C, abundancias e índices sólo se
-  pudieron extraer de 5 a 6 estudios cada uno: muchas tablas son imágenes o
-  tienen la cabecera ilegible. **Por eso no se hizo un análisis multivariante
-  con esas variables**: imputar el 85 % de la matriz no describe los datos,
-  inventa la estructura.
+- **Extracción cuantitativa parcial, y declarada.** δ¹³C, abundancias e
+  índices sólo se pudieron extraer de 5 a 6 estudios cada uno. El pipeline no
+  lo disimula: publica en `tablas_pdf.json` la lista nominal de los **29
+  estudios sin tabla legible por máquina** —tablas rasterizadas, columnas
+  entrelazadas o cabecera que no sobrevive a la extracción—. **Por eso no se
+  hizo un análisis multivariante con esas variables**: imputar el 85 % de la
+  matriz no describe los datos, inventa la estructura.
 - **Presencia no es abundancia.** Del texto se extrae qué taxones aparecen, no
   cuánto pesa cada uno.
 - **Dos estudios sin PDF** (E05, E26) y **8 de 40 sin morfología**, porque la

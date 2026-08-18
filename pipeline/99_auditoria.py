@@ -536,6 +536,22 @@ def main() -> int:
         check("`.vercelignore` cubre los datos primarios inéditos",
               not faltan, f"faltan {faltan}")
 
+    # Un color en hex fijo dentro de un componente NO cambia con el tema. Si se
+    # pinta sobre un fondo que sí cambia, el contraste se invierte al pasar a
+    # oscuro: así la matriz llegó a mostrar la cifra a contraste 1,00 —fondo y
+    # tinta idénticos, número invisible— durante toda la vida del proyecto.
+    # Los colores viven en globals.css, que sí tiene los tres bloques de tema.
+    comp = ROOT / "src" / "components"
+    if comp.is_dir():
+        import re as _re
+        culpables = []
+        for f in sorted(comp.glob("*.tsx")):
+            for i, l in enumerate(f.read_text(encoding="utf-8").splitlines(), 1):
+                if _re.search(r'"#[0-9a-fA-F]{3,8}"', l):
+                    culpables.append(f"{f.name}:{i}")
+        check("Ningún componente fija un color en hex (no seguiría al tema)",
+              not culpables, f"{culpables}")
+
     # ---------------------------------------------------------------------
     # Los Excel corregidos son un producto más del pipeline, y hasta ahora
     # nadie los verificaba: se comprueban si existen. Que la hoja de

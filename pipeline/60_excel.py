@@ -19,7 +19,6 @@ import json
 import math
 import os
 import sys
-from collections import Counter
 from datetime import date
 from pathlib import Path
 
