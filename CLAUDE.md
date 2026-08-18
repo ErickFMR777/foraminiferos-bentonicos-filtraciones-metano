@@ -55,8 +55,11 @@ Dos mitades independientes:
    tesis y produce agregados públicos.
 2. **Frontend Next.js** (`src/`) — consume esos agregados como JSON estático.
 
-No hay base de datos, ni API, ni consultas en runtime. El dataset completo
-(~200 KB) viaja dentro del bundle.
+No hay base de datos, ni API, ni consultas en runtime. Los datasets viajan
+dentro del bundle: 555 KB en `data/derived/`, de los que ~440 KB llegan al
+cliente —`taxones_global.json` y `cuantitativos.json` no los importa ningún
+componente—. El grueso es `taxones_completo.json` (325 KB), que creció al leer
+los artículos enteros.
 
 ---
 
@@ -188,8 +191,8 @@ Data_nosubiralrepo/*.xlsx  ──00──▶  data/private/*_raw.json
       CrossRef ─06─┼──▶ data/private/  ──10──▶  *_clean.json
           PDF ─07─┘    (nunca se sube)          │
                                                 ▼
-                                      20/50 ──▶ data/derived/*.json
-                                                    │  (público, ~200 KB)
+                                    20/45/50 ──▶ data/derived/*.json
+                                                    │  (público, 555 KB)
                                                     ▼
                                import x from "@datos/nombre.json"
                                                     │
@@ -199,6 +202,28 @@ Data_nosubiralrepo/*.xlsx  ──00──▶  data/private/*_raw.json
 `@datos/*` está mapeado en `tsconfig.json` a `data/derived/*`; `@/*` a `src/*`.
 Un componente que necesite un dato nuevo exige que `20_build.py` lo emita
 primero: no hay fetch en runtime.
+
+Los once datasets públicos y quién los consume:
+
+| Dataset | Lo consume |
+|---|---|
+| `estudios.json` | `MapaMundial`, `Referencias`, `Pagina` |
+| `matriz_lat_prof.json` | `MatrizLatProf`, `MapaMundial`, `Pagina` |
+| `pared_por_banda.json` | `ParedPorBanda` |
+| `msh_bc21.json` | `Composicion`, `Testigo`, `Veredicto`, `ParedPorBanda`, `Caribe`, `Pagina` |
+| `sinu_2024.json` | `Sinu`, `Veredicto` |
+| `solape.json` | `Composicion`, `Veredicto` |
+| `taxones_completo.json` | `Explorador`, `Pagina` |
+| `taxones_global.json` | *(insumo de `50_estadisticas.py`)* |
+| `caribe_referencia.json` | `Caribe` |
+| `correcciones.json` | `Pagina` |
+| `cuantitativos.json` | **nadie en el frontend — y está bien** |
+
+**`cuantitativos.json` no es salida muerta.** Es público porque son agregados
+sin texto literal, pero su consumidor es `60_excel.py`: de ahí salen las
+columnas de δ13C, abundancias e índices de los Excel corregidos, que van a la
+carpeta privada. Borrarlo por «no lo importa ningún componente» rompe los Excel
+del autor sin que el `tsc` ni el build se enteren.
 
 ### El pipeline
 
@@ -233,20 +258,24 @@ adivinar se deja en `None` y el dashboard lo muestra como pendiente.
 ### El frontend
 
 `src/app/page.tsx` renderiza un único componente, `src/components/Pagina.tsx`,
-que es la narrativa completa: siete secciones en scroll. Cada una envuelve un
-componente de visualización en `<Seccion>`.
+que es la narrativa completa: **nueve** secciones en scroll. Cada una envuelve
+un componente de visualización en `<Seccion>`.
 
-| Componente | Historia |
-|---|---|
-| `MatrizLatProf` + `MapaMundial` | El punto ciego: la celda 0-15° / <150 m está vacía |
-| `ParedPorBanda` | La firma de la pared (calcáreo/aglutinado por banda) |
-| `Composicion` + `Testigo` | Fauna de seep o de plataforma tropical |
-| `Veredicto` | ¿Qué tan *seep* se ve MSH-BC-21? |
-| `Sinu` | Barragán y Bernal (2024): mismo campo, con isótopos |
-| `Explorador` | Modo exploración: buscar, filtrar y ordenar los taxones |
-| `Caribe` | El contraste con la fauna de fondo regional |
-| `Referencias` | Las 40 referencias |
-| `Cuenta` | Cambiar la contraseña y cerrar sesión |
+| # | Componente | Historia |
+|---|---|---|
+| 01 | `MatrizLatProf` + `MapaMundial` | El punto ciego: la celda 0-15° / <150 m está vacía |
+| 02 | `ParedPorBanda` | La firma de la pared (calcáreo/aglutinado por banda) |
+| 03 | `Composicion` + `Testigo` | Fauna de seep o de plataforma tropical |
+| 04 | `Veredicto` | ¿Qué tan *seep* se ve MSH-BC-21? |
+| 05 | `Sinu` | Barragán y Bernal (2024): mismo campo, con isótopos |
+| 06 | `Explorador` | Buscar, filtrar y ordenar los taxones |
+| 07 | `Caribe` | El contraste con la fauna de fondo regional |
+| 08 | *(inline)* + `Referencias` | Los límites declarados, y las referencias dentro de ellos |
+| 09 | `Cuenta` | Cambiar la contraseña y cerrar sesión |
+
+`Referencias` **no es una sección**: vive dentro de «08 · Límites», bajo
+«Trazabilidad». Poner las fuentes dentro de los límites es deliberado — es
+donde se sostiene lo que el trabajo puede y no puede afirmar.
 
 La autenticación vive en `src/lib/sesion.ts` (firma HMAC, Web Crypto puro, el
 mismo código corre en edge y en Node), `src/lib/credenciales.ts` (almacén
@@ -319,6 +348,25 @@ explica el caso concreto; esto es el índice.
   dominancia cuando el texto la afirma. El dashboard debe distinguirlas.
 - **Los nombres científicos van siempre en cursiva**, vía `<Taxon>`, que
   respeta la nomenclatura abierta: el calificador `sp.` / `spp.` va en redonda.
+- **En el mapa, ningún punto se desplaza de su coordenada real.** Separarlos
+  en abanico para que no se solapen dibujó E23 fuera del marco, al norte de
+  Noruega: un dato falso en un mapa que existe para decir dónde se ha
+  estudiado. La solución es zoom (`K_MIN`–`K_MAX`) más agrupación **en espacio
+  de pantalla** (`JUNTOS = 24` px): al acercar, la distancia en pantalla crece
+  y los grupos se abren solos sin mover nada. Tres estudios en coordenadas
+  idénticas no se separan con ningún zoom —Hydrate Ridge y Vestnesa tienen
+  tres cada uno—, y por eso al pulsar un grupo se despliega su lista bajo el
+  mapa. El `<clipPath id="marco-mapa">` es el cinturón de seguridad; los
+  puntos se dibujan **fuera** del `<g>` escalado para que su radio no crezca.
+- **Una morfología o una localidad exigen evidencia EN EL CUERPO del
+  artículo.** E24 figuraba como «pingos de hidratos» con
+  `fuente="título y resumen"`, que era una inferencia disfrazada de prueba: el
+  artículo dice «pingo» cero veces y «pockmark» treinta, y el punto estaba a
+  330 km de su sitio. Al revisar aparecieron tres casos más. `99_auditoria.py`
+  comprueba ahora que cada morfología asignada se lea en el texto del artículo
+  **recortando la bibliografía** —ahí los títulos citados nombran morfologías
+  de otros trabajos— y que las justificadas sólo por la localidad
+  (`JUSTIFICADA_POR_LOCALIDAD`) sigan siendo pocas y explícitas.
 
 ---
 
@@ -331,6 +379,19 @@ explica el caso concreto; esto es el índice.
   `font-variant-numeric: tabular-nums` cuando se comparan en columna.
 - Toda visualización lleva su `<ComoSeLee>` y su `<Nota>` con la fuente: el
   público es académico y el método tiene que estar a la vista.
+
+---
+
+## README.md
+
+La cara pública del repositorio: qué es, qué contiene cada sección, las cifras,
+el método y los límites declarados. Es el documento que verá quien llegue por
+GitHub, así que **una cifra que cambie en `data/derived/` lo desactualiza**.
+Reparte el trabajo con este archivo sin repetirlo: el README explica el
+proyecto a quien no lo conoce, CLAUDE.md dice qué se rompe con facilidad.
+
+El repositorio está limpio para publicarse, pero **no tiene remoto**: el primer
+`git remote add origin` y el primer push los hace el autor.
 
 ---
 

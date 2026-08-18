@@ -467,11 +467,17 @@ Se regeneró el pipeline completo y se comparó archivo por archivo con lo
 publicado: **los 11 datasets salen idénticos**. No hay deriva entre el código y
 los datos.
 
-### Datasets sin consumidor (decisión pendiente)
-`caribe_referencia.json` y `cuantitativos.json` se generan pero ningún
-componente los lee. No se borran porque son datos curados y publicables —el
-primero es la Historia 5, «El Caribe contra sí mismo», que nunca se construyó—
-pero **o se usan o se retiran**.
+### Datasets sin consumidor — RESUELTO
+Los dos que quedaban pendientes ya tienen destino, y ninguno se retiró:
+
+- `caribe_referencia.json` lo lee `Caribe.tsx`, la sección **07 · El Caribe
+  contra sí mismo**. Era la historia que faltaba por construir.
+- `cuantitativos.json` **no lo lee ningún componente, y así se queda**: su
+  consumidor es `60_excel.py`, que con él escribe las columnas de δ13C,
+  abundancias e índices de los Excel corregidos. Es público por ser agregados
+  sin texto literal, pero su destino es la carpeta privada del autor. Borrarlo
+  por «no lo importa nadie» rompe los Excel en silencio: ni `tsc` ni el build
+  lo notarían.
 
 
 ---
