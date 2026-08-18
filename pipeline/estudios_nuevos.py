@@ -8,7 +8,7 @@ como la construyó la tesis o la base actualizada.
 El primero es el más consecuente: Barragán y Bernal (2024) trabajan en la
 MISMA área que la tesis —la plataforma externa frente al Golfo de
 Morrosquillo, dentro del Cinturón del Sinú—, con la misma directora y dentro
-del mismo proyecto MSH. Publicado dos años después, ocupa la celda de la
+del mismo proyecto MSH. Publicado un año después, ocupa la celda de la
 matriz que la tesis encontraba vacía.
 """
 

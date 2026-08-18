@@ -161,7 +161,7 @@ def main() -> int:
         "de metano: comparación entre distintas localidades y la plataforma\n"
         "continental del Caribe colombiano»\n\n"
         "Universidad Nacional de Colombia, sede Medellín\n"
-        "Facultad de Minas, Departamento de Geociencias y Medio Ambiente, 2022\n"
+        "Facultad de Minas, Departamento de Geociencias y Medio Ambiente, 2023\n"
         "Directora: Ph.D. Gladys Rocío Bernal Franco\n\n"
         "Proyecto Methane seep hunting:\n"
         "A multi-scale and multi method approach\n\n"
@@ -185,7 +185,7 @@ def main() -> int:
     # ---------------------------------------------------------- 1
     pdf.add_page()
     pdf.h1("1. Qué documenta este informe")
-    pdf.p("La tesis de 2022 se apoya en dos libros de Excel: una base bibliográfica "
+    pdf.p("La tesis de 2023 se apoya en dos libros de Excel: una base bibliográfica "
           "que compila las asociaciones de foraminíferos reportadas en filtraciones "
           "de metano de todo el mundo, y el conteo de una muestra propia del Caribe "
           "colombiano (MSH-BC-21). Para convertir eso en un dashboard hubo que "
@@ -197,7 +197,7 @@ def main() -> int:
           "que alimentan el dashboard.")
 
     pdf.h2("Fuentes")
-    pdf.p("Mendoza Rivero, E. F. (2022). Análisis de las asociaciones de "
+    pdf.p("Mendoza Rivero, E. F. (2023). Análisis de las asociaciones de "
           "foraminíferos bentónicos en filtraciones de metano: comparación entre "
           "distintas localidades y la plataforma continental del Caribe colombiano. "
           "Trabajo de grado presentado como requisito parcial para optar al título "

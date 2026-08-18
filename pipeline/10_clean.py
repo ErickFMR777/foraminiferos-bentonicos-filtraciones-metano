@@ -6,7 +6,7 @@ Salida  : data/private/{bibliografia_clean,msh_clean}.json   (privado)
           data/derived/correcciones.json                     (público)
 
 El log de correcciones es público a propósito: es la pieza que permite a un
-lector reconstruir la distancia entre el manuscrito de 2022 y estos datos.
+lector reconstruir la distancia entre el manuscrito de 2023 y estos datos.
 """
 
 from __future__ import annotations

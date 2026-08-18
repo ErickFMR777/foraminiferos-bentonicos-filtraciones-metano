@@ -19,7 +19,7 @@ para retomar sin releer nada.
 Dashboard interactivo bilingüe (ES/EN) sobre la tesis de grado de **Erick
 Francisco Mendoza Rivero, Ingeniero Geólogo** (Universidad Nacional de
 Colombia, sede Medellín, Facultad de Minas, Departamento de Geociencias y
-Medio Ambiente, 2022): *«Análisis de las asociaciones de foraminíferos
+Medio Ambiente, 2023): *«Análisis de las asociaciones de foraminíferos
 bentónicos en filtraciones de metano: comparación entre distintas localidades
 y la plataforma continental del Caribe colombiano»*. Directora: Ph.D. Gladys
 Rocío Bernal Franco.

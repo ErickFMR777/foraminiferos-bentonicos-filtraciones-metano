@@ -12,7 +12,7 @@ y mensajes de commit. Mantener esa convención.
 Dashboard editorial bilingüe (ES/EN) sobre la tesis de grado de **Erick
 Francisco Mendoza Rivero, Ingeniero Geólogo** (Universidad Nacional de
 Colombia, sede Medellín, Facultad de Minas, Departamento de Geociencias y
-Medio Ambiente, 2022; directora Ph.D. Gladys Rocío Bernal Franco). No es un
+Medio Ambiente, 2023; directora Ph.D. Gladys Rocío Bernal Franco). No es un
 panel de KPI: cada sección es una historia de datos con su método declarado.
 
 **El alcance es mundial, y el titular debe reflejarlo.** La tesis compara
@@ -37,6 +37,14 @@ beca-pasantía (no inventar ni aproximar estos identificadores):
 publicada»: lo que sigue siendo inédito son los datos primarios del proyecto
 MSH. Las cédulas que aparecen en el informe técnico son datos personales y no
 se publican en ningún artefacto.
+
+**La tesis es de 2023.** La portada del PDF dice 2022, pero es un error del
+propio documento que el autor rectificó. Cuidado al corregir años: **no todo
+`2022` del repo es la tesis.** Se quedan como están la fecha de consulta de
+WoRMS (nov-2022, declarada en el manuscrito y de la que depende la distinción
+`errata` / `actualizacion`), el año de Puerres 2022 y las campañas de campo de
+mayo-junio de 2022. Cambiar la fecha de WoRMS corrompería el registro de
+correcciones.
 
 Dos mitades independientes:
 

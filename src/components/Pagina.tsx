@@ -167,8 +167,8 @@ export default function Pagina() {
         <Seccion
           n={tx({ es: "05 · La continuación", en: "05 · The continuation" })}
           titulo={tx({
-            es: "El mismo campo, dos años después",
-            en: "The same field, two years later",
+            es: "El mismo campo, un año después",
+            en: "The same field, a year later",
           })}
           entradilla={tx({
             es: "En 2024, el mismo proyecto y la misma directora publicaron un estudio de 18 estaciones en este campo de filtración. Es la línea base local que a la tesis le faltaba: resuelve la duda sobre la diversidad y aporta los primeros isótopos del área.",
@@ -274,14 +274,14 @@ export default function Pagina() {
         </Seccion>
 
         <footer className="border-t border-(--border) pt-8 text-[0.8rem] leading-relaxed text-(--muted)">
-          <p className="mb-5 max-w-[64ch]">
+          <p className="mb-6">
             {tx({ es: "A partir de la tesis de grado de ", en: "Based on the undergraduate thesis of " })}
             <strong className="font-semibold text-(--ink-2)">
               Erick Francisco Mendoza Rivero
             </strong>
             {tx({
-              es: ", Ingeniero Geólogo, «Análisis de las asociaciones de foraminíferos bentónicos en filtraciones de metano: comparación entre distintas localidades y la plataforma continental del Caribe colombiano». Trabajo de grado presentado como requisito parcial para optar al título de Ingeniero Geólogo. Universidad Nacional de Colombia, sede Medellín, Facultad de Minas, Departamento de Geociencias y Medio Ambiente, 2022. Directora: Ph.D. Gladys Rocío Bernal Franco.",
-              en: ", Geological Engineer, “Analysis of benthic foraminiferal assemblages at methane seeps: a comparison between localities and the Colombian Caribbean continental shelf”. Undergraduate thesis submitted in partial fulfilment of the requirements for the degree of Geological Engineer. Universidad Nacional de Colombia, Medellín campus, Facultad de Minas, Department of Geosciences and Environment, 2022. Advisor: Ph.D. Gladys Rocío Bernal Franco.",
+              es: ", Ingeniero Geólogo, «Análisis de las asociaciones de foraminíferos bentónicos en filtraciones de metano: comparación entre distintas localidades y la plataforma continental del Caribe colombiano». Trabajo de grado presentado como requisito parcial para optar al título de Ingeniero Geólogo. Universidad Nacional de Colombia, sede Medellín, Facultad de Minas, Departamento de Geociencias y Medio Ambiente, 2023. Directora: Ph.D. Gladys Rocío Bernal Franco.",
+              en: ", Geological Engineer, “Analysis of benthic foraminiferal assemblages at methane seeps: a comparison between localities and the Colombian Caribbean continental shelf”. Undergraduate thesis submitted in partial fulfilment of the requirements for the degree of Geological Engineer. Universidad Nacional de Colombia, Medellín campus, Facultad de Minas, Department of Geosciences and Environment, 2023. Advisor: Ph.D. Gladys Rocío Bernal Franco.",
             })}
           </p>
 
@@ -289,7 +289,7 @@ export default function Pagina() {
               oficiales porque un dashboard que publica datos de investigación
               financiada tiene que dejar rastro de quién la financió y bajo qué
               convenio. Tomada del informe técnico final de la beca-pasantía. */}
-          <div className="mb-5 max-w-[64ch] border-l-2 border-(--axis) pl-4">
+          <div className="mb-6 border-y border-(--border) py-5">
             <p className="mb-2 font-semibold text-(--ink-2)">
               {tx({ es: "Marco del proyecto", en: "Project framework" })}
             </p>
@@ -350,14 +350,14 @@ export default function Pagina() {
                 },
               ].map((d) => (
                 <div key={d.k} className="sm:flex sm:gap-3">
-                  <dt className="shrink-0 font-medium sm:w-[9.5rem]">{d.k}</dt>
+                  <dt className="shrink-0 font-medium sm:w-[11rem]">{d.k}</dt>
                   <dd className="m-0">{d.v}</dd>
                 </div>
               ))}
             </dl>
           </div>
 
-          <p className="max-w-[64ch]">
+          <p>
             {tx({
               es: "Taxonomía verificada contra WoRMS (World Foraminifera Database). Referencias resueltas con CrossRef. Los datos primarios del proyecto son inéditos y no se publican: aquí sólo se muestran agregados y tablas derivadas.",
               en: "Taxonomy verified against WoRMS (World Foraminifera Database). References resolved with CrossRef. The project's primary data are unpublished and not released: only aggregates and derived tables are shown here.",
