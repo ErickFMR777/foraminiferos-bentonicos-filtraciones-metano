@@ -7,9 +7,12 @@ muestra de la plataforma continental del Caribe colombiano.
 No es un panel de indicadores. Cada sección es una historia de datos con su
 método declarado, su tamaño de muestra a la vista y sus límites escritos.
 
-**En línea:** <https://foraminiferos-bentonicos-filtraciones-metano.vercel.app> — acceso
-libre. Lo que se publica son agregados y tablas derivadas; los datos primarios
-del proyecto siguen inéditos y no salen de aquí.
+**En línea:** <https://foraminiferos-bentonicos-filtraciones-metano.vercel.app>
+
+Acceso libre. Lo que se publica son agregados y tablas derivadas; los datos
+primarios del proyecto siguen inéditos y no salen de aquí. Cada push a `master`
+despliega solo: el repositorio, el proyecto de Vercel y el dominio llevan el
+mismo nombre, y es el único dominio vivo.
 
 ---
 

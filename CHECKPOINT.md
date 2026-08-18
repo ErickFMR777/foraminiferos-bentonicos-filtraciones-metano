@@ -68,7 +68,8 @@ dominio.
 Nota histórica que ha caducado: antes hubo que recrear el proyecto porque el
 CLI no sabía renombrar. **Ya sí**: `vercel project rename viejo nuevo` (CLI 57).
 
-**Dos cosas que el renombrado NO hace solo**, y costaron un 404 y un 302:
+**Cuatro cosas que el renombrado NO hace solo**, y costaron un 404, un 302 y
+una URL vieja anunciada en GitHub:
 
 1. **No crea el dominio nuevo, y levantarlo tiene un paso que no se ve.**
    Renombrar deja `<nombre-nuevo>.vercel.app` en 404 mientras el dominio de
@@ -87,10 +88,24 @@ CLI no sabía renombrar. **Ya sí**: `vercel project rename viejo nuevo` (CLI 57
    de producción. Comprobado con un push después: los dos dominios se movieron
    solos al build nuevo.
 
-   Orden correcto, entonces: `alias set` **y luego** `domains add`. El dominio
-   viejo se deja vivo apuntando al mismo despliegue, así que ningún enlace ya
-   compartido se rompe.
-2. **El proyecto tenía protección SSO** (`ssoProtection.deploymentType =
+   Orden correcto, entonces: `alias set` **y luego** `domains add`.
+
+2. **El dominio viejo NO se va solo, y no se puede desregistrar.** Un
+   `.vercel.app` no es un dominio del equipo: `vercel domains rm` responde
+   `Domain not found`, porque esa orden retira la propiedad de dominios
+   propios. La única palanca es `vercel alias rm <dominio>`, y hay que
+   comprobarla **después de un despliegue**: la primera vez que se quitó, el
+   `redeploy` siguiente volvió a crearlo, porque entonces era el dominio de
+   producción del proyecto. Una vez que el nuevo quedó registrado con
+   `domains add`, quitar el viejo sí es definitivo — verificado con un push
+   posterior.
+
+3. **GitHub se queda con la URL vieja.** Al conectar Vercel con el repositorio,
+   la integración escribe el *homepage* del repo, y ese campo no se actualiza
+   al renombrar: seguía anunciando el dominio antiguo en la portada de GitHub.
+   Se corrige con `gh repo edit --homepage <url>`. Es de las cosas que no salen
+   en ninguna comprobación automática porque viven fuera del código.
+4. **El proyecto tenía protección SSO** (`ssoProtection.deploymentType =
    all_except_custom_domains`), heredada de la etapa con contraseña. El dominio
    viejo estaba exento por ser el de producción, pero el nuevo alias caía en
    ella y devolvía 302 a `vercel.com/sso-api`: el sitio parecía roto estando

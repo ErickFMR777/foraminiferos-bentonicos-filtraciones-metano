@@ -163,7 +163,17 @@ Los scripts leen los originales desde `THESIS_DATA_DIR` (por defecto
 Vercel, proyecto `foraminiferos-bentonicos-filtraciones-metano`, **desplegado
 desde GitHub**: cada push a `master` publica solo, sin `vercel deploy` a mano.
 El repositorio, el proyecto de Vercel y el dominio llevan el mismo nombre a
-propósito.
+propósito, y **hay un solo dominio vivo**:
+
+    https://foraminiferos-bentonicos-filtraciones-metano.vercel.app
+
+Los anteriores (`foraminiferos-caribe`, `foraminiferos-caribe-colombiano`) están
+retirados a conciencia: nombraban sólo el Caribe un trabajo de alcance mundial,
+que es el mismo error que se corrigió en el titular de la página. Si aparecen
+otra vez respondiendo, es que un despliegue los ha recreado — se quitan con
+`vercel alias rm`. Y el *homepage* del repositorio en GitHub lo escribe la
+integración de Vercel al conectarla: **no se actualiza al renombrar** y hay que
+corregirlo a mano con `gh repo edit --homepage`.
 
 Lo que mantiene el sitio abierto **no es el código, es un ajuste de Vercel**:
 `ssoProtection` desactivado. Estuvo en `all_except_custom_domains` de la etapa
