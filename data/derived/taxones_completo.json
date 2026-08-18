@@ -10,7 +10,7 @@
   "generos": 222,
   "taxones_base_tesis": 197,
   "factor_ampliacion": 2.5,
-  "taxones_con_dominancia_declarada": 100,
+  "taxones_con_dominancia_declarada": 99,
   "solape_con_msh": 28,
   "nota_metodo": "Presencia y menciones se extraen del texto completo de cada artículo y se validan contra WoRMS. Las menciones son un proxy débil de importancia: sirven para ordenar dentro de un artículo, no para comparar entre artículos de distinta extensión. Sólo 'dominante' —afirmado por el propio texto— puede leerse como dominancia.",
   "union_taxones": 535,
@@ -342,20 +342,6 @@
    "en_msh_bc21": true
   },
   {
-   "taxon": "Reophax",
-   "rango": "genero",
-   "genero": "Reophax",
-   "familia": "Reophacidae",
-   "orden": null,
-   "aphia_id": 112341,
-   "n_estudios": 8,
-   "menciones": 39,
-   "n_estudios_resultados": 5,
-   "n_estudios_dominante": 3,
-   "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
    "taxon": "Bolivina albatrossi",
    "rango": "especie",
    "genero": "Bolivina",
@@ -367,6 +353,20 @@
    "n_estudios_resultados": 5,
    "n_estudios_dominante": 2,
    "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Reophax",
+   "rango": "genero",
+   "genero": "Reophax",
+   "familia": "Reophacidae",
+   "orden": null,
+   "aphia_id": 112341,
+   "n_estudios": 8,
+   "menciones": 39,
+   "n_estudios_resultados": 5,
+   "n_estudios_dominante": 2,
+   "en_base_tesis": false,
    "en_msh_bc21": false
   },
   {
@@ -748,20 +748,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Neogloboquadrina pachyderma",
-   "rango": "especie",
-   "genero": "Neogloboquadrina",
-   "familia": "Globorotaliidae",
-   "orden": "Rotaliida",
-   "aphia_id": 113458,
-   "n_estudios": 5,
-   "menciones": 45,
-   "n_estudios_resultados": 4,
-   "n_estudios_dominante": 1,
-   "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
    "taxon": "Nonionella stella",
    "rango": "especie",
    "genero": "Nonionella",
@@ -813,6 +799,20 @@
    "n_estudios": 5,
    "menciones": 6,
    "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Neogloboquadrina pachyderma",
+   "rango": "especie",
+   "genero": "Neogloboquadrina",
+   "familia": "Globorotaliidae",
+   "orden": "Rotaliida",
+   "aphia_id": 113458,
+   "n_estudios": 5,
+   "menciones": 45,
+   "n_estudios_resultados": 4,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
    "en_msh_bc21": false
@@ -7288,20 +7288,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Neogloboquadrina pachyderma",
-   "rango": "especie",
-   "genero": "Neogloboquadrina",
-   "familia": "Globorotaliidae",
-   "orden": "Rotaliida",
-   "aphia_id": 113458,
-   "n_estudios": 5,
-   "menciones": 45,
-   "n_estudios_resultados": 4,
-   "n_estudios_dominante": 1,
-   "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
    "taxon": "Nonionella stella",
    "rango": "especie",
    "genero": "Nonionella",
@@ -7339,6 +7325,20 @@
    "n_estudios": 5,
    "menciones": 6,
    "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Neogloboquadrina pachyderma",
+   "rango": "especie",
+   "genero": "Neogloboquadrina",
+   "familia": "Globorotaliidae",
+   "orden": "Rotaliida",
+   "aphia_id": 113458,
+   "n_estudios": 5,
+   "menciones": 45,
+   "n_estudios_resultados": 4,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
    "en_msh_bc21": false
@@ -10506,6 +10506,14 @@
    "n_en_resultados": 40,
    "n_en_base_tesis": 36,
    "asociacion_dominante": [],
+   "destacados_derivados": [
+    "Uvigerina",
+    "Uvigerina peregrina",
+    "Bolivina",
+    "Nonionella",
+    "Epistominella"
+   ],
+   "origen_dominancia": "derivada",
    "top_menciones": [
     {
      "taxon": "Uvigerina",
@@ -10610,6 +10618,14 @@
     "Bolivina striatula",
     "Pseudononion japonicum"
    ],
+   "destacados_derivados": [
+    "Bolivina",
+    "Quinqueloculina",
+    "Nonionella",
+    "Elphidium",
+    "Uvigerina"
+   ],
+   "origen_dominancia": "declarada",
    "top_menciones": [
     {
      "taxon": "Bolivina",
@@ -10725,6 +10741,14 @@
     "Biasterigerina planorbis",
     "Neoconorbina terquemi"
    ],
+   "destacados_derivados": [
+    "Bolivina",
+    "Quinqueloculina",
+    "Elphidium",
+    "Bolivina dilatata",
+    "Bolivina"
+   ],
+   "origen_dominancia": "declarada",
    "top_menciones": [
     {
      "taxon": "Bolivina",
@@ -10825,6 +10849,14 @@
     "Bolivina",
     "Bolivina albatrossi"
    ],
+   "destacados_derivados": [
+    "Melonis",
+    "Melonis affinis",
+    "Uvigerina",
+    "Uvigerina peregrina",
+    "Bolivina"
+   ],
+   "origen_dominancia": "declarada",
    "top_menciones": [
     {
      "taxon": "Melonis",
@@ -10934,6 +10966,14 @@
     "Bolivina",
     "Nuttallides decorata"
    ],
+   "destacados_derivados": [
+    "Hyperammina",
+    "Bolivina",
+    "Portatrochammina antarctica subsp. antarctica",
+    "Bulimina",
+    "Cornuspira involvens"
+   ],
+   "origen_dominancia": "declarada",
    "top_menciones": [
     {
      "taxon": "Hyperammina",
@@ -11039,6 +11079,14 @@
     "Uvigerina",
     "Uvigerina peregrina"
    ],
+   "destacados_derivados": [
+    "Uvigerina",
+    "Uvigerina peregrina",
+    "Bulimina",
+    "Bulimina aculeata",
+    "Pyrgo"
+   ],
+   "origen_dominancia": "declarada",
    "top_menciones": [
     {
      "taxon": "Uvigerina",
@@ -11127,6 +11175,14 @@
     "Uvigerina",
     "Uvigerina peregrina"
    ],
+   "destacados_derivados": [
+    "Uvigerina",
+    "Uvigerina peregrina",
+    "Uvigerina",
+    "Spiroplectammina biformis",
+    "Spiroplectammina"
+   ],
+   "origen_dominancia": "declarada",
    "top_menciones": [
     {
      "taxon": "Uvigerina",
@@ -11218,6 +11274,14 @@
     "Nonionella",
     "Epistominella"
    ],
+   "destacados_derivados": [
+    "Uvigerina",
+    "Bulimina",
+    "Cibicidoides",
+    "Cibicides",
+    "Uvigerina peregrina"
+   ],
+   "origen_dominancia": "declarada",
    "top_menciones": [
     {
      "taxon": "Uvigerina",
@@ -11310,6 +11374,14 @@
    "n_en_resultados": 12,
    "n_en_base_tesis": 9,
    "asociacion_dominante": [],
+   "destacados_derivados": [
+    "Uvigerina",
+    "Cassidulina",
+    "Globobulimina",
+    "Cassidulina carinata",
+    "Globobulimina pacifica"
+   ],
+   "origen_dominancia": "derivada",
    "top_menciones": [
     {
      "taxon": "Uvigerina",
@@ -11404,6 +11476,14 @@
     "Chilostomella",
     "Melonis"
    ],
+   "destacados_derivados": [
+    "Bolivina",
+    "Globobulimina",
+    "Bolivina vadescens",
+    "Globobulimina affinis",
+    "Chilostomella"
+   ],
+   "origen_dominancia": "declarada",
    "top_menciones": [
     {
      "taxon": "Bolivina",
@@ -11506,6 +11586,14 @@
     "Gyroidina orbicularis",
     "Gyroidina"
    ],
+   "destacados_derivados": [
+    "Globobulimina",
+    "Chilostomella",
+    "Chilostomella oolina",
+    "Globobulimina affinis",
+    "Globobulimina pseudospinescens"
+   ],
+   "origen_dominancia": "declarada",
    "top_menciones": [
     {
      "taxon": "Globobulimina",
@@ -11593,6 +11681,14 @@
    "n_en_resultados": 0,
    "n_en_base_tesis": 7,
    "asociacion_dominante": [],
+   "destacados_derivados": [
+    "Cassidulina",
+    "Bulimina",
+    "Bulimina",
+    "Cassidulina carinata",
+    "Protelphidium"
+   ],
+   "origen_dominancia": "derivada",
    "top_menciones": [
     {
      "taxon": "Cassidulina",
@@ -11663,6 +11759,14 @@
     "Gavelinopsis",
     "Paracassidulina neocarinata"
    ],
+   "destacados_derivados": [
+    "Uvigerina",
+    "Uvigerina peregrina",
+    "Bolivina",
+    "Cassidulina",
+    "Bolivina subaenariensis"
+   ],
+   "origen_dominancia": "declarada",
    "top_menciones": [
     {
      "taxon": "Uvigerina",
@@ -11758,7 +11862,6 @@
     "Bolivina",
     "Bolivina albatrossi",
     "Gavelinopsis",
-    "Bolivina ordinaria",
     "Gavelinopsis translucens",
     "Osangularia",
     "Osangularielloides rugosus",
@@ -11767,6 +11870,14 @@
     "Bolivina ordinaria",
     "Bolivina albatrossi"
    ],
+   "destacados_derivados": [
+    "Bolivina",
+    "Cassidulina",
+    "Paracassidulina neocarinata",
+    "Bolivina albatrossi",
+    "Gavelinopsis"
+   ],
+   "origen_dominancia": "declarada",
    "top_menciones": [
     {
      "taxon": "Bolivina",
@@ -11806,7 +11917,7 @@
     {
      "taxon": "Bolivina ordinaria",
      "menciones": 8,
-     "dominante": true
+     "dominante": false
     },
     {
      "taxon": "Gavelinopsis translucens",
@@ -11858,6 +11969,14 @@
    "n_en_resultados": 18,
    "n_en_base_tesis": 6,
    "asociacion_dominante": [],
+   "destacados_derivados": [
+    "Uvigerina",
+    "Uvigerina peregrina",
+    "Globobulimina",
+    "Globobulimina pacifica",
+    "Epistominella"
+   ],
+   "origen_dominancia": "derivada",
    "top_menciones": [
     {
      "taxon": "Uvigerina",
@@ -11946,6 +12065,14 @@
     "Nonion",
     "Gyroidina polia"
    ],
+   "destacados_derivados": [
+    "Bolivina",
+    "Bolivina lowmani",
+    "Globocassidulina subglobosa",
+    "Nonion",
+    "Fissurina"
+   ],
+   "origen_dominancia": "declarada",
    "top_menciones": [
     {
      "taxon": "Bolivina",
@@ -12034,6 +12161,14 @@
    "n_en_resultados": 12,
    "n_en_base_tesis": 6,
    "asociacion_dominante": [],
+   "destacados_derivados": [
+    "Cibicidoides",
+    "Lobatula wuellerstorfi",
+    "Eubuliminella exilis",
+    "Globobulimina",
+    "Globobulimina pacifica"
+   ],
+   "origen_dominancia": "derivada",
    "top_menciones": [
     {
      "taxon": "Cibicidoides",
@@ -12114,6 +12249,14 @@
    "asociacion_dominante": [
     "Globobulimina"
    ],
+   "destacados_derivados": [
+    "Epistominella",
+    "Bolivina",
+    "Uvigerina",
+    "Uvigerina peregrina",
+    "Eubuliminella exilis"
+   ],
+   "origen_dominancia": "declarada",
    "top_menciones": [
     {
      "taxon": "Epistominella",
@@ -12207,6 +12350,14 @@
     "Lobatula wuellerstorfi",
     "Nonionella stella"
    ],
+   "destacados_derivados": [
+    "Elphidium",
+    "Globobulimina",
+    "Cibicides",
+    "Globobulimina pacifica",
+    "Rhabdammina"
+   ],
+   "origen_dominancia": "declarada",
    "top_menciones": [
     {
      "taxon": "Elphidium",
@@ -12317,6 +12468,14 @@
     "Stainforthia fusiformis",
     "Stainforthia loeblichi"
    ],
+   "destacados_derivados": [
+    "Bulimina",
+    "Cassidulina",
+    "Bulimina marginata",
+    "Elphidium",
+    "Trifarina angulosa"
+   ],
+   "origen_dominancia": "declarada",
    "top_menciones": [
     {
      "taxon": "Bulimina",
@@ -12416,6 +12575,14 @@
    "n_en_resultados": 12,
    "n_en_base_tesis": 5,
    "asociacion_dominante": [],
+   "destacados_derivados": [
+    "Melonis affinis",
+    "Melonis",
+    "Cassidulina",
+    "Cassidulina neoteretis",
+    "Nonionellina labradorica"
+   ],
+   "origen_dominancia": "derivada",
    "top_menciones": [
     {
      "taxon": "Neogloboquadrina pachyderma",
@@ -12499,11 +12666,17 @@
     "Cassidulina reniformis",
     "Buccella frigida",
     "Cassidulina neoteretis",
-    "Reophax",
     "Cassidulina",
-    "Melonis affinis",
+    "Melonis affinis"
+   ],
+   "destacados_derivados": [
+    "Cassidulina",
+    "Cassidulina reniformis",
+    "Buccella frigida",
+    "Cassidulina neoteretis",
     "Reophax"
    ],
+   "origen_dominancia": "declarada",
    "top_menciones": [
     {
      "taxon": "Cassidulina",
@@ -12528,7 +12701,7 @@
     {
      "taxon": "Reophax",
      "menciones": 5,
-     "dominante": true
+     "dominante": false
     },
     {
      "taxon": "Uvigerina",
@@ -12561,8 +12734,7 @@
     "Cassidulina",
     "Cassidulina neoteretis",
     "Cassidulina reniformis",
-    "Melonis affinis",
-    "Reophax"
+    "Melonis affinis"
    ],
    "generos": [
     "Cassidulina",
@@ -12593,6 +12765,14 @@
    "n_en_resultados": 9,
    "n_en_base_tesis": 4,
    "asociacion_dominante": [],
+   "destacados_derivados": [
+    "Bulimina striata",
+    "Globobulimina",
+    "Globobulimina pacifica",
+    "Bulimina",
+    "Uvigerina peregrina"
+   ],
+   "origen_dominancia": "derivada",
    "top_menciones": [
     {
      "taxon": "Bulimina striata",
@@ -12668,6 +12848,14 @@
     "Elphidium",
     "Ammonia beccarii"
    ],
+   "destacados_derivados": [
+    "Quinqueloculina",
+    "Quinqueloculina padana",
+    "Elphidium crispum",
+    "Elphidium",
+    "Ammonia beccarii"
+   ],
+   "origen_dominancia": "declarada",
    "top_menciones": [
     {
      "taxon": "Quinqueloculina",
@@ -12752,12 +12940,19 @@
     "Bolivina",
     "Uvigerina",
     "Uvigerina peregrina",
-    "Neogloboquadrina pachyderma",
     "Epistominella",
     "Oridorsalis umbonatus",
     "Bolivina argentea",
     "Epistominella smithi"
    ],
+   "destacados_derivados": [
+    "Bolivina",
+    "Uvigerina",
+    "Uvigerina peregrina",
+    "Cibicides",
+    "Epistominella"
+   ],
+   "origen_dominancia": "declarada",
    "top_menciones": [
     {
      "taxon": "Bolivina",
@@ -12787,7 +12982,7 @@
     {
      "taxon": "Neogloboquadrina pachyderma",
      "menciones": 11,
-     "dominante": true
+     "dominante": false
     },
     {
      "taxon": "Epistominella",
@@ -12815,7 +13010,6 @@
     "Bolivina argentea",
     "Epistominella",
     "Epistominella smithi",
-    "Neogloboquadrina pachyderma",
     "Oridorsalis umbonatus",
     "Uvigerina",
     "Uvigerina peregrina"
@@ -12853,6 +13047,14 @@
     "Trifarina",
     "Globocassidulina subglobosa"
    ],
+   "destacados_derivados": [
+    "Melonis",
+    "Trifarina angulosa",
+    "Melonis affinis",
+    "Ehrenbergina bradyi",
+    "Trifarina"
+   ],
+   "origen_dominancia": "declarada",
    "top_menciones": [
     {
      "taxon": "Melonis",
@@ -12943,6 +13145,14 @@
     "Bolivina",
     "Bolivina lowmani"
    ],
+   "destacados_derivados": [
+    "Globocassidulina subglobosa",
+    "Gyroidinoides",
+    "Gyroidina laevigata",
+    "Uvigerina",
+    "Uvigerina peregrina"
+   ],
+   "origen_dominancia": "declarada",
    "top_menciones": [
     {
      "taxon": "Globocassidulina subglobosa",
@@ -13030,6 +13240,13 @@
    "asociacion_dominante": [
     "Psammophaga simplora"
    ],
+   "destacados_derivados": [
+    "Ammonia batava",
+    "Cryptoelphidiella bartletti",
+    "Glomospira",
+    "Psammophaga simplora"
+   ],
+   "origen_dominancia": "declarada",
    "top_menciones": [
     {
      "taxon": "Ammonia batava",
@@ -13076,6 +13293,14 @@
    "n_en_resultados": 9,
    "n_en_base_tesis": 3,
    "asociacion_dominante": [],
+   "destacados_derivados": [
+    "Globobulimina",
+    "Globobulimina pacifica",
+    "Uvigerina peregrina",
+    "Pseudoparrella pacifica",
+    "Bulimina striata"
+   ],
+   "origen_dominancia": "derivada",
    "top_menciones": [
     {
      "taxon": "Globobulimina",
@@ -13147,6 +13372,14 @@
    "n_en_resultados": 7,
    "n_en_base_tesis": 3,
    "asociacion_dominante": [],
+   "destacados_derivados": [
+    "Uvigerina",
+    "Uvigerina peregrina",
+    "Cibicidoides",
+    "Cibicidoides mckannai",
+    "Globobulimina"
+   ],
+   "origen_dominancia": "derivada",
    "top_menciones": [
     {
      "taxon": "Uvigerina",
@@ -13224,6 +13457,13 @@
    "n_en_resultados": 4,
    "n_en_base_tesis": 3,
    "asociacion_dominante": [],
+   "destacados_derivados": [
+    "Cassidulina",
+    "Cassidulina neoteretis",
+    "Cassidulina reniformis",
+    "Lobatula wuellerstorfi"
+   ],
+   "origen_dominancia": "derivada",
    "top_menciones": [
     {
      "taxon": "Cassidulina",
@@ -13266,6 +13506,14 @@
    "n_en_resultados": 9,
    "n_en_base_tesis": 3,
    "asociacion_dominante": [],
+   "destacados_derivados": [
+    "Cassidulina neoteretis",
+    "Cassidulina",
+    "Melonis affinis",
+    "Melonis",
+    "Lobatula wuellerstorfi"
+   ],
+   "origen_dominancia": "derivada",
    "top_menciones": [
     {
      "taxon": "Cassidulina neoteretis",
@@ -13337,6 +13585,13 @@
    "n_en_resultados": 4,
    "n_en_base_tesis": 2,
    "asociacion_dominante": [],
+   "destacados_derivados": [
+    "Cibicidoides",
+    "Lobatula wuellerstorfi",
+    "Cibicides",
+    "Lobatula lobatula"
+   ],
+   "origen_dominancia": "derivada",
    "top_menciones": [
     {
      "taxon": "Cibicidoides",
@@ -13385,6 +13640,11 @@
    "n_en_resultados": 3,
    "n_en_base_tesis": 1,
    "asociacion_dominante": [],
+   "destacados_derivados": [
+    "Uvigerina peregrina",
+    "Uvigerina"
+   ],
+   "origen_dominancia": "derivada",
    "top_menciones": [
     {
      "taxon": "Uvigerina peregrina",
@@ -13425,6 +13685,14 @@
     "Cibicides",
     "Lobatula lobatula"
    ],
+   "destacados_derivados": [
+    "Cibicidoides",
+    "Lobatula wuellerstorfi",
+    "Cibicides",
+    "Lobatula wuellerstorfi",
+    "Lobatula lobatula"
+   ],
+   "origen_dominancia": "declarada",
    "top_menciones": [
     {
      "taxon": "Cibicidoides",
@@ -13492,6 +13760,11 @@
    "n_en_resultados": 2,
    "n_en_base_tesis": 1,
    "asociacion_dominante": [],
+   "destacados_derivados": [
+    "Cassidulina neoteretis",
+    "Cassidulina"
+   ],
+   "origen_dominancia": "derivada",
    "top_menciones": [
     {
      "taxon": "Cassidulina neoteretis",

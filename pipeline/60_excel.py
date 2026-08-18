@@ -155,8 +155,22 @@ def bibliografia() -> Path:
         "25 traen valores de δ13C y 9 reportan índices de diversidad: NADA DE ESO SE "
         "EXTRAJO. Vive en tablas que el lector de PDF no interpreta de forma fiable, "
         "y extraerlas mal sería peor que no extraerlas.",
-        "· Un artículo (E13) es un PDF escaneado sin capa de texto: no aporta taxones "
-        "a la hoja de asociaciones.",
+        "· 14 de los 36 artículos NO declaran qué foraminífero domina. No es un "
+        "fallo de la extracción: usan «dominant» para la litología («the dominant "
+        "lithology is sandy clay»), para procesos geoquímicos («dominated by AOM "
+        "and sulfate reduction»), para tapetes bacterianos («dominated by "
+        "Beggiatoa») o para gusanos tubícolas («the second most abundant tube "
+        "worm»). Para esos estudios la hoja «Asociaciones dominantes» ofrece los "
+        "taxones más mencionados en Resultados, y la columna «Origen» avisa de "
+        "que es un indicio DERIVADO, no una afirmación del artículo.",
+        "· Los porcentajes del texto NO se extrajeron como abundancias, y es "
+        "deliberado: en varios artículos el símbolo ‰ de los valores de δ13C sale "
+        "del PDF convertido en «%», de modo que «1,26 ± 0,15 %» es un valor "
+        "isotópico y no una abundancia relativa. Tomarlos por abundancias habría "
+        "corrompido la base.",
+        "· Un artículo (E13, McGann 2018) son 77 páginas escaneadas sin capa de "
+        "texto: cero caracteres extraíbles. Necesita OCR. Sus taxones sí están en "
+        "la base original de la tesis, sólo falta la lectura del texto completo.",
         "· 7 de los 40 estudios no tienen morfología asignada. En varios el texto sí "
         "menciona pockmarks o volcanes de lodo, pero la mención está en una tabla "
         "comparativa de otras localidades o en la bibliografía, no en la descripción "
@@ -287,17 +301,24 @@ def bibliografia() -> Path:
     # Una fila por estudio con SU asociación dominante. Es la pregunta directa
     # —«qué domina en cada localidad»— y hasta ahora había que reconstruirla
     # filtrando 1.527 filas a mano.
+    # Todos los estudios aparecen, pero la columna «Origen» dice si la
+    # dominancia la AFIRMA el artículo o la derivamos nosotros. Sin esa
+    # distinción, la hoja daría por declarado lo que sólo es un indicio.
     hoja(wb, "Asociaciones dominantes", [
         "ID estudio", "Autores", "Año", "Localidad", "Tipo de fluido",
-        "Morfología", "Nº de taxones dominantes", "Asociación dominante",
+        "Morfología", "Origen", "Nº de taxones",
+        "Asociación dominante (o taxones destacados)",
     ], [[
         p["estudio_id"], p["autores"], p["anio"], p["localidad"],
         p["tipo_filtracion"], p["morfologia"],
-        len(p.get("asociacion_dominante") or []),
-        ", ".join(p.get("asociacion_dominante") or []) or
-        "— el artículo no declara dominancia explícita —",
+        "declarada por el artículo" if p.get("origen_dominancia") == "declarada"
+        else "DERIVADA: más mencionados (el artículo no la declara)",
+        len(p.get("asociacion_dominante")
+            or p.get("destacados_derivados") or []),
+        ", ".join(p.get("asociacion_dominante")
+                  or p.get("destacados_derivados") or []) or "—",
     ] for p in comp["por_estudio"]],
-        [11, 24, 7, 34, 14, 22, 14, 96])
+        [11, 24, 7, 34, 14, 22, 46, 12, 96])
 
     hoja(wb, "Resumen por estudio", [
         "ID", "Autores", "Año", "Título", "Localidad", "Tipo de fluido",

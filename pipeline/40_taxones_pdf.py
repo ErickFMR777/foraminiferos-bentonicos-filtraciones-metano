@@ -82,6 +82,15 @@ FRASE_DOMINANCIA = re.compile(
 CORTE_CLAUSULA = re.compile(
     r"[;.]|\b(?:whereas|while|but|although|however|though|except|unlike"
     r"|in contrast|compared with|compared to|rather than|instead of)\b", re.I)
+# «dominant» calificando algo que NO es una asociación de foraminíferos: la
+# dirección de enrollamiento, la litología, un proceso geoquímico. Así se
+# colaba «the dominant coiling direction of the planktonic foraminifer
+# Neogloboquadrina pachyderma», que no habla de abundancia ninguna.
+SUJETO_AJENO = re.compile(
+    r"\b(coiling|lithology|lithologies|role|process(?:es)?|pathway|factor"
+    r"|control|direction|source|mechanism|facies|mineral|phase|mode|trend"
+    r"|reaction|oxidation|reduction|current|wind|clay|sand|silt|carbonate"
+    r"|bacteri\w+|mat|mats|worm|worms|macrofauna|vegetation|lineage)\b", re.I)
 NEGACION = re.compile(
     r"\b(not|never|rarely|seldom|neither|nor|without|absent|absence|lack\w*"
     r"|no longer|less|fewer|scarce|rare|scarcely|hardly)\b", re.I)
@@ -199,6 +208,11 @@ def dominantes_del_texto(cuerpo: str, nombres: list[str]) -> dict[str, str]:
         # infaunal taxa included: …» porque la oración previa terminaba en
         # «(e.g., Rathburn y Corliss, 2002).».
         if NEGACION.search(cl) or ATRIBUCION.search(cuerpo[izq:p]):
+            continue
+        # Lo que el indicio califica va justo detrás: si es un proceso, una
+        # litología o la dirección de enrollamiento, no es una dominancia
+        # faunística.
+        if SUJETO_AJENO.search(cuerpo[m.end():m.end() + 34]):
             continue
         for n, pat in patrones.items():
             # Límite de palabra: sin él «Bolivina» casaba dentro de

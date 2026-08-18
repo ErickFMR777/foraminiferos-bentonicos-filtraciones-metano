@@ -27,6 +27,9 @@ import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import taxonomy as T  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 PRIV = ROOT / "data" / "private"
 DERIV = ROOT / "data" / "derived"
@@ -57,7 +60,26 @@ def main() -> int:
         # La ASOCIACIÓN DOMINANTE de un estudio es el conjunto de taxones que
         # el propio artículo declara dominantes, no los más mencionados. Se
         # ordena por menciones sólo para que el más citado abra la lista.
-        asoc = [r["taxon"] for r in sorted(dom, key=lambda x: -x["menciones"])]
+        # También la declarada se limpia de planctónicos: la base es de
+        # bentónicos y su exclusión ya está registrada como corrección.
+        asoc = [r["taxon"] for r in sorted(dom, key=lambda x: -x["menciones"])
+                if (r.get("genero") or "").lower() not in T.PLANCTONICOS]
+
+        # 14 de los 36 artículos NO declaran qué foraminífero domina: usan
+        # «dominant» para la litología, los procesos geoquímicos, los tapetes
+        # bacterianos o los gusanos tubícolas. Para esos no se inventa una
+        # dominancia; se ofrece un indicador DERIVADO —los más mencionados en
+        # Resultados— etiquetado como tal, para que ningún estudio quede vacío
+        # sin que se confunda con lo que el artículo afirma.
+        # Y sin planctónicos: la base es de foraminíferos BENTÓNICOS y su
+        # presencia se excluyó por corrección. Sin este filtro, el indicio de
+        # E23 lo encabezaba Neogloboquadrina pachyderma y el de E38
+        # Globigerinoides ruber, que no pintan nada aquí.
+        candidatos = [r for r in rs
+                      if r.get("en_resultados") is not False
+                      and (r.get("genero") or "").lower() not in T.PLANCTONICOS]
+        derivados = [r["taxon"] for r in
+                     sorted(candidatos, key=lambda x: -x["menciones"])[:5]]
         estudios_out.append({
             "estudio_id": eid,
             "titulo": e.get("titulo"),
@@ -73,6 +95,8 @@ def main() -> int:
                                     if r.get("en_resultados")}),
             "n_en_base_tesis": e.get("n_registros"),
             "asociacion_dominante": asoc,
+            "destacados_derivados": derivados,
+            "origen_dominancia": "declarada" if asoc else "derivada",
             "top_menciones": [
                 {"taxon": r["taxon"], "menciones": r["menciones"],
                  "dominante": r["dominante_declarado"]}
