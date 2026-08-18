@@ -43,7 +43,7 @@ Nueve secciones en scroll, todas bilingües y con su bloque «Cómo se lee».
 
 | # | Sección | Qué responde |
 |---|---|---|
-| 01 | **El vacío** | Matriz latitud × profundidad y mapa mundial: dónde se ha estudiado esto y dónde no |
+| 01 | **El vacío** | Matriz latitud × profundidad y mapa mundial con zoom: dónde se ha estudiado esto y dónde no |
 | 02 | **La firma de la pared** | Proporción calcáreo / aglutinado por banda, la señal más fiable de filtración |
 | 03 | **La muestra** | Qué hay dentro de MSH-BC-21: composición e interior del testigo |
 | 04 | **El veredicto** | Cuatro criterios de la literatura contrastados con lo que la muestra mide |
@@ -147,6 +147,15 @@ Next.js 15 (App Router) + TypeScript + Tailwind v4 con tokens CSS. Todos los
 gráficos son **SVG escrito a mano**: ninguna librería de charts. El mapa usa
 `d3-geo` con `world-atlas` empaquetado, sin tiles externos, de modo que el
 dashboard no hace ni una petición a terceros.
+
+El mapa tiene **zoom y arrastre propios**, y agrupa por distancia **en
+pantalla**: doce de los treinta y nueve estudios comparten coordenada con otro
+—tres en Hydrate Ridge, tres en Vestnesa Ridge— porque la posición es la de la
+localidad, no la del testigo. Los solapados salen como un círculo con su
+número y al acercar se van separando. Cuando la coordenada es **idéntica** no
+hay zoom que los separe, así que al pulsar el círculo se despliega su lista.
+**Ningún punto se desplaza nunca de su posición real**, y un `clipPath` impide
+que nada se dibuje fuera del marco.
 
 ---
 

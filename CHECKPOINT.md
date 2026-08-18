@@ -528,3 +528,27 @@ Ridge— van declaradas en `tipologia.JUSTIFICADA_POR_LOCALIDAD`, y la auditorí
 vigila que no se multipliquen.
 
 Morfologías asignadas: **32 de 40** (antes 33; E10 pasó a sin determinar).
+
+
+---
+
+## 15. El mapa, interactivo (2026-08-18)
+
+El autor detectó dos cosas: que un estudio no aparecía y que había puntos
+dibujados **fuera del mapa, al norte**. Ambas venían del apaño anterior — un
+abanico con relajación que empujaba los puntos y llegó a sacar a E23 por encima
+del borde (y = 6,5 con el marco en 8).
+
+Sustituido por lo que pidió, que además es lo correcto:
+
+- **Zoom y arrastre** propios (rueda, botones, ×1 a ×12), con la vista sujeta
+  para que el mapa no se pueda sacar del marco.
+- **Agrupación por distancia EN PANTALLA**: los solapados se muestran como un
+  círculo con el número de estudios, y al acercar se separan solos porque la
+  distancia en pantalla crece. **Ningún punto se desplaza de su posición real.**
+- **Coordenadas idénticas**: no hay zoom que las separe, así que al pulsar el
+  círculo se despliega la lista de sus estudios bajo el mapa.
+- **`clipPath`**: nada puede dibujarse fuera del marco, pase lo que pase.
+
+Verificado contra el despliegue: 8 puntos sueltos + 7 grupos que suman 31 = los
+39 georreferenciados, 0 fuera del marco.
