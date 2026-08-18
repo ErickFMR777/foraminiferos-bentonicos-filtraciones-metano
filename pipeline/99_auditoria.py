@@ -434,6 +434,24 @@ def main() -> int:
         check("El informe cita la tesis como fuente",
               "Mendoza Rivero" in txt, "")
 
+    # El CLI de Vercel NO lee .gitignore: su lista de exclusiones sale sólo de
+    # .vercelignore (o .nowignore) más unos pocos valores por defecto. Mientras
+    # ese archivo no existió, `vercel deploy` subió el directorio entero —los
+    # dos Excel inéditos, los 47 PDF y todo data/private/— a los servidores de
+    # Vercel. No estaban servidos en ninguna URL, pero habían salido del
+    # equipo. Se detectó consultando la API de despliegues, no razonando sobre
+    # el CLI. Esta comprobación existe para que no vuelva a pasar en silencio.
+    vign = ROOT / ".vercelignore"
+    check("Existe .vercelignore (el CLI de Vercel ignora .gitignore)",
+          vign.exists(), "sin él, `vercel deploy` sube la carpeta entera")
+    if vign.exists():
+        reglas = {l.strip().rstrip("/") for l in vign.read_text(encoding="utf-8")
+                  .splitlines() if l.strip() and not l.startswith("#")}
+        faltan = [d for d in ("Data_nosubiralrepo", "data/private", "*.xlsx")
+                  if d not in reglas]
+        check("`.vercelignore` cubre los datos primarios inéditos",
+              not faltan, f"faltan {faltan}")
+
     # ---------------------------------------------------------------------
     print("\n" + "=" * 74)
     print(f"RESULTADO: {N_OK} comprobaciones OK, {len(FALLAS)} fallas")

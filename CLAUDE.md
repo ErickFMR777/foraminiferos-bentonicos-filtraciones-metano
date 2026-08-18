@@ -1,0 +1,269 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+Todo el proyecto está en español: identificadores, comentarios, documentación
+y mensajes de commit. Mantener esa convención.
+
+---
+
+## Qué es esto
+
+Dashboard editorial bilingüe (ES/EN) sobre la tesis de grado de Erick F.
+Mendoza Rivero (Ing. Geológica, UNAL Medellín, 2022) acerca de foraminíferos
+bentónicos en filtraciones de metano. No es un panel de KPI: cada sección es
+una historia de datos con su método declarado.
+
+Dos mitades independientes:
+
+1. **Pipeline en Python** (`pipeline/`) — cura los Excel originales de la
+   tesis y produce agregados públicos.
+2. **Frontend Next.js** (`src/`) — consume esos agregados como JSON estático.
+
+No hay base de datos, ni API, ni consultas en runtime. El dataset completo
+(~200 KB) viaja dentro del bundle.
+
+---
+
+## Regla no negociable: confidencialidad
+
+Los datos primarios son inéditos (proyecto MSH, *Methane Seep Hunting*).
+
+| Ruta | Estado |
+|---|---|
+| `Data_nosubiralrepo/` | **NUNCA** se sube. Tesis en PDF, artículos y los dos Excel |
+| `data/private/` | **NUNCA** se sube. Extracciones intermedias, cita texto literal |
+| `data/derived/` | Público. Sólo agregados, índices y tablas derivadas |
+| `Informe_curacion_datos.pdf` | Público. Único PDF versionado (excepción explícita en `.gitignore`) |
+
+Las **referencias bibliográficas sí se publican** — el usuario lo autorizó
+rectificando una instrucción previa. La regla es no subir los archivos, no
+callar las fuentes. Lo que no se publica es cualquier enlace de descarga.
+
+Antes de cualquier push, comprobar los ignorados:
+`git status --porcelain --ignored`.
+
+**Hacen falta DOS archivos de exclusión, y no son intercambiables.** El CLI de
+Vercel **no lee `.gitignore`**: construye su lista sólo desde `.vercelignore`
+(o `.nowignore`) más unos pocos valores por defecto. Mientras `.vercelignore`
+no existió, `vercel deploy` subió el directorio entero —los dos Excel
+inéditos, los 47 PDF y todo `data/private/`— a los servidores de Vercel. No
+llegaron a servirse en ninguna URL (nada de eso está en `public/` y el
+middleware devolvía 401), pero habían salido del equipo. Borrar
+`.vercelignore` reabre la fuga en el siguiente despliegue.
+
+La auditoría verifica además que ningún dataset público ni el informe
+contengan rutas del sistema de archivos (`Data_nosubiralrepo/`, `C:\Users`,
+`OneDrive`, `file://`).
+
+---
+
+## Comandos
+
+### Frontend
+
+```bash
+npm run dev              # servidor de desarrollo
+npm run build            # build de producción (prerenderiza todo)
+npx tsc --noEmit         # verificación de tipos — ESTE es el gate
+```
+
+No hay configuración de ESLint en el repo; el script `lint` de `package.json`
+no está operativo. La comprobación real es `npx tsc --noEmit`, y ha atrapado
+errores que la auditoría no vio (p. ej. una colisión de claves en un spread
+de objeto que silenciaba una banda latitudinal).
+
+### Pipeline
+
+```bash
+npm run datos            # 00 -> 10 -> 20 -> 99 (el subconjunto sin red ni PDF)
+npm run auditoria        # sólo la auditoría
+python pipeline/05_worms.py      # un script suelto, siempre desde la raíz
+```
+
+Orden completo, cuando se regenera todo desde cero:
+
+```bash
+python pipeline/00_extract.py         # Excel        -> data/private/*_raw.json
+python pipeline/05_worms.py           # WoRMS (red, cacheado)
+python pipeline/06_estudios.py        # CrossRef (red)
+python pipeline/10_clean.py           # aplica correcciones -> *_clean.json
+python pipeline/07_pdfs.py            # empareja PDF y extrae evidencia
+python pipeline/08_organizar.py       # renombra PDF, separa los excluidos
+python pipeline/09_verificar_pdfs.py  # nombre vs contenido + duplicados
+python pipeline/20_build.py           # -> data/derived/*.json (PÚBLICO)
+python pipeline/40_taxones_pdf.py     # lee los artículos completos
+python pipeline/50_estadisticas.py    # -> taxones_completo.json
+python pipeline/30_informe.py         # -> Informe_curacion_datos.pdf
+python pipeline/60_excel.py           # -> los Excel corregidos (carpeta privada)
+python pipeline/99_auditoria.py       # sale con código 1 si algo falla
+```
+
+**Ejecutar `99_auditoria.py` después de cualquier cambio en el pipeline.** No
+confía en las salidas intermedias: vuelve a leer los Excel originales y
+verifica de forma independiente la conservación de registros, la aritmética
+recalculada desde cero, la coherencia entre datasets y la ausencia de fugas.
+
+Dependencias: `openpyxl`, `pypdf`, `fpdf2`. **Ningún script usa pandas.**
+Los scripts leen los originales desde `THESIS_DATA_DIR` (por defecto
+`./Data_nosubiralrepo`). El caché de WoRMS vive en
+`data/private/worms_cache.json`; borrarlo fuerza la reconsulta.
+
+### Despliegue
+
+Vercel, proyecto `foraminiferos-caribe-colombiano`. El sitio va protegido con
+autenticación básica en el edge; las credenciales viven en las variables de
+entorno `DASHBOARD_USUARIO` y `DASHBOARD_CLAVE` de Vercel (definidas en las
+tres environments). Si no están definidas el sitio queda abierto — que es lo
+cómodo en local, y lo peligroso en producción.
+
+---
+
+## Arquitectura
+
+### Flujo de datos
+
+```
+Data_nosubiralrepo/*.xlsx  ──00──▶  data/private/*_raw.json
+                                          │
+        WoRMS ─05─┐                       │
+      CrossRef ─06─┼──▶ data/private/  ──10──▶  *_clean.json
+          PDF ─07─┘    (nunca se sube)          │
+                                                ▼
+                                      20/50 ──▶ data/derived/*.json
+                                                    │  (público, ~200 KB)
+                                                    ▼
+                               import x from "@datos/nombre.json"
+                                                    │
+                                        build estático de Next.js
+```
+
+`@datos/*` está mapeado en `tsconfig.json` a `data/derived/*`; `@/*` a `src/*`.
+Un componente que necesite un dato nuevo exige que `20_build.py` lo emita
+primero: no hay fetch en runtime.
+
+### El pipeline
+
+Numeración por etapas. Los archivos **sin número son módulos de referencia
+curados a mano, y son la fuente de verdad** — no se generan, se editan:
+
+| Módulo | Contenido |
+|---|---|
+| `taxonomy.py` | Tablas género→pared, planctónicos, normalización de texto de PDF |
+| `corrections.py` | Registro auditable de TODAS las desviaciones respecto del original |
+| `localidades.py` | Georreferenciación por DOI, tipo de fluido, nivel de confianza |
+| `tipologia.py` | Los dos ejes de clasificación de filtraciones |
+| `caribe_referencia.py` | Fauna caribeña estructurada desde la prosa del cap. 4.2 de la tesis |
+| `estudios_nuevos.py` | Estudios incorporados después de la tesis |
+| `candidatos.py` | Lista de trabajo: estudios por integrar. No alimenta el dashboard |
+
+**`corrections.py` es la pieza central del proyecto.** Toda diferencia entre
+los Excel del autor y los datos publicados pasa por ahí, con su motivo y su
+fuente, y el registro se publica en `correcciones.json`. Los tipos distinguen
+cosas que no son equivalentes: `errata` (error del manuscrito) frente a
+`actualizacion` (WoRMS reclasificó después de nov-2022 — **no** es un error
+del autor), más `exclusion`, `reclasificacion_pared`, `aritmetica`,
+`duplicado`, `recuperacion` y `sin_verificar`. Nunca corregir un dato saltando
+este registro.
+
+`tipologia.py` clasifica cada filtración en **dos ejes ortogonales**: la
+naturaleza del fluido (frío / termogénico / biogénico / hidrotermal) y la
+expresión geomorfológica (pockmark, volcán de lodo, montículo de hidratos…).
+Mezclarlos en un solo campo confunde dos cosas distintas. Donde habría que
+adivinar se deja en `None` y el dashboard lo muestra como pendiente.
+
+### El frontend
+
+`src/app/page.tsx` renderiza un único componente, `src/components/Pagina.tsx`,
+que es la narrativa completa: siete secciones en scroll. Cada una envuelve un
+componente de visualización en `<Seccion>`.
+
+| Componente | Historia |
+|---|---|
+| `MatrizLatProf` + `MapaMundial` | El punto ciego: la celda 0-15° / <150 m está vacía |
+| `ParedPorBanda` | La firma de la pared (calcáreo/aglutinado por banda) |
+| `Composicion` + `Testigo` | Fauna de seep o de plataforma tropical |
+| `Veredicto` | ¿Qué tan *seep* se ve MSH-BC-21? |
+| `Sinu` | Barragán y Bernal (2024): mismo campo, con isótopos |
+| `Explorador` | Modo exploración: buscar, filtrar y ordenar los taxones |
+| `Referencias` | Las 40 referencias |
+
+`src/lib/i18n.tsx` — contexto con `idioma` y `modo` (narrativa ↔ exploración),
+persistidos en `localStorage`. `useT()` devuelve `t(clave)` para las cadenas
+de interfaz repetidas y `tx({es, en})` para el contenido largo, que vive
+inline en cada componente. **Todo texto visible pasa por uno de los dos.**
+
+`src/lib/ui.tsx` — primitivas compartidas: `<Taxon>`, `<Cifra>`, `<Seccion>`,
+`<ComoSeLee>` (bloque plegable con el método) y `<Nota>`.
+
+---
+
+## Invariantes que se rompen con facilidad
+
+Cada una viene de un fallo real ya ocurrido. El comentario en el código
+explica el caso concreto; esto es el índice.
+
+- **El matcher del middleware protege TODO menos el favicon.** Excluir
+  `_next/static` parecía inofensivo y abría una fuga real: el dataset viaja en
+  el chunk de la página, así que `/_next/static/chunks/app/page-*.js` servía
+  los datos completos sin credenciales. Verificado contra el despliegue, no
+  razonado. Si alguien vuelve a excluir los assets, reabre la fuga.
+- **`next.config.ts` NO lleva `output: "export"`.** Un export estático no
+  admite middleware, y una contraseña en cliente sería decorativa. Para abrir
+  el sitio al público: borrar `src/middleware.ts` y devolver `output: "export"`.
+- **`05_worms.py::pick_foram` filtra por `phylum == "Foraminifera"`.** Varios
+  géneros son homónimos entre grupos: `Cassidulina` devuelve un equinoideo. No
+  quitar el filtro.
+- **La firma que identifica un PDF se busca SÓLO en la primera página.**
+  Buscarla en tres capturó una cita de la bibliografía y archivó un resumen de
+  Panieri (2000) con el nombre de Sen Gupta y Aharon (1994). Ejecutar siempre
+  `09_verificar_pdfs.py` después de `08_organizar.py`.
+- **`taxonomy.normalizar_pdf()` antes de buscar nombres en texto de PDF.** Las
+  ligaduras salen con espacios espurios (`wuellerstor ﬁ`); sin esto,
+  *Cibicidoides wuellerstorfi* se pierde entero.
+- **Los colores de serie de `globals.css` pasaron un validador de contraste**
+  sobre las superficies reales del proyecto, en ambos modos y con visión
+  cromática deficiente. La paleta desaturada que se probó primero falló. No
+  sustituir esos valores a ojo. El color codifica variables; si no codifica
+  nada, es gris.
+- **«Sin datos» debe leerse VACÍO, nunca como cero** — de ahí
+  `--sin-datos-trama` y la clase `.trama-sin-datos`, que sobrevive a
+  `forced-colors` y a la impresión, donde el relleno de color se pierde.
+- **Los rankings van por número de ESTUDIOS, no de registros.** El recuento de
+  registros premia a los artículos que desglosan más bandas.
+- **Dos vistas de la base, y no son intercambiables:** `curada` (la que
+  sustenta la tesis) y `ampliada` (con los estudios reincorporados). Los
+  datasets traen ambas (`celdas` / `celdas_ampliada`, `n_curada` /
+  `n_ampliada`). El dashboard ofrece la curada por defecto.
+- **Presencia, menciones y dominancia no valen lo mismo** en la extracción de
+  los artículos: la presencia es señal sólida, el número de menciones es un
+  proxy débil (un artículo repite un nombre al citar a otros) y sólo hay
+  dominancia cuando el texto la afirma. El dashboard debe distinguirlas.
+- **Los nombres científicos van siempre en cursiva**, vía `<Taxon>`, que
+  respeta la nomenclatura abierta: el calificador `sp.` / `spp.` va en redonda.
+
+---
+
+## Convenciones
+
+- Comentarios en español, y explican **por qué**, no qué. Varios documentan un
+  fallo concreto para que nadie lo repita: no borrarlos al refactorizar.
+- Mensajes de commit en español, en imperativo y sin tildes en el asunto.
+- En la interfaz, las cifras van con coma decimal (`3,4325`) y
+  `font-variant-numeric: tabular-nums` cuando se comparan en columna.
+- Toda visualización lleva su `<ComoSeLee>` y su `<Nota>` con la fuente: el
+  público es académico y el método tiene que estar a la vista.
+
+---
+
+## CHECKPOINT.md
+
+Documento de continuidad entre sesiones: estado del pipeline, cifras
+verificadas, hallazgos que corrigen el manuscrito y decisiones del usuario.
+**Leerlo antes de retomar el trabajo.**
+
+Sus §4 y §5 (los datos y las cifras clave) han quedado obsoletos tres veces:
+si cambia el pipeline, **regenerarlos desde `data/derived/`**, no editarlos a
+mano, y con `99_auditoria.py` en verde. La §10 conserva la dirección visual
+acordada, pero sus valores de color son la propuesta inicial, anterior al
+validador: los vigentes son los de `globals.css`.

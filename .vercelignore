@@ -1,0 +1,34 @@
+# ============================================================
+#  CONFIDENCIALIDAD — NO TOCAR SIN LEER
+#
+#  Este archivo NO es opcional ni redundante con .gitignore.
+#
+#  El CLI de Vercel NO lee .gitignore. Su lista de exclusiones sale
+#  únicamente de .vercelignore (o .nowignore) más unos pocos valores por
+#  defecto (.git, node_modules, .next, .env.local…). Mientras este archivo
+#  no existió, `vercel deploy` subió el directorio ENTERO: los dos Excel con
+#  los datos primarios inéditos del proyecto MSH, los 47 artículos en PDF y
+#  todo data/private/. Verificado contra la API de despliegues, no supuesto.
+#
+#  Si se borra este archivo, la fuga se reabre en el siguiente despliegue.
+# ============================================================
+
+# Datos primarios inéditos y bibliografía en PDF
+Data_nosubiralrepo/
+data/private/
+*.xlsx
+*.xls
+
+# El build sólo necesita src/, data/derived/ y la configuración.
+# Nada de lo de abajo interviene en él.
+pipeline/
+CHECKPOINT.md
+CLAUDE.md
+*.pdf
+
+# Salidas de build y entorno
+out/
+.next/
+.env.example
+__pycache__/
+*.tsbuildinfo

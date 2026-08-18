@@ -63,6 +63,14 @@ Para abrir el sitio al público: borrar `src/middleware.ts` y devolver
   con datos primarios inéditos del proyecto MSH.
 - `data/private/` NUNCA se sube (extracciones intermedias).
 - Ya están en `.gitignore`, junto con `*.xlsx`, `*.pdf`, `.env*`.
+- **Y también en `.vercelignore`, que es OTRO archivo y es imprescindible.**
+  El CLI de Vercel no lee `.gitignore`. Del 2026-08-17 al 2026-08-18, sin ese
+  archivo, `vercel deploy` subió la carpeta entera a Vercel: los dos Excel
+  inéditos, los 47 PDF y todo `data/private/`. Nunca estuvieron servidos en
+  una URL —no están en `public/` y el middleware devolvía 401— pero sí
+  almacenados fuera del equipo. Corregido: se creó `.vercelignore`, se
+  redesplegó limpio (39 archivos, 0 confidenciales, verificado contra la API)
+  y **se eliminó el despliegue que guardaba las copias**.
 - **SÍ se publica:** los agregados de `data/derived/` y las 38 referencias
   bibliográficas (el usuario lo autorizó explícitamente el 2026-08-16,
   rectificando una instrucción previa).
