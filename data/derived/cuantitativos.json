@@ -1,0 +1,1817 @@
+{
+ "d13C": [
+  {
+   "estudio_id": "E03",
+   "taxon": "Bolivina dilatata",
+   "n": 1,
+   "min": -23.95,
+   "max": -23.95,
+   "media": -23.95
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Bolivina pseudoplicata",
+   "n": 2,
+   "min": -25.51,
+   "max": -24.44,
+   "media": -24.975
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Gavelinopsis praegeri",
+   "n": 1,
+   "min": -1.5,
+   "max": -1.5,
+   "media": -1.5
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Lobatula lobatula",
+   "n": 2,
+   "min": -24.15,
+   "max": -0.22,
+   "media": -12.185
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Planorbulina mediterranensis",
+   "n": 1,
+   "min": -2.57,
+   "max": -2.57,
+   "media": -2.57
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Rosalina bradyi",
+   "n": 2,
+   "min": -1.77,
+   "max": -0.37,
+   "media": -1.07
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Bulimina aculeata",
+   "n": 2,
+   "min": -0.32,
+   "max": -0.15,
+   "media": -0.235
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Globobulimina pacifica",
+   "n": 11,
+   "min": -14.79,
+   "max": -0.32,
+   "media": -3.112
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Hoeglundina elegans",
+   "n": 3,
+   "min": -33.57,
+   "max": -18.05,
+   "media": -23.273
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Oridorsalis umbonatus",
+   "n": 5,
+   "min": -10.16,
+   "max": -0.91,
+   "media": -3.092
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Pyrgo depressa",
+   "n": 3,
+   "min": -31.01,
+   "max": -4.21,
+   "media": -16.417
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Uvigerina peregrina",
+   "n": 110,
+   "min": -7.7,
+   "max": -0.11,
+   "media": -1.771
+  },
+  {
+   "estudio_id": "E10",
+   "taxon": "Cassidulina carinata",
+   "n": 1,
+   "min": -1.0,
+   "max": -1.0,
+   "media": -1.0
+  },
+  {
+   "estudio_id": "E10",
+   "taxon": "Globobulimina auriculata",
+   "n": 2,
+   "min": -6.7,
+   "max": -2.1,
+   "media": -4.4
+  },
+  {
+   "estudio_id": "E10",
+   "taxon": "Globobulimina pacifica",
+   "n": 4,
+   "min": -37.0,
+   "max": -0.4,
+   "media": -19.525
+  },
+  {
+   "estudio_id": "E10",
+   "taxon": "Nonionella stella",
+   "n": 1,
+   "min": -43.0,
+   "max": -43.0,
+   "media": -43.0
+  },
+  {
+   "estudio_id": "E10",
+   "taxon": "Uvigerina",
+   "n": 1,
+   "min": -1.7,
+   "max": -1.7,
+   "media": -1.7
+  },
+  {
+   "estudio_id": "E15",
+   "taxon": "Lenticulina",
+   "n": 2,
+   "min": -2.1,
+   "max": -0.8,
+   "media": -1.45
+  },
+  {
+   "estudio_id": "E36",
+   "taxon": "Lobatula wuellerstorfi",
+   "n": 14,
+   "min": -1.39,
+   "max": -0.05,
+   "media": -0.482
+  }
+ ],
+ "abundancia_rel": [
+  {
+   "estudio_id": "E02",
+   "taxon": "Ammonia pauciloculata",
+   "n": 2,
+   "min": 2.0,
+   "max": 3.0,
+   "media": 2.5
+  },
+  {
+   "estudio_id": "E02",
+   "taxon": "Bigenerina irregularis",
+   "n": 4,
+   "min": 4.0,
+   "max": 7.0,
+   "media": 5.5
+  },
+  {
+   "estudio_id": "E02",
+   "taxon": "Bolivina lowmani",
+   "n": 1,
+   "min": 7.0,
+   "max": 7.0,
+   "media": 7.0
+  },
+  {
+   "estudio_id": "E02",
+   "taxon": "Bolivina striatula",
+   "n": 1,
+   "min": 78.0,
+   "max": 78.0,
+   "media": 78.0
+  },
+  {
+   "estudio_id": "E02",
+   "taxon": "Spirillina vivipara",
+   "n": 1,
+   "min": 62.0,
+   "max": 62.0,
+   "media": 62.0
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Adelosina elegans",
+   "n": 4,
+   "min": 0.2,
+   "max": 1.4,
+   "media": 0.8
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Ammonia beccarii",
+   "n": 6,
+   "min": 0.3,
+   "max": 2.3,
+   "media": 1.267
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Ammonia tepida",
+   "n": 3,
+   "min": 0.3,
+   "max": 0.6,
+   "media": 0.433
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Articulina tubulosa",
+   "n": 1,
+   "min": 0.2,
+   "max": 0.2,
+   "media": 0.2
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Asterigerinata mamilla",
+   "n": 9,
+   "min": 0.3,
+   "max": 18.5,
+   "media": 9.189
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Astrononion stelligerum",
+   "n": 6,
+   "min": 0.2,
+   "max": 2.4,
+   "media": 1.433
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Bolivina",
+   "n": 7,
+   "min": 0.3,
+   "max": 3.8,
+   "media": 1.8
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Bolivina aenariensis",
+   "n": 2,
+   "min": 0.3,
+   "max": 1.6,
+   "media": 0.95
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Bolivina dilatata",
+   "n": 9,
+   "min": 0.2,
+   "max": 3.8,
+   "media": 1.8
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Bolivina pseudoplicata",
+   "n": 6,
+   "min": 0.4,
+   "max": 3.0,
+   "media": 1.717
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Bolivina spathulata",
+   "n": 5,
+   "min": 0.2,
+   "max": 2.9,
+   "media": 1.28
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Buccella frigida",
+   "n": 6,
+   "min": 0.6,
+   "max": 2.8,
+   "media": 1.517
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Bulimina",
+   "n": 1,
+   "min": 0.5,
+   "max": 0.5,
+   "media": 0.5
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Bulimina elegans",
+   "n": 6,
+   "min": 0.2,
+   "max": 2.0,
+   "media": 1.083
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Bulimina marginata",
+   "n": 4,
+   "min": 0.2,
+   "max": 1.5,
+   "media": 0.775
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Buliminella elegantissima",
+   "n": 2,
+   "min": 0.2,
+   "max": 0.5,
+   "media": 0.35
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Cassidulina laevigata",
+   "n": 2,
+   "min": 0.2,
+   "max": 0.6,
+   "media": 0.4
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Cibicides",
+   "n": 1,
+   "min": 0.3,
+   "max": 0.3,
+   "media": 0.3
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Cibicides refulgens",
+   "n": 6,
+   "min": 0.2,
+   "max": 2.4,
+   "media": 1.25
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Cornuspira involvens",
+   "n": 1,
+   "min": 0.5,
+   "max": 0.5,
+   "media": 0.5
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Cribrostomoides jeffreysii",
+   "n": 4,
+   "min": 0.4,
+   "max": 0.9,
+   "media": 0.65
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Cycloforina contorta",
+   "n": 4,
+   "min": 0.5,
+   "max": 6.2,
+   "media": 2.7
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Discorbinella bertheloti",
+   "n": 2,
+   "min": 0.6,
+   "max": 1.9,
+   "media": 1.25
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Eggerella bradyi",
+   "n": 2,
+   "min": 0.2,
+   "max": 0.7,
+   "media": 0.45
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Eggerelloides scabrum",
+   "n": 8,
+   "min": 0.2,
+   "max": 2.9,
+   "media": 1.125
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Elphidium",
+   "n": 4,
+   "min": 0.2,
+   "max": 0.6,
+   "media": 0.4
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Elphidium advena",
+   "n": 7,
+   "min": 3.0,
+   "max": 6.5,
+   "media": 4.4
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Elphidium complanatum",
+   "n": 1,
+   "min": 0.2,
+   "max": 0.2,
+   "media": 0.2
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Elphidium crispum",
+   "n": 5,
+   "min": 0.4,
+   "max": 1.6,
+   "media": 0.96
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Elphidium macellum",
+   "n": 5,
+   "min": 0.2,
+   "max": 1.3,
+   "media": 0.6
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Epistominella exigua",
+   "n": 8,
+   "min": 0.4,
+   "max": 2.8,
+   "media": 1.275
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Fissurina lucida",
+   "n": 1,
+   "min": 0.2,
+   "max": 0.2,
+   "media": 0.2
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Fissurina marginata",
+   "n": 2,
+   "min": 0.2,
+   "max": 0.3,
+   "media": 0.25
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Fissurina orbignyana",
+   "n": 1,
+   "min": 0.2,
+   "max": 0.2,
+   "media": 0.2
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Fissurina pseudoorbignyana",
+   "n": 5,
+   "min": 0.2,
+   "max": 0.9,
+   "media": 0.46
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Fursenkoina",
+   "n": 2,
+   "min": 0.2,
+   "max": 0.3,
+   "media": 0.25
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Gavelinopsis",
+   "n": 2,
+   "min": 0.2,
+   "max": 0.3,
+   "media": 0.25
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Gavelinopsis praegeri",
+   "n": 9,
+   "min": 0.2,
+   "max": 2.3,
+   "media": 1.322
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Globocassidulina crassa",
+   "n": 2,
+   "min": 0.2,
+   "max": 0.3,
+   "media": 0.25
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Globocassidulina subglobosa",
+   "n": 2,
+   "min": 0.2,
+   "max": 0.4,
+   "media": 0.3
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Hanzawaia boueana",
+   "n": 4,
+   "min": 0.2,
+   "max": 1.9,
+   "media": 0.85
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Hyalinonetrion clavatum",
+   "n": 1,
+   "min": 0.2,
+   "max": 0.2,
+   "media": 0.2
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Hyalinonetrion gracillimum",
+   "n": 1,
+   "min": 0.2,
+   "max": 0.2,
+   "media": 0.2
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Lagena semistriata",
+   "n": 2,
+   "min": 0.2,
+   "max": 0.3,
+   "media": 0.25
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Lagena striata",
+   "n": 4,
+   "min": 0.2,
+   "max": 0.6,
+   "media": 0.375
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Oolina borealis",
+   "n": 1,
+   "min": 0.4,
+   "max": 0.4,
+   "media": 0.4
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Quinqueloculina pulchella",
+   "n": 1,
+   "min": 0.2,
+   "max": 0.2,
+   "media": 0.2
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Riminopsis",
+   "n": 3,
+   "min": 0.2,
+   "max": 0.6,
+   "media": 0.367
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Rosalina floridensis",
+   "n": 1,
+   "min": 2.3,
+   "max": 2.3,
+   "media": 2.3
+  },
+  {
+   "estudio_id": "E03",
+   "taxon": "Vasiglobulina myristiformis",
+   "n": 1,
+   "min": 0.3,
+   "max": 0.3,
+   "media": 0.3
+  },
+  {
+   "estudio_id": "E06",
+   "taxon": "Bolivina lowmani",
+   "n": 2,
+   "min": 1.0,
+   "max": 4.7,
+   "media": 2.85
+  },
+  {
+   "estudio_id": "E06",
+   "taxon": "Portatrochammina antarctica subsp. antarctica",
+   "n": 5,
+   "min": 7.0,
+   "max": 41.0,
+   "media": 15.6
+  },
+  {
+   "estudio_id": "E06",
+   "taxon": "Saccorhiza ramosa",
+   "n": 1,
+   "min": 30.0,
+   "max": 30.0,
+   "media": 30.0
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Abditodentrix pseudothalmanni",
+   "n": 7,
+   "min": 0.37,
+   "max": 5.34,
+   "media": 2.19
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Ammobaculites",
+   "n": 1,
+   "min": 2.76,
+   "max": 2.76,
+   "media": 2.76
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Ammodiscus incertus",
+   "n": 4,
+   "min": 0.09,
+   "max": 7.36,
+   "media": 1.995
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Anomalinoides globulosus",
+   "n": 2,
+   "min": 0.13,
+   "max": 0.18,
+   "media": 0.155
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Anomalinoides tasmanicus",
+   "n": 7,
+   "min": 0.38,
+   "max": 2.99,
+   "media": 1.35
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Astrononion novozealandicum",
+   "n": 4,
+   "min": 0.78,
+   "max": 4.66,
+   "media": 1.9
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Bathysiphon",
+   "n": 7,
+   "min": 0.07,
+   "max": 4.14,
+   "media": 1.343
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Bolivina cacozela",
+   "n": 3,
+   "min": 0.09,
+   "max": 0.19,
+   "media": 0.153
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Bolivina seminuda",
+   "n": 7,
+   "min": 0.13,
+   "max": 5.58,
+   "media": 1.274
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Bolivina spathulata",
+   "n": 7,
+   "min": 0.23,
+   "max": 1.42,
+   "media": 0.73
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Bolivina variabilis",
+   "n": 3,
+   "min": 0.06,
+   "max": 0.1,
+   "media": 0.083
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Bolivinita quadrilatera",
+   "n": 8,
+   "min": 0.26,
+   "max": 30.85,
+   "media": 8.027
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Bulimina aculeata",
+   "n": 8,
+   "min": 0.39,
+   "max": 10.13,
+   "media": 4.449
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Bulimina gibba",
+   "n": 6,
+   "min": 0.47,
+   "max": 2.86,
+   "media": 1.808
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Bulimina marginata",
+   "n": 8,
+   "min": 0.95,
+   "max": 12.81,
+   "media": 3.189
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Bulimina truncana",
+   "n": 8,
+   "min": 0.32,
+   "max": 3.12,
+   "media": 1.611
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Cassidulina carinata",
+   "n": 7,
+   "min": 2.09,
+   "max": 16.96,
+   "media": 9.314
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Cerebrina clathrata",
+   "n": 1,
+   "min": 0.66,
+   "max": 0.66,
+   "media": 0.66
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Chilostomella",
+   "n": 6,
+   "min": 0.13,
+   "max": 3.28,
+   "media": 1.392
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Cibicidoides dispars",
+   "n": 8,
+   "min": 0.46,
+   "max": 3.42,
+   "media": 1.565
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Cribrostomoides jeffreysii",
+   "n": 6,
+   "min": 0.18,
+   "max": 2.76,
+   "media": 1.325
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Cribrostomoides subglobosus",
+   "n": 7,
+   "min": 0.13,
+   "max": 5.75,
+   "media": 1.266
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Cuneata arctica",
+   "n": 3,
+   "min": 0.07,
+   "max": 0.52,
+   "media": 0.273
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Discorbinella bertheloti",
+   "n": 6,
+   "min": 0.09,
+   "max": 0.52,
+   "media": 0.317
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Elphidium advena",
+   "n": 3,
+   "min": 0.14,
+   "max": 0.35,
+   "media": 0.25
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Fissurina claricurta",
+   "n": 7,
+   "min": 0.14,
+   "max": 0.78,
+   "media": 0.389
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Fissurina marginata",
+   "n": 8,
+   "min": 0.23,
+   "max": 1.55,
+   "media": 0.909
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Fissurina orbignyana",
+   "n": 5,
+   "min": 0.06,
+   "max": 1.56,
+   "media": 0.424
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Frondicularia",
+   "n": 5,
+   "min": 0.06,
+   "max": 0.39,
+   "media": 0.174
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Fursenkoina complanata",
+   "n": 8,
+   "min": 0.13,
+   "max": 4.63,
+   "media": 1.879
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Gavelinopsis praegeri",
+   "n": 8,
+   "min": 0.76,
+   "max": 7.13,
+   "media": 2.931
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Glandulina",
+   "n": 4,
+   "min": 0.1,
+   "max": 0.52,
+   "media": 0.302
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Globobulimina pacifica",
+   "n": 8,
+   "min": 0.38,
+   "max": 6.49,
+   "media": 2.027
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Globocassidulina crassa",
+   "n": 7,
+   "min": 0.47,
+   "max": 1.71,
+   "media": 1.053
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Grigelis orectus",
+   "n": 3,
+   "min": 0.36,
+   "max": 0.52,
+   "media": 0.417
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Gyroidina kawagatai",
+   "n": 5,
+   "min": 1.2,
+   "max": 4.68,
+   "media": 3.006
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Hansenisca soldanii",
+   "n": 7,
+   "min": 1.01,
+   "max": 3.93,
+   "media": 2.171
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Haplophragmoides canariensis",
+   "n": 7,
+   "min": 0.09,
+   "max": 1.61,
+   "media": 0.591
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Hoeglundina elegans",
+   "n": 7,
+   "min": 0.09,
+   "max": 2.93,
+   "media": 1.111
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Hormosina globulifera",
+   "n": 1,
+   "min": 0.19,
+   "max": 0.19,
+   "media": 0.19
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Laevidentalina elegans",
+   "n": 6,
+   "min": 0.23,
+   "max": 1.56,
+   "media": 0.573
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Laevidentalina haueri",
+   "n": 1,
+   "min": 0.07,
+   "max": 0.07,
+   "media": 0.07
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Lagena hispida",
+   "n": 7,
+   "min": 0.18,
+   "max": 1.3,
+   "media": 0.66
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Lagena laevicostatiformis",
+   "n": 8,
+   "min": 0.19,
+   "max": 1.64,
+   "media": 0.726
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Lagenosolenia",
+   "n": 3,
+   "min": 0.09,
+   "max": 0.32,
+   "media": 0.2
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Laticarinina altocamerata",
+   "n": 5,
+   "min": 0.22,
+   "max": 0.78,
+   "media": 0.488
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Lenticulina australis",
+   "n": 7,
+   "min": 0.19,
+   "max": 3.42,
+   "media": 1.493
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Lenticulina erratica",
+   "n": 7,
+   "min": 0.29,
+   "max": 0.65,
+   "media": 0.471
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Lenticulina subgibba",
+   "n": 3,
+   "min": 0.09,
+   "max": 0.35,
+   "media": 0.21
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Lobatula lobatula",
+   "n": 5,
+   "min": 0.22,
+   "max": 0.69,
+   "media": 0.338
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Lobatula wuellerstorfi",
+   "n": 4,
+   "min": 0.09,
+   "max": 3.68,
+   "media": 1.073
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Martinottiella communis",
+   "n": 1,
+   "min": 0.44,
+   "max": 0.44,
+   "media": 0.44
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Nonionella auris",
+   "n": 8,
+   "min": 0.19,
+   "max": 2.02,
+   "media": 0.858
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Nonionella magnalingua",
+   "n": 3,
+   "min": 0.48,
+   "max": 1.82,
+   "media": 1.01
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Notorotalia zelandica",
+   "n": 1,
+   "min": 1.8,
+   "max": 1.8,
+   "media": 1.8
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Nouria polymorphinoides",
+   "n": 3,
+   "min": 0.35,
+   "max": 5.06,
+   "media": 1.933
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Oridorsalis umbonatus",
+   "n": 8,
+   "min": 2.54,
+   "max": 4.83,
+   "media": 3.604
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Paracassidulina minuta",
+   "n": 7,
+   "min": 0.25,
+   "max": 4.68,
+   "media": 1.853
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Paratrochammina challengeri",
+   "n": 6,
+   "min": 0.09,
+   "max": 5.52,
+   "media": 1.382
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Procerolagena meridionalis",
+   "n": 3,
+   "min": 0.09,
+   "max": 0.26,
+   "media": 0.15
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Pullenia bulloides",
+   "n": 7,
+   "min": 0.09,
+   "max": 8.05,
+   "media": 3.449
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Pullenia quinqueloba",
+   "n": 7,
+   "min": 0.35,
+   "max": 7.01,
+   "media": 3.034
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Pullenia salisburyi",
+   "n": 4,
+   "min": 0.82,
+   "max": 1.93,
+   "media": 1.335
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Pyrgo inornata",
+   "n": 1,
+   "min": 0.18,
+   "max": 0.18,
+   "media": 0.18
+  },
+  {
+   "estudio_id": "E07",
+   "taxon": "Siphouvigerina proboscidea",
+   "n": 7,
+   "min": 0.82,
+   "max": 2.73,
+   "media": 1.691
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Ammoglobigerina globigeriniformis",
+   "n": 2,
+   "min": 0.4,
+   "max": 0.7,
+   "media": 0.55
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Anomalina",
+   "n": 5,
+   "min": 0.3,
+   "max": 1.6,
+   "media": 0.9
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Asterigerinata mamilla",
+   "n": 1,
+   "min": 0.4,
+   "max": 0.4,
+   "media": 0.4
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Biasterigerina planorbis",
+   "n": 2,
+   "min": 0.3,
+   "max": 0.4,
+   "media": 0.35
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Bolivina",
+   "n": 4,
+   "min": 0.3,
+   "max": 0.9,
+   "media": 0.6
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Bolivina albatrossi",
+   "n": 1,
+   "min": 0.4,
+   "max": 0.4,
+   "media": 0.4
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Bolivina dilatata",
+   "n": 1,
+   "min": 0.3,
+   "max": 0.3,
+   "media": 0.3
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Bolivina lowmani",
+   "n": 12,
+   "min": 16.3,
+   "max": 41.6,
+   "media": 30.783
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Bolivina pseudoplicata",
+   "n": 3,
+   "min": 0.4,
+   "max": 0.7,
+   "media": 0.533
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Bolivina spathulata",
+   "n": 1,
+   "min": 0.4,
+   "max": 0.4,
+   "media": 0.4
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Bolivina subaenariensis",
+   "n": 2,
+   "min": 0.4,
+   "max": 0.6,
+   "media": 0.5
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Bolivinellina translucens",
+   "n": 7,
+   "min": 0.3,
+   "max": 1.9,
+   "media": 0.929
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Buccella frigida",
+   "n": 2,
+   "min": 0.3,
+   "max": 0.4,
+   "media": 0.35
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Bulimina",
+   "n": 1,
+   "min": 0.4,
+   "max": 0.4,
+   "media": 0.4
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Bulimina aculeata",
+   "n": 4,
+   "min": 0.4,
+   "max": 1.3,
+   "media": 0.925
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Bulimina marginata",
+   "n": 2,
+   "min": 0.4,
+   "max": 0.7,
+   "media": 0.55
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Bulimina spicata",
+   "n": 2,
+   "min": 0.4,
+   "max": 0.5,
+   "media": 0.45
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Bulimina striata",
+   "n": 1,
+   "min": 0.4,
+   "max": 0.4,
+   "media": 0.4
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Buliminella elegantissima",
+   "n": 8,
+   "min": 0.3,
+   "max": 2.0,
+   "media": 0.963
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Cancris oblongus",
+   "n": 3,
+   "min": 0.3,
+   "max": 0.7,
+   "media": 0.467
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Cassidelina spinescens",
+   "n": 2,
+   "min": 0.4,
+   "max": 0.5,
+   "media": 0.45
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Cassidulina",
+   "n": 4,
+   "min": 0.4,
+   "max": 1.3,
+   "media": 0.775
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Cassidulina laevigata",
+   "n": 11,
+   "min": 1.1,
+   "max": 10.2,
+   "media": 4.055
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Chilostomella oolina",
+   "n": 1,
+   "min": 0.4,
+   "max": 0.4,
+   "media": 0.4
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Cibicides",
+   "n": 3,
+   "min": 0.4,
+   "max": 0.9,
+   "media": 0.633
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Cibicides mollis",
+   "n": 8,
+   "min": 0.7,
+   "max": 2.2,
+   "media": 1.4
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Cibicides refulgens",
+   "n": 4,
+   "min": 0.4,
+   "max": 1.6,
+   "media": 0.95
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Discorbinella",
+   "n": 6,
+   "min": 0.3,
+   "max": 1.6,
+   "media": 0.95
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Discorbis",
+   "n": 6,
+   "min": 0.3,
+   "max": 2.2,
+   "media": 0.983
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Eggerella bradyi",
+   "n": 3,
+   "min": 1.2,
+   "max": 3.9,
+   "media": 2.167
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Eggerelloides scabrum",
+   "n": 1,
+   "min": 2.4,
+   "max": 2.4,
+   "media": 2.4
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Elphidium",
+   "n": 2,
+   "min": 0.3,
+   "max": 0.4,
+   "media": 0.35
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Elphidium advena",
+   "n": 4,
+   "min": 0.3,
+   "max": 0.9,
+   "media": 0.525
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Epistominella exigua",
+   "n": 7,
+   "min": 0.4,
+   "max": 2.1,
+   "media": 1.286
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Eponides turgidus",
+   "n": 4,
+   "min": 0.4,
+   "max": 2.1,
+   "media": 1.05
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Fissurina marginata",
+   "n": 6,
+   "min": 0.4,
+   "max": 1.5,
+   "media": 0.8
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Fissurina orbignyana",
+   "n": 2,
+   "min": 0.3,
+   "max": 0.4,
+   "media": 0.35
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Fissurina pseudoorbignyana",
+   "n": 3,
+   "min": 0.3,
+   "max": 0.5,
+   "media": 0.4
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Fissurina quadrata",
+   "n": 3,
+   "min": 0.3,
+   "max": 0.5,
+   "media": 0.4
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Fissurina staphyllearia",
+   "n": 2,
+   "min": 0.3,
+   "max": 0.4,
+   "media": 0.35
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Fursenkoina complanata",
+   "n": 4,
+   "min": 0.5,
+   "max": 3.4,
+   "media": 1.875
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Fursenkoina compressa",
+   "n": 6,
+   "min": 0.8,
+   "max": 2.9,
+   "media": 1.567
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Galwayella trigonomarginata",
+   "n": 2,
+   "min": 0.4,
+   "max": 1.1,
+   "media": 0.75
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Globocassidulina crassa",
+   "n": 5,
+   "min": 0.4,
+   "max": 1.4,
+   "media": 0.9
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Gyroidina polia",
+   "n": 8,
+   "min": 0.4,
+   "max": 23.1,
+   "media": 6.425
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Gyroidinoides regularis",
+   "n": 2,
+   "min": 0.3,
+   "max": 0.4,
+   "media": 0.35
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Ioanella tumidula",
+   "n": 8,
+   "min": 0.7,
+   "max": 1.4,
+   "media": 1.05
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Laevidentalina communis",
+   "n": 2,
+   "min": 0.4,
+   "max": 0.5,
+   "media": 0.45
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Lobatula wuellerstorfi",
+   "n": 3,
+   "min": 0.4,
+   "max": 0.9,
+   "media": 0.667
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Nonion",
+   "n": 1,
+   "min": 30.0,
+   "max": 30.0,
+   "media": 30.0
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Osangulariella bradyi",
+   "n": 6,
+   "min": 0.4,
+   "max": 2.2,
+   "media": 1.0
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Polystomammina nitida",
+   "n": 1,
+   "min": 0.4,
+   "max": 0.4,
+   "media": 0.4
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Prolixoplecta parvula",
+   "n": 1,
+   "min": 0.4,
+   "max": 0.4,
+   "media": 0.4
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Rhizammina algaeformis",
+   "n": 1,
+   "min": 2.0,
+   "max": 2.0,
+   "media": 2.0
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Robertinoides bradyi",
+   "n": 1,
+   "min": 0.9,
+   "max": 0.9,
+   "media": 0.9
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Rosalina floridana",
+   "n": 12,
+   "min": 0.4,
+   "max": 5.6,
+   "media": 2.275
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Rosalina floridensis",
+   "n": 11,
+   "min": 0.4,
+   "max": 4.9,
+   "media": 2.164
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Saccammina sphaerica",
+   "n": 1,
+   "min": 0.4,
+   "max": 0.4,
+   "media": 0.4
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Sagrina",
+   "n": 2,
+   "min": 0.4,
+   "max": 0.9,
+   "media": 0.65
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Seabrookia pellucida",
+   "n": 2,
+   "min": 0.4,
+   "max": 0.8,
+   "media": 0.6
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Spirophthalmidium acutimargo",
+   "n": 1,
+   "min": 0.4,
+   "max": 0.4,
+   "media": 0.4
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Stainforthia",
+   "n": 11,
+   "min": 0.4,
+   "max": 2.8,
+   "media": 1.245
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Trifarina",
+   "n": 1,
+   "min": 0.4,
+   "max": 0.4,
+   "media": 0.4
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Trifarina angulosa",
+   "n": 5,
+   "min": 0.4,
+   "max": 1.3,
+   "media": 0.7
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Trifarina bradyi",
+   "n": 2,
+   "min": 1.7,
+   "max": 2.0,
+   "media": 1.85
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Uvigerina bradyana",
+   "n": 1,
+   "min": 0.4,
+   "max": 0.4,
+   "media": 0.4
+  },
+  {
+   "estudio_id": "E18",
+   "taxon": "Uvigerina peregrina",
+   "n": 3,
+   "min": 0.4,
+   "max": 1.6,
+   "media": 0.933
+  },
+  {
+   "estudio_id": "E20",
+   "taxon": "Hormosinella gracilis",
+   "n": 1,
+   "min": 0.7,
+   "max": 0.7,
+   "media": 0.7
+  },
+  {
+   "estudio_id": "E20",
+   "taxon": "Psammosphaera",
+   "n": 2,
+   "min": 0.6,
+   "max": 1.4,
+   "media": 1.0
+  },
+  {
+   "estudio_id": "E20",
+   "taxon": "Reophax",
+   "n": 4,
+   "min": 0.2,
+   "max": 2.3,
+   "media": 0.95
+  },
+  {
+   "estudio_id": "E20",
+   "taxon": "Spiroplectammina",
+   "n": 4,
+   "min": 0.2,
+   "max": 4.2,
+   "media": 1.8
+  },
+  {
+   "estudio_id": "E20",
+   "taxon": "Tolypammina",
+   "n": 1,
+   "min": 0.2,
+   "max": 0.2,
+   "media": 0.2
+  },
+  {
+   "estudio_id": "E20",
+   "taxon": "Trifarina angulosa",
+   "n": 1,
+   "min": 0.7,
+   "max": 0.7,
+   "media": 0.7
+  },
+  {
+   "estudio_id": "E20",
+   "taxon": "Triloculinella",
+   "n": 1,
+   "min": 0.2,
+   "max": 0.2,
+   "media": 0.2
+  },
+  {
+   "estudio_id": "E20",
+   "taxon": "Trochammina",
+   "n": 2,
+   "min": 0.2,
+   "max": 0.7,
+   "media": 0.45
+  },
+  {
+   "estudio_id": "E20",
+   "taxon": "Uvigerina",
+   "n": 1,
+   "min": 0.7,
+   "max": 0.7,
+   "media": 0.7
+  },
+  {
+   "estudio_id": "E20",
+   "taxon": "Uvigerina peregrina",
+   "n": 9,
+   "min": 0.4,
+   "max": 20.2,
+   "media": 5.4
+  }
+ ],
+ "indices": [
+  {
+   "estudio_id": "E02",
+   "indice": "fisher_alpha",
+   "n": 2,
+   "min": 4.3,
+   "max": 18.4
+  },
+  {
+   "estudio_id": "E02",
+   "indice": "shannon_H",
+   "n": 2,
+   "min": 1.5,
+   "max": 3.5
+  },
+  {
+   "estudio_id": "E04",
+   "indice": "shannon_H",
+   "n": 2,
+   "min": 2.85,
+   "max": 3.54
+  },
+  {
+   "estudio_id": "E07",
+   "indice": "shannon_H",
+   "n": 1,
+   "min": 4.37,
+   "max": 4.37
+  },
+  {
+   "estudio_id": "E07",
+   "indice": "simpson",
+   "n": 1,
+   "min": 0.06,
+   "max": 0.06
+  },
+  {
+   "estudio_id": "E11",
+   "indice": "shannon_H",
+   "n": 1,
+   "min": 0.97,
+   "max": 0.97
+  },
+  {
+   "estudio_id": "E18",
+   "indice": "shannon_H",
+   "n": 1,
+   "min": 2.42,
+   "max": 2.42
+  },
+  {
+   "estudio_id": "E29",
+   "indice": "simpson",
+   "n": 1,
+   "min": 0.007,
+   "max": 0.007
+  }
+ ],
+ "nota_metodo": "Extraído de las tablas con pdfplumber, reagrupando las palabras por coordenada para recuperar la fila. Sólo se aceptan filas encabezadas por un taxón ya validado contra WoRMS, y cada cifra debe caer en el rango físico de su variable. Las abundancias exigen que el pie de tabla diga «%» o «relative abundance»: en varios artículos el símbolo ‰ de los δ13C sale del PDF como «%», y tomarlo por abundancia corrompería el dato. La cobertura es parcial por definición: muchas tablas son imágenes."
+}

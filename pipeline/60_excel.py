@@ -163,14 +163,22 @@ def bibliografia() -> Path:
         "worm»). Para esos estudios la hoja «Asociaciones dominantes» ofrece los "
         "taxones más mencionados en Resultados, y la columna «Origen» avisa de "
         "que es un indicio DERIVADO, no una afirmación del artículo.",
-        "· Los porcentajes del texto NO se extrajeron como abundancias, y es "
-        "deliberado: en varios artículos el símbolo ‰ de los valores de δ13C sale "
-        "del PDF convertido en «%», de modo que «1,26 ± 0,15 %» es un valor "
-        "isotópico y no una abundancia relativa. Tomarlos por abundancias habría "
-        "corrompido la base.",
-        "· Un artículo (E13, McGann 2018) son 77 páginas escaneadas sin capa de "
-        "texto: cero caracteres extraíbles. Necesita OCR. Sus taxones sí están en "
-        "la base original de la tesis, sólo falta la lectura del texto completo.",
+        "· Las abundancias del CUERPO DEL TEXTO no se extrajeron como cifras, y "
+        "es deliberado: en varios artículos el símbolo ‰ de los valores de δ13C "
+        "sale del PDF convertido en «%», de modo que «1,26 ± 0,15 %» es un valor "
+        "isotópico y no una abundancia. Lo que sí se extrajo son las TABLAS, con "
+        "otra herramienta y con validación de rango (hojas «δ13C por taxón», "
+        "«Abundancias de los artículos» e «Índices de diversidad»).",
+        "· La cobertura de esas tres hojas es PARCIAL y desigual, porque muchas "
+        "tablas son imágenes o tienen la cabecera de columna ilegible. Cada valor "
+        "trae la página y la fila literal del artículo para poder comprobarlo.",
+        "· De las abundancias no se dice a qué estación corresponde cada cifra: "
+        "los encabezados de columna no se leen de forma fiable. Una fila trae "
+        "todos los valores de ese taxón en esa tabla.",
+        "· De los isótopos sólo se recogen los valores NEGATIVOS de δ13C. Es la "
+        "firma del carbono derivado del metano —lo que interesa aquí— y es lo "
+        "único que permite distinguir un δ13C de un δ18O cuando la cabecera no se "
+        "puede leer. Los positivos quedan sin clasificar.",
         "· 7 de los 40 estudios no tienen morfología asignada. En varios el texto sí "
         "menciona pockmarks o volcanes de lodo, pero la mención está en una tabla "
         "comparativa de otras localidades o en la bibliografía, no en la descripción "
@@ -332,6 +340,49 @@ def bibliografia() -> Path:
         ", ".join(p["dominantes_declarados"]) or "—",
     ] for p in comp["por_estudio"]],
         [8, 24, 7, 60, 34, 14, 22, 12, 12, 12, 14, 16, 46])
+
+    # --- lo extraído de las TABLAS (45_tablas_pdf.py) --------------------
+    tab = PRIV / "tablas_pdf.json"
+    if tab.exists():
+        tt = json.loads(tab.read_text(encoding="utf-8"))
+        est_id = {e["id"]: e for e in
+                  json.loads((DERIV / "estudios.json").read_text(encoding="utf-8"))}
+
+        def fila_val(v):
+            e = est_id.get(v["estudio_id"], {})
+            return [v["estudio_id"], (e.get("autores") or [""])[0], e.get("anio"),
+                    e.get("localidad"), v["taxon"], v["taxon_texto"],
+                    v["valor"], v["unidad"], v["pagina"], v["evidencia"]]
+
+        cab_val = ["ID estudio", "Primer autor", "Año", "Localidad",
+                   "Taxón (nombre válido)", "Nombre leído", "Valor", "Unidad",
+                   "Página", "Fila del artículo"]
+        anchos = [11, 18, 7, 30, 30, 28, 10, 10, 8, 84]
+
+        hoja(wb, "δ13C por taxón",
+             cab_val,
+             [fila_val(v) for v in tt["valores"] if v["variable"] == "d13C"],
+             anchos)
+
+        hoja(wb, "Abundancias de los artículos",
+             cab_val,
+             [fila_val(v) for v in tt["valores"]
+              if v["variable"] == "abundancia_rel"],
+             anchos)
+
+        NOM = {"shannon_H": "Shannon-Wiener (H')", "equidad_J": "Equidad (J')",
+               "simpson": "Simpson", "fisher_alpha": "Fisher alfa"}
+        hoja(wb, "Índices de diversidad", [
+            "ID estudio", "Primer autor", "Año", "Localidad", "Índice",
+            "Valor", "Página", "Frase del artículo",
+        ], [[
+            x["estudio_id"],
+            (est_id.get(x["estudio_id"], {}).get("autores") or [""])[0],
+            est_id.get(x["estudio_id"], {}).get("anio"),
+            est_id.get(x["estudio_id"], {}).get("localidad"),
+            NOM.get(x["indice"], x["indice"]), x["valor"], x["pagina"],
+            x["evidencia"],
+        ] for x in tt["indices"]], [11, 18, 7, 30, 22, 10, 8, 92])
 
     hoja(wb, "Correcciones", [
         "Tipo", "Desde", "Hacia", "Motivo", "Fuente", "Impacto",

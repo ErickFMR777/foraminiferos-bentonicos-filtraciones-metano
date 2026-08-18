@@ -128,6 +128,7 @@ python pipeline/08_organizar.py       # renombra PDF, separa los excluidos
 python pipeline/09_verificar_pdfs.py  # nombre vs contenido + duplicados
 python pipeline/20_build.py           # -> data/derived/*.json (PÚBLICO)
 python pipeline/40_taxones_pdf.py     # lee los artículos completos
+python pipeline/45_tablas_pdf.py      # TABLAS: d13C, abundancias, indices
 python pipeline/50_estadisticas.py    # -> taxones_completo.json
 python pipeline/30_informe.py         # -> Informe_curacion_datos.pdf
 python pipeline/60_excel.py           # -> los Excel corregidos (carpeta privada)
@@ -139,7 +140,12 @@ confía en las salidas intermedias: vuelve a leer los Excel originales y
 verifica de forma independiente la conservación de registros, la aritmética
 recalculada desde cero, la coherencia entre datasets y la ausencia de fugas.
 
-Dependencias: `openpyxl`, `pypdf`, `fpdf2`. **Ningún script usa pandas.**
+Dependencias: `openpyxl`, `pypdf`, `fpdf2`, `pdfplumber`. **Ningún script
+usa pandas.** `pdfplumber` es sólo para `45_tablas_pdf.py`: `pypdf` devuelve
+el texto en orden de lectura y una tabla se vuelve una ristra de números sin
+columnas; `pdfplumber` da la POSICIÓN de cada palabra, y agrupando por
+coordenada vertical se recupera la fila, que es lo que asocia un taxón con
+sus cifras.
 Los scripts leen los originales desde `THESIS_DATA_DIR` (por defecto
 `./Data_nosubiralrepo`). El caché de WoRMS vive en
 `data/private/worms_cache.json`; borrarlo fuerza la reconsulta.

@@ -441,6 +441,30 @@ def main() -> int:
     # Vercel. No estaban servidos en ninguna URL, pero habían salido del
     # equipo. Se detectó consultando la API de despliegues, no razonando sobre
     # el CLI. Esta comprobación existe para que no vuelva a pasar en silencio.
+    # Lo extraído de las tablas se valida por RANGO FÍSICO: una cifra fuera de
+    # rango significa que se leyó la columna equivocada, y eso hay que
+    # detectarlo aquí y no en el dashboard.
+    tab = PRIV / "tablas_pdf.json"
+    if tab.exists():
+        tt = load(tab)
+        d13 = [v["valor"] for v in tt["valores"] if v["variable"] == "d13C"]
+        ab = [v["valor"] for v in tt["valores"]
+              if v["variable"] == "abundancia_rel"]
+        check("Todo δ13C extraído cae en el rango físico (-75 a 0 ‰)",
+              all(-75 <= v < 0 for v in d13), f"{[v for v in d13 if not -75 <= v < 0][:4]}")
+        check("Toda abundancia extraída está entre 0 y 100 %",
+              all(0 < v <= 100 for v in ab), f"{[v for v in ab if not 0 < v <= 100][:4]}")
+        LIM = {"shannon_H": (0, 6), "equidad_J": (0, 1), "simpson": (0, 1),
+               "fisher_alpha": (0, 120)}
+        malos = [x for x in tt["indices"]
+                 if not LIM[x["indice"]][0] <= x["valor"] <= LIM[x["indice"]][1]]
+        check("Todo índice de diversidad cae en su rango", not malos,
+              f"{[(x['indice'], x['valor']) for x in malos][:4]}")
+        cuant = DERIV / "cuantitativos.json"
+        if cuant.exists():
+            check("El agregado público de tablas no lleva texto literal",
+                  "evidencia" not in cuant.read_text(encoding="utf-8"), "")
+
     # La evidencia de dominancia es texto LITERAL de artículos con derechos de
     # autor. Vive en data/private/ y no puede salir de ahí: si se copiara a un
     # dataset público, el dashboard estaría redistribuyendo el texto ajeno.

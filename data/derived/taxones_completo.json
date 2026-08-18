@@ -1,22 +1,20 @@
 {
  "resumen": {
-  "articulos_leidos": 36,
-  "articulos_sin_texto": [
-   "E13"
-  ],
-  "candidatos_evaluados": 2514,
-  "taxones_validados": 497,
-  "especies": 426,
-  "generos": 222,
+  "articulos_leidos": 37,
+  "articulos_sin_texto": [],
+  "candidatos_evaluados": 2613,
+  "taxones_validados": 530,
+  "especies": 456,
+  "generos": 228,
   "taxones_base_tesis": 197,
-  "factor_ampliacion": 2.5,
-  "taxones_con_dominancia_declarada": 99,
+  "factor_ampliacion": 2.7,
+  "taxones_con_dominancia_declarada": 105,
   "solape_con_msh": 28,
   "nota_metodo": "Presencia y menciones se extraen del texto completo de cada artículo y se validan contra WoRMS. Las menciones son un proxy débil de importancia: sirven para ordenar dentro de un artículo, no para comparar entre artículos de distinta extensión. Sólo 'dominante' —afirmado por el propio texto— puede leerse como dominancia.",
-  "union_taxones": 535,
-  "solo_en_base": 38,
-  "solo_en_pdf": 338,
-  "en_ambas": 159
+  "union_taxones": 565,
+  "solo_en_base": 35,
+  "solo_en_pdf": 368,
+  "en_ambas": 162
  },
  "taxones": [
   {
@@ -26,10 +24,10 @@
    "familia": "Uvigerinidae",
    "orden": "Rotaliida",
    "aphia_id": 112281,
-   "n_estudios": 26,
-   "menciones": 799,
-   "n_estudios_resultados": 21,
-   "n_estudios_dominante": 8,
+   "n_estudios": 27,
+   "menciones": 839,
+   "n_estudios_resultados": 22,
+   "n_estudios_dominante": 9,
    "en_base_tesis": true,
    "en_msh_bc21": true
   },
@@ -40,10 +38,24 @@
    "familia": "Uvigerinidae",
    "orden": "Rotaliida",
    "aphia_id": 113773,
-   "n_estudios": 22,
-   "menciones": 717,
-   "n_estudios_resultados": 17,
-   "n_estudios_dominante": 6,
+   "n_estudios": 23,
+   "menciones": 747,
+   "n_estudios_resultados": 18,
+   "n_estudios_dominante": 7,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Cassidulina",
+   "rango": "genero",
+   "genero": "Cassidulina",
+   "familia": "Cassidulinidae",
+   "orden": "Rotaliida",
+   "aphia_id": 112120,
+   "n_estudios": 23,
+   "menciones": 292,
+   "n_estudios_resultados": 16,
+   "n_estudios_dominante": 4,
    "en_base_tesis": true,
    "en_msh_bc21": false
   },
@@ -54,26 +66,12 @@
    "familia": "Buliminidae",
    "orden": "Rotaliida",
    "aphia_id": 112110,
-   "n_estudios": 22,
-   "menciones": 215,
-   "n_estudios_resultados": 16,
+   "n_estudios": 23,
+   "menciones": 231,
+   "n_estudios_resultados": 17,
    "n_estudios_dominante": 3,
    "en_base_tesis": true,
    "en_msh_bc21": true
-  },
-  {
-   "taxon": "Cassidulina",
-   "rango": "genero",
-   "genero": "Cassidulina",
-   "familia": "Cassidulinidae",
-   "orden": "Rotaliida",
-   "aphia_id": 112120,
-   "n_estudios": 22,
-   "menciones": 272,
-   "n_estudios_resultados": 15,
-   "n_estudios_dominante": 3,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
   },
   {
    "taxon": "Bolivina",
@@ -82,9 +80,9 @@
    "familia": "Bolivinitidae",
    "orden": "Rotaliida",
    "aphia_id": 112101,
-   "n_estudios": 21,
-   "menciones": 372,
-   "n_estudios_resultados": 16,
+   "n_estudios": 22,
+   "menciones": 399,
+   "n_estudios_resultados": 17,
    "n_estudios_dominante": 11,
    "en_base_tesis": true,
    "en_msh_bc21": false
@@ -96,9 +94,9 @@
    "familia": "Nonionidae",
    "orden": "Rotaliida",
    "aphia_id": 112233,
-   "n_estudios": 20,
-   "menciones": 81,
-   "n_estudios_resultados": 13,
+   "n_estudios": 21,
+   "menciones": 86,
+   "n_estudios_resultados": 14,
    "n_estudios_dominante": 3,
    "en_base_tesis": false,
    "en_msh_bc21": true
@@ -110,9 +108,9 @@
    "familia": "Cibicididae",
    "orden": "Rotaliida",
    "aphia_id": 112082,
-   "n_estudios": 19,
-   "menciones": 75,
-   "n_estudios_resultados": 15,
+   "n_estudios": 20,
+   "menciones": 81,
+   "n_estudios_resultados": 16,
    "n_estudios_dominante": 4,
    "en_base_tesis": false,
    "en_msh_bc21": false
@@ -124,10 +122,10 @@
    "familia": "Globobuliminidae",
    "orden": "Rotaliida",
    "aphia_id": 112112,
-   "n_estudios": 18,
-   "menciones": 256,
-   "n_estudios_resultados": 16,
-   "n_estudios_dominante": 4,
+   "n_estudios": 19,
+   "menciones": 316,
+   "n_estudios_resultados": 17,
+   "n_estudios_dominante": 5,
    "en_base_tesis": true,
    "en_msh_bc21": false
   },
@@ -138,9 +136,9 @@
    "familia": "Pseudoparrellidae",
    "orden": "Rotaliida",
    "aphia_id": 112168,
-   "n_estudios": 17,
-   "menciones": 106,
-   "n_estudios_resultados": 11,
+   "n_estudios": 18,
+   "menciones": 116,
+   "n_estudios_resultados": 12,
    "n_estudios_dominante": 2,
    "en_base_tesis": true,
    "en_msh_bc21": false
@@ -152,26 +150,12 @@
    "familia": "Cibicididae",
    "orden": "Rotaliida",
    "aphia_id": 1746350,
-   "n_estudios": 15,
-   "menciones": 143,
-   "n_estudios_resultados": 13,
-   "n_estudios_dominante": 2,
+   "n_estudios": 16,
+   "menciones": 168,
+   "n_estudios_resultados": 14,
+   "n_estudios_dominante": 3,
    "en_base_tesis": true,
    "en_msh_bc21": true
-  },
-  {
-   "taxon": "Chilostomella",
-   "rango": "genero",
-   "genero": "Chilostomella",
-   "familia": "Chilostomellidae",
-   "orden": "Rotaliida",
-   "aphia_id": 112227,
-   "n_estudios": 13,
-   "menciones": 62,
-   "n_estudios_resultados": 10,
-   "n_estudios_dominante": 1,
-   "en_base_tesis": false,
-   "en_msh_bc21": false
   },
   {
    "taxon": "Cibicidoides",
@@ -180,11 +164,25 @@
    "familia": "Cibicididae",
    "orden": "Rotaliida",
    "aphia_id": 112084,
-   "n_estudios": 13,
-   "menciones": 363,
-   "n_estudios_resultados": 10,
-   "n_estudios_dominante": 1,
+   "n_estudios": 14,
+   "menciones": 394,
+   "n_estudios_resultados": 11,
+   "n_estudios_dominante": 2,
    "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Chilostomella",
+   "rango": "genero",
+   "genero": "Chilostomella",
+   "familia": "Chilostomellidae",
+   "orden": "Rotaliida",
+   "aphia_id": 112227,
+   "n_estudios": 14,
+   "menciones": 73,
+   "n_estudios_resultados": 11,
+   "n_estudios_dominante": 1,
+   "en_base_tesis": false,
    "en_msh_bc21": false
   },
   {
@@ -194,9 +192,9 @@
    "familia": "Bolivinitidae",
    "orden": "Rotaliida",
    "aphia_id": 112111,
-   "n_estudios": 12,
-   "menciones": 30,
-   "n_estudios_resultados": 8,
+   "n_estudios": 13,
+   "menciones": 49,
+   "n_estudios_resultados": 9,
    "n_estudios_dominante": 1,
    "en_base_tesis": false,
    "en_msh_bc21": false
@@ -208,10 +206,10 @@
    "familia": "Gavelinellidae",
    "orden": "Rotaliida",
    "aphia_id": 112086,
-   "n_estudios": 11,
-   "menciones": 26,
-   "n_estudios_resultados": 8,
-   "n_estudios_dominante": 1,
+   "n_estudios": 12,
+   "menciones": 40,
+   "n_estudios_resultados": 9,
+   "n_estudios_dominante": 2,
    "en_base_tesis": false,
    "en_msh_bc21": false
   },
@@ -222,9 +220,9 @@
    "familia": "Cassidulinidae",
    "orden": "Rotaliida",
    "aphia_id": 113091,
-   "n_estudios": 10,
-   "menciones": 48,
-   "n_estudios_resultados": 7,
+   "n_estudios": 11,
+   "menciones": 53,
+   "n_estudios_resultados": 8,
    "n_estudios_dominante": 3,
    "en_base_tesis": true,
    "en_msh_bc21": false
@@ -236,9 +234,9 @@
    "familia": "Melonidae",
    "orden": "Rotaliida",
    "aphia_id": 112230,
-   "n_estudios": 10,
-   "menciones": 134,
-   "n_estudios_resultados": 6,
+   "n_estudios": 11,
+   "menciones": 137,
+   "n_estudios_resultados": 7,
    "n_estudios_dominante": 2,
    "en_base_tesis": false,
    "en_msh_bc21": false
@@ -250,9 +248,9 @@
    "familia": "Buliminidae",
    "orden": "Rotaliida",
    "aphia_id": 113047,
-   "n_estudios": 10,
-   "menciones": 53,
-   "n_estudios_resultados": 8,
+   "n_estudios": 11,
+   "menciones": 59,
+   "n_estudios_resultados": 9,
    "n_estudios_dominante": 0,
    "en_base_tesis": true,
    "en_msh_bc21": false
@@ -264,12 +262,40 @@
    "familia": "Vaginulinidae",
    "orden": "Vaginulinida",
    "aphia_id": 112284,
-   "n_estudios": 10,
-   "menciones": 35,
-   "n_estudios_resultados": 6,
+   "n_estudios": 11,
+   "menciones": 38,
+   "n_estudios_resultados": 7,
    "n_estudios_dominante": 0,
    "en_base_tesis": true,
    "en_msh_bc21": false
+  },
+  {
+   "taxon": "Melonis affinis",
+   "rango": "especie",
+   "genero": "Melonis",
+   "familia": "Nonionidae",
+   "orden": "Rotaliida",
+   "aphia_id": 418046,
+   "n_estudios": 10,
+   "menciones": 134,
+   "n_estudios_resultados": 7,
+   "n_estudios_dominante": 2,
+   "en_base_tesis": true,
+   "en_msh_bc21": true
+  },
+  {
+   "taxon": "Fissurina",
+   "rango": "genero",
+   "genero": "Fissurina",
+   "familia": "Ellipsolagenidae",
+   "orden": "Polymorphinida",
+   "aphia_id": 112154,
+   "n_estudios": 10,
+   "menciones": 41,
+   "n_estudios_resultados": 7,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": true,
+   "en_msh_bc21": true
   },
   {
    "taxon": "Elphidium",
@@ -300,20 +326,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Melonis affinis",
-   "rango": "especie",
-   "genero": "Melonis",
-   "familia": "Nonionidae",
-   "orden": "Rotaliida",
-   "aphia_id": 418046,
-   "n_estudios": 9,
-   "menciones": 131,
-   "n_estudios_resultados": 6,
-   "n_estudios_dominante": 2,
-   "en_base_tesis": true,
-   "en_msh_bc21": true
-  },
-  {
    "taxon": "Bulimina marginata",
    "rango": "especie",
    "genero": "Bulimina",
@@ -328,18 +340,46 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Fissurina",
-   "rango": "genero",
-   "genero": "Fissurina",
-   "familia": "Ellipsolagenidae",
-   "orden": "Polymorphinida",
-   "aphia_id": 112154,
+   "taxon": "Globobulimina pacifica",
+   "rango": "especie",
+   "genero": "Globobulimina",
+   "familia": "Globobuliminidae",
+   "orden": "Rotaliida",
+   "aphia_id": 417928,
    "n_estudios": 9,
-   "menciones": 38,
+   "menciones": 120,
+   "n_estudios_resultados": 9,
+   "n_estudios_dominante": 1,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Epistominella exigua",
+   "rango": "especie",
+   "genero": "Epistominella",
+   "familia": "Pseudoparrellidae",
+   "orden": "Rotaliida",
+   "aphia_id": 113334,
+   "n_estudios": 9,
+   "menciones": 30,
    "n_estudios_resultados": 6,
    "n_estudios_dominante": 0,
-   "en_base_tesis": true,
-   "en_msh_bc21": true
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Trochammina",
+   "rango": "genero",
+   "genero": "Trochammina",
+   "familia": "Trochamminidae",
+   "orden": "Lituolida",
+   "aphia_id": 112412,
+   "n_estudios": 9,
+   "menciones": 22,
+   "n_estudios_resultados": 7,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
   },
   {
    "taxon": "Bolivina albatrossi",
@@ -370,18 +410,60 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Globobulimina pacifica",
+   "taxon": "Trifarina angulosa",
    "rango": "especie",
-   "genero": "Globobulimina",
-   "familia": "Globobuliminidae",
+   "genero": "Trifarina",
+   "familia": "Uvigerinidae",
    "orden": "Rotaliida",
-   "aphia_id": 417928,
+   "aphia_id": 113756,
    "n_estudios": 8,
-   "menciones": 111,
+   "menciones": 25,
+   "n_estudios_resultados": 7,
+   "n_estudios_dominante": 2,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Eubuliminella exilis",
+   "rango": "especie",
+   "genero": "Eubuliminella",
+   "familia": "Buliminellidae",
+   "orden": "Rotaliida",
+   "aphia_id": 417980,
+   "n_estudios": 8,
+   "menciones": 61,
    "n_estudios_resultados": 8,
    "n_estudios_dominante": 1,
    "en_base_tesis": true,
    "en_msh_bc21": false
+  },
+  {
+   "taxon": "Oridorsalis umbonatus",
+   "rango": "especie",
+   "genero": "Oridorsalis",
+   "familia": "Alabaminidae",
+   "orden": "Rotaliida",
+   "aphia_id": 254690,
+   "n_estudios": 8,
+   "menciones": 29,
+   "n_estudios_resultados": 6,
+   "n_estudios_dominante": 1,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Quinqueloculina",
+   "rango": "genero",
+   "genero": "Quinqueloculina",
+   "familia": "Hauerinidae",
+   "orden": "Miliolida",
+   "aphia_id": 112040,
+   "n_estudios": 8,
+   "menciones": 76,
+   "n_estudios_resultados": 7,
+   "n_estudios_dominante": 1,
+   "en_base_tesis": true,
+   "en_msh_bc21": true
   },
   {
    "taxon": "Bulimina aculeata",
@@ -398,28 +480,28 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Epistominella exigua",
-   "rango": "especie",
-   "genero": "Epistominella",
-   "familia": "Pseudoparrellidae",
-   "orden": "Rotaliida",
-   "aphia_id": 113334,
+   "taxon": "Dentalina",
+   "rango": "genero",
+   "genero": "Dentalina",
+   "familia": "Nodosariidae",
+   "orden": "Nodosariida",
+   "aphia_id": 112217,
    "n_estudios": 8,
-   "menciones": 23,
+   "menciones": 15,
    "n_estudios_resultados": 5,
    "n_estudios_dominante": 0,
-   "en_base_tesis": false,
+   "en_base_tesis": true,
    "en_msh_bc21": false
   },
   {
-   "taxon": "Trochammina",
+   "taxon": "Textularia",
    "rango": "genero",
-   "genero": "Trochammina",
-   "familia": "Trochamminidae",
-   "orden": "Lituolida",
-   "aphia_id": 112412,
+   "genero": "Textularia",
+   "familia": "Textulariidae",
+   "orden": "Textulariida",
+   "aphia_id": 112394,
    "n_estudios": 8,
-   "menciones": 19,
+   "menciones": 26,
    "n_estudios_resultados": 6,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
@@ -440,29 +522,15 @@
    "en_msh_bc21": true
   },
   {
-   "taxon": "Trifarina angulosa",
+   "taxon": "Chilostomella ovoidea",
    "rango": "especie",
-   "genero": "Trifarina",
-   "familia": "Uvigerinidae",
+   "genero": "Chilostomella",
+   "familia": "Chilostomellidae",
    "orden": "Rotaliida",
-   "aphia_id": 113756,
+   "aphia_id": 113554,
    "n_estudios": 7,
-   "menciones": 24,
+   "menciones": 28,
    "n_estudios_resultados": 6,
-   "n_estudios_dominante": 2,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Eubuliminella exilis",
-   "rango": "especie",
-   "genero": "Eubuliminella",
-   "familia": "Buliminellidae",
-   "orden": "Rotaliida",
-   "aphia_id": 417980,
-   "n_estudios": 7,
-   "menciones": 54,
-   "n_estudios_resultados": 7,
    "n_estudios_dominante": 1,
    "en_base_tesis": true,
    "en_msh_bc21": false
@@ -482,20 +550,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Oridorsalis umbonatus",
-   "rango": "especie",
-   "genero": "Oridorsalis",
-   "familia": "Alabaminidae",
-   "orden": "Rotaliida",
-   "aphia_id": 254690,
-   "n_estudios": 7,
-   "menciones": 28,
-   "n_estudios_resultados": 5,
-   "n_estudios_dominante": 1,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
-  },
-  {
    "taxon": "Osangularia",
    "rango": "genero",
    "genero": "Osangularia",
@@ -508,20 +562,6 @@
    "n_estudios_dominante": 1,
    "en_base_tesis": false,
    "en_msh_bc21": false
-  },
-  {
-   "taxon": "Quinqueloculina",
-   "rango": "genero",
-   "genero": "Quinqueloculina",
-   "familia": "Hauerinidae",
-   "orden": "Miliolida",
-   "aphia_id": 112040,
-   "n_estudios": 7,
-   "menciones": 75,
-   "n_estudios_resultados": 6,
-   "n_estudios_dominante": 1,
-   "en_base_tesis": true,
-   "en_msh_bc21": true
   },
   {
    "taxon": "Cassidulina laevigata",
@@ -538,31 +578,59 @@
    "en_msh_bc21": true
   },
   {
-   "taxon": "Dentalina",
-   "rango": "genero",
-   "genero": "Dentalina",
-   "familia": "Nodosariidae",
-   "orden": "Nodosariida",
-   "aphia_id": 112217,
+   "taxon": "Chilostomella oolina",
+   "rango": "especie",
+   "genero": "Chilostomella",
+   "familia": "Chilostomellidae",
+   "orden": "Rotaliida",
+   "aphia_id": 113553,
    "n_estudios": 7,
-   "menciones": 12,
-   "n_estudios_resultados": 4,
+   "menciones": 32,
+   "n_estudios_resultados": 6,
    "n_estudios_dominante": 0,
    "en_base_tesis": true,
    "en_msh_bc21": false
   },
   {
-   "taxon": "Textularia",
-   "rango": "genero",
-   "genero": "Textularia",
-   "familia": "Textulariidae",
-   "orden": "Textulariida",
-   "aphia_id": 112394,
+   "taxon": "Gyroidina altiformis",
+   "rango": "especie",
+   "genero": "Gyroidina",
+   "familia": "Gavelinellidae",
+   "orden": "Rotaliida",
+   "aphia_id": 112894,
    "n_estudios": 7,
-   "menciones": 25,
+   "menciones": 20,
+   "n_estudios_resultados": 6,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Planulina",
+   "rango": "genero",
+   "genero": "Planulina",
+   "familia": "Planulinidae",
+   "orden": "Rotaliida",
+   "aphia_id": 112091,
+   "n_estudios": 7,
+   "menciones": 26,
    "n_estudios_resultados": 5,
    "n_estudios_dominante": 0,
-   "en_base_tesis": false,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Pyrgo",
+   "rango": "genero",
+   "genero": "Pyrgo",
+   "familia": "Hauerinidae",
+   "orden": "Miliolida",
+   "aphia_id": 112037,
+   "n_estudios": 7,
+   "menciones": 48,
+   "n_estudios_resultados": 6,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": true,
    "en_msh_bc21": false
   },
   {
@@ -580,20 +648,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Chilostomella ovoidea",
-   "rango": "especie",
-   "genero": "Chilostomella",
-   "familia": "Chilostomellidae",
-   "orden": "Rotaliida",
-   "aphia_id": 113554,
-   "n_estudios": 6,
-   "menciones": 25,
-   "n_estudios_resultados": 5,
-   "n_estudios_dominante": 1,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
-  },
-  {
    "taxon": "Globocassidulina crassa",
    "rango": "especie",
    "genero": "Globocassidulina",
@@ -603,6 +657,34 @@
    "n_estudios": 6,
    "menciones": 10,
    "n_estudios_resultados": 4,
+   "n_estudios_dominante": 1,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Nonionella stella",
+   "rango": "especie",
+   "genero": "Nonionella",
+   "familia": "Nonionidae",
+   "orden": "Rotaliida",
+   "aphia_id": 113604,
+   "n_estudios": 6,
+   "menciones": 15,
+   "n_estudios_resultados": 5,
+   "n_estudios_dominante": 1,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Spiroplectammina",
+   "rango": "genero",
+   "genero": "Spiroplectammina",
+   "familia": "Spiroplectamminidae",
+   "orden": "Lituolida",
+   "aphia_id": 112385,
+   "n_estudios": 6,
+   "menciones": 17,
+   "n_estudios_resultados": 5,
    "n_estudios_dominante": 1,
    "en_base_tesis": false,
    "en_msh_bc21": false
@@ -622,6 +704,20 @@
    "en_msh_bc21": false
   },
   {
+   "taxon": "Bulimina truncana",
+   "rango": "especie",
+   "genero": "Bulimina",
+   "familia": "Buliminidae",
+   "orden": "Rotaliida",
+   "aphia_id": 466352,
+   "n_estudios": 6,
+   "menciones": 13,
+   "n_estudios_resultados": 3,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
    "taxon": "Cassidulina carinata",
    "rango": "especie",
    "genero": "Cassidulina",
@@ -631,34 +727,6 @@
    "n_estudios": 6,
    "menciones": 18,
    "n_estudios_resultados": 3,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Chilostomella oolina",
-   "rango": "especie",
-   "genero": "Chilostomella",
-   "familia": "Chilostomellidae",
-   "orden": "Rotaliida",
-   "aphia_id": 113553,
-   "n_estudios": 6,
-   "menciones": 24,
-   "n_estudios_resultados": 5,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Gyroidina altiformis",
-   "rango": "especie",
-   "genero": "Gyroidina",
-   "familia": "Gavelinellidae",
-   "orden": "Rotaliida",
-   "aphia_id": 112894,
-   "n_estudios": 6,
-   "menciones": 18,
-   "n_estudios_resultados": 5,
    "n_estudios_dominante": 0,
    "en_base_tesis": true,
    "en_msh_bc21": false
@@ -678,31 +746,17 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Planulina",
-   "rango": "genero",
-   "genero": "Planulina",
-   "familia": "Planulinidae",
+   "taxon": "Neogloboquadrina pachyderma",
+   "rango": "especie",
+   "genero": "Neogloboquadrina",
+   "familia": "Globorotaliidae",
    "orden": "Rotaliida",
-   "aphia_id": 112091,
+   "aphia_id": 113458,
    "n_estudios": 6,
-   "menciones": 24,
-   "n_estudios_resultados": 4,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Pyrgo",
-   "rango": "genero",
-   "genero": "Pyrgo",
-   "familia": "Hauerinidae",
-   "orden": "Miliolida",
-   "aphia_id": 112037,
-   "n_estudios": 6,
-   "menciones": 44,
+   "menciones": 56,
    "n_estudios_resultados": 5,
    "n_estudios_dominante": 0,
-   "en_base_tesis": true,
+   "en_base_tesis": false,
    "en_msh_bc21": false
   },
   {
@@ -748,15 +802,43 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Nonionella stella",
+   "taxon": "Epistominella smithi",
    "rango": "especie",
-   "genero": "Nonionella",
-   "familia": "Nonionidae",
+   "genero": "Epistominella",
+   "familia": "Pseudoparrellidae",
    "orden": "Rotaliida",
-   "aphia_id": 113604,
+   "aphia_id": 862706,
    "n_estudios": 5,
-   "menciones": 12,
+   "menciones": 30,
+   "n_estudios_resultados": 5,
+   "n_estudios_dominante": 1,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Globobulimina affinis",
+   "rango": "especie",
+   "genero": "Globobulimina",
+   "familia": "Globobuliminidae",
+   "orden": "Rotaliida",
+   "aphia_id": 113060,
+   "n_estudios": 5,
+   "menciones": 48,
    "n_estudios_resultados": 4,
+   "n_estudios_dominante": 1,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Hoeglundina elegans",
+   "rango": "especie",
+   "genero": "Hoeglundina",
+   "familia": "Epistominidae",
+   "orden": "Robertinida",
+   "aphia_id": 113341,
+   "n_estudios": 5,
+   "menciones": 49,
+   "n_estudios_resultados": 3,
    "n_estudios_dominante": 1,
    "en_base_tesis": true,
    "en_msh_bc21": false
@@ -776,17 +858,45 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Bulimina truncana",
+   "taxon": "Bolivina seminuda",
    "rango": "especie",
-   "genero": "Bulimina",
-   "familia": "Buliminidae",
+   "genero": "Bolivina",
+   "familia": "Bolivinitidae",
    "orden": "Rotaliida",
-   "aphia_id": 466352,
+   "aphia_id": 417913,
    "n_estudios": 5,
-   "menciones": 10,
-   "n_estudios_resultados": 2,
+   "menciones": 11,
+   "n_estudios_resultados": 5,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Buliminella elegantissima",
+   "rango": "especie",
+   "genero": "Buliminella",
+   "familia": "Buliminellidae",
+   "orden": "Rotaliida",
+   "aphia_id": 113747,
+   "n_estudios": 5,
+   "menciones": 6,
+   "n_estudios_resultados": 4,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Cibicidoides mckannai",
+   "rango": "especie",
+   "genero": "Cibicidoides",
+   "familia": "Cibicididae",
+   "orden": "Rotaliida",
+   "aphia_id": 1311388,
+   "n_estudios": 5,
+   "menciones": 106,
+   "n_estudios_resultados": 4,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": true,
    "en_msh_bc21": false
   },
   {
@@ -804,32 +914,46 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Neogloboquadrina pachyderma",
+   "taxon": "Fissurina marginata",
    "rango": "especie",
-   "genero": "Neogloboquadrina",
-   "familia": "Globorotaliidae",
-   "orden": "Rotaliida",
-   "aphia_id": 113458,
+   "genero": "Fissurina",
+   "familia": "Ellipsolagenidae",
+   "orden": "Polymorphinida",
+   "aphia_id": 113207,
    "n_estudios": 5,
-   "menciones": 45,
+   "menciones": 6,
    "n_estudios_resultados": 4,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
    "en_msh_bc21": false
   },
   {
-   "taxon": "Spiroplectammina",
-   "rango": "genero",
-   "genero": "Spiroplectammina",
-   "familia": "Spiroplectamminidae",
-   "orden": "Lituolida",
-   "aphia_id": 112385,
+   "taxon": "Fursenkoina complanata",
+   "rango": "especie",
+   "genero": "Fursenkoina",
+   "familia": "Stainforthiidae",
+   "orden": "Rotaliida",
+   "aphia_id": 466392,
    "n_estudios": 5,
-   "menciones": 11,
+   "menciones": 8,
    "n_estudios_resultados": 4,
    "n_estudios_dominante": 0,
-   "en_base_tesis": false,
+   "en_base_tesis": true,
    "en_msh_bc21": false
+  },
+  {
+   "taxon": "Pullenia bulloides",
+   "rango": "especie",
+   "genero": "Pullenia",
+   "familia": "Pulleniidae",
+   "orden": "Rotaliida",
+   "aphia_id": 113110,
+   "n_estudios": 5,
+   "menciones": 5,
+   "n_estudios_resultados": 4,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": true,
+   "en_msh_bc21": true
   },
   {
    "taxon": "Bolivina ordinaria",
@@ -888,20 +1012,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Epistominella smithi",
-   "rango": "especie",
-   "genero": "Epistominella",
-   "familia": "Pseudoparrellidae",
-   "orden": "Rotaliida",
-   "aphia_id": 862706,
-   "n_estudios": 4,
-   "menciones": 27,
-   "n_estudios_resultados": 4,
-   "n_estudios_dominante": 1,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
-  },
-  {
    "taxon": "Fursenkoina compressa",
    "rango": "especie",
    "genero": "Fursenkoina",
@@ -916,20 +1026,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Globobulimina affinis",
-   "rango": "especie",
-   "genero": "Globobulimina",
-   "familia": "Globobuliminidae",
-   "orden": "Rotaliida",
-   "aphia_id": 113060,
-   "n_estudios": 4,
-   "menciones": 47,
-   "n_estudios_resultados": 3,
-   "n_estudios_dominante": 1,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
-  },
-  {
    "taxon": "Glomospira charoides",
    "rango": "especie",
    "genero": "Glomospira",
@@ -941,6 +1037,20 @@
    "n_estudios_resultados": 3,
    "n_estudios_dominante": 1,
    "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Pseudoparrella pacifica",
+   "rango": "especie",
+   "genero": "Pseudoparrella",
+   "familia": "Pseudoparrellidae",
+   "orden": "Rotaliida",
+   "aphia_id": 593332,
+   "n_estudios": 4,
+   "menciones": 42,
+   "n_estudios_resultados": 4,
+   "n_estudios_dominante": 1,
+   "en_base_tesis": true,
    "en_msh_bc21": false
   },
   {
@@ -972,6 +1082,34 @@
    "en_msh_bc21": false
   },
   {
+   "taxon": "Spiroplectammina biformis",
+   "rango": "especie",
+   "genero": "Spiroplectammina",
+   "familia": "Spiroplectamminidae",
+   "orden": "Lituolida",
+   "aphia_id": 114226,
+   "n_estudios": 4,
+   "menciones": 14,
+   "n_estudios_resultados": 4,
+   "n_estudios_dominante": 1,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Takayanagia delicata",
+   "rango": "especie",
+   "genero": "Takayanagia",
+   "familia": "Cassidulinidae",
+   "orden": "Rotaliida",
+   "aphia_id": 526531,
+   "n_estudios": 4,
+   "menciones": 23,
+   "n_estudios_resultados": 4,
+   "n_estudios_dominante": 1,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
    "taxon": "Trifarina bradyi",
    "rango": "especie",
    "genero": "Trifarina",
@@ -1000,71 +1138,57 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Bolivina seminuda",
+   "taxon": "Bolivina spissa",
    "rango": "especie",
    "genero": "Bolivina",
    "familia": "Bolivinitidae",
    "orden": "Rotaliida",
-   "aphia_id": 417913,
+   "aphia_id": 814781,
    "n_estudios": 4,
-   "menciones": 8,
+   "menciones": 16,
    "n_estudios_resultados": 4,
    "n_estudios_dominante": 0,
    "en_base_tesis": true,
    "en_msh_bc21": false
   },
   {
-   "taxon": "Buliminella elegantissima",
+   "taxon": "Eggerella bradyi",
    "rango": "especie",
-   "genero": "Buliminella",
-   "familia": "Buliminellidae",
-   "orden": "Rotaliida",
-   "aphia_id": 113747,
+   "genero": "Eggerella",
+   "familia": "Eggerellidae",
+   "orden": "Textulariida",
+   "aphia_id": 113930,
    "n_estudios": 4,
-   "menciones": 5,
+   "menciones": 7,
    "n_estudios_resultados": 3,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
    "en_msh_bc21": false
   },
   {
-   "taxon": "Cibicidoides mckannai",
+   "taxon": "Globigerina bulloides",
    "rango": "especie",
-   "genero": "Cibicidoides",
-   "familia": "Cibicididae",
+   "genero": "Globigerina",
+   "familia": "Globigerinidae",
    "orden": "Rotaliida",
-   "aphia_id": 1311388,
+   "aphia_id": 113434,
    "n_estudios": 4,
-   "menciones": 103,
-   "n_estudios_resultados": 3,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Fissurina marginata",
-   "rango": "especie",
-   "genero": "Fissurina",
-   "familia": "Ellipsolagenidae",
-   "orden": "Polymorphinida",
-   "aphia_id": 113207,
-   "n_estudios": 4,
-   "menciones": 5,
-   "n_estudios_resultados": 3,
+   "menciones": 41,
+   "n_estudios_resultados": 4,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
    "en_msh_bc21": false
   },
   {
-   "taxon": "Fursenkoina complanata",
+   "taxon": "Globobulimina auriculata",
    "rango": "especie",
-   "genero": "Fursenkoina",
-   "familia": "Stainforthiidae",
+   "genero": "Globobulimina",
+   "familia": "Globobuliminidae",
    "orden": "Rotaliida",
-   "aphia_id": 466392,
+   "aphia_id": 293027,
    "n_estudios": 4,
-   "menciones": 6,
-   "n_estudios_resultados": 3,
+   "menciones": 30,
+   "n_estudios_resultados": 4,
    "n_estudios_dominante": 0,
    "en_base_tesis": true,
    "en_msh_bc21": false
@@ -1098,15 +1222,15 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Hoeglundina elegans",
+   "taxon": "Leptohalysis scottii",
    "rango": "especie",
-   "genero": "Hoeglundina",
-   "familia": "Epistominidae",
-   "orden": "Robertinida",
-   "aphia_id": 113341,
+   "genero": "Leptohalysis",
+   "familia": "Reophacidae",
+   "orden": null,
+   "aphia_id": 578704,
    "n_estudios": 4,
-   "menciones": 25,
-   "n_estudios_resultados": 2,
+   "menciones": 6,
+   "n_estudios_resultados": 3,
    "n_estudios_dominante": 0,
    "en_base_tesis": true,
    "en_msh_bc21": false
@@ -1154,20 +1278,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Pullenia bulloides",
-   "rango": "especie",
-   "genero": "Pullenia",
-   "familia": "Pulleniidae",
-   "orden": "Rotaliida",
-   "aphia_id": 113110,
-   "n_estudios": 4,
-   "menciones": 4,
-   "n_estudios_resultados": 3,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": true,
-   "en_msh_bc21": true
-  },
-  {
    "taxon": "Pullenia quinqueloba",
    "rango": "especie",
    "genero": "Pullenia",
@@ -1207,6 +1317,34 @@
    "n_estudios_resultados": 3,
    "n_estudios_dominante": 0,
    "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Spirillina vivipara",
+   "rango": "especie",
+   "genero": "Spirillina",
+   "familia": "Spirillinidae",
+   "orden": "Spirillinida",
+   "aphia_id": 113737,
+   "n_estudios": 4,
+   "menciones": 7,
+   "n_estudios_resultados": 3,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Valvulineria",
+   "rango": "genero",
+   "genero": "Valvulineria",
+   "familia": "Cancrisidae",
+   "orden": "Rotaliida",
+   "aphia_id": 112100,
+   "n_estudios": 4,
+   "menciones": 14,
+   "n_estudios_resultados": 3,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
    "en_msh_bc21": false
   },
   {
@@ -1308,6 +1446,20 @@
    "en_msh_bc21": false
   },
   {
+   "taxon": "Pseudononion japonicum",
+   "rango": "especie",
+   "genero": "Pseudononion",
+   "familia": "Nonionidae",
+   "orden": "Rotaliida",
+   "aphia_id": 712062,
+   "n_estudios": 3,
+   "menciones": 7,
+   "n_estudios_resultados": 3,
+   "n_estudios_dominante": 1,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
    "taxon": "Quinqueloculina bosciana",
    "rango": "especie",
    "genero": "Quinqueloculina",
@@ -1317,6 +1469,20 @@
    "n_estudios": 3,
    "menciones": 9,
    "n_estudios_resultados": 2,
+   "n_estudios_dominante": 1,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Siphouvigerina proboscidea",
+   "rango": "especie",
+   "genero": "Siphouvigerina",
+   "familia": "Uvigerinidae",
+   "orden": "Rotaliida",
+   "aphia_id": 580069,
+   "n_estudios": 3,
+   "menciones": 5,
+   "n_estudios_resultados": 3,
    "n_estudios_dominante": 1,
    "en_base_tesis": true,
    "en_msh_bc21": false
@@ -1350,14 +1516,28 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Bolivina spissa",
+   "taxon": "Ammoglobigerina globigeriniformis",
+   "rango": "especie",
+   "genero": "Ammoglobigerina",
+   "familia": "Trochamminidae",
+   "orden": "Lituolida",
+   "aphia_id": 114298,
+   "n_estudios": 3,
+   "menciones": 5,
+   "n_estudios_resultados": 3,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Bolivina pacifica",
    "rango": "especie",
    "genero": "Bolivina",
    "familia": "Bolivinitidae",
    "orden": "Rotaliida",
-   "aphia_id": 814781,
+   "aphia_id": 112979,
    "n_estudios": 3,
-   "menciones": 10,
+   "menciones": 12,
    "n_estudios_resultados": 3,
    "n_estudios_dominante": 0,
    "en_base_tesis": true,
@@ -1490,20 +1670,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Eggerella bradyi",
-   "rango": "especie",
-   "genero": "Eggerella",
-   "familia": "Eggerellidae",
-   "orden": "Textulariida",
-   "aphia_id": 113930,
-   "n_estudios": 3,
-   "menciones": 6,
-   "n_estudios_resultados": 2,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
    "taxon": "Elphidium advena",
    "rango": "especie",
    "genero": "Elphidium",
@@ -1512,6 +1678,20 @@
    "aphia_id": 1636051,
    "n_estudios": 3,
    "menciones": 4,
+   "n_estudios_resultados": 3,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Fissurina lucida",
+   "rango": "especie",
+   "genero": "Fissurina",
+   "familia": "Lagenidae",
+   "orden": "Nodosariida",
+   "aphia_id": 113206,
+   "n_estudios": 3,
+   "menciones": 6,
    "n_estudios_resultados": 3,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
@@ -1560,34 +1740,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Globigerina bulloides",
-   "rango": "especie",
-   "genero": "Globigerina",
-   "familia": "Globigerinidae",
-   "orden": "Rotaliida",
-   "aphia_id": 113434,
-   "n_estudios": 3,
-   "menciones": 29,
-   "n_estudios_resultados": 3,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Globobulimina auriculata",
-   "rango": "especie",
-   "genero": "Globobulimina",
-   "familia": "Globobuliminidae",
-   "orden": "Rotaliida",
-   "aphia_id": 293027,
-   "n_estudios": 3,
-   "menciones": 26,
-   "n_estudios_resultados": 3,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
-  },
-  {
    "taxon": "Haplophragmoides",
    "rango": "genero",
    "genero": "Haplophragmoides",
@@ -1616,6 +1768,34 @@
    "en_msh_bc21": false
   },
   {
+   "taxon": "Islandiella",
+   "rango": "genero",
+   "genero": "Islandiella",
+   "familia": "Cassidulinidae",
+   "orden": "Rotaliida",
+   "aphia_id": 112124,
+   "n_estudios": 3,
+   "menciones": 3,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Lagena sulcata",
+   "rango": "especie",
+   "genero": "Lagena",
+   "familia": "Lagenidae",
+   "orden": "Nodosariida",
+   "aphia_id": 113509,
+   "n_estudios": 3,
+   "menciones": 6,
+   "n_estudios_resultados": 3,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": true,
+   "en_msh_bc21": true
+  },
+  {
    "taxon": "Lagenosolenia",
    "rango": "genero",
    "genero": "Lagenosolenia",
@@ -1627,20 +1807,6 @@
    "n_estudios_resultados": 2,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Leptohalysis scottii",
-   "rango": "especie",
-   "genero": "Leptohalysis",
-   "familia": "Reophacidae",
-   "orden": null,
-   "aphia_id": 578704,
-   "n_estudios": 3,
-   "menciones": 5,
-   "n_estudios_resultados": 2,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": true,
    "en_msh_bc21": false
   },
   {
@@ -1714,15 +1880,15 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Pseudoparrella pacifica",
+   "taxon": "Pyrgo murrhina",
    "rango": "especie",
-   "genero": "Pseudoparrella",
-   "familia": "Pseudoparrellidae",
-   "orden": "Rotaliida",
-   "aphia_id": 593332,
+   "genero": "Pyrgo",
+   "familia": "Hauerinidae",
+   "orden": "Miliolida",
+   "aphia_id": 112593,
    "n_estudios": 3,
-   "menciones": 32,
-   "n_estudios_resultados": 3,
+   "menciones": 6,
+   "n_estudios_resultados": 2,
    "n_estudios_dominante": 0,
    "en_base_tesis": true,
    "en_msh_bc21": false
@@ -1736,62 +1902,6 @@
    "aphia_id": 992022,
    "n_estudios": 3,
    "menciones": 4,
-   "n_estudios_resultados": 2,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Spirillina vivipara",
-   "rango": "especie",
-   "genero": "Spirillina",
-   "familia": "Spirillinidae",
-   "orden": "Spirillinida",
-   "aphia_id": 113737,
-   "n_estudios": 3,
-   "menciones": 5,
-   "n_estudios_resultados": 2,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Spiroplectammina biformis",
-   "rango": "especie",
-   "genero": "Spiroplectammina",
-   "familia": "Spiroplectamminidae",
-   "orden": "Lituolida",
-   "aphia_id": 114226,
-   "n_estudios": 3,
-   "menciones": 8,
-   "n_estudios_resultados": 3,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Takayanagia delicata",
-   "rango": "especie",
-   "genero": "Takayanagia",
-   "familia": "Cassidulinidae",
-   "orden": "Rotaliida",
-   "aphia_id": 526531,
-   "n_estudios": 3,
-   "menciones": 10,
-   "n_estudios_resultados": 3,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Valvulineria",
-   "rango": "genero",
-   "genero": "Valvulineria",
-   "familia": "Cancrisidae",
-   "orden": "Rotaliida",
-   "aphia_id": 112100,
-   "n_estudios": 3,
-   "menciones": 10,
    "n_estudios_resultados": 2,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
@@ -2022,20 +2132,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Pseudononion japonicum",
-   "rango": "especie",
-   "genero": "Pseudononion",
-   "familia": "Nonionidae",
-   "orden": "Rotaliida",
-   "aphia_id": 712062,
-   "n_estudios": 2,
-   "menciones": 6,
-   "n_estudios_resultados": 2,
-   "n_estudios_dominante": 1,
-   "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
    "taxon": "Quinqueloculina compta",
    "rango": "especie",
    "genero": "Quinqueloculina",
@@ -2044,20 +2140,6 @@
    "aphia_id": 417706,
    "n_estudios": 2,
    "menciones": 10,
-   "n_estudios_resultados": 2,
-   "n_estudios_dominante": 1,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Siphouvigerina proboscidea",
-   "rango": "especie",
-   "genero": "Siphouvigerina",
-   "familia": "Uvigerinidae",
-   "orden": "Rotaliida",
-   "aphia_id": 580069,
-   "n_estudios": 2,
-   "menciones": 4,
    "n_estudios_resultados": 2,
    "n_estudios_dominante": 1,
    "en_base_tesis": true,
@@ -2148,20 +2230,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Ammoglobigerina globigeriniformis",
-   "rango": "especie",
-   "genero": "Ammoglobigerina",
-   "familia": "Trochamminidae",
-   "orden": "Lituolida",
-   "aphia_id": 114298,
-   "n_estudios": 2,
-   "menciones": 3,
-   "n_estudios_resultados": 2,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
    "taxon": "Anomalina",
    "rango": "genero",
    "genero": "Anomalina",
@@ -2246,20 +2314,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Bolivina pacifica",
-   "rango": "especie",
-   "genero": "Bolivina",
-   "familia": "Bolivinitidae",
-   "orden": "Rotaliida",
-   "aphia_id": 112979,
-   "n_estudios": 2,
-   "menciones": 6,
-   "n_estudios_resultados": 2,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
-  },
-  {
    "taxon": "Bolivina pseudoplicata",
    "rango": "especie",
    "genero": "Bolivina",
@@ -2268,6 +2322,20 @@
    "aphia_id": 112982,
    "n_estudios": 2,
    "menciones": 8,
+   "n_estudios_resultados": 2,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Bolivina subargentea",
+   "rango": "especie",
+   "genero": "Bolivina",
+   "familia": "Bolivinitidae",
+   "orden": "Rotaliida",
+   "aphia_id": 522129,
+   "n_estudios": 2,
+   "menciones": 13,
    "n_estudios_resultados": 2,
    "n_estudios_dominante": 0,
    "en_base_tesis": true,
@@ -2314,6 +2382,20 @@
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
    "en_msh_bc21": false
+  },
+  {
+   "taxon": "Cibicidoides mundulus",
+   "rango": "especie",
+   "genero": "Cibicidoides",
+   "familia": "Cibicididae",
+   "orden": "Rotaliida",
+   "aphia_id": 418067,
+   "n_estudios": 2,
+   "menciones": 5,
+   "n_estudios_resultados": 2,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": true,
+   "en_msh_bc21": true
   },
   {
    "taxon": "Cribrostomoides subglobosus",
@@ -2400,20 +2482,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Fissurina lucida",
-   "rango": "especie",
-   "genero": "Fissurina",
-   "familia": "Lagenidae",
-   "orden": "Nodosariida",
-   "aphia_id": 113206,
-   "n_estudios": 2,
-   "menciones": 5,
-   "n_estudios_resultados": 2,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
    "taxon": "Fissurina pseudoorbignyana",
    "rango": "especie",
    "genero": "Fissurina",
@@ -2439,6 +2507,48 @@
    "n_estudios_resultados": 1,
    "n_estudios_dominante": 0,
    "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Fursenkoina bramlettei",
+   "rango": "especie",
+   "genero": "Fursenkoina",
+   "familia": "Bolivinitidae",
+   "orden": "Rotaliida",
+   "aphia_id": 417964,
+   "n_estudios": 2,
+   "menciones": 5,
+   "n_estudios_resultados": 2,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Fursenkoina cornuta",
+   "rango": "especie",
+   "genero": "Fursenkoina",
+   "familia": "Bolivinitidae",
+   "orden": "Rotaliida",
+   "aphia_id": 862715,
+   "n_estudios": 2,
+   "menciones": 4,
+   "n_estudios_resultados": 2,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Fursenkoina seminuda",
+   "rango": "especie",
+   "genero": "Fursenkoina",
+   "familia": "Bolivinitidae",
+   "orden": "Rotaliida",
+   "aphia_id": 417969,
+   "n_estudios": 2,
+   "menciones": 6,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
    "en_msh_bc21": false
   },
   {
@@ -2478,6 +2588,20 @@
    "aphia_id": 113444,
    "n_estudios": 2,
    "menciones": 2,
+   "n_estudios_resultados": 2,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Globobulimina barbata",
+   "rango": "especie",
+   "genero": "Globobulimina",
+   "familia": "Globobuliminidae",
+   "orden": "Rotaliida",
+   "aphia_id": 1551161,
+   "n_estudios": 2,
+   "menciones": 5,
    "n_estudios_resultados": 2,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
@@ -2610,20 +2734,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Islandiella",
-   "rango": "genero",
-   "genero": "Islandiella",
-   "familia": "Cassidulinidae",
-   "orden": "Rotaliida",
-   "aphia_id": 112124,
-   "n_estudios": 2,
-   "menciones": 2,
-   "n_estudios_resultados": 0,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
    "taxon": "Karreriella bradyi",
    "rango": "especie",
    "genero": "Karreriella",
@@ -2680,18 +2790,18 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Lagena sulcata",
+   "taxon": "Laticarinina pauperata",
    "rango": "especie",
-   "genero": "Lagena",
-   "familia": "Lagenidae",
-   "orden": "Nodosariida",
-   "aphia_id": 113509,
+   "genero": "Laticarinina",
+   "familia": "Discorbinellidae",
+   "orden": "Rotaliida",
+   "aphia_id": 113162,
    "n_estudios": 2,
-   "menciones": 5,
-   "n_estudios_resultados": 2,
+   "menciones": 2,
+   "n_estudios_resultados": 1,
    "n_estudios_dominante": 0,
-   "en_base_tesis": true,
-   "en_msh_bc21": true
+   "en_base_tesis": false,
+   "en_msh_bc21": false
   },
   {
    "taxon": "Lenticulina calcar",
@@ -2706,6 +2816,20 @@
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
    "en_msh_bc21": false
+  },
+  {
+   "taxon": "Lenticulina orbicularis",
+   "rango": "especie",
+   "genero": "Lenticulina",
+   "familia": "Vaginulinidae",
+   "orden": "Vaginulinida",
+   "aphia_id": 113790,
+   "n_estudios": 2,
+   "menciones": 2,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": true
   },
   {
    "taxon": "Lenticulina rotulata",
@@ -2806,6 +2930,20 @@
    "en_msh_bc21": false
   },
   {
+   "taxon": "Paracassidulina minuta",
+   "rango": "especie",
+   "genero": "Paracassidulina",
+   "familia": "Cassidulinidae",
+   "orden": "Rotaliida",
+   "aphia_id": 526529,
+   "n_estudios": 2,
+   "menciones": 8,
+   "n_estudios_resultados": 2,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
    "taxon": "Parafissurina lateralis",
    "rango": "especie",
    "genero": "Parafissurina",
@@ -2876,17 +3014,17 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Pyrgo murrhina",
+   "taxon": "Pullenia salisburyi",
    "rango": "especie",
-   "genero": "Pyrgo",
-   "familia": "Hauerinidae",
-   "orden": "Miliolida",
-   "aphia_id": 112593,
+   "genero": "Pullenia",
+   "familia": "Pulleniidae",
+   "orden": "Rotaliida",
+   "aphia_id": 113113,
    "n_estudios": 2,
-   "menciones": 3,
-   "n_estudios_resultados": 1,
+   "menciones": 2,
+   "n_estudios_resultados": 2,
    "n_estudios_dominante": 0,
-   "en_base_tesis": true,
+   "en_base_tesis": false,
    "en_msh_bc21": false
   },
   {
@@ -2899,6 +3037,20 @@
    "n_estudios": 2,
    "menciones": 3,
    "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Quadrimorphina",
+   "rango": "genero",
+   "genero": "Quadrimorphina",
+   "familia": "Quadrimorphinidae",
+   "orden": "Rotaliida",
+   "aphia_id": 465911,
+   "n_estudios": 2,
+   "menciones": 2,
+   "n_estudios_resultados": 2,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
    "en_msh_bc21": false
@@ -2974,6 +3126,20 @@
    "en_msh_bc21": false
   },
   {
+   "taxon": "Reussoolina laevis",
+   "rango": "especie",
+   "genero": "Reussoolina",
+   "familia": "Lagenidae",
+   "orden": "Nodosariida",
+   "aphia_id": 509125,
+   "n_estudios": 2,
+   "menciones": 2,
+   "n_estudios_resultados": 2,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
    "taxon": "Rhabdammina abyssorum",
    "rango": "especie",
    "genero": "Rhabdammina",
@@ -3030,6 +3196,20 @@
    "en_msh_bc21": false
   },
   {
+   "taxon": "Rutherfordoides rotundatus",
+   "rango": "especie",
+   "genero": "Rutherfordoides",
+   "familia": "Bolivinitidae",
+   "orden": "Rotaliida",
+   "aphia_id": 1540267,
+   "n_estudios": 2,
+   "menciones": 9,
+   "n_estudios_resultados": 2,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
    "taxon": "Saccammina sphaerica",
    "rango": "especie",
    "genero": "Saccammina",
@@ -3067,6 +3247,34 @@
    "n_estudios": 2,
    "menciones": 3,
    "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Sigmoilina",
+   "rango": "genero",
+   "genero": "Sigmoilina",
+   "familia": "Hauerinidae",
+   "orden": "Miliolida",
+   "aphia_id": 112042,
+   "n_estudios": 2,
+   "menciones": 3,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Textularia earlandi",
+   "rango": "especie",
+   "genero": "Textularia",
+   "familia": "Textulariidae",
+   "orden": "Textulariida",
+   "aphia_id": 114273,
+   "n_estudios": 2,
+   "menciones": 2,
+   "n_estudios_resultados": 2,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
    "en_msh_bc21": false
@@ -3142,6 +3350,20 @@
    "en_msh_bc21": false
   },
   {
+   "taxon": "Uvigerina juncea",
+   "rango": "especie",
+   "genero": "Uvigerina",
+   "familia": "Uvigerinidae",
+   "orden": "Rotaliida",
+   "aphia_id": 862721,
+   "n_estudios": 2,
+   "menciones": 2,
+   "n_estudios_resultados": 2,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
    "taxon": "Vaginulinopsis",
    "rango": "genero",
    "genero": "Vaginulinopsis",
@@ -3153,6 +3375,20 @@
    "n_estudios_resultados": 1,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Valvulineria araucana",
+   "rango": "especie",
+   "genero": "Valvulineria",
+   "familia": "Cancrisidae",
+   "orden": "Rotaliida",
+   "aphia_id": 112958,
+   "n_estudios": 2,
+   "menciones": 6,
+   "n_estudios_resultados": 2,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": true,
    "en_msh_bc21": false
   },
   {
@@ -3220,6 +3456,20 @@
    "aphia_id": 522820,
    "n_estudios": 1,
    "menciones": 35,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 1,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Cassidulina translucens",
+   "rango": "especie",
+   "genero": "Cassidulina",
+   "familia": "Cassidulinidae",
+   "orden": "Rotaliida",
+   "aphia_id": 764032,
+   "n_estudios": 1,
+   "menciones": 15,
    "n_estudios_resultados": 1,
    "n_estudios_dominante": 1,
    "en_base_tesis": true,
@@ -3674,6 +3924,20 @@
    "en_msh_bc21": false
   },
   {
+   "taxon": "Astacolus",
+   "rango": "genero",
+   "genero": "Astacolus",
+   "familia": "Vaginulinidae",
+   "orden": "Vaginulinida",
+   "aphia_id": 112283,
+   "n_estudios": 1,
+   "menciones": 1,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
    "taxon": "Astrononion novozealandicum",
    "rango": "especie",
    "genero": "Astrononion",
@@ -3870,6 +4134,20 @@
    "en_msh_bc21": false
   },
   {
+   "taxon": "Bolivina peirsonae",
+   "rango": "especie",
+   "genero": "Bolivina",
+   "familia": "Bolivinitidae",
+   "orden": "Rotaliida",
+   "aphia_id": 522128,
+   "n_estudios": 1,
+   "menciones": 2,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
    "taxon": "Bolivina punctata",
    "rango": "especie",
    "genero": "Bolivina",
@@ -3898,20 +4176,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Bolivina subargentea",
-   "rango": "especie",
-   "genero": "Bolivina",
-   "familia": "Bolivinitidae",
-   "orden": "Rotaliida",
-   "aphia_id": 522129,
-   "n_estudios": 1,
-   "menciones": 11,
-   "n_estudios_resultados": 1,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
-  },
-  {
    "taxon": "Bolivina variabilis",
    "rango": "especie",
    "genero": "Bolivina",
@@ -3923,6 +4187,20 @@
    "n_estudios_resultados": 1,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Bolivinita minuta",
+   "rango": "especie",
+   "genero": "Bolivinita",
+   "familia": "Loxostomatidae",
+   "orden": "Rotaliida",
+   "aphia_id": 1551292,
+   "n_estudios": 1,
+   "menciones": 10,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": true,
    "en_msh_bc21": false
   },
   {
@@ -3940,12 +4218,54 @@
    "en_msh_bc21": false
   },
   {
+   "taxon": "Bulimina marginospinata",
+   "rango": "especie",
+   "genero": "Bulimina",
+   "familia": "Buliminidae",
+   "orden": "Rotaliida",
+   "aphia_id": 522948,
+   "n_estudios": 1,
+   "menciones": 3,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Bulimina pagoda",
+   "rango": "especie",
+   "genero": "Bulimina",
+   "familia": "Buliminidae",
+   "orden": "Rotaliida",
+   "aphia_id": 522687,
+   "n_estudios": 1,
+   "menciones": 3,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
    "taxon": "Bulimina spicata",
    "rango": "especie",
    "genero": "Bulimina",
    "familia": "Buliminidae",
    "orden": "Rotaliida",
    "aphia_id": 417924,
+   "n_estudios": 1,
+   "menciones": 1,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Bulimina spinifera",
+   "rango": "especie",
+   "genero": "Bulimina",
+   "familia": "Buliminidae",
+   "orden": "Rotaliida",
+   "aphia_id": 522688,
    "n_estudios": 1,
    "menciones": 1,
    "n_estudios_resultados": 1,
@@ -4094,20 +4414,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Cibicidoides mundulus",
-   "rango": "especie",
-   "genero": "Cibicidoides",
-   "familia": "Cibicididae",
-   "orden": "Rotaliida",
-   "aphia_id": 418067,
-   "n_estudios": 1,
-   "menciones": 2,
-   "n_estudios_resultados": 1,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": true,
-   "en_msh_bc21": true
-  },
-  {
    "taxon": "Cornuspira foliacea",
    "rango": "especie",
    "genero": "Cornuspira",
@@ -4189,6 +4495,20 @@
    "n_estudios_resultados": 1,
    "n_estudios_dominante": 0,
    "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Cushmanina striatopunctata",
+   "rango": "especie",
+   "genero": "Cushmanina",
+   "familia": "Ellipsolagenidae",
+   "orden": "Polymorphinida",
+   "aphia_id": 417865,
+   "n_estudios": 1,
+   "menciones": 1,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
    "en_msh_bc21": false
   },
   {
@@ -4304,6 +4624,34 @@
    "en_msh_bc21": false
   },
   {
+   "taxon": "Dyocibicides biserialis",
+   "rango": "especie",
+   "genero": "Dyocibicides",
+   "familia": "Cibicididae",
+   "orden": "Rotaliida",
+   "aphia_id": 466490,
+   "n_estudios": 1,
+   "menciones": 2,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Eggerelloides advena",
+   "rango": "especie",
+   "genero": "Eggerelloides",
+   "familia": "Globotextulariidae",
+   "orden": "Loftusiida",
+   "aphia_id": 113933,
+   "n_estudios": 1,
+   "menciones": 1,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
    "taxon": "Ehrenbergina bradyi",
    "rango": "especie",
    "genero": "Ehrenbergina",
@@ -4312,6 +4660,20 @@
    "aphia_id": 113088,
    "n_estudios": 1,
    "menciones": 6,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Ehrenbergina compressa",
+   "rango": "especie",
+   "genero": "Ehrenbergina",
+   "familia": "Cassidulinidae",
+   "orden": "Rotaliida",
+   "aphia_id": 522692,
+   "n_estudios": 1,
+   "menciones": 3,
    "n_estudios_resultados": 1,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
@@ -4374,6 +4736,20 @@
    "en_msh_bc21": false
   },
   {
+   "taxon": "Epistominella sandiegoensis",
+   "rango": "especie",
+   "genero": "Epistominella",
+   "familia": "Pseudoparrellidae",
+   "orden": "Rotaliida",
+   "aphia_id": 522137,
+   "n_estudios": 1,
+   "menciones": 1,
+   "n_estudios_resultados": 0,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
    "taxon": "Eponides repandus",
    "rango": "especie",
    "genero": "Eponides",
@@ -4399,6 +4775,20 @@
    "n_estudios_resultados": 0,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Euloxostomum pseudobeyrichi",
+   "rango": "especie",
+   "genero": "Euloxostomum",
+   "familia": "Bolivinitidae",
+   "orden": "Rotaliida",
+   "aphia_id": 526537,
+   "n_estudios": 1,
+   "menciones": 3,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": true,
    "en_msh_bc21": false
   },
   {
@@ -4450,6 +4840,20 @@
    "familia": "Ellipsolagenidae",
    "orden": "Polymorphinida",
    "aphia_id": 521101,
+   "n_estudios": 1,
+   "menciones": 1,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Fissurina cucurbitasema",
+   "rango": "especie",
+   "genero": "Fissurina",
+   "familia": "Ellipsolagenidae",
+   "orden": "Polymorphinida",
+   "aphia_id": 521017,
    "n_estudios": 1,
    "menciones": 1,
    "n_estudios_resultados": 1,
@@ -4514,28 +4918,42 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Fursenkoina bramlettei",
+   "taxon": "Frondicularia gigas",
+   "rango": "especie",
+   "genero": "Frondicularia",
+   "familia": "Nodosariidae",
+   "orden": "Nodosariida",
+   "aphia_id": 528174,
+   "n_estudios": 1,
+   "menciones": 1,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Fursenkoina apertura",
    "rango": "especie",
    "genero": "Fursenkoina",
    "familia": "Bolivinitidae",
    "orden": "Rotaliida",
-   "aphia_id": 417964,
+   "aphia_id": 585272,
    "n_estudios": 1,
    "menciones": 2,
    "n_estudios_resultados": 1,
    "n_estudios_dominante": 0,
-   "en_base_tesis": true,
+   "en_base_tesis": false,
    "en_msh_bc21": false
   },
   {
-   "taxon": "Fursenkoina cornuta",
+   "taxon": "Fursenkoina delicatula",
    "rango": "especie",
    "genero": "Fursenkoina",
    "familia": "Bolivinitidae",
    "orden": "Rotaliida",
-   "aphia_id": 862715,
+   "aphia_id": 585273,
    "n_estudios": 1,
-   "menciones": 1,
+   "menciones": 2,
    "n_estudios_resultados": 1,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
@@ -4556,15 +4974,15 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Fursenkoina seminuda",
+   "taxon": "Fursenkoina sandiegoensis",
    "rango": "especie",
    "genero": "Fursenkoina",
    "familia": "Bolivinitidae",
    "orden": "Rotaliida",
-   "aphia_id": 417969,
+   "aphia_id": 585275,
    "n_estudios": 1,
-   "menciones": 3,
-   "n_estudios_resultados": 0,
+   "menciones": 2,
+   "n_estudios_resultados": 1,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
    "en_msh_bc21": false
@@ -4612,14 +5030,14 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Globobulimina barbata",
+   "taxon": "Globobulimina hoeglundi",
    "rango": "especie",
    "genero": "Globobulimina",
    "familia": "Globobuliminidae",
    "orden": "Rotaliida",
-   "aphia_id": 1551161,
+   "aphia_id": 522138,
    "n_estudios": 1,
-   "menciones": 3,
+   "menciones": 2,
    "n_estudios_resultados": 1,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
@@ -4696,6 +5114,20 @@
    "en_msh_bc21": false
   },
   {
+   "taxon": "Gyroidina gemma",
+   "rango": "especie",
+   "genero": "Gyroidina",
+   "familia": "Gavelinellidae",
+   "orden": "Rotaliida",
+   "aphia_id": 848916,
+   "n_estudios": 1,
+   "menciones": 1,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
    "taxon": "Gyroidina kawagatai",
    "rango": "especie",
    "genero": "Gyroidina",
@@ -4718,6 +5150,20 @@
    "aphia_id": 112896,
    "n_estudios": 1,
    "menciones": 2,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Gyroidina quinqueloba",
+   "rango": "especie",
+   "genero": "Gyroidina",
+   "familia": "Gavelinellidae",
+   "orden": "Rotaliida",
+   "aphia_id": 522139,
+   "n_estudios": 1,
+   "menciones": 1,
    "n_estudios_resultados": 1,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
@@ -4763,6 +5209,20 @@
    "n_estudios_resultados": 1,
    "n_estudios_dominante": 0,
    "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Hanzawaia nitidula",
+   "rango": "especie",
+   "genero": "Hanzawaia",
+   "familia": "Discorbinellidae",
+   "orden": "Rotaliida",
+   "aphia_id": 113187,
+   "n_estudios": 1,
+   "menciones": 1,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
    "en_msh_bc21": false
   },
   {
@@ -4858,6 +5318,34 @@
    "aphia_id": 1467855,
    "n_estudios": 1,
    "menciones": 2,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Hyalinonetrion elongatum",
+   "rango": "especie",
+   "genero": "Hyalinonetrion",
+   "familia": "Lagenidae",
+   "orden": "Nodosariida",
+   "aphia_id": 723201,
+   "n_estudios": 1,
+   "menciones": 1,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Islandiella californica",
+   "rango": "especie",
+   "genero": "Islandiella",
+   "familia": "Cassidulinidae",
+   "orden": "Rotaliida",
+   "aphia_id": 815665,
+   "n_estudios": 1,
+   "menciones": 1,
    "n_estudios_resultados": 1,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
@@ -5046,20 +5534,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Laticarinina pauperata",
-   "rango": "especie",
-   "genero": "Laticarinina",
-   "familia": "Discorbinellidae",
-   "orden": "Rotaliida",
-   "aphia_id": 113162,
-   "n_estudios": 1,
-   "menciones": 1,
-   "n_estudios_resultados": 0,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
    "taxon": "Lenticulina australis",
    "rango": "especie",
    "genero": "Lenticulina",
@@ -5128,20 +5602,6 @@
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
    "en_msh_bc21": false
-  },
-  {
-   "taxon": "Lenticulina orbicularis",
-   "rango": "especie",
-   "genero": "Lenticulina",
-   "familia": "Vaginulinidae",
-   "orden": "Vaginulinida",
-   "aphia_id": 113790,
-   "n_estudios": 1,
-   "menciones": 1,
-   "n_estudios_resultados": 0,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": false,
-   "en_msh_bc21": true
   },
   {
    "taxon": "Lenticulina pliocaena",
@@ -5312,6 +5772,20 @@
    "en_msh_bc21": false
   },
   {
+   "taxon": "Nonionella digitata",
+   "rango": "especie",
+   "genero": "Nonionella",
+   "familia": "Nonionidae",
+   "orden": "Rotaliida",
+   "aphia_id": 113600,
+   "n_estudios": 1,
+   "menciones": 1,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
    "taxon": "Nonionella iridea",
    "rango": "especie",
    "genero": "Nonionella",
@@ -5410,6 +5884,20 @@
    "en_msh_bc21": false
   },
   {
+   "taxon": "Orbulina universa",
+   "rango": "especie",
+   "genero": "Orbulina",
+   "familia": "Globigerinidae",
+   "orden": "Rotaliida",
+   "aphia_id": 113460,
+   "n_estudios": 1,
+   "menciones": 1,
+   "n_estudios_resultados": 0,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
    "taxon": "Orectostomina camposi",
    "rango": "especie",
    "genero": "Orectostomina",
@@ -5449,20 +5937,6 @@
    "n_estudios_resultados": 1,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Paracassidulina minuta",
-   "rango": "especie",
-   "genero": "Paracassidulina",
-   "familia": "Cassidulinidae",
-   "orden": "Rotaliida",
-   "aphia_id": 526529,
-   "n_estudios": 1,
-   "menciones": 1,
-   "n_estudios_resultados": 1,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": true,
    "en_msh_bc21": false
   },
   {
@@ -5558,6 +6032,20 @@
    "aphia_id": 113634,
    "n_estudios": 1,
    "menciones": 6,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Planulina ornata",
+   "rango": "especie",
+   "genero": "Planulina",
+   "familia": "Planulinidae",
+   "orden": "Rotaliida",
+   "aphia_id": 418080,
+   "n_estudios": 1,
+   "menciones": 1,
    "n_estudios_resultados": 1,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
@@ -5746,20 +6234,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Pullenia salisburyi",
-   "rango": "especie",
-   "genero": "Pullenia",
-   "familia": "Pulleniidae",
-   "orden": "Rotaliida",
-   "aphia_id": 113113,
-   "n_estudios": 1,
-   "menciones": 1,
-   "n_estudios_resultados": 1,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
    "taxon": "Pullenia subcarinata",
    "rango": "especie",
    "genero": "Pullenia",
@@ -5844,12 +6318,12 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Quadrimorphina",
-   "rango": "genero",
+   "taxon": "Quadrimorphina laevigata",
+   "rango": "especie",
    "genero": "Quadrimorphina",
    "familia": "Quadrimorphinidae",
    "orden": "Rotaliida",
-   "aphia_id": 465911,
+   "aphia_id": 466407,
    "n_estudios": 1,
    "menciones": 1,
    "n_estudios_resultados": 1,
@@ -6082,20 +6556,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Reussoolina laevis",
-   "rango": "especie",
-   "genero": "Reussoolina",
-   "familia": "Lagenidae",
-   "orden": "Nodosariida",
-   "aphia_id": 509125,
-   "n_estudios": 1,
-   "menciones": 1,
-   "n_estudios_resultados": 1,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
    "taxon": "Rhabdammina linearis",
    "rango": "especie",
    "genero": "Rhabdammina",
@@ -6208,6 +6668,20 @@
    "en_msh_bc21": false
   },
   {
+   "taxon": "Rotorbinella",
+   "rango": "genero",
+   "genero": "Rotorbinella",
+   "familia": "Rotaliidae",
+   "orden": "Rotaliida",
+   "aphia_id": 490063,
+   "n_estudios": 1,
+   "menciones": 1,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
    "taxon": "Rutherfordoides mexicanus",
    "rango": "especie",
    "genero": "Rutherfordoides",
@@ -6219,20 +6693,6 @@
    "n_estudios_resultados": 0,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Rutherfordoides rotundatus",
-   "rango": "especie",
-   "genero": "Rutherfordoides",
-   "familia": "Bolivinitidae",
-   "orden": "Rotaliida",
-   "aphia_id": 1540267,
-   "n_estudios": 1,
-   "menciones": 6,
-   "n_estudios_resultados": 1,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": true,
    "en_msh_bc21": false
   },
   {
@@ -6474,6 +6934,20 @@
    "en_msh_bc21": false
   },
   {
+   "taxon": "Spiroloculina fragilis",
+   "rango": "especie",
+   "genero": "Spiroloculina",
+   "familia": "Spiroloculinidae",
+   "orden": "Miliolida",
+   "aphia_id": 492882,
+   "n_estudios": 1,
+   "menciones": 1,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
    "taxon": "Spiroloculina soldanii",
    "rango": "especie",
    "genero": "Spiroloculina",
@@ -6584,20 +7058,6 @@
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
    "en_msh_bc21": true
-  },
-  {
-   "taxon": "Textularia earlandi",
-   "rango": "especie",
-   "genero": "Textularia",
-   "familia": "Textulariidae",
-   "orden": "Textulariida",
-   "aphia_id": 114273,
-   "n_estudios": 1,
-   "menciones": 1,
-   "n_estudios_resultados": 1,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": false,
-   "en_msh_bc21": false
   },
   {
    "taxon": "Textularia foliacea",
@@ -6852,6 +7312,34 @@
    "en_msh_bc21": false
   },
   {
+   "taxon": "Trochammina vesicularis",
+   "rango": "especie",
+   "genero": "Trochammina",
+   "familia": "Trochamminidae",
+   "orden": "Lituolida",
+   "aphia_id": 523023,
+   "n_estudios": 1,
+   "menciones": 3,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Uvigerina dirupta",
+   "rango": "especie",
+   "genero": "Uvigerina",
+   "familia": "Uvigerinidae",
+   "orden": "Rotaliida",
+   "aphia_id": 526565,
+   "n_estudios": 1,
+   "menciones": 1,
+   "n_estudios_resultados": 1,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
    "taxon": "Uvigerina flintii",
    "rango": "especie",
    "genero": "Uvigerina",
@@ -6863,34 +7351,6 @@
    "n_estudios_resultados": 0,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Uvigerina juncea",
-   "rango": "especie",
-   "genero": "Uvigerina",
-   "familia": "Uvigerinidae",
-   "orden": "Rotaliida",
-   "aphia_id": 862721,
-   "n_estudios": 1,
-   "menciones": 1,
-   "n_estudios_resultados": 1,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Valvulineria araucana",
-   "rango": "especie",
-   "genero": "Valvulineria",
-   "familia": "Cancrisidae",
-   "orden": "Rotaliida",
-   "aphia_id": 112958,
-   "n_estudios": 1,
-   "menciones": 2,
-   "n_estudios_resultados": 1,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": true,
    "en_msh_bc21": false
   },
   {
@@ -6986,10 +7446,10 @@
    "familia": "Uvigerinidae",
    "orden": "Rotaliida",
    "aphia_id": 113773,
-   "n_estudios": 22,
-   "menciones": 717,
-   "n_estudios_resultados": 17,
-   "n_estudios_dominante": 6,
+   "n_estudios": 23,
+   "menciones": 747,
+   "n_estudios_resultados": 18,
+   "n_estudios_dominante": 7,
    "en_base_tesis": true,
    "en_msh_bc21": false
   },
@@ -7000,10 +7460,10 @@
    "familia": "Cibicididae",
    "orden": "Rotaliida",
    "aphia_id": 1746350,
-   "n_estudios": 15,
-   "menciones": 143,
-   "n_estudios_resultados": 13,
-   "n_estudios_dominante": 2,
+   "n_estudios": 16,
+   "menciones": 168,
+   "n_estudios_resultados": 14,
+   "n_estudios_dominante": 3,
    "en_base_tesis": true,
    "en_msh_bc21": true
   },
@@ -7014,9 +7474,9 @@
    "familia": "Cassidulinidae",
    "orden": "Rotaliida",
    "aphia_id": 113091,
-   "n_estudios": 10,
-   "menciones": 48,
-   "n_estudios_resultados": 7,
+   "n_estudios": 11,
+   "menciones": 53,
+   "n_estudios_resultados": 8,
    "n_estudios_dominante": 3,
    "en_base_tesis": true,
    "en_msh_bc21": false
@@ -7028,9 +7488,9 @@
    "familia": "Buliminidae",
    "orden": "Rotaliida",
    "aphia_id": 113047,
-   "n_estudios": 10,
-   "menciones": 53,
-   "n_estudios_resultados": 8,
+   "n_estudios": 11,
+   "menciones": 59,
+   "n_estudios_resultados": 9,
    "n_estudios_dominante": 0,
    "en_base_tesis": true,
    "en_msh_bc21": false
@@ -7042,9 +7502,9 @@
    "familia": "Nonionidae",
    "orden": "Rotaliida",
    "aphia_id": 418046,
-   "n_estudios": 9,
-   "menciones": 131,
-   "n_estudios_resultados": 6,
+   "n_estudios": 10,
+   "menciones": 134,
+   "n_estudios_resultados": 7,
    "n_estudios_dominante": 2,
    "en_base_tesis": true,
    "en_msh_bc21": true
@@ -7064,6 +7524,34 @@
    "en_msh_bc21": false
   },
   {
+   "taxon": "Globobulimina pacifica",
+   "rango": "especie",
+   "genero": "Globobulimina",
+   "familia": "Globobuliminidae",
+   "orden": "Rotaliida",
+   "aphia_id": 417928,
+   "n_estudios": 9,
+   "menciones": 120,
+   "n_estudios_resultados": 9,
+   "n_estudios_dominante": 1,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Epistominella exigua",
+   "rango": "especie",
+   "genero": "Epistominella",
+   "familia": "Pseudoparrellidae",
+   "orden": "Rotaliida",
+   "aphia_id": 113334,
+   "n_estudios": 9,
+   "menciones": 30,
+   "n_estudios_resultados": 6,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
    "taxon": "Bolivina albatrossi",
    "rango": "especie",
    "genero": "Bolivina",
@@ -7078,15 +7566,43 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Globobulimina pacifica",
+   "taxon": "Trifarina angulosa",
    "rango": "especie",
-   "genero": "Globobulimina",
-   "familia": "Globobuliminidae",
+   "genero": "Trifarina",
+   "familia": "Uvigerinidae",
    "orden": "Rotaliida",
-   "aphia_id": 417928,
+   "aphia_id": 113756,
    "n_estudios": 8,
-   "menciones": 111,
+   "menciones": 25,
+   "n_estudios_resultados": 7,
+   "n_estudios_dominante": 2,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Eubuliminella exilis",
+   "rango": "especie",
+   "genero": "Eubuliminella",
+   "familia": "Buliminellidae",
+   "orden": "Rotaliida",
+   "aphia_id": 417980,
+   "n_estudios": 8,
+   "menciones": 61,
    "n_estudios_resultados": 8,
+   "n_estudios_dominante": 1,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Oridorsalis umbonatus",
+   "rango": "especie",
+   "genero": "Oridorsalis",
+   "familia": "Alabaminidae",
+   "orden": "Rotaliida",
+   "aphia_id": 254690,
+   "n_estudios": 8,
+   "menciones": 29,
+   "n_estudios_resultados": 6,
    "n_estudios_dominante": 1,
    "en_base_tesis": true,
    "en_msh_bc21": false
@@ -7106,20 +7622,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Epistominella exigua",
-   "rango": "especie",
-   "genero": "Epistominella",
-   "familia": "Pseudoparrellidae",
-   "orden": "Rotaliida",
-   "aphia_id": 113334,
-   "n_estudios": 8,
-   "menciones": 23,
-   "n_estudios_resultados": 5,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
    "taxon": "Lobatula lobatula",
    "rango": "especie",
    "genero": "Lobatula",
@@ -7134,43 +7636,15 @@
    "en_msh_bc21": true
   },
   {
-   "taxon": "Trifarina angulosa",
+   "taxon": "Chilostomella ovoidea",
    "rango": "especie",
-   "genero": "Trifarina",
-   "familia": "Uvigerinidae",
+   "genero": "Chilostomella",
+   "familia": "Chilostomellidae",
    "orden": "Rotaliida",
-   "aphia_id": 113756,
-   "n_estudios": 7,
-   "menciones": 24,
-   "n_estudios_resultados": 6,
-   "n_estudios_dominante": 2,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Eubuliminella exilis",
-   "rango": "especie",
-   "genero": "Eubuliminella",
-   "familia": "Buliminellidae",
-   "orden": "Rotaliida",
-   "aphia_id": 417980,
-   "n_estudios": 7,
-   "menciones": 54,
-   "n_estudios_resultados": 7,
-   "n_estudios_dominante": 1,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Oridorsalis umbonatus",
-   "rango": "especie",
-   "genero": "Oridorsalis",
-   "familia": "Alabaminidae",
-   "orden": "Rotaliida",
-   "aphia_id": 254690,
+   "aphia_id": 113554,
    "n_estudios": 7,
    "menciones": 28,
-   "n_estudios_resultados": 5,
+   "n_estudios_resultados": 6,
    "n_estudios_dominante": 1,
    "en_base_tesis": true,
    "en_msh_bc21": false
@@ -7190,16 +7664,30 @@
    "en_msh_bc21": true
   },
   {
-   "taxon": "Chilostomella ovoidea",
+   "taxon": "Chilostomella oolina",
    "rango": "especie",
    "genero": "Chilostomella",
    "familia": "Chilostomellidae",
    "orden": "Rotaliida",
-   "aphia_id": 113554,
-   "n_estudios": 6,
-   "menciones": 25,
-   "n_estudios_resultados": 5,
-   "n_estudios_dominante": 1,
+   "aphia_id": 113553,
+   "n_estudios": 7,
+   "menciones": 32,
+   "n_estudios_resultados": 6,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Gyroidina altiformis",
+   "rango": "especie",
+   "genero": "Gyroidina",
+   "familia": "Gavelinellidae",
+   "orden": "Rotaliida",
+   "aphia_id": 112894,
+   "n_estudios": 7,
+   "menciones": 20,
+   "n_estudios_resultados": 6,
+   "n_estudios_dominante": 0,
    "en_base_tesis": true,
    "en_msh_bc21": false
   },
@@ -7218,6 +7706,34 @@
    "en_msh_bc21": false
   },
   {
+   "taxon": "Nonionella stella",
+   "rango": "especie",
+   "genero": "Nonionella",
+   "familia": "Nonionidae",
+   "orden": "Rotaliida",
+   "aphia_id": 113604,
+   "n_estudios": 6,
+   "menciones": 15,
+   "n_estudios_resultados": 5,
+   "n_estudios_dominante": 1,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Bulimina truncana",
+   "rango": "especie",
+   "genero": "Bulimina",
+   "familia": "Buliminidae",
+   "orden": "Rotaliida",
+   "aphia_id": 466352,
+   "n_estudios": 6,
+   "menciones": 13,
+   "n_estudios_resultados": 3,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
    "taxon": "Cassidulina carinata",
    "rango": "especie",
    "genero": "Cassidulina",
@@ -7232,31 +7748,17 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Chilostomella oolina",
+   "taxon": "Neogloboquadrina pachyderma",
    "rango": "especie",
-   "genero": "Chilostomella",
-   "familia": "Chilostomellidae",
+   "genero": "Neogloboquadrina",
+   "familia": "Globorotaliidae",
    "orden": "Rotaliida",
-   "aphia_id": 113553,
+   "aphia_id": 113458,
    "n_estudios": 6,
-   "menciones": 24,
+   "menciones": 56,
    "n_estudios_resultados": 5,
    "n_estudios_dominante": 0,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Gyroidina altiformis",
-   "rango": "especie",
-   "genero": "Gyroidina",
-   "familia": "Gavelinellidae",
-   "orden": "Rotaliida",
-   "aphia_id": 112894,
-   "n_estudios": 6,
-   "menciones": 18,
-   "n_estudios_resultados": 5,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": true,
+   "en_base_tesis": false,
    "en_msh_bc21": false
   },
   {
@@ -7288,31 +7790,87 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Nonionella stella",
+   "taxon": "Epistominella smithi",
    "rango": "especie",
-   "genero": "Nonionella",
-   "familia": "Nonionidae",
+   "genero": "Epistominella",
+   "familia": "Pseudoparrellidae",
    "orden": "Rotaliida",
-   "aphia_id": 113604,
+   "aphia_id": 862706,
    "n_estudios": 5,
-   "menciones": 12,
+   "menciones": 30,
+   "n_estudios_resultados": 5,
+   "n_estudios_dominante": 1,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Globobulimina affinis",
+   "rango": "especie",
+   "genero": "Globobulimina",
+   "familia": "Globobuliminidae",
+   "orden": "Rotaliida",
+   "aphia_id": 113060,
+   "n_estudios": 5,
+   "menciones": 48,
    "n_estudios_resultados": 4,
    "n_estudios_dominante": 1,
    "en_base_tesis": true,
    "en_msh_bc21": false
   },
   {
-   "taxon": "Bulimina truncana",
+   "taxon": "Hoeglundina elegans",
    "rango": "especie",
-   "genero": "Bulimina",
-   "familia": "Buliminidae",
-   "orden": "Rotaliida",
-   "aphia_id": 466352,
+   "genero": "Hoeglundina",
+   "familia": "Epistominidae",
+   "orden": "Robertinida",
+   "aphia_id": 113341,
    "n_estudios": 5,
-   "menciones": 10,
-   "n_estudios_resultados": 2,
+   "menciones": 49,
+   "n_estudios_resultados": 3,
+   "n_estudios_dominante": 1,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Bolivina seminuda",
+   "rango": "especie",
+   "genero": "Bolivina",
+   "familia": "Bolivinitidae",
+   "orden": "Rotaliida",
+   "aphia_id": 417913,
+   "n_estudios": 5,
+   "menciones": 11,
+   "n_estudios_resultados": 5,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Buliminella elegantissima",
+   "rango": "especie",
+   "genero": "Buliminella",
+   "familia": "Buliminellidae",
+   "orden": "Rotaliida",
+   "aphia_id": 113747,
+   "n_estudios": 5,
+   "menciones": 6,
+   "n_estudios_resultados": 4,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Cibicidoides mckannai",
+   "rango": "especie",
+   "genero": "Cibicidoides",
+   "familia": "Cibicididae",
+   "orden": "Rotaliida",
+   "aphia_id": 1311388,
+   "n_estudios": 5,
+   "menciones": 106,
+   "n_estudios_resultados": 4,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": true,
    "en_msh_bc21": false
   },
   {
@@ -7330,18 +7888,46 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Neogloboquadrina pachyderma",
+   "taxon": "Fissurina marginata",
    "rango": "especie",
-   "genero": "Neogloboquadrina",
-   "familia": "Globorotaliidae",
-   "orden": "Rotaliida",
-   "aphia_id": 113458,
+   "genero": "Fissurina",
+   "familia": "Ellipsolagenidae",
+   "orden": "Polymorphinida",
+   "aphia_id": 113207,
    "n_estudios": 5,
-   "menciones": 45,
+   "menciones": 6,
    "n_estudios_resultados": 4,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
    "en_msh_bc21": false
+  },
+  {
+   "taxon": "Fursenkoina complanata",
+   "rango": "especie",
+   "genero": "Fursenkoina",
+   "familia": "Stainforthiidae",
+   "orden": "Rotaliida",
+   "aphia_id": 466392,
+   "n_estudios": 5,
+   "menciones": 8,
+   "n_estudios_resultados": 4,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Pullenia bulloides",
+   "rango": "especie",
+   "genero": "Pullenia",
+   "familia": "Pulleniidae",
+   "orden": "Rotaliida",
+   "aphia_id": 113110,
+   "n_estudios": 5,
+   "menciones": 5,
+   "n_estudios_resultados": 4,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": true,
+   "en_msh_bc21": true
   },
   {
    "taxon": "Bolivina ordinaria",
@@ -7400,20 +7986,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Epistominella smithi",
-   "rango": "especie",
-   "genero": "Epistominella",
-   "familia": "Pseudoparrellidae",
-   "orden": "Rotaliida",
-   "aphia_id": 862706,
-   "n_estudios": 4,
-   "menciones": 27,
-   "n_estudios_resultados": 4,
-   "n_estudios_dominante": 1,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
-  },
-  {
    "taxon": "Fursenkoina compressa",
    "rango": "especie",
    "genero": "Fursenkoina",
@@ -7425,20 +7997,6 @@
    "n_estudios_resultados": 2,
    "n_estudios_dominante": 1,
    "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Globobulimina affinis",
-   "rango": "especie",
-   "genero": "Globobulimina",
-   "familia": "Globobuliminidae",
-   "orden": "Rotaliida",
-   "aphia_id": 113060,
-   "n_estudios": 4,
-   "menciones": 47,
-   "n_estudios_resultados": 3,
-   "n_estudios_dominante": 1,
-   "en_base_tesis": true,
    "en_msh_bc21": false
   },
   {
@@ -7456,6 +8014,20 @@
    "en_msh_bc21": false
   },
   {
+   "taxon": "Pseudoparrella pacifica",
+   "rango": "especie",
+   "genero": "Pseudoparrella",
+   "familia": "Pseudoparrellidae",
+   "orden": "Rotaliida",
+   "aphia_id": 593332,
+   "n_estudios": 4,
+   "menciones": 42,
+   "n_estudios_resultados": 4,
+   "n_estudios_dominante": 1,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
    "taxon": "Reophax scorpiurus",
    "rango": "especie",
    "genero": "Reophax",
@@ -7465,6 +8037,34 @@
    "n_estudios": 4,
    "menciones": 7,
    "n_estudios_resultados": 2,
+   "n_estudios_dominante": 1,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Spiroplectammina biformis",
+   "rango": "especie",
+   "genero": "Spiroplectammina",
+   "familia": "Spiroplectamminidae",
+   "orden": "Lituolida",
+   "aphia_id": 114226,
+   "n_estudios": 4,
+   "menciones": 14,
+   "n_estudios_resultados": 4,
+   "n_estudios_dominante": 1,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Takayanagia delicata",
+   "rango": "especie",
+   "genero": "Takayanagia",
+   "familia": "Cassidulinidae",
+   "orden": "Rotaliida",
+   "aphia_id": 526531,
+   "n_estudios": 4,
+   "menciones": 23,
+   "n_estudios_resultados": 4,
    "n_estudios_dominante": 1,
    "en_base_tesis": true,
    "en_msh_bc21": false
@@ -7484,71 +8084,57 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Bolivina seminuda",
+   "taxon": "Bolivina spissa",
    "rango": "especie",
    "genero": "Bolivina",
    "familia": "Bolivinitidae",
    "orden": "Rotaliida",
-   "aphia_id": 417913,
+   "aphia_id": 814781,
    "n_estudios": 4,
-   "menciones": 8,
+   "menciones": 16,
    "n_estudios_resultados": 4,
    "n_estudios_dominante": 0,
    "en_base_tesis": true,
    "en_msh_bc21": false
   },
   {
-   "taxon": "Buliminella elegantissima",
+   "taxon": "Eggerella bradyi",
    "rango": "especie",
-   "genero": "Buliminella",
-   "familia": "Buliminellidae",
-   "orden": "Rotaliida",
-   "aphia_id": 113747,
+   "genero": "Eggerella",
+   "familia": "Eggerellidae",
+   "orden": "Textulariida",
+   "aphia_id": 113930,
    "n_estudios": 4,
-   "menciones": 5,
+   "menciones": 7,
    "n_estudios_resultados": 3,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
    "en_msh_bc21": false
   },
   {
-   "taxon": "Cibicidoides mckannai",
+   "taxon": "Globigerina bulloides",
    "rango": "especie",
-   "genero": "Cibicidoides",
-   "familia": "Cibicididae",
+   "genero": "Globigerina",
+   "familia": "Globigerinidae",
    "orden": "Rotaliida",
-   "aphia_id": 1311388,
+   "aphia_id": 113434,
    "n_estudios": 4,
-   "menciones": 103,
-   "n_estudios_resultados": 3,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Fissurina marginata",
-   "rango": "especie",
-   "genero": "Fissurina",
-   "familia": "Ellipsolagenidae",
-   "orden": "Polymorphinida",
-   "aphia_id": 113207,
-   "n_estudios": 4,
-   "menciones": 5,
-   "n_estudios_resultados": 3,
+   "menciones": 41,
+   "n_estudios_resultados": 4,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
    "en_msh_bc21": false
   },
   {
-   "taxon": "Fursenkoina complanata",
+   "taxon": "Globobulimina auriculata",
    "rango": "especie",
-   "genero": "Fursenkoina",
-   "familia": "Stainforthiidae",
+   "genero": "Globobulimina",
+   "familia": "Globobuliminidae",
    "orden": "Rotaliida",
-   "aphia_id": 466392,
+   "aphia_id": 293027,
    "n_estudios": 4,
-   "menciones": 6,
-   "n_estudios_resultados": 3,
+   "menciones": 30,
+   "n_estudios_resultados": 4,
    "n_estudios_dominante": 0,
    "en_base_tesis": true,
    "en_msh_bc21": false
@@ -7582,15 +8168,15 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Hoeglundina elegans",
+   "taxon": "Leptohalysis scottii",
    "rango": "especie",
-   "genero": "Hoeglundina",
-   "familia": "Epistominidae",
-   "orden": "Robertinida",
-   "aphia_id": 113341,
+   "genero": "Leptohalysis",
+   "familia": "Reophacidae",
+   "orden": null,
+   "aphia_id": 578704,
    "n_estudios": 4,
-   "menciones": 25,
-   "n_estudios_resultados": 2,
+   "menciones": 6,
+   "n_estudios_resultados": 3,
    "n_estudios_dominante": 0,
    "en_base_tesis": true,
    "en_msh_bc21": false
@@ -7624,20 +8210,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Pullenia bulloides",
-   "rango": "especie",
-   "genero": "Pullenia",
-   "familia": "Pulleniidae",
-   "orden": "Rotaliida",
-   "aphia_id": 113110,
-   "n_estudios": 4,
-   "menciones": 4,
-   "n_estudios_resultados": 3,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": true,
-   "en_msh_bc21": true
-  },
-  {
    "taxon": "Pullenia quinqueloba",
    "rango": "especie",
    "genero": "Pullenia",
@@ -7663,6 +8235,20 @@
    "n_estudios_resultados": 3,
    "n_estudios_dominante": 0,
    "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Spirillina vivipara",
+   "rango": "especie",
+   "genero": "Spirillina",
+   "familia": "Spirillinidae",
+   "orden": "Spirillinida",
+   "aphia_id": 113737,
+   "n_estudios": 4,
+   "menciones": 7,
+   "n_estudios_resultados": 3,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
    "en_msh_bc21": false
   },
   {
@@ -7750,6 +8336,20 @@
    "en_msh_bc21": false
   },
   {
+   "taxon": "Pseudononion japonicum",
+   "rango": "especie",
+   "genero": "Pseudononion",
+   "familia": "Nonionidae",
+   "orden": "Rotaliida",
+   "aphia_id": 712062,
+   "n_estudios": 3,
+   "menciones": 7,
+   "n_estudios_resultados": 3,
+   "n_estudios_dominante": 1,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
    "taxon": "Quinqueloculina bosciana",
    "rango": "especie",
    "genero": "Quinqueloculina",
@@ -7759,6 +8359,20 @@
    "n_estudios": 3,
    "menciones": 9,
    "n_estudios_resultados": 2,
+   "n_estudios_dominante": 1,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Siphouvigerina proboscidea",
+   "rango": "especie",
+   "genero": "Siphouvigerina",
+   "familia": "Uvigerinidae",
+   "orden": "Rotaliida",
+   "aphia_id": 580069,
+   "n_estudios": 3,
+   "menciones": 5,
+   "n_estudios_resultados": 3,
    "n_estudios_dominante": 1,
    "en_base_tesis": true,
    "en_msh_bc21": false
@@ -7792,14 +8406,28 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Bolivina spissa",
+   "taxon": "Ammoglobigerina globigeriniformis",
+   "rango": "especie",
+   "genero": "Ammoglobigerina",
+   "familia": "Trochamminidae",
+   "orden": "Lituolida",
+   "aphia_id": 114298,
+   "n_estudios": 3,
+   "menciones": 5,
+   "n_estudios_resultados": 3,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Bolivina pacifica",
    "rango": "especie",
    "genero": "Bolivina",
    "familia": "Bolivinitidae",
    "orden": "Rotaliida",
-   "aphia_id": 814781,
+   "aphia_id": 112979,
    "n_estudios": 3,
-   "menciones": 10,
+   "menciones": 12,
    "n_estudios_resultados": 3,
    "n_estudios_dominante": 0,
    "en_base_tesis": true,
@@ -7918,20 +8546,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Eggerella bradyi",
-   "rango": "especie",
-   "genero": "Eggerella",
-   "familia": "Eggerellidae",
-   "orden": "Textulariida",
-   "aphia_id": 113930,
-   "n_estudios": 3,
-   "menciones": 6,
-   "n_estudios_resultados": 2,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
    "taxon": "Elphidium advena",
    "rango": "especie",
    "genero": "Elphidium",
@@ -7940,6 +8554,20 @@
    "aphia_id": 1636051,
    "n_estudios": 3,
    "menciones": 4,
+   "n_estudios_resultados": 3,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": false,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Fissurina lucida",
+   "rango": "especie",
+   "genero": "Fissurina",
+   "familia": "Lagenidae",
+   "orden": "Nodosariida",
+   "aphia_id": 113206,
+   "n_estudios": 3,
+   "menciones": 6,
    "n_estudios_resultados": 3,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
@@ -7988,34 +8616,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Globigerina bulloides",
-   "rango": "especie",
-   "genero": "Globigerina",
-   "familia": "Globigerinidae",
-   "orden": "Rotaliida",
-   "aphia_id": 113434,
-   "n_estudios": 3,
-   "menciones": 29,
-   "n_estudios_resultados": 3,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Globobulimina auriculata",
-   "rango": "especie",
-   "genero": "Globobulimina",
-   "familia": "Globobuliminidae",
-   "orden": "Rotaliida",
-   "aphia_id": 293027,
-   "n_estudios": 3,
-   "menciones": 26,
-   "n_estudios_resultados": 3,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
-  },
-  {
    "taxon": "Haynesina depressula",
    "rango": "especie",
    "genero": "Haynesina",
@@ -8030,18 +8630,18 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Leptohalysis scottii",
+   "taxon": "Lagena sulcata",
    "rango": "especie",
-   "genero": "Leptohalysis",
-   "familia": "Reophacidae",
-   "orden": null,
-   "aphia_id": 578704,
+   "genero": "Lagena",
+   "familia": "Lagenidae",
+   "orden": "Nodosariida",
+   "aphia_id": 113509,
    "n_estudios": 3,
-   "menciones": 5,
-   "n_estudios_resultados": 2,
+   "menciones": 6,
+   "n_estudios_resultados": 3,
    "n_estudios_dominante": 0,
    "en_base_tesis": true,
-   "en_msh_bc21": false
+   "en_msh_bc21": true
   },
   {
    "taxon": "Nonionella auris",
@@ -8086,15 +8686,15 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Pseudoparrella pacifica",
+   "taxon": "Pyrgo murrhina",
    "rango": "especie",
-   "genero": "Pseudoparrella",
-   "familia": "Pseudoparrellidae",
-   "orden": "Rotaliida",
-   "aphia_id": 593332,
+   "genero": "Pyrgo",
+   "familia": "Hauerinidae",
+   "orden": "Miliolida",
+   "aphia_id": 112593,
    "n_estudios": 3,
-   "menciones": 32,
-   "n_estudios_resultados": 3,
+   "menciones": 6,
+   "n_estudios_resultados": 2,
    "n_estudios_dominante": 0,
    "en_base_tesis": true,
    "en_msh_bc21": false
@@ -8111,48 +8711,6 @@
    "n_estudios_resultados": 2,
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Spirillina vivipara",
-   "rango": "especie",
-   "genero": "Spirillina",
-   "familia": "Spirillinidae",
-   "orden": "Spirillinida",
-   "aphia_id": 113737,
-   "n_estudios": 3,
-   "menciones": 5,
-   "n_estudios_resultados": 2,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Spiroplectammina biformis",
-   "rango": "especie",
-   "genero": "Spiroplectammina",
-   "familia": "Spiroplectamminidae",
-   "orden": "Lituolida",
-   "aphia_id": 114226,
-   "n_estudios": 3,
-   "menciones": 8,
-   "n_estudios_resultados": 3,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Takayanagia delicata",
-   "rango": "especie",
-   "genero": "Takayanagia",
-   "familia": "Cassidulinidae",
-   "orden": "Rotaliida",
-   "aphia_id": 526531,
-   "n_estudios": 3,
-   "menciones": 10,
-   "n_estudios_resultados": 3,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": true,
    "en_msh_bc21": false
   },
   {
@@ -8380,20 +8938,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Pseudononion japonicum",
-   "rango": "especie",
-   "genero": "Pseudononion",
-   "familia": "Nonionidae",
-   "orden": "Rotaliida",
-   "aphia_id": 712062,
-   "n_estudios": 2,
-   "menciones": 6,
-   "n_estudios_resultados": 2,
-   "n_estudios_dominante": 1,
-   "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
    "taxon": "Quinqueloculina compta",
    "rango": "especie",
    "genero": "Quinqueloculina",
@@ -8402,20 +8946,6 @@
    "aphia_id": 417706,
    "n_estudios": 2,
    "menciones": 10,
-   "n_estudios_resultados": 2,
-   "n_estudios_dominante": 1,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Siphouvigerina proboscidea",
-   "rango": "especie",
-   "genero": "Siphouvigerina",
-   "familia": "Uvigerinidae",
-   "orden": "Rotaliida",
-   "aphia_id": 580069,
-   "n_estudios": 2,
-   "menciones": 4,
    "n_estudios_resultados": 2,
    "n_estudios_dominante": 1,
    "en_base_tesis": true,
@@ -8478,20 +9008,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Ammoglobigerina globigeriniformis",
-   "rango": "especie",
-   "genero": "Ammoglobigerina",
-   "familia": "Trochamminidae",
-   "orden": "Lituolida",
-   "aphia_id": 114298,
-   "n_estudios": 2,
-   "menciones": 3,
-   "n_estudios_resultados": 2,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
    "taxon": "Anomalinoides globulosus",
    "rango": "especie",
    "genero": "Anomalinoides",
@@ -8548,20 +9064,6 @@
    "en_msh_bc21": false
   },
   {
-   "taxon": "Bolivina pacifica",
-   "rango": "especie",
-   "genero": "Bolivina",
-   "familia": "Bolivinitidae",
-   "orden": "Rotaliida",
-   "aphia_id": 112979,
-   "n_estudios": 2,
-   "menciones": 6,
-   "n_estudios_resultados": 2,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
-  },
-  {
    "taxon": "Bolivina pseudoplicata",
    "rango": "especie",
    "genero": "Bolivina",
@@ -8570,6 +9072,20 @@
    "aphia_id": 112982,
    "n_estudios": 2,
    "menciones": 8,
+   "n_estudios_resultados": 2,
+   "n_estudios_dominante": 0,
+   "en_base_tesis": true,
+   "en_msh_bc21": false
+  },
+  {
+   "taxon": "Bolivina subargentea",
+   "rango": "especie",
+   "genero": "Bolivina",
+   "familia": "Bolivinitidae",
+   "orden": "Rotaliida",
+   "aphia_id": 522129,
+   "n_estudios": 2,
+   "menciones": 13,
    "n_estudios_resultados": 2,
    "n_estudios_dominante": 0,
    "en_base_tesis": true,
@@ -8602,171 +9118,115 @@
    "n_estudios_dominante": 0,
    "en_base_tesis": false,
    "en_msh_bc21": false
-  },
-  {
-   "taxon": "Cibicides refulgens",
-   "rango": "especie",
-   "genero": "Cibicides",
-   "familia": "Cibicididae",
-   "orden": "Rotaliida",
-   "aphia_id": 112877,
-   "n_estudios": 2,
-   "menciones": 3,
-   "n_estudios_resultados": 2,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": false,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Cribrostomoides subglobosus",
-   "rango": "especie",
-   "genero": "Cribrostomoides",
-   "familia": "Ammosphaeroidinidae",
-   "orden": "Lituolida",
-   "aphia_id": 254681,
-   "n_estudios": 2,
-   "menciones": 2,
-   "n_estudios_resultados": 1,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Cryptoelphidiella bartletti",
-   "rango": "especie",
-   "genero": "Cryptoelphidiella",
-   "familia": "Cribroelphidiidae",
-   "orden": "Rotaliida",
-   "aphia_id": 1844959,
-   "n_estudios": 2,
-   "menciones": 2,
-   "n_estudios_resultados": 1,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": true,
-   "en_msh_bc21": false
-  },
-  {
-   "taxon": "Discorbinella bertheloti",
-   "rango": "especie",
-   "genero": "Discorbinella",
-   "familia": "Discorbinellidae",
-   "orden": "Rotaliida",
-   "aphia_id": 113143,
-   "n_estudios": 2,
-   "menciones": 3,
-   "n_estudios_resultados": 2,
-   "n_estudios_dominante": 0,
-   "en_base_tesis": false,
-   "en_msh_bc21": false
   }
  ],
  "generos": [
   {
    "genero": "Uvigerina",
-   "n_estudios": 26,
-   "n_taxones": 8,
+   "n_estudios": 27,
+   "n_taxones": 9,
    "en_msh_bc21": true
   },
   {
    "genero": "Bulimina",
-   "n_estudios": 22,
-   "n_taxones": 10,
+   "n_estudios": 23,
+   "n_taxones": 13,
    "en_msh_bc21": true
   },
   {
    "genero": "Cassidulina",
-   "n_estudios": 22,
-   "n_taxones": 7,
+   "n_estudios": 23,
+   "n_taxones": 8,
    "en_msh_bc21": true
   },
   {
    "genero": "Bolivina",
-   "n_estudios": 21,
-   "n_taxones": 31,
+   "n_estudios": 22,
+   "n_taxones": 32,
    "en_msh_bc21": true
   },
   {
    "genero": "Globobulimina",
-   "n_estudios": 20,
-   "n_taxones": 8,
+   "n_estudios": 21,
+   "n_taxones": 9,
    "en_msh_bc21": false
   },
   {
    "genero": "Nonionella",
-   "n_estudios": 20,
-   "n_taxones": 8,
+   "n_estudios": 21,
+   "n_taxones": 9,
    "en_msh_bc21": true
   },
   {
    "genero": "Cibicides",
-   "n_estudios": 19,
+   "n_estudios": 20,
    "n_taxones": 5,
    "en_msh_bc21": true
   },
   {
    "genero": "Lobatula",
-   "n_estudios": 18,
+   "n_estudios": 19,
    "n_taxones": 2,
    "en_msh_bc21": true
   },
   {
    "genero": "Epistominella",
-   "n_estudios": 17,
-   "n_taxones": 4,
+   "n_estudios": 18,
+   "n_taxones": 5,
    "en_msh_bc21": false
   },
   {
    "genero": "Gyroidina",
-   "n_estudios": 15,
-   "n_taxones": 8,
+   "n_estudios": 16,
+   "n_taxones": 10,
    "en_msh_bc21": false
   },
   {
    "genero": "Cibicidoides",
-   "n_estudios": 15,
+   "n_estudios": 16,
    "n_taxones": 5,
    "en_msh_bc21": true
   },
   {
    "genero": "Trifarina",
-   "n_estudios": 13,
+   "n_estudios": 14,
    "n_taxones": 7,
    "en_msh_bc21": false
   },
   {
    "genero": "Chilostomella",
-   "n_estudios": 13,
+   "n_estudios": 14,
    "n_taxones": 4,
    "en_msh_bc21": false
   },
   {
    "genero": "Globocassidulina",
-   "n_estudios": 13,
+   "n_estudios": 14,
    "n_taxones": 2,
    "en_msh_bc21": false
   },
   {
    "genero": "Fursenkoina",
-   "n_estudios": 12,
-   "n_taxones": 8,
+   "n_estudios": 13,
+   "n_taxones": 11,
    "en_msh_bc21": false
   },
   {
    "genero": "Melonis",
-   "n_estudios": 11,
+   "n_estudios": 12,
    "n_taxones": 3,
    "en_msh_bc21": true
   },
   {
    "genero": "Lenticulina",
-   "n_estudios": 10,
+   "n_estudios": 11,
    "n_taxones": 12,
    "en_msh_bc21": true
   },
   {
    "genero": "Fissurina",
-   "n_estudios": 9,
-   "n_taxones": 10,
+   "n_estudios": 10,
+   "n_taxones": 11,
    "en_msh_bc21": true
   },
   {
@@ -8776,10 +9236,34 @@
    "en_msh_bc21": false
   },
   {
+   "genero": "Trochammina",
+   "n_estudios": 9,
+   "n_taxones": 4,
+   "en_msh_bc21": false
+  },
+  {
    "genero": "Gavelinopsis",
    "n_estudios": 9,
    "n_taxones": 3,
    "en_msh_bc21": false
+  },
+  {
+   "genero": "Eubuliminella",
+   "n_estudios": 9,
+   "n_taxones": 2,
+   "en_msh_bc21": false
+  },
+  {
+   "genero": "Quinqueloculina",
+   "n_estudios": 8,
+   "n_taxones": 14,
+   "en_msh_bc21": true
+  },
+  {
+   "genero": "Textularia",
+   "n_estudios": 8,
+   "n_taxones": 9,
+   "en_msh_bc21": true
   },
   {
    "genero": "Reophax",
@@ -8788,27 +9272,39 @@
    "en_msh_bc21": false
   },
   {
-   "genero": "Trochammina",
+   "genero": "Dentalina",
    "n_estudios": 8,
-   "n_taxones": 3,
+   "n_taxones": 1,
    "en_msh_bc21": false
   },
   {
-   "genero": "Eubuliminella",
+   "genero": "Oridorsalis",
    "n_estudios": 8,
-   "n_taxones": 2,
+   "n_taxones": 1,
    "en_msh_bc21": false
   },
   {
-   "genero": "Quinqueloculina",
+   "genero": "Lagena",
    "n_estudios": 7,
-   "n_taxones": 14,
+   "n_taxones": 7,
    "en_msh_bc21": true
   },
   {
-   "genero": "Textularia",
+   "genero": "Pyrgo",
    "n_estudios": 7,
-   "n_taxones": 9,
+   "n_taxones": 6,
+   "en_msh_bc21": false
+  },
+  {
+   "genero": "Planulina",
+   "n_estudios": 7,
+   "n_taxones": 4,
+   "en_msh_bc21": false
+  },
+  {
+   "genero": "Pullenia",
+   "n_estudios": 7,
+   "n_taxones": 4,
    "en_msh_bc21": true
   },
   {
@@ -8824,52 +9320,16 @@
    "en_msh_bc21": false
   },
   {
-   "genero": "Dentalina",
-   "n_estudios": 7,
-   "n_taxones": 1,
-   "en_msh_bc21": false
-  },
-  {
    "genero": "Nonion",
    "n_estudios": 7,
    "n_taxones": 1,
    "en_msh_bc21": false
   },
   {
-   "genero": "Oridorsalis",
-   "n_estudios": 7,
-   "n_taxones": 1,
-   "en_msh_bc21": false
-  },
-  {
-   "genero": "Lagena",
-   "n_estudios": 6,
-   "n_taxones": 7,
-   "en_msh_bc21": true
-  },
-  {
    "genero": "Ammonia",
    "n_estudios": 6,
    "n_taxones": 6,
    "en_msh_bc21": true
-  },
-  {
-   "genero": "Pyrgo",
-   "n_estudios": 6,
-   "n_taxones": 6,
-   "en_msh_bc21": false
-  },
-  {
-   "genero": "Pullenia",
-   "n_estudios": 6,
-   "n_taxones": 4,
-   "en_msh_bc21": true
-  },
-  {
-   "genero": "Planulina",
-   "n_estudios": 6,
-   "n_taxones": 3,
-   "en_msh_bc21": false
   },
   {
    "genero": "Rhabdammina",
@@ -8881,6 +9341,18 @@
    "genero": "Stainforthia",
    "n_estudios": 6,
    "n_taxones": 3,
+   "en_msh_bc21": false
+  },
+  {
+   "genero": "Spiroplectammina",
+   "n_estudios": 6,
+   "n_taxones": 2,
+   "en_msh_bc21": false
+  },
+  {
+   "genero": "Neogloboquadrina",
+   "n_estudios": 6,
+   "n_taxones": 1,
    "en_msh_bc21": false
   },
   {
@@ -8908,9 +9380,15 @@
    "en_msh_bc21": false
   },
   {
-   "genero": "Spiroplectammina",
+   "genero": "Pseudononion",
    "n_estudios": 5,
    "n_taxones": 2,
+   "en_msh_bc21": false
+  },
+  {
+   "genero": "Buliminella",
+   "n_estudios": 5,
+   "n_taxones": 1,
    "en_msh_bc21": false
   },
   {
@@ -8920,9 +9398,15 @@
    "en_msh_bc21": false
   },
   {
-   "genero": "Neogloboquadrina",
+   "genero": "Hoeglundina",
    "n_estudios": 5,
    "n_taxones": 1,
+   "en_msh_bc21": false
+  },
+  {
+   "genero": "Valvulineria",
+   "n_estudios": 4,
+   "n_taxones": 5,
    "en_msh_bc21": false
   },
   {
@@ -8956,19 +9440,37 @@
    "en_msh_bc21": false
   },
   {
+   "genero": "Bolivinita",
+   "n_estudios": 4,
+   "n_taxones": 2,
+   "en_msh_bc21": false
+  },
+  {
    "genero": "Discorbis",
    "n_estudios": 4,
    "n_taxones": 2,
    "en_msh_bc21": false
   },
   {
-   "genero": "Pseudononion",
+   "genero": "Paracassidulina",
    "n_estudios": 4,
    "n_taxones": 2,
    "en_msh_bc21": false
   },
   {
-   "genero": "Buliminella",
+   "genero": "Siphouvigerina",
+   "n_estudios": 4,
+   "n_taxones": 2,
+   "en_msh_bc21": false
+  },
+  {
+   "genero": "Eggerella",
+   "n_estudios": 4,
+   "n_taxones": 1,
+   "en_msh_bc21": false
+  },
+  {
+   "genero": "Globigerina",
    "n_estudios": 4,
    "n_taxones": 1,
    "en_msh_bc21": false
@@ -8980,7 +9482,7 @@
    "en_msh_bc21": false
   },
   {
-   "genero": "Hoeglundina",
+   "genero": "Leptohalysis",
    "n_estudios": 4,
    "n_taxones": 1,
    "en_msh_bc21": false
@@ -8992,9 +9494,27 @@
    "en_msh_bc21": false
   },
   {
-   "genero": "Valvulineria",
+   "genero": "Pseudoparrella",
+   "n_estudios": 4,
+   "n_taxones": 1,
+   "en_msh_bc21": false
+  },
+  {
+   "genero": "Spirillina",
+   "n_estudios": 4,
+   "n_taxones": 1,
+   "en_msh_bc21": false
+  },
+  {
+   "genero": "Takayanagia",
+   "n_estudios": 4,
+   "n_taxones": 1,
+   "en_msh_bc21": false
+  },
+  {
+   "genero": "Hanzawaia",
    "n_estudios": 3,
-   "n_taxones": 5,
+   "n_taxones": 4,
    "en_msh_bc21": false
   },
   {
@@ -9016,7 +9536,37 @@
    "en_msh_bc21": false
   },
   {
+   "genero": "Ehrenbergina",
+   "n_estudios": 3,
+   "n_taxones": 3,
+   "en_msh_bc21": true
+  },
+  {
+   "genero": "Hyalinonetrion",
+   "n_estudios": 3,
+   "n_taxones": 3,
+   "en_msh_bc21": false
+  },
+  {
+   "genero": "Islandiella",
+   "n_estudios": 3,
+   "n_taxones": 3,
+   "en_msh_bc21": false
+  },
+  {
    "genero": "Laevidentalina",
+   "n_estudios": 3,
+   "n_taxones": 3,
+   "en_msh_bc21": false
+  },
+  {
+   "genero": "Sigmoilina",
+   "n_estudios": 3,
+   "n_taxones": 3,
+   "en_msh_bc21": false
+  },
+  {
+   "genero": "Spiroloculina",
    "n_estudios": 3,
    "n_taxones": 3,
    "en_msh_bc21": false
@@ -9040,6 +9590,12 @@
    "en_msh_bc21": false
   },
   {
+   "genero": "Eggerelloides",
+   "n_estudios": 3,
+   "n_taxones": 2,
+   "en_msh_bc21": false
+  },
+  {
    "genero": "Eponides",
    "n_estudios": 3,
    "n_taxones": 2,
@@ -9058,7 +9614,7 @@
    "en_msh_bc21": false
   },
   {
-   "genero": "Paracassidulina",
+   "genero": "Laticarinina",
    "n_estudios": 3,
    "n_taxones": 2,
    "en_msh_bc21": false
@@ -9076,9 +9632,15 @@
    "en_msh_bc21": false
   },
   {
-   "genero": "Siphouvigerina",
+   "genero": "Rutherfordoides",
    "n_estudios": 3,
    "n_taxones": 2,
+   "en_msh_bc21": false
+  },
+  {
+   "genero": "Ammoglobigerina",
+   "n_estudios": 3,
+   "n_taxones": 1,
    "en_msh_bc21": false
   },
   {
@@ -9088,31 +9650,7 @@
    "en_msh_bc21": false
   },
   {
-   "genero": "Bolivinita",
-   "n_estudios": 3,
-   "n_taxones": 1,
-   "en_msh_bc21": false
-  },
-  {
    "genero": "Buccella",
-   "n_estudios": 3,
-   "n_taxones": 1,
-   "en_msh_bc21": false
-  },
-  {
-   "genero": "Eggerella",
-   "n_estudios": 3,
-   "n_taxones": 1,
-   "en_msh_bc21": false
-  },
-  {
-   "genero": "Globigerina",
-   "n_estudios": 3,
-   "n_taxones": 1,
-   "en_msh_bc21": false
-  },
-  {
-   "genero": "Leptohalysis",
    "n_estudios": 3,
    "n_taxones": 1,
    "en_msh_bc21": false
@@ -9142,25 +9680,7 @@
    "en_msh_bc21": false
   },
   {
-   "genero": "Pseudoparrella",
-   "n_estudios": 3,
-   "n_taxones": 1,
-   "en_msh_bc21": false
-  },
-  {
    "genero": "Sphaeroidina",
-   "n_estudios": 3,
-   "n_taxones": 1,
-   "en_msh_bc21": false
-  },
-  {
-   "genero": "Spirillina",
-   "n_estudios": 3,
-   "n_taxones": 1,
-   "en_msh_bc21": false
-  },
-  {
-   "genero": "Takayanagia",
    "n_estudios": 3,
    "n_taxones": 1,
    "en_msh_bc21": false
@@ -9185,12 +9705,6 @@
   },
   {
    "genero": "Anomalinoides",
-   "n_estudios": 2,
-   "n_taxones": 3,
-   "en_msh_bc21": false
-  },
-  {
-   "genero": "Hanzawaia",
    "n_estudios": 2,
    "n_taxones": 3,
    "en_msh_bc21": false
@@ -9226,13 +9740,13 @@
    "en_msh_bc21": false
   },
   {
-   "genero": "Ehrenbergina",
+   "genero": "Favulina",
    "n_estudios": 2,
    "n_taxones": 2,
-   "en_msh_bc21": true
+   "en_msh_bc21": false
   },
   {
-   "genero": "Favulina",
+   "genero": "Frondicularia",
    "n_estudios": 2,
    "n_taxones": 2,
    "en_msh_bc21": false
@@ -9245,24 +9759,6 @@
   },
   {
    "genero": "Hormosinella",
-   "n_estudios": 2,
-   "n_taxones": 2,
-   "en_msh_bc21": false
-  },
-  {
-   "genero": "Hyalinonetrion",
-   "n_estudios": 2,
-   "n_taxones": 2,
-   "en_msh_bc21": false
-  },
-  {
-   "genero": "Islandiella",
-   "n_estudios": 2,
-   "n_taxones": 2,
-   "en_msh_bc21": false
-  },
-  {
-   "genero": "Laticarinina",
    "n_estudios": 2,
    "n_taxones": 2,
    "en_msh_bc21": false
@@ -9292,7 +9788,7 @@
    "en_msh_bc21": false
   },
   {
-   "genero": "Rutherfordoides",
+   "genero": "Quadrimorphina",
    "n_estudios": 2,
    "n_taxones": 2,
    "en_msh_bc21": false
@@ -9305,12 +9801,6 @@
   },
   {
    "genero": "Siphonina",
-   "n_estudios": 2,
-   "n_taxones": 2,
-   "en_msh_bc21": false
-  },
-  {
-   "genero": "Spiroloculina",
    "n_estudios": 2,
    "n_taxones": 2,
    "en_msh_bc21": false
@@ -9329,12 +9819,6 @@
   },
   {
    "genero": "Adercotryma",
-   "n_estudios": 2,
-   "n_taxones": 1,
-   "en_msh_bc21": false
-  },
-  {
-   "genero": "Ammoglobigerina",
    "n_estudios": 2,
    "n_taxones": 1,
    "en_msh_bc21": false
@@ -9359,12 +9843,6 @@
   },
   {
    "genero": "Biasterigerina",
-   "n_estudios": 2,
-   "n_taxones": 1,
-   "en_msh_bc21": false
-  },
-  {
-   "genero": "Eggerelloides",
    "n_estudios": 2,
    "n_taxones": 1,
    "en_msh_bc21": false
@@ -9448,6 +9926,12 @@
    "en_msh_bc21": false
   },
   {
+   "genero": "Reussoolina",
+   "n_estudios": 2,
+   "n_taxones": 1,
+   "en_msh_bc21": false
+  },
+  {
    "genero": "Rhizammina",
    "n_estudios": 2,
    "n_taxones": 1,
@@ -9490,12 +9974,6 @@
    "en_msh_bc21": false
   },
   {
-   "genero": "Sigmoilina",
-   "n_estudios": 1,
-   "n_taxones": 2,
-   "en_msh_bc21": false
-  },
-  {
    "genero": "Ammolagena",
    "n_estudios": 1,
    "n_taxones": 1,
@@ -9527,6 +10005,12 @@
   },
   {
    "genero": "Archimerismus",
+   "n_estudios": 1,
+   "n_taxones": 1,
+   "en_msh_bc21": false
+  },
+  {
+   "genero": "Astacolus",
    "n_estudios": 1,
    "n_taxones": 1,
    "en_msh_bc21": false
@@ -9580,6 +10064,12 @@
    "en_msh_bc21": false
   },
   {
+   "genero": "Cushmanina",
+   "n_estudios": 1,
+   "n_taxones": 1,
+   "en_msh_bc21": false
+  },
+  {
    "genero": "Cycloforina",
    "n_estudios": 1,
    "n_taxones": 1,
@@ -9604,13 +10094,19 @@
    "en_msh_bc21": false
   },
   {
-   "genero": "Evolvocassidulina",
+   "genero": "Dyocibicides",
    "n_estudios": 1,
    "n_taxones": 1,
    "en_msh_bc21": false
   },
   {
-   "genero": "Frondicularia",
+   "genero": "Euloxostomum",
+   "n_estudios": 1,
+   "n_taxones": 1,
+   "en_msh_bc21": false
+  },
+  {
+   "genero": "Evolvocassidulina",
    "n_estudios": 1,
    "n_taxones": 1,
    "en_msh_bc21": false
@@ -9713,6 +10209,12 @@
   },
   {
    "genero": "Nuttallides",
+   "n_estudios": 1,
+   "n_taxones": 1,
+   "en_msh_bc21": false
+  },
+  {
+   "genero": "Orbulina",
    "n_estudios": 1,
    "n_taxones": 1,
    "en_msh_bc21": false
@@ -9826,12 +10328,6 @@
    "en_msh_bc21": false
   },
   {
-   "genero": "Quadrimorphina",
-   "n_estudios": 1,
-   "n_taxones": 1,
-   "en_msh_bc21": false
-  },
-  {
    "genero": "Rectobolivina",
    "n_estudios": 1,
    "n_taxones": 1,
@@ -9850,12 +10346,6 @@
    "en_msh_bc21": false
   },
   {
-   "genero": "Reussoolina",
-   "n_estudios": 1,
-   "n_taxones": 1,
-   "en_msh_bc21": false
-  },
-  {
    "genero": "Riminopsis",
    "n_estudios": 1,
    "n_taxones": 1,
@@ -9869,6 +10359,12 @@
   },
   {
    "genero": "Rotalinoides",
+   "n_estudios": 1,
+   "n_taxones": 1,
+   "en_msh_bc21": false
+  },
+  {
+   "genero": "Rotorbinella",
    "n_estudios": 1,
    "n_taxones": 1,
    "en_msh_bc21": false
@@ -9995,17 +10491,15 @@
   }
  ],
  "union": {
-  "total": 535,
+  "total": 565,
   "solo_en_base_tesis": [
    "Bigenerina nodosaria",
    "Bolivina tumida",
-   "Bolivinita minuta",
    "Buccella granulata",
    "Bulimina marginara",
    "Buliminella",
    "Buliminella tenuata",
    "Cassidulina reflexa",
-   "Cassidulina translucens",
    "Ceratobulimina contraria",
    "Cibicidoides kullenbergi",
    "Cibicidoides pachyderma",
@@ -10013,7 +10507,6 @@
    "Cushmanina feildeniana",
    "Elphidium koeboeense",
    "Eponides leviculus",
-   "Euloxostomum pseudobeyrichi",
    "Globobulimina spp.",
    "Globocassidulina braziliensis",
    "Globocassidulina subglobulosa",
@@ -10036,57 +10529,57 @@
    "Uvigerina cocoaensis",
    "Uvigerina hispida"
   ],
-  "solo_en_articulos": 338,
+  "solo_en_articulos": 368,
   "nota": "La base de la tesis y la extracción de los artículos no se contienen la una a la otra: el extractor no lee el PDF escaneado ni los artículos sin PDF, y la base recoge taxones de tablas que el extractor no capta."
  },
  "familias": [
   {
    "familia": "Bolivinitidae",
-   "ocurrencias": 135
+   "ocurrencias": 153
   },
   {
    "familia": "Uvigerinidae",
-   "ocurrencias": 87
+   "ocurrencias": 94
   },
   {
    "familia": "Cibicididae",
-   "ocurrencias": 84
+   "ocurrencias": 93
   },
   {
    "familia": "Cassidulinidae",
-   "ocurrencias": 82
+   "ocurrencias": 90
   },
   {
    "familia": "Buliminidae",
-   "ocurrencias": 78
+   "ocurrencias": 85
   },
   {
    "familia": "Hauerinidae",
-   "ocurrencias": 73
+   "ocurrencias": 78
   },
   {
    "familia": "Nonionidae",
-   "ocurrencias": 66
-  },
-  {
-   "familia": "Ellipsolagenidae",
-   "ocurrencias": 44
+   "ocurrencias": 70
   },
   {
    "familia": "Globobuliminidae",
-   "ocurrencias": 43
+   "ocurrencias": 50
+  },
+  {
+   "familia": "Ellipsolagenidae",
+   "ocurrencias": 49
   },
   {
    "familia": "Pseudoparrellidae",
-   "ocurrencias": 39
+   "ocurrencias": 45
   },
   {
    "familia": "Lagenidae",
-   "ocurrencias": 34
+   "ocurrencias": 37
   },
   {
    "familia": "Vaginulinidae",
-   "ocurrencias": 33
+   "ocurrencias": 36
   },
   {
    "familia": "Rosalinidae",
@@ -10094,43 +10587,47 @@
   },
   {
    "familia": "Chilostomellidae",
-   "ocurrencias": 27
-  },
-  {
-   "familia": "Trochamminidae",
-   "ocurrencias": 27
+   "ocurrencias": 30
   },
   {
    "familia": "Gavelinellidae",
-   "ocurrencias": 26
+   "ocurrencias": 30
+  },
+  {
+   "familia": "Trochamminidae",
+   "ocurrencias": 30
   },
   {
    "familia": "Reophacidae",
-   "ocurrencias": 26
+   "ocurrencias": 27
   },
   {
    "familia": "Cancrisidae",
-   "ocurrencias": 25
+   "ocurrencias": 27
   },
   {
    "familia": "Melonidae",
-   "ocurrencias": 24
+   "ocurrencias": 26
+  },
+  {
+   "familia": "Textulariidae",
+   "ocurrencias": 25
   },
   {
    "familia": "Elphidiidae",
    "ocurrencias": 24
   },
   {
-   "familia": "Textulariidae",
-   "ocurrencias": 23
-  },
-  {
    "familia": "Nodosariidae",
-   "ocurrencias": 22
+   "ocurrencias": 24
   },
   {
    "familia": "Alabaminidae",
-   "ocurrencias": 21
+   "ocurrencias": 22
+  },
+  {
+   "familia": "Planulinidae",
+   "ocurrencias": 17
   },
   {
    "familia": "Stainforthiidae",
@@ -10141,24 +10638,28 @@
    "ocurrencias": 14
   },
   {
-   "familia": "Planulinidae",
-   "ocurrencias": 14
+   "familia": "Buliminellidae",
+   "ocurrencias": 13
   },
   {
    "familia": "Saccamminidae",
    "ocurrencias": 13
   },
   {
-   "familia": "Eponididae",
-   "ocurrencias": 12
+   "familia": "Pulleniidae",
+   "ocurrencias": 13
   },
   {
    "familia": "Eggerellidae",
+   "ocurrencias": 13
+  },
+  {
+   "familia": "Spiroplectamminidae",
    "ocurrencias": 12
   },
   {
-   "familia": "Buliminellidae",
-   "ocurrencias": 11
+   "familia": "Eponididae",
+   "ocurrencias": 12
   },
   {
    "familia": "Ammodiscidae",
@@ -10169,19 +10670,15 @@
    "ocurrencias": 11
   },
   {
-   "familia": "Pulleniidae",
-   "ocurrencias": 11
-  },
-  {
-   "familia": "Spiroplectamminidae",
-   "ocurrencias": 10
-  },
-  {
    "familia": "Hyperamminidae",
    "ocurrencias": 10
   },
   {
    "familia": "Haplophragmoididae",
+   "ocurrencias": 10
+  },
+  {
+   "familia": "Discorbinellidae",
    "ocurrencias": 10
   },
   {
@@ -10193,11 +10690,11 @@
    "ocurrencias": 8
   },
   {
-   "familia": "Verneuilinidae",
+   "familia": "Globorotaliidae",
    "ocurrencias": 8
   },
   {
-   "familia": "Discorbinellidae",
+   "familia": "Verneuilinidae",
    "ocurrencias": 8
   },
   {
@@ -10205,11 +10702,11 @@
    "ocurrencias": 8
   },
   {
-   "familia": "Globorotaliidae",
+   "familia": "Ammosphaeroidinidae",
    "ocurrencias": 7
   },
   {
-   "familia": "Ammosphaeroidinidae",
+   "familia": "Globigerinidae",
    "ocurrencias": 7
   },
   {
@@ -10233,11 +10730,11 @@
    "ocurrencias": 5
   },
   {
-   "familia": "Globigerinidae",
+   "familia": "Cribroelphidiidae",
    "ocurrencias": 5
   },
   {
-   "familia": "Cribroelphidiidae",
+   "familia": "Epistominidae",
    "ocurrencias": 5
   },
   {
@@ -10253,7 +10750,7 @@
    "ocurrencias": 4
   },
   {
-   "familia": "Epistominidae",
+   "familia": "Spirillinidae",
    "ocurrencias": 4
   },
   {
@@ -10289,10 +10786,6 @@
    "ocurrencias": 3
   },
   {
-   "familia": "Spirillinidae",
-   "ocurrencias": 3
-  },
-  {
    "familia": "Valvulinidae",
    "ocurrencias": 3
   },
@@ -10302,6 +10795,14 @@
   },
   {
    "familia": "Sphaeroidinidae",
+   "ocurrencias": 3
+  },
+  {
+   "familia": "Spiroloculinidae",
+   "ocurrencias": 3
+  },
+  {
+   "familia": "Quadrimorphinidae",
    "ocurrencias": 3
   },
   {
@@ -10349,7 +10850,7 @@
    "ocurrencias": 2
   },
   {
-   "familia": "Spiroloculinidae",
+   "familia": "Globotextulariidae",
    "ocurrencias": 2
   },
   {
@@ -10401,10 +10902,6 @@
    "ocurrencias": 1
   },
   {
-   "familia": "Globotextulariidae",
-   "ocurrencias": 1
-  },
-  {
    "familia": "Heronalleniidae",
    "ocurrencias": 1
   },
@@ -10421,15 +10918,19 @@
    "ocurrencias": 1
   },
   {
+   "familia": "Loxostomatidae",
+   "ocurrencias": 1
+  },
+  {
+   "familia": "Rotaliidae",
+   "ocurrencias": 1
+  },
+  {
    "familia": "Acervulinidae",
    "ocurrencias": 1
   },
   {
    "familia": "Ophthalmidiidae",
-   "ocurrencias": 1
-  },
-  {
-   "familia": "Quadrimorphinidae",
    "ocurrencias": 1
   },
   {
@@ -10444,47 +10945,47 @@
  "ordenes": [
   {
    "orden": "Rotaliida",
-   "ocurrencias": 957
+   "ocurrencias": 1051
   },
   {
    "orden": "Miliolida",
-   "ocurrencias": 89
+   "ocurrencias": 95
   },
   {
    "orden": "Lituolida",
-   "ocurrencias": 85
+   "ocurrencias": 90
   },
   {
    "orden": "Nodosariida",
-   "ocurrencias": 56
+   "ocurrencias": 61
   },
   {
    "orden": "Polymorphinida",
-   "ocurrencias": 55
+   "ocurrencias": 60
+  },
+  {
+   "orden": "Textulariida",
+   "ocurrencias": 45
   },
   {
    "orden": "Astrorhizida",
    "ocurrencias": 42
   },
   {
-   "orden": "Textulariida",
-   "ocurrencias": 42
-  },
-  {
    "orden": "Vaginulinida",
-   "ocurrencias": 33
+   "ocurrencias": 36
   },
   {
    "orden": "Spirillinida",
-   "ocurrencias": 17
+   "ocurrencias": 18
   },
   {
    "orden": "Robertinida",
-   "ocurrencias": 8
+   "ocurrencias": 9
   },
   {
    "orden": "Loftusiida",
-   "ocurrencias": 3
+   "ocurrencias": 4
   },
   {
    "orden": "Allogromiida",
@@ -10576,8 +11077,8 @@
     "Chilostomella",
     "Trifarina",
     "Fissurina",
-    "Lagena",
     "Fursenkoina",
+    "Lagena",
     "Eubuliminella",
     "Globobulimina"
    ]
@@ -10938,9 +11439,9 @@
    "localidad": "Talud de Luisiana (Green Canyon), Golfo de México",
    "tipo_filtracion": "termogenico",
    "morfologia": "Tapete bacteriano",
-   "n_taxones": 236,
+   "n_taxones": 237,
    "n_especies": 187,
-   "n_generos": 137,
+   "n_generos": 138,
    "n_en_resultados": 0,
    "n_en_base_tesis": 18,
    "asociacion_dominante": [
@@ -11663,8 +12164,127 @@
     "Cassidulina",
     "Bulimina",
     "Nonionella",
+    "Lenticulina",
+    "Fursenkoina"
+   ]
+  },
+  {
+   "estudio_id": "E13",
+   "titulo": "Faunal and stable isotopic analyses of benthic foraminifera from the Southeast Seep on Kimki Ridge offshore southern California, USA",
+   "autores": "McGann, M.",
+   "anio": 2018,
+   "localidad": "Kimki Ridge, borderland del sur de California",
+   "tipo_filtracion": "frio",
+   "morfologia": null,
+   "n_taxones": 114,
+   "n_especies": 86,
+   "n_generos": 62,
+   "n_en_resultados": 112,
+   "n_en_base_tesis": 8,
+   "asociacion_dominante": [
+    "Globobulimina",
+    "Uvigerina",
+    "Cibicidoides",
+    "Uvigerina peregrina",
+    "Hoeglundina elegans",
+    "Cassidulina",
+    "Globobulimina",
+    "Lobatula wuellerstorfi",
+    "Cassidulina translucens",
+    "Gyroidina",
+    "Takayanagia delicata",
+    "Pseudoparrella pacifica",
+    "Spiroplectammina biformis",
+    "Spiroplectammina"
+   ],
+   "destacados_derivados": [
+    "Globobulimina",
+    "Uvigerina",
+    "Cibicidoides",
+    "Uvigerina peregrina",
+    "Bolivina"
+   ],
+   "origen_dominancia": "declarada",
+   "top_menciones": [
+    {
+     "taxon": "Globobulimina",
+     "menciones": 41,
+     "dominante": true
+    },
+    {
+     "taxon": "Uvigerina",
+     "menciones": 37,
+     "dominante": true
+    },
+    {
+     "taxon": "Cibicidoides",
+     "menciones": 31,
+     "dominante": true
+    },
+    {
+     "taxon": "Uvigerina peregrina",
+     "menciones": 30,
+     "dominante": true
+    },
+    {
+     "taxon": "Bolivina",
+     "menciones": 27,
+     "dominante": false
+    },
+    {
+     "taxon": "Hoeglundina elegans",
+     "menciones": 24,
+     "dominante": true
+    },
+    {
+     "taxon": "Cassidulina",
+     "menciones": 20,
+     "dominante": true
+    },
+    {
+     "taxon": "Globobulimina",
+     "menciones": 19,
+     "dominante": true
+    },
+    {
+     "taxon": "Lobatula wuellerstorfi",
+     "menciones": 19,
+     "dominante": true
+    },
+    {
+     "taxon": "Fursenkoina",
+     "menciones": 19,
+     "dominante": false
+    }
+   ],
+   "dominantes_declarados": [
+    "Cassidulina",
+    "Cassidulina translucens",
+    "Cibicidoides",
+    "Globobulimina",
+    "Gyroidina",
+    "Hoeglundina elegans",
+    "Lobatula wuellerstorfi",
+    "Pseudoparrella pacifica",
+    "Spiroplectammina",
+    "Spiroplectammina biformis",
+    "Takayanagia delicata",
+    "Uvigerina",
+    "Uvigerina peregrina"
+   ],
+   "generos": [
     "Fursenkoina",
-    "Lenticulina"
+    "Globobulimina",
+    "Bolivina",
+    "Bulimina",
+    "Uvigerina",
+    "Epistominella",
+    "Lobatula",
+    "Gyroidina",
+    "Fissurina",
+    "Chilostomella",
+    "Cibicidoides",
+    "Nonionella"
    ]
   },
   {
@@ -11875,7 +12495,7 @@
     "Cassidulina",
     "Paracassidulina neocarinata",
     "Bolivina albatrossi",
-    "Gavelinopsis"
+    "Lenticulina"
    ],
    "origen_dominancia": "declarada",
    "top_menciones": [
@@ -11900,14 +12520,14 @@
      "dominante": true
     },
     {
-     "taxon": "Gavelinopsis",
-     "menciones": 9,
-     "dominante": true
-    },
-    {
      "taxon": "Lenticulina",
      "menciones": 9,
      "dominante": false
+    },
+    {
+     "taxon": "Gavelinopsis",
+     "menciones": 9,
+     "dominante": true
     },
     {
      "taxon": "Uvigerina",

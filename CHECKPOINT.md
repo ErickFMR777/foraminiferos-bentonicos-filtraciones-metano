@@ -136,10 +136,11 @@ python pipeline/08_organizar.py  # renombra y separa «Referencias excluidas»
 python pipeline/09_verificar_pdfs.py  # nombre vs contenido + duplicados
 python pipeline/20_build.py      # -> data/derived/*.json (público)
 python pipeline/40_taxones_pdf.py    # lee los artículos completos (WoRMS)
+python pipeline/45_tablas_pdf.py     # TABLAS: d13C, abundancias, indices
 python pipeline/50_estadisticas.py   # -> taxones_completo.json
 python pipeline/30_informe.py    # -> Informe_curacion_datos.pdf
 python pipeline/60_excel.py      # -> los dos Excel corregidos (carpeta privada)
-python pipeline/99_auditoria.py  # 76 comprobaciones; código 1 si algo falla
+python pipeline/99_auditoria.py  # 89 comprobaciones; código 1 si algo falla
 ```
 
 **Ejecutar `99_auditoria.py` después de cualquier cambio en el pipeline.**
