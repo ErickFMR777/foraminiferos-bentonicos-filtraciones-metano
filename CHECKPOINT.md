@@ -70,19 +70,26 @@ CLI no sabía renombrar. **Ya sí**: `vercel project rename viejo nuevo` (CLI 57
 
 **Dos cosas que el renombrado NO hace solo**, y costaron un 404 y un 302:
 
-1. **No crea el dominio nuevo, y esto tiene más cola de lo que parece.**
-   Renombrar deja `<nombre-nuevo>.vercel.app` sin resolver (404) mientras el
-   **dominio de producción sigue atado al nombre original**. Se comprobó a las
-   malas: `vercel alias set` lo levanta, pero crea un alias ESTÁTICO que no
-   sigue a los despliegues siguientes —el push publicaba y el dominio nuevo
-   seguía sirviendo el build anterior—, mientras el viejo sí se movía solo.
-   Tampoco lo arreglan `vercel domains add` (responde
-   `domain_already_assigned`), ni `vercel project update` (no toca dominios),
-   ni un `vercel redeploy`, que vuelve a aliasar al nombre viejo.
+1. **No crea el dominio nuevo, y levantarlo tiene un paso que no se ve.**
+   Renombrar deja `<nombre-nuevo>.vercel.app` en 404 mientras el dominio de
+   producción sigue atado al nombre original.
 
-   **Lo único que reasigna de verdad el dominio de producción es recrear el
-   proyecto.** Mientras no se haga, hay que reasignar el alias a mano tras cada
-   despliegue, o quedarse con el dominio viejo, que sí se actualiza solo.
+   `vercel alias set` lo levanta, **pero por sí solo crea un alias estático**:
+   el push siguiente publicaba y el dominio nuevo seguía sirviendo el build
+   anterior, mientras el viejo sí se movía. Un `vercel redeploy` tampoco
+   ayuda — vuelve a aliasar al nombre viejo—, ni `vercel project update`, que
+   no toca dominios.
+
+   **El paso que falta es `vercel domains add <dominio> <proyecto>`**, que lo
+   registra como dominio DEL PROYECTO. Responde
+   `status: success, reason: domain_already_assigned`, y ese mensaje engaña:
+   parece que no hizo nada, pero es justo lo que convierte el alias en dominio
+   de producción. Comprobado con un push después: los dos dominios se movieron
+   solos al build nuevo.
+
+   Orden correcto, entonces: `alias set` **y luego** `domains add`. El dominio
+   viejo se deja vivo apuntando al mismo despliegue, así que ningún enlace ya
+   compartido se rompe.
 2. **El proyecto tenía protección SSO** (`ssoProtection.deploymentType =
    all_except_custom_domains`), heredada de la etapa con contraseña. El dominio
    viejo estaba exento por ser el de producción, pero el nuevo alias caía en
