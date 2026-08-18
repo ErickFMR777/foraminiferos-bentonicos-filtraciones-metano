@@ -125,6 +125,14 @@ redesplegar, y el usuario pide poder rotar la contraseña desde la interfaz.
 vez; después se ignoran. **Son la vía de recuperación**: borrar el blob
 devuelve el control a esas dos variables.
 
+**Cambiar la contraseña exige además la respuesta a una pregunta de
+seguridad** (`DASHBOARD_RESPUESTA`), y ese es todo su propósito: el autor
+quiere poder enseñar el dashboard dando la contraseña, sin que quien la reciba
+pueda cambiarla y dejarlo fuera. Se compara distinguiendo mayúsculas y se
+guarda derivada, igual que la contraseña. Si no está configurada, cambiar la
+contraseña queda **bloqueado**: ante un fallo de configuración la barrera se
+cierra, no se abre.
+
 ---
 
 ## Arquitectura
@@ -235,6 +243,10 @@ explica el caso concreto; esto es el índice.
 - **A `/api/*` sin sesión se le responde JSON, no la página de acceso.** Si
   caduca la sesión con el dashboard abierto, devolver HTML rompe el `r.json()`
   del componente y el usuario ve «no hay red» en vez de «sesión caducada».
+- **`nuevas()` arrastra la respuesta de seguridad de las credenciales
+  anteriores.** Si no se le pasan, el primer cambio de contraseña la borraría
+  y desarmaría la barrera justo cuando se usa. Hay prueba de esto contra
+  producción: tras cambiar la clave, la respuesta se sigue exigiendo.
 - **`05_worms.py::pick_foram` filtra por `phylum == "Foraminifera"`.** Varios
   géneros son homónimos entre grupos: `Cassidulina` devuelve un equinoideo. No
   quitar el filtro.

@@ -245,8 +245,8 @@ export default function Pagina() {
           n={tx({ es: "08 · Cuenta", en: "08 · Account" })}
           titulo={tx({ es: "Cambiar la contraseña", en: "Change the password" })}
           entradilla={tx({
-            es: "El sitio está cerrado mientras la tesis siga sin publicarse. Desde aquí puedes rotar la contraseña sin pasar por el panel de Vercel ni volver a desplegar.",
-            en: "The site stays closed while the thesis remains unpublished. From here you can rotate the password without going through the Vercel dashboard or redeploying.",
+            es: "El sitio está cerrado mientras la tesis siga sin publicarse. Desde aquí se rota la contraseña sin pasar por el panel de Vercel ni volver a desplegar. Hace falta además la respuesta a la pregunta de seguridad: así se puede compartir el acceso para que alguien lo vea, sin que pueda cambiar la clave.",
+            en: "The site stays closed while the thesis remains unpublished. From here the password is rotated without going through the Vercel dashboard or redeploying. The answer to the security question is also required: that way access can be shared for someone to look around, without letting them change the password.",
           })}
         >
           <Cuenta />

@@ -16,12 +16,17 @@ type Estado =
 
 export default function Cuenta() {
   const { tx } = useT();
+  const [respuesta, setRespuesta] = useState("");
   const [actual, setActual] = useState("");
   const [nueva, setNueva] = useState("");
   const [repite, setRepite] = useState("");
   const [estado, setEstado] = useState<Estado>({ tipo: "reposo" });
 
   const MENSAJES: Record<string, { es: string; en: string }> = {
+    respuesta_incorrecta: {
+      es: "La respuesta a la pregunta de seguridad no es correcta.",
+      en: "The answer to the security question is not correct.",
+    },
     actual_incorrecta: {
       es: "La contraseña actual no es correcta.",
       en: "The current password is not correct.",
@@ -67,10 +72,11 @@ export default function Cuenta() {
       const r = await fetch("/api/clave", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ actual, nueva }),
+        body: JSON.stringify({ actual, nueva, respuesta }),
       });
       if (r.ok) {
         setEstado({ tipo: "ok" });
+        setRespuesta("");
         setActual("");
         setNueva("");
         setRepite("");
@@ -92,6 +98,31 @@ export default function Cuenta() {
   return (
     <div className="max-w-[26rem]">
       <form onSubmit={enviar} className="space-y-4">
+        <div className="rounded-[6px] border border-(--border) bg-(--surface-2) p-3.5">
+          <label className={etiqueta} htmlFor="respuesta">
+            {tx({
+              es: "Ingresa la respuesta a la pregunta de seguridad para cambiar la contraseña",
+              en: "Enter the answer to the security question to change the password",
+            })}
+          </label>
+          <input
+            id="respuesta"
+            type="password"
+            required
+            autoComplete="off"
+            spellCheck={false}
+            value={respuesta}
+            onChange={(e) => setRespuesta(e.target.value)}
+            className={campo}
+          />
+          <p className="mt-1.5 text-[0.72rem] text-(--muted)">
+            {tx({
+              es: "Distingue mayúsculas y minúsculas.",
+              en: "Case-sensitive.",
+            })}
+          </p>
+        </div>
+
         <div>
           <label className={etiqueta} htmlFor="actual">
             {tx({ es: "Contraseña actual", en: "Current password" })}
@@ -187,8 +218,8 @@ export default function Cuenta() {
 
       <Nota>
         {tx({
-          es: "La contraseña no se guarda en ninguna parte: se almacena su derivación PBKDF2-SHA256 con sal aleatoria, en un almacén privado que sólo alcanza este proyecto. La sesión dura 12 horas; al cambiar la contraseña, las sesiones abiertas en otros navegadores siguen válidas hasta que caducan.",
-          en: "The password itself is never stored: what is kept is its PBKDF2-SHA256 derivation with a random salt, in a private store scoped to this project alone. Sessions last 12 hours; when the password changes, sessions already open in other browsers stay valid until they expire.",
+          es: "La pregunta de seguridad existe para poder enseñar el dashboard sin ceder el control: quien reciba la contraseña podrá verlo todo, pero no cambiarla. Ni la contraseña ni la respuesta se guardan en claro — se almacena su derivación PBKDF2-SHA256 con sal aleatoria, en un almacén privado que sólo alcanza este proyecto. La sesión dura 12 horas; al cambiar la contraseña, las sesiones abiertas en otros navegadores siguen válidas hasta que caducan.",
+          en: "The security question exists so the dashboard can be shown without handing over control: whoever receives the password can see everything, but cannot change it. Neither the password nor the answer is stored in the clear — what is kept is their PBKDF2-SHA256 derivation with a random salt, in a private store scoped to this project alone. Sessions last 12 hours; when the password changes, sessions already open in other browsers stay valid until they expire.",
         })}
       </Nota>
     </div>

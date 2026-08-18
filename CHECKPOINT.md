@@ -47,6 +47,11 @@ en una variable de entorno que sólo se toca redesplegando.
   almacén; se descartó Edge Config y la variable de entorno porque escribir en
   ellas exige un token con poder sobre TODA la cuenta.
 - Se cambia desde la sección **08 · Cuenta** del dashboard.
+- **Cambiarla exige además la respuesta a una pregunta de seguridad**
+  (`DASHBOARD_RESPUESTA`), para poder compartir el acceso sin ceder el
+  control: quien reciba la contraseña lo ve todo, pero no puede cambiarla.
+  Distingue mayúsculas, se guarda derivada y **sobrevive al cambio de
+  contraseña**. Sin ella configurada, el cambio queda bloqueado.
 - `DASHBOARD_USUARIO` / `DASHBOARD_CLAVE` sólo siembran el almacén la primera
   vez. **Recuperación si se olvida la contraseña:** borrar el blob
   `auth/credenciales.json` y vuelven a mandar esas dos variables.

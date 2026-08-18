@@ -3,6 +3,7 @@ import { COOKIE_SESION, firmar, opcionesCookie, verificar } from "@/lib/sesion";
 import {
   MINIMO_CLAVE,
   comprueba,
+  compruebaRespuesta,
   guardar,
   nuevas,
   vigentes,
@@ -39,7 +40,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "origen_ajeno" }, { status: 403 });
   }
 
-  let cuerpo: { actual?: unknown; nueva?: unknown };
+  let cuerpo: { actual?: unknown; nueva?: unknown; respuesta?: unknown };
   try {
     cuerpo = await req.json();
   } catch {
@@ -48,6 +49,8 @@ export async function POST(req: Request) {
 
   const actual = typeof cuerpo.actual === "string" ? cuerpo.actual : "";
   const nueva = typeof cuerpo.nueva === "string" ? cuerpo.nueva : "";
+  const respuesta =
+    typeof cuerpo.respuesta === "string" ? cuerpo.respuesta : "";
 
   if (nueva.length < MINIMO_CLAVE) {
     return NextResponse.json({ error: "corta" }, { status: 400 });
@@ -61,12 +64,22 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "sin_credenciales" }, { status: 500 });
   }
 
+  // La pregunta de seguridad va PRIMERO y es independiente de la contraseña:
+  // quien recibe el dashboard para verlo conoce la contraseña, y esta barrera
+  // es justo lo que le impide cambiarla y dejar fuera al autor.
+  if (!(await compruebaRespuesta(credenciales, respuesta))) {
+    await espera();
+    return NextResponse.json({ error: "respuesta_incorrecta" }, { status: 403 });
+  }
+
   if (!(await comprueba(credenciales, sesion.usuario, actual))) {
     await espera();
     return NextResponse.json({ error: "actual_incorrecta" }, { status: 403 });
   }
 
-  await guardar(await nuevas(credenciales.usuario, nueva));
+  // Se pasan las credenciales anteriores para arrastrar la respuesta de
+  // seguridad: cambiar la contraseña no debe desarmar la barrera.
+  await guardar(await nuevas(credenciales.usuario, nueva, credenciales));
 
   // Se reemite el testigo de ESTE navegador para que la sesión siga viva. Los
   // testigos ya emitidos en otros navegadores siguen valiendo hasta caducar:
