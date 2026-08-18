@@ -441,6 +441,14 @@ def main() -> int:
     # Vercel. No estaban servidos en ninguna URL, pero habían salido del
     # equipo. Se detectó consultando la API de despliegues, no razonando sobre
     # el CLI. Esta comprobación existe para que no vuelva a pasar en silencio.
+    # La evidencia de dominancia es texto LITERAL de artículos con derechos de
+    # autor. Vive en data/private/ y no puede salir de ahí: si se copiara a un
+    # dataset público, el dashboard estaría redistribuyendo el texto ajeno.
+    fuga_ev = [f.name for f in DERIV.glob("*.json")
+               if "evidencia_dominancia" in f.read_text(encoding="utf-8")]
+    check("La evidencia literal de los artículos no sale a data/derived",
+          not fuga_ev, f"{fuga_ev}")
+
     vign = ROOT / ".vercelignore"
     check("Existe .vercelignore (el CLI de Vercel ignora .gitignore)",
           vign.exists(), "sin él, `vercel deploy` sube la carpeta entera")
@@ -463,12 +471,18 @@ def main() -> int:
         wbc = openpyxl.load_workbook(libro, data_only=True)
         pdfs = PRIV / "taxones_pdf.json"
         if "Asociaciones por estudio" in wbc.sheetnames and pdfs.exists():
-            n_xl = wbc["Asociaciones por estudio"].max_row - 1
+            wsa = wbc["Asociaciones por estudio"]
+            n_xl = wsa.max_row - 1
             regs = load(pdfs)["registros"]
             check("La hoja de asociaciones conserva todos los pares estudio-taxón",
                   n_xl == len(regs), f"Excel {n_xl} vs pipeline {len(regs)}")
-            dom_xl = sum(1 for f in wbc["Asociaciones por estudio"]
-                         .iter_rows(min_row=2, values_only=True) if f[14] == "sí")
+            # La columna se localiza por su NOMBRE. Con el índice fijo, añadir
+            # una columna delante dejaba la comprobación contando otra cosa —
+            # y así pasó: leía 0 dominancias donde había 148.
+            cab = [c.value for c in wsa[1]]
+            col = cab.index("¿Dominante declarado?")
+            dom_xl = sum(1 for f in wsa.iter_rows(min_row=2, values_only=True)
+                         if f[col] == "sí")
             dom_pp = sum(1 for r in regs if r["dominante_declarado"])
             check("Las dominancias declaradas cuadran con el pipeline",
                   dom_xl == dom_pp, f"Excel {dom_xl} vs pipeline {dom_pp}")

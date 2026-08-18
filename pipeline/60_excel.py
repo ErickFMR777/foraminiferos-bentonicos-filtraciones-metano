@@ -115,6 +115,31 @@ def bibliografia() -> Path:
         "· «Resumen por estudio»: cuántos taxones, especies y géneros aporta cada "
         "artículo, y cuáles declara dominantes.",
         "",
+        "CÓMO SE DECIDE QUÉ REPORTA CADA ARTÍCULO",
+        "· La bibliografía se descarta antes de contar. La lista de referencias "
+        "cita los títulos de otros trabajos, y esos títulos llevan nombres de "
+        "especies: contarlos daba por «reportado» un taxón que el artículo sólo "
+        "nombraba al citar a un tercero. La columna «menciones en la "
+        "bibliografía» deja ver cuántas se descartaron en cada caso.",
+        "· Los nombres abreviados se expanden: «U. peregrina» cuenta como "
+        "«Uvigerina peregrina». Los artículos escriben el binomio entero la "
+        "primera vez y lo abrevian después, sobre todo en tablas. Sólo se "
+        "expande cuando inicial y epíteto identifican un único binomio del "
+        "propio artículo; si «B. spissa» pudiera ser Bolivina o Bulimina, se "
+        "deja como está antes que adivinar.",
+        "· «¿Aparece en Resultados?» distingue el taxón que el artículo mide del "
+        "que sólo menciona al repasar la literatura. Donde no se pudo localizar "
+        "el encabezado de Resultados dice «sin determinar», que no es lo mismo "
+        "que «no».",
+        "· La dominancia se atribuye por CLÁUSULA, no por frase. Antes bastaba "
+        "con que el taxón y la palabra «dominant» cayeran en la misma frase, y "
+        "eso marcaba dominante a cualquier taxón nombrado de paso: en «Bolivina "
+        "dominated the assemblage, whereas Uvigerina was rare», Uvigerina salía "
+        "dominante. Ahora se descartan además las cláusulas negadas («X was not "
+        "dominant») y las que atribuyen el hallazgo a otro trabajo («Rathburn et "
+        "al. (2000) found X dominant»). La columna «frase que lo afirma» trae la "
+        "cláusula literal para que la decisión se pueda auditar una a una.",
+        "",
         "CÓMO SE LEEN LAS TRES SEÑALES, QUE NO VALEN LO MISMO",
         "· Presencia: el taxón aparece en el artículo. Señal sólida.",
         "· Menciones: cuántas veces se nombra. Proxy DÉBIL de importancia — un "
@@ -211,18 +236,20 @@ def bibliografia() -> Path:
     hoja(wb, "Taxones en los artículos", [
         "Taxón", "Rango", "Género", "Familia", "Orden", "AphiaID",
         "Nº de estudios que lo reportan", "Reportado en (IDs)",
+        "Estudios donde aparece en Resultados",
         "Declarado dominante en", "Dominante en (IDs)",
         "¿Estaba en la base?", "¿Está en MSH-BC-21?",
     ], [[
         t["taxon"], t["rango"], t["genero"], t["familia"], t["orden"],
         t["aphia_id"], t["n_estudios"],
         ", ".join(sorted(set(quien.get(t["taxon"], [])))),
+        t.get("n_estudios_resultados"),
         t["n_estudios_dominante"],
         ", ".join(sorted(set(dom.get(t["taxon"], [])))),
         "sí" if t["en_base_tesis"] else "no",
         "sí" if t["en_msh_bc21"] else "no",
     ] for t in comp["taxones"]],
-        [32, 10, 20, 22, 16, 10, 16, 30, 16, 26, 16, 16])
+        [32, 10, 20, 22, 16, 10, 16, 30, 18, 16, 26, 16, 16])
 
     # LA ASOCIACIÓN COMPLETA, estudio por estudio. Es el dato que la tesis no
     # tenía: su base recogía «las 5 principales especies» de cada filtro, de
@@ -239,28 +266,51 @@ def bibliografia() -> Path:
             e.get("localidad"), e.get("tipo_filtracion"), e.get("morfologia_label"),
             r["taxon"], r["taxon_texto"], r["rango"], r["genero"], r["familia"],
             r["orden"], r["aphia_id"], r["menciones"],
+            r.get("menciones_en_referencias", 0),
+            {True: "sí", False: "no", None: "sin determinar"}[
+                r.get("en_resultados")],
             "sí" if r["dominante_declarado"] else "no",
+            r.get("evidencia_dominancia") or "",
             "sí" if r["taxon"] in en_base else "no",
         ])
     hoja(wb, "Asociaciones por estudio", [
         "ID estudio", "Primer autor", "Año", "Localidad", "Tipo de fluido",
         "Morfología", "Taxón (nombre válido)", "Nombre leído en el texto",
         "Rango", "Género", "Familia", "Orden", "AphiaID", "Menciones",
-        "¿Dominante declarado?", "¿Estaba en la base de la tesis?",
+        "Menciones en la bibliografía", "¿Aparece en Resultados?",
+        "¿Dominante declarado?", "Frase que lo afirma",
+        "¿Estaba en la base de la tesis?",
     ], filas_asoc,
-        [11, 18, 7, 34, 14, 22, 32, 32, 10, 20, 22, 16, 10, 11, 16, 20])
+        [11, 18, 7, 34, 14, 22, 32, 32, 10, 20, 22, 16, 10, 11, 14, 16, 16,
+         80, 20])
+
+    # Una fila por estudio con SU asociación dominante. Es la pregunta directa
+    # —«qué domina en cada localidad»— y hasta ahora había que reconstruirla
+    # filtrando 1.527 filas a mano.
+    hoja(wb, "Asociaciones dominantes", [
+        "ID estudio", "Autores", "Año", "Localidad", "Tipo de fluido",
+        "Morfología", "Nº de taxones dominantes", "Asociación dominante",
+    ], [[
+        p["estudio_id"], p["autores"], p["anio"], p["localidad"],
+        p["tipo_filtracion"], p["morfologia"],
+        len(p.get("asociacion_dominante") or []),
+        ", ".join(p.get("asociacion_dominante") or []) or
+        "— el artículo no declara dominancia explícita —",
+    ] for p in comp["por_estudio"]],
+        [11, 24, 7, 34, 14, 22, 14, 96])
 
     hoja(wb, "Resumen por estudio", [
         "ID", "Autores", "Año", "Título", "Localidad", "Tipo de fluido",
         "Morfología", "Nº de taxones", "Nº de especies", "Nº de géneros",
-        "Ya estaban en la base", "Dominantes declarados",
+        "De ellos, en Resultados", "Registros en la base de la tesis",
+        "Dominantes declarados",
     ], [[
         p["estudio_id"], p["autores"], p["anio"], p["titulo"], p["localidad"],
         p["tipo_filtracion"], p["morfologia"], p["n_taxones"], p["n_especies"],
-        p["n_generos"], p["n_en_base_tesis"],
+        p["n_generos"], p.get("n_en_resultados"), p["n_en_base_tesis"],
         ", ".join(p["dominantes_declarados"]) or "—",
     ] for p in comp["por_estudio"]],
-        [8, 24, 7, 60, 34, 14, 22, 12, 12, 12, 14, 46])
+        [8, 24, 7, 60, 34, 14, 22, 12, 12, 12, 14, 16, 46])
 
     hoja(wb, "Correcciones", [
         "Tipo", "Desde", "Hacia", "Motivo", "Fuente", "Impacto",

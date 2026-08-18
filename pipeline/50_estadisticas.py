@@ -54,6 +54,10 @@ def main() -> int:
         e = estudios.get(eid, {})
         esp = [r for r in rs if r["rango"] == "especie"]
         dom = [r for r in rs if r["dominante_declarado"]]
+        # La ASOCIACIÓN DOMINANTE de un estudio es el conjunto de taxones que
+        # el propio artículo declara dominantes, no los más mencionados. Se
+        # ordena por menciones sólo para que el más citado abra la lista.
+        asoc = [r["taxon"] for r in sorted(dom, key=lambda x: -x["menciones"])]
         estudios_out.append({
             "estudio_id": eid,
             "titulo": e.get("titulo"),
@@ -65,7 +69,10 @@ def main() -> int:
             "n_taxones": len({r["taxon"] for r in rs}),
             "n_especies": len({r["taxon"] for r in esp}),
             "n_generos": len({r["genero"] for r in rs if r["genero"]}),
+            "n_en_resultados": len({r["taxon"] for r in rs
+                                    if r.get("en_resultados")}),
             "n_en_base_tesis": e.get("n_registros"),
+            "asociacion_dominante": asoc,
             "top_menciones": [
                 {"taxon": r["taxon"], "menciones": r["menciones"],
                  "dominante": r["dominante_declarado"]}
@@ -79,10 +86,13 @@ def main() -> int:
     t_est = defaultdict(set)
     t_men = Counter()
     t_dom = defaultdict(set)
+    t_res = defaultdict(set)
     t_meta = {}
     for r in regs:
         t_est[r["taxon"]].add(r["estudio_id"])
         t_men[r["taxon"]] += r["menciones"]
+        if r.get("en_resultados"):
+            t_res[r["taxon"]].add(r["estudio_id"])
         if r["dominante_declarado"]:
             t_dom[r["taxon"]].add(r["estudio_id"])
         t_meta[r["taxon"]] = {"rango": r["rango"], "genero": r["genero"],
@@ -92,6 +102,7 @@ def main() -> int:
     taxones = sorted(
         [{"taxon": k, **t_meta[k],
           "n_estudios": len(v), "menciones": t_men[k],
+          "n_estudios_resultados": len(t_res.get(k, ())),
           "n_estudios_dominante": len(t_dom.get(k, ())),
           "en_base_tesis": k in en_base,
           "en_msh_bc21": k in en_msh}
