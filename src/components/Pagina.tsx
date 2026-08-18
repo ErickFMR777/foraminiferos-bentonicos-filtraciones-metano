@@ -33,8 +33,8 @@ export default function Pagina() {
         <header className="py-16 md:py-24">
           <p className="mb-4 text-[0.72rem] uppercase tracking-[0.16em] text-(--muted)">
             {tx({
-              es: "Universidad Nacional de Colombia · Proyecto Methane Seep Hunting (MSH)",
-              en: "Universidad Nacional de Colombia · Methane Seep Hunting (MSH) project",
+              es: "Universidad Nacional de Colombia · Proyecto Methane seep hunting (MSH)",
+              en: "Universidad Nacional de Colombia · Methane seep hunting (MSH) project",
             })}
           </p>
           <h1 className="mb-4 max-w-[20ch] text-[2.5rem] leading-[1.08] md:text-[3.4rem]">
@@ -286,7 +286,7 @@ export default function Pagina() {
               {[
                 {
                   k: tx({ es: "Proyecto", en: "Project" }),
-                  v: "Methane Seep Hunting (MSH): A multi-scale and multi method approach",
+                  v: "Methane seep hunting: A multi-scale and multi method approach",
                 },
                 {
                   k: tx({ es: "Objetivo general", en: "General objective" }),
@@ -296,7 +296,7 @@ export default function Pagina() {
                   }),
                 },
                 {
-                  k: tx({ es: "Programa", en: "Programme" }),
+                  k: tx({ es: "Programa CTeI", en: "STI programme" }),
                   v: tx({
                     es: "Programa Nacional de Ciencia, Tecnología e Innovación en Geociencias — Minciencias",
                     en: "National Programme for Science, Technology and Innovation in Geosciences — Minciencias",
@@ -305,13 +305,19 @@ export default function Pagina() {
                 {
                   k: tx({ es: "Convocatoria", en: "Call" }),
                   v: tx({
-                    es: "877 de 2020 — Financiación de proyectos de investigación en geociencias para el sector de hidrocarburos",
-                    en: "877 of 2020 — Funding for geoscience research projects for the hydrocarbon sector",
+                    es: "877-2020 — Financiación de proyectos de investigación en geociencias para el sector de hidrocarburos",
+                    en: "877-2020 — Funding of geoscience research projects for the hydrocarbon sector",
                   }),
                 },
                 {
-                  k: tx({ es: "Contrato / convenio", en: "Contract / agreement" }),
-                  v: "Minciencias 80740-143-2021",
+                  k: tx({
+                    es: "Contrato / convenio",
+                    en: "Contract / agreement",
+                  }),
+                  v: tx({
+                    es: "80740-143-2021 (Minciencias — Entidad)",
+                    en: "80740-143-2021 (Minciencias — Institution)",
+                  }),
                 },
                 {
                   k: tx({ es: "Grupo de investigación", en: "Research group" }),

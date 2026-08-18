@@ -32,10 +32,10 @@ Marco, verificado contra el informe técnico final de la beca-pasantía
 
 | | |
 |---|---|
-| Proyecto | Methane Seep Hunting (MSH): A multi-scale and multi method approach |
-| Programa | Programa Nacional de CTeI en Geociencias — Minciencias |
-| Convocatoria | 877 de 2020 |
-| Contrato | Minciencias 80740-143-2021 |
+| Proyecto | Methane seep hunting: A multi-scale and multi method approach |
+| Programa CTeI | Programa Nacional de Ciencia, Tecnología e Innovación en Geociencias |
+| Convocatoria | 877-2020 (geociencias para el sector de hidrocarburos) |
+| Contrato / convenio | 80740-143-2021 (Minciencias — Entidad) |
 | Grupo | OCEÁNICOS |
 | Entidades | UPB · UNAL · GMAS · GEOMARES · ACGGP |
 | Vinculación | Jóvenes Investigadores, 21-08-2021 a 31-03-2024 |

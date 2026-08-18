@@ -93,10 +93,14 @@ function paginaAcceso(destino: string, fallo: boolean): string {
     font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
     -webkit-font-smoothing:antialiased}
   main{width:100%;max-width:23rem}
+  /* Sólo la pantalla de acceso va centrada: es una tarjeta aislada, sin
+     contenido que recorrer. El dashboard sigue alineado a la izquierda,
+     que es lo legible en textos largos. */
+  .marca,h1,p.sub,footer{text-align:center}
   .marca{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
     color:var(--muted);margin:0 0 .9rem}
   h1{font-family:Georgia,"Times New Roman",serif;font-weight:600;
-    letter-spacing:-.011em;font-size:1.5rem;line-height:1.2;margin:0 0 .6rem}
+    letter-spacing:-.011em;font-size:1.5rem;line-height:1.25;margin:0 0 .7rem}
   p.sub{margin:0 0 1.6rem;font-size:.86rem;line-height:1.55;color:var(--ink-2)}
   form{background:var(--surface);border:1px solid var(--borde);border-radius:8px;
     padding:1.35rem}
@@ -113,12 +117,15 @@ function paginaAcceso(destino: string, fallo: boolean): string {
   button:hover{filter:brightness(1.08)}
   .error{margin:0 0 1rem;padding:.6rem .7rem;border-radius:5px;font-size:.8rem;
     line-height:1.45;color:var(--mal);border:1px solid currentColor}
-  footer{margin-top:1.4rem;font-size:.7rem;line-height:1.5;color:var(--muted)}
+  footer{margin-top:1.5rem;font-size:.7rem;line-height:1.62;color:var(--muted)}
+  footer strong{color:var(--ink-2);font-weight:600}
+  footer .sep{display:block;margin:.55rem auto 0;padding-top:.55rem;
+    max-width:19rem;border-top:1px solid var(--borde)}
 </style>
 </head>
 <body>
 <main>
-  <p class="marca">Universidad Nacional de Colombia · Proyecto Methane Seep Hunting (MSH)</p>
+  <p class="marca">Universidad Nacional de Colombia · Proyecto Methane seep hunting</p>
   <h1>Foraminíferos bentónicos en filtraciones de metano</h1>
   <p class="sub">Comparación entre distintas localidades del mundo y la
     plataforma continental del Caribe colombiano.<br>
@@ -138,9 +145,16 @@ function paginaAcceso(destino: string, fallo: boolean): string {
     </div>
     <button type="submit">Entrar · Sign in</button>
   </form>
-  <footer>Erick Francisco Mendoza Rivero, Ingeniero Geólogo.<br>
-    Universidad Nacional de Colombia, sede Medellín — Facultad de Minas.<br>
-    Proyecto MSH · Minciencias, convocatoria 877 de 2020 · contrato 80740-143-2021.</footer>
+  <footer>
+    <strong>Erick Francisco Mendoza Rivero</strong>, Ingeniero Geólogo<br>
+    Universidad Nacional de Colombia, sede Medellín — Facultad de Minas
+    <span class="sep">
+      Proyecto <strong>Methane seep hunting: A multi-scale and multi method
+      approach</strong><br>
+      Programa Nacional de Ciencia, Tecnología e Innovación en Geociencias<br>
+      Convocatoria 877-2020 · Contrato Minciencias 80740-143-2021
+    </span>
+  </footer>
 </main>
 </body>
 </html>`;

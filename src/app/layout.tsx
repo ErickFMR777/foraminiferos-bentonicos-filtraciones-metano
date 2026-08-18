@@ -22,8 +22,9 @@ export const metadata: Metadata = {
     "de metano: comparación entre distintas localidades del mundo y la " +
     "plataforma continental del Caribe colombiano. A partir de la tesis de " +
     "Erick Francisco Mendoza Rivero, Ingeniero Geólogo, Universidad Nacional " +
-    "de Colombia, sede Medellín, Facultad de Minas. Proyecto Methane Seep " +
-    "Hunting (MSH).",
+    "de Colombia, sede Medellín, Facultad de Minas. Proyecto «Methane seep " +
+    "hunting: A multi-scale and multi method approach» — Minciencias, " +
+    "convocatoria 877-2020, contrato 80740-143-2021.",
   authors: [
     {
       name: "Erick Francisco Mendoza Rivero, Ingeniero Geólogo — Universidad Nacional de Colombia, sede Medellín, Facultad de Minas",

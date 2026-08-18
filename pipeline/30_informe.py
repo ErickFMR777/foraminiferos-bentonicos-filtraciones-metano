@@ -40,7 +40,8 @@ class Informe(FPDF):
             return
         self.set_font("D", "", 7.5)
         self.set_text_color(*SUAVE)
-        self.cell(0, 6, "Foraminíferos y filtraciones de metano — informe de curación",
+        self.cell(0, 6,
+                  "Foraminíferos bentónicos en filtraciones de metano — informe de curación",
                   align="L")
         self.ln(7)
         self.set_draw_color(*LINEA)
@@ -162,9 +163,12 @@ def main() -> int:
         "Universidad Nacional de Colombia, sede Medellín\n"
         "Facultad de Minas, Departamento de Geociencias y Medio Ambiente, 2022\n"
         "Directora: Ph.D. Gladys Rocío Bernal Franco\n\n"
-        "Proyecto Methane Seep Hunting (MSH):\n"
-        "A multi-scale and multi method approach\n"
-        "Minciencias — convocatoria 877 de 2020, contrato 80740-143-2021\n"
+        "Proyecto Methane seep hunting:\n"
+        "A multi-scale and multi method approach\n\n"
+        "Programa Nacional de Ciencia, Tecnología e Innovación en Geociencias\n"
+        "Convocatoria 877-2020 — Financiación de proyectos de investigación\n"
+        "en geociencias para el sector de hidrocarburos\n"
+        "Contrato/convenio Minciencias — Entidad: 80740-143-2021\n"
         "Grupo de investigación OCEÁNICOS\n"
         "Entidades: UPB · UNAL · GMAS · GEOMARES · ACGGP")
     pdf.ln(14)
@@ -199,10 +203,10 @@ def main() -> int:
           "de Ingeniero Geólogo. Universidad Nacional de Colombia, sede Medellín, "
           "Facultad de Minas, Departamento de Geociencias y Medio Ambiente. "
           "Directora: Ph.D. Gladys Rocío Bernal Franco. 62 pp.")
-    pdf.p("Realizada en el marco del proyecto «Methane Seep Hunting (MSH): A "
+    pdf.p("Realizada en el marco del proyecto «Methane seep hunting: A "
           "multi-scale and multi method approach», del Programa Nacional de "
           "Ciencia, Tecnología e Innovación en Geociencias (Minciencias), "
-          "convocatoria 877 de 2020 —financiación de proyectos de investigación en "
+          "convocatoria 877-2020 —financiación de proyectos de investigación en "
           "geociencias para el sector de hidrocarburos—, contrato 80740-143-2021. "
           "Grupo de investigación OCEÁNICOS. Entidades ejecutoras y beneficiarias: "
           "UPB, UNAL, GMAS, GEOMARES y ACGGP. El autor participó mediante "
