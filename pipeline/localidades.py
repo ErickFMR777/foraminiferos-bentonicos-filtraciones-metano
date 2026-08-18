@@ -219,9 +219,30 @@ LOCALIDADES: dict[str, dict] = {
 SIN_DOI = {
     "Diversity and Characteristics of Benthic Foraminifera in Cold Seep Areas in the Active "
     "Margin of the northeastern South China Sea": dict(
-        localidad="Margen activo del Mar de China Meridional NE", region="Pacífico NW",
-        lat=22.00, lon=119.00, prof_m=1100, confianza="media",
-        fuente="título; referencia no localizable en CrossRef ni en búsqueda web"),
+        localidad="Margen activo del Mar de China Meridional NE, frente a Taiwán",
+        region="Pacífico NW",
+        lat=22.00, lon=120.00, prof_m=1100, confianza="media",
+        fuente="Referencia recuperada de la lista bibliográfica de Zhang et al. "
+               "(2018), que la cita. Es un resumen de congreso de la EGU, no un "
+               "artículo en revista: por eso no aparece en CrossRef."),
+}
+
+# Referencias que no están en CrossRef y se han verificado a mano. Sin esto,
+# el estudio aparecería en el dashboard sin autoría ni año.
+REFERENCIAS_MANUALES = {
+    "Diversity and Characteristics of Benthic Foraminifera in Cold Seep Areas in the Active "
+    "Margin of the northeastern South China Sea": dict(
+        autores=["Chiang, M.-T.", "Thomas, E.", "Wei, K.-Y.", "Lin, Y.-S.",
+                 "Lin, S.", "Lin, A.T.-S."],
+        anio=2015,
+        revista="EGU General Assembly Conference Abstracts",
+        doi=None,
+        verificada=True,
+        fuente="Citada en la bibliografía de Zhang et al. (2018), "
+               "doi:10.1016/j.jseaes.2018.05.007. Mismos autores que la "
+               "referencia de proporciones de pared que usa la tesis "
+               "(68/32 en filtraciones frente a 24/76 en control).",
+    ),
 }
 
 # El sitio de la propia tesis, para situarlo en el mismo mapa.

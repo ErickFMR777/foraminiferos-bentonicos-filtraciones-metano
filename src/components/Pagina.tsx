@@ -7,6 +7,7 @@ import MapaMundial from "./MapaMundial";
 import MatrizLatProf from "./MatrizLatProf";
 import ParedPorBanda from "./ParedPorBanda";
 import Referencias from "./Referencias";
+import Sinu from "./Sinu";
 import Testigo from "./Testigo";
 import Veredicto from "./Veredicto";
 import completo from "@datos/taxones_completo.json";
@@ -140,9 +141,24 @@ export default function Pagina() {
           <Veredicto />
         </Seccion>
 
+        {/* ── 4 bis ─────────────────────────────────────────────── */}
+        <Seccion
+          n={tx({ es: "05 · La continuación", en: "05 · The continuation" })}
+          titulo={tx({
+            es: "El mismo campo, dos años después",
+            en: "The same field, two years later",
+          })}
+          entradilla={tx({
+            es: "En 2024, el mismo proyecto y la misma directora publicaron un estudio de 18 estaciones en este campo de filtración. Es la línea base local que a la tesis le faltaba: resuelve la duda sobre la diversidad y aporta los primeros isótopos del área.",
+            en: "In 2024, the same project and the same advisor published a study of 18 stations in this seep field. It is the local baseline the thesis lacked: it settles the diversity question and supplies the first isotopes for the area.",
+          })}
+        >
+          <Sinu />
+        </Seccion>
+
         {/* ── 5 ─────────────────────────────────────────────────── */}
         <Seccion
-          n={tx({ es: "05 · El catálogo", en: "05 · The catalogue" })}
+          n={tx({ es: "06 · El catálogo", en: "06 · The catalogue" })}
           titulo={tx({
             es: "Qué se ha reportado en las filtraciones del mundo",
             en: "What has been reported at the world's seeps",
@@ -171,7 +187,7 @@ export default function Pagina() {
 
         {/* ── cierre ───────────────────────────────────────────── */}
         <Seccion
-          n={tx({ es: "06 · Límites", en: "06 · Limits" })}
+          n={tx({ es: "07 · Límites", en: "07 · Limits" })}
           titulo={tx({
             es: "Lo que estos datos no pueden decir",
             en: "What these data cannot tell us",

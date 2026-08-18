@@ -40,7 +40,39 @@ BARRAGAN_BERNAL_2024 = dict(
          "se reconoce como de filtración por pockmarks, montículos, tapetes "
          "microbianos y flares acústicos, más manchas de petróleo detectadas por "
          "satélite. Campañas de mayo y junio de 2022.",
-    # (taxón, zona de actividad, banda de profundidad)
+    # Lista completa leída del artículo y validada contra WoRMS. El artículo
+    # no publica abundancias por especie, así que esto es presencia.
+    taxones_completos=[
+        "Amphistegina gibbosa",
+        "Bigenerina irregularis",
+        "Bolivina cochei",
+        "Cibicides refulgens",
+        "Cibicidoides mundulus",
+        "Cibicidoides pseudoungerianus",
+        "Cribroelphidium poeyanum",
+        "Elphidium crispum",
+        "Eponides inceratus",
+        "Gaudryina aequa",
+        "Lagenammina difflugiformis",
+        "Lenticulina orbicularis",
+        "Liebusella soldanii",
+        "Lobatula ungeriana",
+        "Lobatula wuellerstorfi",
+        "Melonis affinis",
+        "Planulina ariminensis",
+        "Quinqueloculina candeiana",
+        "Quinqueloculina padana",
+        "Quinqueloculina polygona",
+        "Reophax agglutinatus",
+        "Reophax compressus",
+        "Reussella spinulosa",
+        "Rosalina floridensis",
+        "Triloculina trigonula",
+        "Uvigerina auberiana",
+        "Uvigerina peregrina",
+    ],
+    # (taxón, zona de actividad, banda de profundidad). Las asociaciones que
+    # el propio artículo declara para cada nivel de actividad.
     taxones=[
         ("Quinqueloculina candeiana", "baja", "< 150 m"),
         ("Triloculina trigonula", "baja", "< 150 m"),

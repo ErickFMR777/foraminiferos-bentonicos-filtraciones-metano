@@ -110,8 +110,11 @@ TIPOLOGIA: dict[str, dict] = {
         fluido="termogenico", morfologia=None, confianza="alta",
         fuente="el título dice «hydrocarbon seeps»"),
     "10.1007/bf01203719": dict(
-        fluido="termogenico", morfologia=None, confianza="alta",
-        fuente="el título dice «bathyal hydrocarbon vents»"),
+        fluido="termogenico", morfologia="tapete_bacteriano", confianza="alta",
+        fuente="PDF: «Bacterial mat» es una de las categorías de muestreo de sus "
+               "propios testigos (GC53, GC185…), y el texto describe «la "
+               "adaptación de las comunidades de foraminíferos a los tapetes "
+               "bacterianos (Beggiatoa)»"),
     "10.1016/j.geobios.2003.10.004": dict(
         fluido="termogenico", morfologia=None, confianza="alta",
         fuente="el título dice «hydrocarbon seep»"),
@@ -194,6 +197,29 @@ TIPOLOGIA: dict[str, dict] = {
     "10.1029/pa005i002p00161": dict(
         fluido="no_filtracion", morfologia="no_aplica", confianza="alta",
         fuente="estudio de microhábitats en márgenes continentales normales"),
+}
+
+# Estudios cuya morfología NO se pudo determinar, con el motivo. Se dejan sin
+# asignar a propósito: en varios casos el texto sí menciona pockmarks o
+# volcanes de lodo, pero al leerlo resulta que la mención está en una tabla
+# comparativa de OTRAS localidades o en la lista de referencias, no en la
+# descripción del sitio muestreado. Asignarla sería inventar.
+SIN_MORFOLOGIA = {
+    "E02": "Machain-Castillo et al. (2019): el artículo no describe la "
+           "morfología del fondo; se centra en el impacto del petróleo.",
+    "E09": "Zhang et al. (2018): las menciones de pockmark, diapiro y tapete "
+           "bacteriano están en una tabla que compara OTRAS localidades "
+           "(Green Canyon, entre otras), no en su sitio de muestreo.",
+    "E13": "McGann y Conrad (2018): el PDF está escaneado y no tiene capa de "
+           "texto, así que no se puede leer automáticamente.",
+    "E26": "Chiang et al. (2015): resumen de congreso de la EGU, sin PDF.",
+    "E29": "Panieri (2005): la única mención de tapete bacteriano es el título "
+           "de Sen Gupta et al. (1997) en su bibliografía.",
+    "E37": "Li et al. (2020): resumen de Goldschmidt; el artículo completo en "
+           "Ore Geology Reviews figura como entrada aparte.",
+    "E38": "Wang et al. (2013): volcán de lodo y diapiro aparecen sólo en los "
+           "títulos de trabajos citados en su bibliografía, no en la "
+           "descripción del sitio.",
 }
 
 # Por defecto: filtración fría (es el objeto de la tesis) con morfología sin

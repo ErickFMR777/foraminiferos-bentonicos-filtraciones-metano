@@ -61,17 +61,21 @@ def main() -> int:
                     loc = v
                     break
         fiable = doi and doi != "10.1021/acsestwater.3c00740.s001"
+        # referencias verificadas a mano para lo que CrossRef no tiene
+        manual = next((v for k, v in LOC.REFERENCIAS_MANUALES.items()
+                       if k[:50].lower() in (e.get("titulo_limpio") or "").lower()), None)
         tip = TIP.TIPOLOGIA.get(doi, TIP.DEFECTO)
         tipo = loc.get("tipo", tip["fluido"])
         recuperado = any(r.get("recuperado") for r in bib if r["estudio"] == titulo)
         estudios.append({
             "id": e.get("id"),
             "titulo": e.get("titulo_limpio") or titulo,
-            "autores": cr.get("autores") if fiable else None,
-            "anio": cr.get("anio") if fiable else None,
-            "revista": cr.get("revista") if fiable else None,
+            "autores": (manual or {}).get("autores") or (cr.get("autores") if fiable else None),
+            "anio": (manual or {}).get("anio") or (cr.get("anio") if fiable else None),
+            "revista": (manual or {}).get("revista") or (cr.get("revista") if fiable else None),
             "doi": doi if fiable else None,
-            "referencia_verificada": bool(fiable),
+            "referencia_verificada": bool(fiable or (manual or {}).get("verificada")),
+            "referencia_fuente": (manual or {}).get("fuente"),
             "n_registros": n,
             "tipo_filtracion": tipo,
             "es_filtracion": tipo != "no_filtracion",
@@ -332,9 +336,16 @@ def main() -> int:
                     "incluso en estaciones de actividad alta: el valor de la tesis "
                     "no es anómalo para esta plataforma tropical.",
         },
+        "taxones_completos": bb.get("taxones_completos", []),
+        "n_taxones": len(bb.get("taxones_completos", [])),
+        # Dos estudios del MISMO campo de filtración: lo que comparten es el
+        # contraste más directo que existe para MSH-BC-21.
         "taxones_compartidos_con_msh": sorted(
-            {T.binomen(t) for t, _, _ in bb["taxones"]}
-            & {T.binomen(e["taxon"]) for e in especies}),
+            set(bb.get("taxones_completos", []))
+            & {e["taxon"] for e in especies}),
+        "taxones_solo_sinu": sorted(
+            set(bb.get("taxones_completos", []))
+            - {e["taxon"] for e in especies}),
     }, ensure_ascii=False, indent=1), encoding="utf-8")
 
     print("DATASETS PÚBLICOS GENERADOS")

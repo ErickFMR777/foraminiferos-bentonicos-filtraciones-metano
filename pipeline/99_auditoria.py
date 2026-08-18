@@ -374,9 +374,12 @@ def main() -> int:
           all(e["confianza"] == "nula" for e in est if e["lat"] is None), "")
     falso = [e for e in est if e["doi"] == "10.1021/acsestwater.3c00740.s001"]
     check("El DOI falso (parafinas cloradas) está anulado", not falso, "")
-    check("Sólo una referencia sin verificar (Mar de China, no localizable)",
-          len(est) - sum(1 for e in est if e["referencia_verificada"]) == 1,
-          f"{len(est) - sum(1 for e in est if e['referencia_verificada'])}")
+    check("Todas las referencias verificadas",
+          all(e["referencia_verificada"] for e in est),
+          f"{sum(1 for e in est if not e['referencia_verificada'])} sin verificar")
+    check("Las referencias resueltas a mano declaran de dónde salen",
+          all(e.get("referencia_fuente") for e in est if not e.get("doi")),
+          "")
 
     # etiquetas listas para mostrar
     gen_min = [t["taxon"] for t in tax if t["genero"] and t["genero"][0].islower()]

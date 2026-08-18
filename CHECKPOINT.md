@@ -222,13 +222,27 @@ archivó el resumen P-43 de Panieri (2000) con el nombre de Sen Gupta y
 Aharon (1994). `09_verificar_pdfs.py` existe para detectar eso; ejecutarlo
 siempre después de `08_organizar.py`.
 
-### 7.3 Una referencia no localizable
+### 7.3 Referencia recuperada — RESUELTO (2026-08-17)
+El estudio que no aparecía en CrossRef es **Chiang, M.-T., Thomas, E., Wei,
+K.-Y., Lin, Y.-S., Lin, S. y Lin, A.T.-S. (2015)**, *EGU General Assembly
+Conference Abstracts*. Es un resumen de congreso, de ahí que no tenga DOI. Se
+recuperó de la bibliografía de Zhang et al. (2018). Son los mismos autores de
+la referencia de proporciones de pared que usa la tesis (68/32 frente a
+24/76). **Las 40 referencias están verificadas.**
+
+### 7.3 bis Morfologías sin determinar (7 de 40)
+Documentadas una a una en `tipologia.SIN_MORFOLOGIA`. En varios casos el texto
+sí menciona pockmarks o volcanes de lodo, pero **la mención está en una tabla
+comparativa de otras localidades o en la lista de referencias**, no en la
+descripción del sitio muestreado. Asignarla sería inventar.
+
+### 7.4 Antigua sección — una referencia no localizable
 *«Diversity and Characteristics of Benthic Foraminifera in Cold Seep Areas in
 the Active Margin of the northeastern South China Sea»* (4 registros).
 No está en CrossRef ni aparece en búsqueda web. CrossRef devolvió una
 coincidencia falsa (parafinas cloradas) que ya está anulada en `20_build.py`.
 
-### 7.4 Ampliar la base de estudios
+### 7.5 Ampliar la base de estudios
 Propuesta hecha, sin respuesta: buscar de forma **dirigida** trabajos en
 **0-15° de latitud y <150 m** (el hueco), en vez de ampliar en general.
 
