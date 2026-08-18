@@ -37,3 +37,5 @@ venv/
 Thumbs.db
 desktop.ini
 *.log
+
+# Dependencias del atlas cartográfico (se resuelven en build)

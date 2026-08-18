@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
+import { Proveedor } from "@/lib/i18n";
 
 const sans = Inter({
   subsets: ["latin"],
@@ -39,7 +40,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${sans.variable} ${serif.variable}`}>{children}</body>
+      <body className={`${sans.variable} ${serif.variable}`}>
+        <Proveedor>{children}</Proveedor>
+      </body>
     </html>
   );
 }

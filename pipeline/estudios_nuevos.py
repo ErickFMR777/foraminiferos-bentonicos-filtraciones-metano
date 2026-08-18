@@ -30,6 +30,12 @@ BARRAGAN_BERNAL_2024 = dict(
     lat_banda="0-15",
     tipo="frio",
     morfologia="pockmark",
+    mismo_proyecto=True,
+    relacion_con_tesis="MISMO proyecto (MSH) y MISMA localidad que la tesis: "
+                       "la plataforma externa frente al Golfo de Morrosquillo. "
+                       "Confirmado por el autor de la tesis. Es la continuación "
+                       "directa de este trabajo, con 18 estaciones donde la tesis "
+                       "analizó una, y con los isótopos que a la tesis le faltaban.",
     nota="Área de 297 km², 18 estaciones, profundidades de 40 a 300 m. El campo "
          "se reconoce como de filtración por pockmarks, montículos, tapetes "
          "microbianos y flares acústicos, más manchas de petróleo detectadas por "
