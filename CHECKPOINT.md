@@ -766,3 +766,61 @@ se dejan leer agrupando palabras por coordenada vertical.
 Los 29 sin tabla legible están **nominados** en `tablas_pdf.json`. Tablas
 rasterizadas o con columnas entrelazadas: no es una carencia oculta, es una
 carencia declarada.
+
+---
+
+## 18. Auditoría de las tres superficies (2026-08-18)
+
+Revisión tras los cambios de dominio, comprobando por separado el repositorio
+local, GitHub y el despliegue en producción. **No se rompió nada con el
+renombrado**, pero la revisión destapó dos cosas que llevaban tiempo ahí.
+
+### Lo que estaba bien
+
+| | |
+|---|---|
+| Árbol local | limpio, y `git ls-files` idéntico a lo que GitHub tiene (60 archivos) |
+| Datos | los 11 datasets salen **byte a byte idénticos** al regenerarlos desde los Excel |
+| Historial publicado | ningún `.xlsx`, ningún PDF salvo el informe autorizado; las cinco variables de `.env.example` vacías **en todos los commits** |
+| Producción | los 9 assets en 200, ocho secciones, `robots: index, follow`, cero rastro de contraseña |
+| Dominio viejo | 404, y sigue en 404 después de desplegar |
+
+### Hallazgo 1 · El build local no coincidía con el desplegado
+
+El CSS local daba 30 254 bytes y el servido 29 355. **No era producción
+desactualizada.** Tailwind v4 escanea todo el repositorio, así que tomaba por
+clases la prosa de la documentación —CLAUDE.md nombra `font-serif` y
+`tabular-nums` justo al explicar por qué NO se usan— y el `.capitalize()` de un
+script de Python. Producción excluye `.md` y `pipeline/` por `.vercelignore`, de
+ahí la diferencia.
+
+Lo grave no era el peso sobrante: **dos builds del mismo commit dando
+resultados distintos impiden verificar el despliegue contra el código.** Con
+`@import "tailwindcss" source("../")` los dos dan 29 355 bytes idénticos, y el
+chunk de página coincide en tamaño y contenido salvo cuatro identificadores
+internos de webpack, que dependen del orden de build.
+
+### Hallazgo 2 · «H' 3.43» con punto en la versión española
+
+Encontrado leyendo el HTML servido, no el código. Al tirar del hilo había
+**tres criterios conviviendo**:
+
+- un helper propio, correcto, duplicado en `Caribe` y `MapaMundial`;
+- `.replace(".", ",")` a mano en `Composicion` y `Sinu` — que dejaba coma
+  también en inglés;
+- `.toFixed()` crudo en `Veredicto`, `Composicion` y `Testigo` — que dejaba
+  punto también en español.
+
+Y el separador de **millar** clavado a `"es"` en tres sitios, así que en inglés
+salía `1.234` donde debía leerse `1,234`.
+
+Todo pasa ahora por `useNum()` de `src/lib/ui.tsx`. Se respetaron los dos casos
+que ya estaban bien y que parecen errores: los valores de `style`, que son CSS,
+y las cifras escritas dentro de una rama concreta de `tx({es, en})`.
+
+### La auditoría sube a 93
+
+La comprobación nueva falla si un componente vuelve a clavar el separador
+decimal o el de millar. Es la misma idea que la del hex de colores: los dos
+bugs venían de escribir a mano algo que depende del contexto —el tema en un
+caso, el idioma en el otro— y ninguno lo habría detectado un `tsc`.
