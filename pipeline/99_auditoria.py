@@ -552,6 +552,20 @@ def main() -> int:
         check("Ningún componente fija un color en hex (no seguiría al tema)",
               not culpables, f"{culpables}")
 
+        # El separador decimal NO es el mismo en los dos idiomas, y el proyecto
+        # llegó a tener tres criterios a la vez: helper propio, `.replace` a
+        # mano —que dejaba coma también en inglés— y `.toFixed()` crudo —que
+        # dejaba punto también en español—. En producción se leía «H' 3.43» en
+        # la versión española. Ahora todo pasa por `useNum()` de src/lib/ui.tsx.
+        # Se permite dentro de un par tx({es, en}), donde cada rama ya elige.
+        clavados = []
+        for f in sorted(comp.glob("*.tsx")):
+            for i, l in enumerate(f.read_text(encoding="utf-8").splitlines(), 1):
+                if 'replace(".", ",")' in l or 'toLocaleString("es")' in l:
+                    clavados.append(f"{f.name}:{i}")
+        check("Ningún componente clava el separador decimal o de millar",
+              not clavados, f"{clavados}")
+
     # ---------------------------------------------------------------------
     # Los Excel corregidos son un producto más del pipeline, y hasta ahora
     # nadie los verificaba: se comprueban si existen. Que la hoja de

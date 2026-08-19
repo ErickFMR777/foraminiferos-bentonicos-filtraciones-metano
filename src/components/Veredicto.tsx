@@ -4,7 +4,7 @@ import msh from "@datos/msh_bc21.json";
 import sinu from "@datos/sinu_2024.json";
 import solape from "@datos/solape.json";
 import { useT } from "@/lib/i18n";
-import { ComoSeLee, Nota, Taxon } from "@/lib/ui";
+import { ComoSeLee, Nota, Taxon, useNum } from "@/lib/ui";
 
 type Estado = "cumple" | "matiza";
 
@@ -55,6 +55,7 @@ function Criterio({
 
 export default function Veredicto() {
   const { tx } = useT();
+  const num = useNum();
   const d = sinu.diversidad;
   const c = sinu.comparacion_msh;
 
@@ -129,7 +130,7 @@ export default function Veredicto() {
           es: "La literatura predice diversidad BAJA en filtraciones",
           en: "The literature predicts LOW diversity at seeps",
         })}
-        observado={"H' " + msh.indices.shannon_H.toFixed(2)}
+        observado={"H' " + num(msh.indices.shannon_H, 2)}
         explicacion={
           <>
             {tx({
@@ -138,9 +139,9 @@ export default function Veredicto() {
             })}
             <strong className="font-semibold text-(--ink)">
               {tx({ es: "Shannon entre ", en: "Shannon between " })}
-              {d.shannon_min.toFixed(1)}
+              {num(d.shannon_min)}
               {tx({ es: " y ", en: " and " })}
-              {d.shannon_max.toFixed(1)}
+              {num(d.shannon_max)}
               {tx({
                 es: " en las 18 estaciones",
                 en: " across all 18 stations",
@@ -188,13 +189,13 @@ export default function Veredicto() {
             className="absolute top-10 -translate-x-1/2 whitespace-nowrap text-[0.72rem] font-semibold"
             style={{ left: (((msh.indices.shannon_H - 2) / 2) * 100).toFixed(1) + "%" }}
           >
-            MSH-BC-21 · {msh.indices.shannon_H.toFixed(2)}
+            MSH-BC-21 · {num(msh.indices.shannon_H, 2)}
           </div>
           <span className="absolute top-7 left-0 text-[0.68rem] tabular text-(--muted)">
-            2,0
+            {num(2)}
           </span>
           <span className="absolute top-7 right-0 text-[0.68rem] tabular text-(--muted)">
-            4,0
+            {num(4)}
           </span>
         </div>
         <p className="mt-7 text-[0.8rem] leading-relaxed text-(--ink-2)">

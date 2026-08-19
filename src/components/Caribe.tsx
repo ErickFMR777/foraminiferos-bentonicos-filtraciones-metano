@@ -3,7 +3,7 @@
 import caribe from "@datos/caribe_referencia.json";
 import msh from "@datos/msh_bc21.json";
 import { useT } from "@/lib/i18n";
-import { ComoSeLee, Nota, Taxon } from "@/lib/ui";
+import { ComoSeLee, Nota, Taxon, useNum } from "@/lib/ui";
 
 const AMBIENTE: Record<string, { es: string; en: string }> = {
   Estuarino: { es: "Estuarino", en: "Estuarine" },
@@ -17,9 +17,8 @@ const AMBIENTE: Record<string, { es: string; en: string }> = {
 };
 
 export default function Caribe() {
-  const { tx, idioma } = useT();
-  const num = (v: number, d = 1) =>
-    v.toFixed(d).replace(".", idioma === "es" ? "," : ".");
+  const { tx } = useT();
+  const num = useNum();
 
   // Ordenadas por dominancia del taxón principal: así el contraste con
   // MSH-BC-21 —que cierra la lista— se lee de un vistazo.

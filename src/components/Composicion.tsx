@@ -4,7 +4,7 @@ import { useState } from "react";
 import msh from "@datos/msh_bc21.json";
 import solape from "@datos/solape.json";
 import { useT } from "@/lib/i18n";
-import { ComoSeLee, Nota, Taxon } from "@/lib/ui";
+import { ComoSeLee, Nota, Taxon, useNum } from "@/lib/ui";
 
 const COLOR: Record<string, string> = {
   Hialino: "var(--pared-hialino)",
@@ -22,6 +22,7 @@ const ETIQ: Record<string, { es: string; en: string }> = {
 
 export default function Composicion() {
   const { tx } = useT();
+  const num = useNum();
   const [n, setN] = useState(15);
   const esp = msh.especies;
   const max = esp[0].abundancia_rel;
@@ -49,7 +50,7 @@ export default function Composicion() {
                 style={{ background: COLOR[k] }}
               />
               <span className="text-(--ink-2)">{tx(ETIQ[k])}</span>
-              <span className="tabular text-(--muted)">{v.toFixed(1)}%</span>
+              <span className="tabular text-(--muted)">{num(v)}%</span>
             </span>
           ))}
         </div>
@@ -81,7 +82,7 @@ export default function Composicion() {
                 />
               </span>
               <span className="tabular w-12 shrink-0 text-right text-(--muted)">
-                {e.abundancia_rel.toFixed(2)}%
+                {num(e.abundancia_rel, 2)}%
               </span>
             </div>
           );
@@ -105,11 +106,11 @@ export default function Composicion() {
             t: tx({ es: "especies (riqueza S)", en: "species (richness S)" }),
           },
           {
-            v: msh.indices.equidad_J.toFixed(3).replace(".", ","),
+            v: num(msh.indices.equidad_J, 3),
             t: tx({ es: "equidad de Pielou J'", en: "Pielou evenness J'" }),
           },
           {
-            v: msh.indices.dominancia_top5.toFixed(1).replace(".", ",") + "%",
+            v: num(msh.indices.dominancia_top5) + "%",
             t: tx({
               es: "abundancia en las 5 principales",
               en: "abundance in the top 5",
@@ -136,7 +137,7 @@ export default function Composicion() {
         {tx({
           es:
             "Los conteos originales son fraccionarios porque proceden de submuestreo por alícuotas; el factor de reparto no está documentado en la hoja de origen. " +
-            solape.generos.pct_abundancia_compartida.toFixed(1).replace(".", ",") +
+            num(solape.generos.pct_abundancia_compartida) +
             "% de la abundancia corresponde a géneros ya reportados en filtraciones.",
           en:
             "Original counts are fractional because they come from aliquot splitting; the split factor is not documented in the source sheet. " +

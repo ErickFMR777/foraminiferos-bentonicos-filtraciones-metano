@@ -1,11 +1,23 @@
 "use client";
 
 import { useState } from "react";
-import { useT } from "./i18n";
+import { useApp, useT } from "./i18n";
 
 /** Nombre científico. Los taxones van SIEMPRE en cursiva: es la convención
  *  taxonómica y un especialista lo nota en el primer segundo. Las entradas de
  *  género abierto («Uvigerina spp.») llevan el calificador en redonda. */
+/** Formatea una cifra según el idioma activo: coma decimal en español, punto
+ *  en inglés. Existe porque el proyecto tenía tres criterios a la vez —helper
+ *  propio en un componente, `.replace(".", ",")` a mano (que dejaba coma
+ *  también en inglés) y `.toFixed()` crudo (que dejaba punto también en
+ *  español)—, y en producción se veía «H' 3.43» en la versión española. Toda
+ *  cifra VISIBLE pasa por aquí; los valores de `style` no, que son CSS. */
+export function useNum() {
+  const { idioma } = useApp();
+  return (v: number, d = 1) =>
+    v.toFixed(d).replace(".", idioma === "es" ? "," : ".");
+}
+
 export function Taxon({ nombre }: { nombre: string }) {
   const m = nombre.match(/^(.*?)(\s+(?:spp?\.|sp\.))$/);
   return m ? (

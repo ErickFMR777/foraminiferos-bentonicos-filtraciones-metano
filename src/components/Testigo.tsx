@@ -2,7 +2,7 @@
 
 import msh from "@datos/msh_bc21.json";
 import { useT } from "@/lib/i18n";
-import { ComoSeLee, Nota } from "@/lib/ui";
+import { ComoSeLee, Nota, useNum } from "@/lib/ui";
 
 const FRACC = ["125", "250", "500"] as const;
 const CM = ["MSH_21_BC_01", "MSH_21_BC_02"] as const;
@@ -10,7 +10,11 @@ const CM = ["MSH_21_BC_01", "MSH_21_BC_02"] as const;
 type Ab = Record<string, Record<string, Record<string, number | null>>>;
 
 export default function Testigo() {
-  const { tx } = useT();
+  const { tx, idioma } = useT();
+  const num = useNum();
+  // Separador de MILLAR, que no es el mismo en los dos idiomas. Estaba
+  // clavado a "es" en tres sitios y en inglés salía «1.234» por «1,234».
+  const miles = (v: number) => v.toLocaleString(idioma === "es" ? "es" : "en");
   const ab = msh.abundancias as unknown as Ab;
 
   const serie = (variable: string, cm: string) =>
@@ -54,7 +58,7 @@ export default function Testigo() {
                   textAnchor="end"
                   className="fill-(--muted) text-[9px] tabular"
                 >
-                  {Math.round(g * max).toLocaleString("es")}
+                  {miles(Math.round(g * max))}
                 </text>
               </g>
             ))}
@@ -113,17 +117,17 @@ export default function Testigo() {
           {[
             {
               t: tx({ es: "Densidad total", en: "Total density" }),
-              v: densidad.map((d) => Math.round(d).toLocaleString("es")),
+              v: densidad.map((d) => miles(Math.round(d))),
               u: "ind./g",
             },
             {
               t: tx({ es: "Bentónicos extraídos", en: "Benthics picked" }),
-              v: totalB.map((d) => d.toLocaleString("es")),
+              v: totalB.map((d) => miles(d)),
               u: "",
             },
             {
               t: tx({ es: "Razón bentónicos / planctónicos", en: "Benthic / planktic ratio" }),
-              v: totalB.map((b, i) => (b / (totalP[i] || 1)).toFixed(2)),
+              v: totalB.map((b, i) => num(b / (totalP[i] || 1), 2)),
               u: "",
             },
           ].map((f) => (

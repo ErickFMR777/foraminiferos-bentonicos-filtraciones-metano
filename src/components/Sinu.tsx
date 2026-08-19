@@ -2,7 +2,7 @@
 
 import sinu from "@datos/sinu_2024.json";
 import { useT } from "@/lib/i18n";
-import { ComoSeLee, Nota, Taxon } from "@/lib/ui";
+import { ComoSeLee, Nota, Taxon, useNum } from "@/lib/ui";
 
 const ZONA: Record<string, { es: string; en: string; color: string }> = {
   baja: { es: "Actividad baja", en: "Low activity", color: "var(--seq-250)" },
@@ -16,6 +16,7 @@ const ZONA: Record<string, { es: string; en: string; color: string }> = {
 
 export default function Sinu() {
   const { tx } = useT();
+  const num = useNum();
   const compartidos = new Set(sinu.taxones_compartidos_con_msh);
   const zonas = ["baja", "moderada", "moderada-alta"];
 
@@ -119,8 +120,8 @@ export default function Sinu() {
                 <Taxon nombre={i.taxon} />
               </span>
               <span className="tabular text-(--ink-2)">
-                {i.d13c_min.toFixed(2).replace(".", ",")} a{" "}
-                {i.d13c_max.toFixed(2).replace(".", ",")} ‰ PDB
+                {num(i.d13c_min, 2)} a{" "}
+                {num(i.d13c_max, 2)} ‰ PDB
               </span>
               {i.nota && (
                 <span className="text-[0.75rem] text-(--muted)">{i.nota}</span>

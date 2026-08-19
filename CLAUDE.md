@@ -405,8 +405,15 @@ explica el caso concreto; esto es el índice.
 - Comentarios en español, y explican **por qué**, no qué. Varios documentan un
   fallo concreto para que nadie lo repita: no borrarlos al refactorizar.
 - Mensajes de commit en español, en imperativo y sin tildes en el asunto.
-- En la interfaz, las cifras van con coma decimal (`3,4325`) y
-  `font-variant-numeric: tabular-nums` cuando se comparan en columna.
+- En la interfaz, las cifras van con coma decimal **en español y punto en
+  inglés**, siempre vía `useNum()` de `src/lib/ui.tsx` — nunca `.toFixed()`
+  suelto (deja punto también en español; en producción se leyó «H' 3.43») ni
+  `.replace(".", ",")` a mano (deja coma también en inglés). El separador de
+  MILLAR tampoco coincide: `toLocaleString` necesita el idioma, no `"es"`
+  clavado. Se exceptúan los valores de `style`, que son CSS, y las cifras
+  escritas dentro de una rama concreta de `tx({es, en})`. Hay comprobación en
+  `99_auditoria.py`. Y `font-variant-numeric: tabular-nums` —la clase
+  `.tabular`— cuando se comparan en columna.
 - Toda visualización lleva su `<ComoSeLee>` y su `<Nota>` con la fuente: el
   público es académico y el método tiene que estar a la vista.
 

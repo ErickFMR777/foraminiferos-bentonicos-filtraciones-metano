@@ -8,7 +8,7 @@ import land from "world-atlas/land-110m.json";
 import estudios from "@datos/estudios.json";
 import matriz from "@datos/matriz_lat_prof.json";
 import { useT } from "@/lib/i18n";
-import { ComoSeLee, Nota } from "@/lib/ui";
+import { ComoSeLee, Nota, useNum } from "@/lib/ui";
 
 const W = 900;
 const H = 460;
@@ -56,6 +56,7 @@ function encajar(v: Vista): Vista {
 
 export default function MapaMundial() {
   const { tx, idioma } = useT();
+  const num = useNum();
   const [activo, setActivo] = useState<Est | null>(null);
   const [filtro, setFiltro] = useState<string | null>(null);
   const [vista, setVista] = useState<Vista>({ k: 1, x: 0, y: 0 });
@@ -200,7 +201,7 @@ export default function MapaMundial() {
           {tx({ es: "Ver todo", en: "Reset" })}
         </button>
         <span className="tabular text-[0.72rem] text-(--muted)">
-          ×{vista.k.toFixed(1).replace(".", idioma === "es" ? "," : ".")}
+          ×{num(vista.k)}
         </span>
       </div>
 
