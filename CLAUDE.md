@@ -291,7 +291,7 @@ un componente de visualización en `<Seccion>`.
 | 02 | `ParedPorBanda` | La firma de la pared (calcáreo/aglutinado por banda) |
 | 03 | `Composicion` + `Testigo` | Fauna de seep o de plataforma tropical |
 | 04 | `Veredicto` | ¿Qué tan *seep* se ve MSH-BC-21? |
-| 05 | `Sinu` | Barragán-Jacksson y Bernal (2024): mismo campo, con isótopos |
+| 05 | `Sinu` | El resto del mismo muestreo, publicado por Barragán-Jacksson y Bernal (2024) |
 | 06 | `Explorador` | Buscar, filtrar y ordenar los taxones |
 | 07 | `Caribe` | El contraste con la fauna de fondo regional |
 | 08 | *(inline)* + `Referencias` | Los límites declarados, y las referencias dentro de ellos |
@@ -376,9 +376,15 @@ explica el caso concreto; esto es el índice.
   los artículos: la presencia es señal sólida, el número de menciones es un
   proxy débil (un artículo repite un nombre al citar a otros) y sólo hay
   dominancia cuando el texto la afirma. El dashboard debe distinguirlas.
-- **La sección 05 resume un trabajo AJENO, y tiene que decirlo.** Los datos de
-  Barragán-Jacksson, C.M. y Bernal, G.R. (2024) —18 estaciones, δ13C, rango de
-  Shannon— son de sus autoras; la tesis no participó en ese estudio. La
+- **La sección 05 resume un trabajo AJENO, y contarlo mal es fácil.** No hubo
+  segunda campaña: es el **mismo proyecto MSH y el mismo muestreo** —18
+  estaciones de mayo-junio de 2022—. La tesis analizó uno de esos testigos
+  (MSH-BC-21) y se ocupó de las asociaciones; Camila María Barragán-Jacksson,
+  compañera de proyecto durante la tesis, terminó el análisis de todas las
+  muestras y lo publicó en 2024 con Gladys Bernal, la directora. Escribir que
+  «volvieron al campo» es falso, y llamarlo «la continuación» de la tesis
+  también: el artículo es obra de sus autoras. Los datos —18 estaciones, δ13C,
+  rango de Shannon— son suyos; la tesis no participó en ese estudio. La
   entradilla decía «el mismo proyecto y la misma directora publicaron un
   estudio» sin nombrarlas, se citaba a la primera autora con el apellido
   compuesto partido por la mitad —lo que atribuye el trabajo a otra persona—,

@@ -134,8 +134,8 @@ export default function Veredicto() {
         explicacion={
           <>
             {tx({
-              es: "La tesis obtuvo un Shannon de 3,43 y lo trató como una anomalía, atribuyéndola a la ubicación tropical. Un año después, Barragán-Jacksson y Bernal (2024) midieron el mismo campo de filtración y publicaron ",
-              en: "The thesis obtained a Shannon of 3.43 and treated it as an anomaly, attributing it to the tropical setting. A year later, Barragán-Jacksson and Bernal (2024) measured the same seep field and published ",
+              es: "La tesis obtuvo un Shannon de 3,43 y lo trató como una anomalía, atribuyéndola a la ubicación tropical. Al terminarse el análisis del resto del muestreo, Barragán-Jacksson y Bernal (2024) publicaron ",
+              en: "The thesis obtained a Shannon of 3.43 and treated it as an anomaly, attributing it to the tropical setting. Once the rest of the sampling had been analysed, Barragán-Jacksson and Bernal (2024) published ",
             })}
             <strong className="font-semibold text-(--ink)">
               {tx({ es: "Shannon entre ", en: "Shannon between " })}

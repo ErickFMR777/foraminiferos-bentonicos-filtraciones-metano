@@ -41,7 +41,8 @@ CANDIDATOS = [
                 "ungeriana). Es el único candidato que caería en la celda vacía "
                 "y aporta justo lo que a la tesis le faltaba: réplicas "
                 "espaciales e isótopos.",
-        advertencia="Publicado un año después de la tesis y probablemente la "
+        advertencia="Publicado después de la tesis, sobre el mismo muestreo, y "
+                    "probablemente la "
                     "cita. Conviene leerlo ANTES de publicar el dashboard: si "
                     "ya ocupa la celda vacía, la narrativa pasa de «nadie ha "
                     "estudiado esto» a «esto se acaba de empezar a estudiar».",

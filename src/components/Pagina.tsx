@@ -172,14 +172,14 @@ export default function Pagina() {
 
         {/* ── 4 bis ─────────────────────────────────────────────── */}
         <Seccion
-          n={tx({ es: "05 · Lo que vino después", en: "05 · What came next" })}
+          n={tx({ es: "05 · El resto del proyecto", en: "05 · The rest of the project" })}
           titulo={tx({
-            es: "Barragán-Jacksson y Bernal vuelven al mismo campo",
-            en: "Barragán-Jacksson and Bernal go back to the same field",
+            es: "Las 18 estaciones que esta tesis no alcanzó a analizar",
+            en: "The 18 stations this thesis did not get to analyse",
           })}
           entradilla={tx({
-            es: "La cifra más incómoda de la tesis era su propia diversidad: demasiado alta para lo que la literatura predice en una filtración. En 2024, Camila María Barragán-Jacksson y Gladys Bernal volvieron a este campo con 18 estaciones y midieron lo que aquí faltaba. El trabajo es de ellas —esta sección lo resume y lo cita, nada más—, y es lo mejor que le ha pasado a esta tesis desde que se entregó.",
-            en: "The most awkward figure in the thesis was its own diversity: too high for what the literature predicts at a seep. In 2024, Camila María Barragán-Jacksson and Gladys Bernal went back to this field with 18 stations and measured what was missing here. The work is theirs — this section only summarises and cites it — and it is the best thing that has happened to this thesis since it was submitted.",
+            es: "El proyecto MSH muestreó 18 estaciones en las campañas de mayo y junio de 2022. Esta tesis analizó una de ellas, el testigo MSH-BC-21, y se ocupó de las asociaciones de foraminíferos. Camila María Barragán-Jacksson, compañera de proyecto durante la tesis, terminó después el análisis de todas las muestras y lo publicó en 2024 junto a Gladys Bernal, la directora. No es una campaña posterior ni otro sitio: es el mismo muestreo, completo. Suyo es el trabajo que sigue, y suyos los isótopos que aquí faltaban.",
+            en: "The MSH project sampled 18 stations during the May and June 2022 surveys. This thesis analysed one of them, the MSH-BC-21 box core, and dealt with foraminiferal assemblages. Camila María Barragán-Jacksson, a colleague on the project while the thesis was under way, later completed the analysis of every sample and published it in 2024 with Gladys Bernal, the advisor. This is not a later survey or a different site: it is the same sampling, finished. The work that follows is hers, and so are the isotopes that were missing here.",
           })}
         >
           <Sinu />

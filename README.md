@@ -50,7 +50,7 @@ Ocho secciones en scroll, todas bilingües y con su bloque «Cómo se lee».
 | 02 | **La firma de la pared** | Proporción calcáreo / aglutinado por banda, la señal más fiable de filtración |
 | 03 | **La muestra** | Qué hay dentro de MSH-BC-21: composición e interior del testigo |
 | 04 | **El veredicto** | Cuatro criterios de la literatura contrastados con lo que la muestra mide |
-| 05 | **El estudio de 2024** | Barragán-Jacksson y Bernal (2024), obra ajena a la tesis: 18 estaciones del mismo campo, con isótopos |
+| 05 | **El resto del proyecto** | Las otras 18 estaciones del mismo muestreo, que analizó y publicó Barragán-Jacksson con Bernal (2024) |
 | 06 | **El catálogo** | Explorador de los taxones: buscar, filtrar y ordenar |
 | 07 | **El Caribe contra sí mismo** | La muestra frente a la fauna de fondo regional |
 | 08 | **Límites** | Lo que estos datos **no** pueden decir |

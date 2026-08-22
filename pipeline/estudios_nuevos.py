@@ -5,11 +5,18 @@ Datos extraídos de artículos que no formaban parte de la base original. Van
 marcados con origen='nuevo' para que el dashboard pueda mostrar la base tal
 como la construyó la tesis o la base actualizada.
 
-El primero es el más consecuente: Barragán-Jacksson y Bernal (2024) trabajan en la
-MISMA área que la tesis —la plataforma externa frente al Golfo de
-Morrosquillo, dentro del Cinturón del Sinú—, con la misma directora y dentro
-del mismo proyecto MSH. Publicado un año después, ocupa la celda de la
-matriz que la tesis encontraba vacía.
+El primero es el más consecuente, y conviene entender bien qué relación tiene
+con la tesis, porque es fácil contarlo mal. NO es una campaña posterior ni otro
+sitio: es el MISMO proyecto MSH y el MISMO muestreo —18 estaciones de las
+campañas de mayo y junio de 2022, frente al Golfo de Morrosquillo—. La tesis
+analizó uno de esos testigos, MSH-BC-21, centrada en las asociaciones de
+foraminíferos. Camila María Barragán-Jacksson, compañera de proyecto durante la
+tesis, terminó después el análisis de todas las muestras y lo publicó en 2024
+con Gladys Bernal, directora de la tesis.
+
+Decir que «volvieron al campo» o que es «la continuación» del trabajo del autor
+sería falso en los dos sentidos: no hubo segunda salida, y el artículo es obra
+de sus autoras, no una prolongación de la tesis.
 """
 
 from __future__ import annotations
@@ -31,11 +38,16 @@ BARRAGAN_BERNAL_2024 = dict(
     tipo="frio",
     morfologia="pockmark",
     mismo_proyecto=True,
-    relacion_con_tesis="MISMO proyecto (MSH) y MISMA localidad que la tesis: "
-                       "la plataforma externa frente al Golfo de Morrosquillo. "
-                       "Confirmado por el autor de la tesis. Es la continuación "
-                       "directa de este trabajo, con 18 estaciones donde la tesis "
-                       "analizó una, y con los isótopos que a la tesis le faltaban.",
+    relacion_con_tesis="MISMO proyecto (MSH), MISMO muestreo y MISMA localidad "
+                       "que la tesis: las campañas de mayo y junio de 2022 frente "
+                       "al Golfo de Morrosquillo. No es una campaña posterior. La "
+                       "tesis analizó uno de los testigos (MSH-BC-21) y se ocupó "
+                       "de las asociaciones; Camila María Barragán-Jacksson, "
+                       "compañera de proyecto durante la tesis, terminó el "
+                       "análisis de todas las muestras y lo publicó en 2024 con "
+                       "Gladys Bernal, la directora. El artículo es obra de sus "
+                       "autoras, no una prolongación de la tesis. Confirmado por "
+                       "el autor de la tesis.",
     nota="Área de 297 km², 18 estaciones, profundidades de 40 a 300 m. El campo "
          "se reconoce como de filtración por pockmarks, montículos, tapetes "
          "microbianos y flares acústicos, más manchas de petróleo detectadas por "
