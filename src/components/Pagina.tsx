@@ -172,14 +172,14 @@ export default function Pagina() {
 
         {/* ── 4 bis ─────────────────────────────────────────────── */}
         <Seccion
-          n={tx({ es: "05 · El resto del proyecto", en: "05 · The rest of the project" })}
+          n={tx({ es: "05 · Del testigo al campo", en: "05 · From one core to the field" })}
           titulo={tx({
             es: "Las 18 estaciones que esta tesis no alcanzó a analizar",
             en: "The 18 stations this thesis did not get to analyse",
           })}
           entradilla={tx({
-            es: "El proyecto MSH muestreó 18 estaciones en las campañas de mayo y junio de 2022; esta tesis analizó una, el testigo MSH-BC-21. El análisis del muestreo completo se publicó después —Barragán-Jacksson y Bernal (2024)— y aporta las réplicas espaciales y los primeros isótopos del área, que es lo que aquí faltaba.",
-            en: "The MSH project sampled 18 stations during the May and June 2022 surveys; this thesis analysed one, the MSH-BC-21 box core. The analysis of the complete set was published later — Barragán-Jacksson and Bernal (2024) — and it supplies the spatial replicates and the first isotopes for the area, which is what was missing here.",
+            es: "«Methane seep hunting: A multi-scale and multi method approach» muestreó 18 estaciones en las campañas de mayo y junio de 2022; esta tesis analizó una, el testigo MSH-BC-21. El análisis del muestreo completo se publicó después —Barragán-Jacksson y Bernal (2024)— y aporta las réplicas espaciales y los primeros isótopos del área, que es lo que aquí faltaba.",
+            en: "“Methane seep hunting: A multi-scale and multi method approach” sampled 18 stations during the May and June 2022 surveys; this thesis analysed one, the MSH-BC-21 box core. The analysis of the complete set was published later — Barragán-Jacksson and Bernal (2024) — and it supplies the spatial replicates and the first isotopes for the area, which is what was missing here.",
           })}
         >
           <Sinu />
@@ -394,8 +394,8 @@ export default function Pagina() {
                 {
                   k: tx({ es: "Vinculación", en: "Appointment" }),
                   v: tx({
-                    es: "Beca-pasantía del programa Jóvenes Investigadores, 21-08-2021 a 31-03-2024. Tutora: Gladys Rocío Bernal Franco.",
-                    en: "Young Researchers scholarship-internship, 21 Aug 2021 to 31 Mar 2024. Tutor: Gladys Rocío Bernal Franco.",
+                    es: "Beca-pasantía del programa Jóvenes Investigadores, 21-08-2021 a 31-03-2024. Asesora: Gladys Rocío Bernal Franco.",
+                    en: "Young Researchers scholarship-internship, 21 Aug 2021 to 31 Mar 2024. Adviser: Gladys Rocío Bernal Franco.",
                   }),
                 },
               ].map((d) => (

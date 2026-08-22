@@ -68,8 +68,8 @@ export default function Referencias() {
 
       <Nota>
         {tx({
-          es: "Las referencias se citan; los documentos no se publican. Los datos primarios de la tesis y del proyecto MSH son inéditos y quedan reservados para su publicación académica. Cada obra citada es de sus autores: lo que este dashboard aporta es la curación y la comparación, no los datos ajenos, y quien quiera usar un resultado publicado debe citar el artículo original.",
-          en: "References are cited; the documents are not published. The primary data of the thesis and the MSH project are unpublished and reserved for academic publication. Each work cited belongs to its authors: what this dashboard contributes is the curation and the comparison, not other people's data, and anyone using a published result should cite the original article.",
+          es: "Las referencias se citan; los documentos no se publican. Los datos primarios de la tesis y del proyecto «Methane seep hunting: A multi-scale and multi method approach» son inéditos y quedan reservados para su publicación académica. Cada obra citada es de sus autores: lo que este dashboard aporta es la curación y la comparación, no los datos ajenos, y quien quiera usar un resultado publicado debe citar el artículo original.",
+          en: "References are cited; the documents are not published. The primary data of the thesis and of “Methane seep hunting: A multi-scale and multi method approach” are unpublished and reserved for academic publication. Each work cited belongs to its authors: what this dashboard contributes is the curation and the comparison, not other people's data, and anyone using a published result should cite the original article.",
         })}
       </Nota>
     </div>

@@ -114,7 +114,7 @@ export default function Explorador() {
               <th className="py-2 pr-3 text-right font-medium">
                 {tx({ es: "Dominante en", en: "Dominant in" })}
               </th>
-              <th className="py-2 font-medium">MSH</th>
+              <th className="py-2 font-medium">MSH-BC-21</th>
             </tr>
           </thead>
           <tbody>
