@@ -291,7 +291,7 @@ un componente de visualización en `<Seccion>`.
 | 02 | `ParedPorBanda` | La firma de la pared (calcáreo/aglutinado por banda) |
 | 03 | `Composicion` + `Testigo` | Fauna de seep o de plataforma tropical |
 | 04 | `Veredicto` | ¿Qué tan *seep* se ve MSH-BC-21? |
-| 05 | `Sinu` | Barragán y Bernal (2024): mismo campo, con isótopos |
+| 05 | `Sinu` | Barragán-Jacksson y Bernal (2024): mismo campo, con isótopos |
 | 06 | `Explorador` | Buscar, filtrar y ordenar los taxones |
 | 07 | `Caribe` | El contraste con la fauna de fondo regional |
 | 08 | *(inline)* + `Referencias` | Los límites declarados, y las referencias dentro de ellos |
@@ -376,6 +376,15 @@ explica el caso concreto; esto es el índice.
   los artículos: la presencia es señal sólida, el número de menciones es un
   proxy débil (un artículo repite un nombre al citar a otros) y sólo hay
   dominancia cuando el texto la afirma. El dashboard debe distinguirlas.
+- **La sección 05 resume un trabajo AJENO, y tiene que decirlo.** Los datos de
+  Barragán-Jacksson, C.M. y Bernal, G.R. (2024) —18 estaciones, δ13C, rango de
+  Shannon— son de sus autoras; la tesis no participó en ese estudio. La
+  entradilla decía «el mismo proyecto y la misma directora publicaron un
+  estudio» sin nombrarlas, se las citaba como «Barragán y Bernal» partiendo un
+  apellido compuesto, y el artículo **no aparecía en la lista de Referencias**,
+  porque se mantiene fuera de `estudios.json` a propósito. Una cosa es no
+  analizarlo con los demás —no debe llenar la celda tropical somera— y otra
+  dejar de citarlo. Dos comprobaciones en `99_auditoria.py` lo vigilan.
 - **Los nombres científicos van siempre en cursiva**, vía `<Taxon>`, que
   respeta la nomenclatura abierta: el calificador `sp.` / `spp.` va en redonda.
 - **En el mapa, ningún punto se desplaza de su coordenada real.** Separarlos

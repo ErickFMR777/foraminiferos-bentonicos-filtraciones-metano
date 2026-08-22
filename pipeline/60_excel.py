@@ -458,9 +458,12 @@ def coleccion() -> Path:
         "· La hoja original no desglosa por centímetro ni por fracción de tamaño: los "
         "conteos por especie están agregados. Esa resolución se perdió.",
         "",
-        "La columna «También en el Sinú (2024)» marca las especies que Barragán y "
-        "Bernal reportan en el mismo campo de filtración, que es el contraste más "
-        "directo disponible para esta muestra.",
+        "La columna «También en el Sinú (2024)» marca las especies que "
+        "Barragán-Jacksson, C.M. y Bernal, G.R. (2024) reportan en el mismo campo "
+        "de filtración —Journal of South American Earth Sciences 148, 105103, "
+        "doi:10.1016/j.jsames.2024.105103—, que es el contraste más directo "
+        "disponible para esta muestra. Ese dato es de sus autoras: al usarlo hay "
+        "que citar el artículo original.",
     ])
 
     # Se devuelve Pi*Ln(Pi) por especie, que la hoja original sí traía: es el

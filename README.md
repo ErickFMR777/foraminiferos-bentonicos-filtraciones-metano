@@ -50,7 +50,7 @@ Ocho secciones en scroll, todas bilingües y con su bloque «Cómo se lee».
 | 02 | **La firma de la pared** | Proporción calcáreo / aglutinado por banda, la señal más fiable de filtración |
 | 03 | **La muestra** | Qué hay dentro de MSH-BC-21: composición e interior del testigo |
 | 04 | **El veredicto** | Cuatro criterios de la literatura contrastados con lo que la muestra mide |
-| 05 | **La continuación** | Barragán y Bernal (2024): 18 estaciones del mismo campo, con isótopos |
+| 05 | **El estudio de 2024** | Barragán-Jacksson y Bernal (2024), obra ajena a la tesis: 18 estaciones del mismo campo, con isótopos |
 | 06 | **El catálogo** | Explorador de los taxones: buscar, filtrar y ordenar |
 | 07 | **El Caribe contra sí mismo** | La muestra frente a la fauna de fondo regional |
 | 08 | **Límites** | Lo que estos datos **no** pueden decir |
@@ -68,7 +68,7 @@ Ocho secciones en scroll, todas bilingües y con su bloque «Cómo se lee».
   Unificadas, pasa a ser el segundo taxón más reportado del mundo — lo que
   *refuerza* el argumento de la tesis.
 - **La diversidad de MSH-BC-21 (H′ = 3,4325) deja de ser una anomalía.**
-  Barragán y Bernal miden Shannon de 3,0 a 3,8 en las 18 estaciones del mismo
+  Barragán-Jacksson y Bernal miden Shannon de 3,0 a 3,8 en las 18 estaciones del mismo
   campo, incluidas las de actividad alta.
 - **En el Caribe colombiano, una sola especie se lleva entre el 29 y el 61 %
   de la asociación** —manglares, estuarios, arrecifes—. En MSH-BC-21 la más
@@ -295,7 +295,7 @@ Un trabajo serio dice lo que **no** puede decir.
 - **Una sola muestra propia.** MSH-BC-21 es un testigo, sin réplicas ni sitios
   de control propios.
 - **Sin isótopos propios.** La tesis no midió δ¹³C. Los primeros valores del
-  área son los de Barragán y Bernal (2024).
+  área son los de Barragán-Jacksson y Bernal (2024).
 - **Extracción cuantitativa parcial, y declarada.** δ¹³C, abundancias e
   índices sólo se pudieron extraer de 5 a 6 estudios cada uno. El pipeline no
   lo disimula: publica en `tablas_pdf.json` la lista nominal de los **29

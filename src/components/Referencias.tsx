@@ -2,13 +2,23 @@
 
 import { useState } from "react";
 import estudios from "@datos/estudios.json";
+import sinu from "@datos/sinu_2024.json";
 import { useT } from "@/lib/i18n";
 import { Nota } from "@/lib/ui";
 
 export default function Referencias() {
   const { tx } = useT();
   const [abierto, setAbierto] = useState(false);
-  const orden = [...estudios].sort((a, b) =>
+  // Barragán-Jacksson y Bernal (2024) NO está en estudios.json a propósito: se
+  // mantiene fuera de la base analítica para no llenar con él la celda tropical
+  // somera que sostiene el argumento central. Pero es la fuente entera de la
+  // sección 05, y quedaba sin aparecer en la única lista de fuentes del
+  // dashboard. Una cosa es no analizarlo con los demás y otra no citarlo.
+  const orden = [
+    ...estudios,
+    { id: "sinu2024", autores: sinu.autores, anio: sinu.anio, titulo: sinu.titulo,
+      revista: sinu.revista, doi: sinu.doi, localidad: sinu.localidad },
+  ].sort((a, b) =>
     ((a.autores ?? ["z"])[0] ?? "z").localeCompare((b.autores ?? ["z"])[0] ?? "z"),
   );
 
@@ -22,8 +32,8 @@ export default function Referencias() {
       >
         {abierto ? "− " : "+ "}
         {tx({
-          es: "Ver las " + estudios.length + " referencias",
-          en: "Show the " + estudios.length + " references",
+          es: "Ver las " + orden.length + " referencias",
+          en: "Show the " + orden.length + " references",
         })}
       </button>
 
@@ -58,8 +68,8 @@ export default function Referencias() {
 
       <Nota>
         {tx({
-          es: "Las referencias se citan; los documentos no se publican. Los datos primarios de la tesis y del proyecto MSH son inéditos y quedan reservados para su publicación académica.",
-          en: "References are cited; the documents are not published. The primary data of the thesis and the MSH project are unpublished and reserved for academic publication.",
+          es: "Las referencias se citan; los documentos no se publican. Los datos primarios de la tesis y del proyecto MSH son inéditos y quedan reservados para su publicación académica. Cada obra citada es de sus autores: lo que este dashboard aporta es la curación y la comparación, no los datos ajenos, y quien quiera usar un resultado publicado debe citar el artículo original.",
+          en: "References are cited; the documents are not published. The primary data of the thesis and the MSH project are unpublished and reserved for academic publication. Each work cited belongs to its authors: what this dashboard contributes is the curation and the comparison, not other people's data, and anyone using a published result should cite the original article.",
         })}
       </Nota>
     </div>

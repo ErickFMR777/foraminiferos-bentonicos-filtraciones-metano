@@ -293,7 +293,7 @@ pipeline y que `Pi*Ln(Pi)` reconstruya el Shannon publicado (3,4325).
 | `solape.json` | Intersección MSH ↔ literatura global |
 | `caribe_referencia.json` | 5 localidades caribeñas + MSH-BC-21 |
 | `correcciones.json` | 85 correcciones documentadas + resumen de impacto |
-| `sinu_2024.json` | Barragán y Bernal 2024: 18 estaciones, δ13C, rango Shannon del campo |
+| `sinu_2024.json` | Barragán-Jacksson y Bernal 2024: 18 estaciones, δ13C, rango Shannon del campo |
 | `taxones_completo.json` | 515 taxones leídos de los artículos; rankings de especies y géneros, dominancia declarada, estadísticas por estudio |
 
 **Volumen decisivo:** 191 KB. Todo va en el bundle estático. NO hace falta
@@ -383,7 +383,7 @@ lleva además una lista `sitios` con sus 8 posiciones.
 Renombrados a «Autor Año - Título.pdf»; tres movidos a
 `Data_nosubiralrepo/Referencias excluidas/` (McCorkle 1990, no es filtración;
 Gracia 2012, moluscos; Puerres 2022, revisión sin datos primarios).
-Cuatro pendientes de integrar: Barragán y Bernal 2024, Babineaux 2025,
+Cuatro pendientes de integrar: Barragán-Jacksson y Bernal 2024, Babineaux 2025,
 Fiorini 2015, Li 2021.
 
 **Cuidado con el emparejador**: la firma de título debe buscarse SÓLO en la
@@ -457,7 +457,7 @@ registros procede de >500 m y 3 de las 4 bandas latitudinales carecen por
 completo de datos someros; (b) la celda 0-15° / <150 m está vacía, y es
 justo donde cae el Caribe colombiano. Usar esas dos cifras, no la primera.
 
-**Historia 2 — RESUELTA por Barragán y Bernal (2024).** La tesis trató su
+**Historia 2 — RESUELTA por Barragán-Jacksson y Bernal (2024).** La tesis trató su
 H'=3,43 como una anomalía frente a la literatura, que predice diversidad baja
 en filtraciones. Ese trabajo mide **Shannon de 3,0 a 3,8 en las 18 estaciones
 del mismo campo del Sinú**, incluidas las de actividad alta. Es decir: en esta

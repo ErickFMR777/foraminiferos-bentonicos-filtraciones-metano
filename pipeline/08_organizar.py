@@ -49,7 +49,7 @@ EXCLUIDOS: dict[str, dict] = {
                "área de estudio de la tesis, pero no aporta taxones a la base. Se "
                "conserva como respaldo de la narrativa, no como dato."),
     "10.15446/rbct.n51.96150": dict(
-        autor="Puerres, Barragán y Bernal", anio=2022,
+        autor="Puerres, Barragán-Jacksson y Bernal", anio=2022,
         titulo="Review of foraminifera methodologies related to hydrocarbon seeps "
                "on the ocean floor - implications for the Colombian Caribbean",
         motivo="Revisión metodológica sin datos primarios propios: no reporta "
@@ -62,7 +62,7 @@ EXCLUIDOS: dict[str, dict] = {
 # PDF que sí se usan pero todavía no están en la base: pendientes de integrar
 PENDIENTES: dict[str, dict] = {
     "10.1016/j.jsames.2024.105103": dict(
-        autor="Barragán y Bernal", anio=2024,
+        autor="Barragán-Jacksson y Bernal", anio=2024,
         titulo="Benthic foraminifera as bioindicators of gas seep intensity in the "
                "offshore zone of the Sinu fold belt"),
     "10.1016/j.epsl.2025.119558": dict(

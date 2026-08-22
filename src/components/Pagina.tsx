@@ -172,14 +172,14 @@ export default function Pagina() {
 
         {/* ── 4 bis ─────────────────────────────────────────────── */}
         <Seccion
-          n={tx({ es: "05 · La continuación", en: "05 · The continuation" })}
+          n={tx({ es: "05 · El estudio de 2024", en: "05 · The 2024 study" })}
           titulo={tx({
-            es: "El mismo campo, un año después",
-            en: "The same field, a year later",
+            es: "Barragán-Jacksson y Bernal (2024): el mismo campo, 18 estaciones",
+            en: "Barragán-Jacksson and Bernal (2024): the same field, 18 stations",
           })}
           entradilla={tx({
-            es: "En 2024, el mismo proyecto y la misma directora publicaron un estudio de 18 estaciones en este campo de filtración. Es la línea base local que a la tesis le faltaba: resuelve la duda sobre la diversidad y aporta los primeros isótopos del área.",
-            en: "In 2024, the same project and the same advisor published a study of 18 stations in this seep field. It is the local baseline the thesis lacked: it settles the diversity question and supplies the first isotopes for the area.",
+            es: "Esta sección resume un trabajo ajeno a la tesis. Barragán-Jacksson, C.M. y Bernal, G.R. publicaron en 2024 un estudio de 18 estaciones en este mismo campo de filtración, en el Journal of South American Earth Sciences. La investigación, los muestreos, las mediciones y los resultados son de esas autoras: aquí se citan y se resumen porque aportan la línea base local que a la tesis le faltaba —resuelven la duda sobre la diversidad y aportan los primeros isótopos del área—, no porque formen parte de este trabajo.",
+            en: "This section summarises work that is not part of the thesis. Barragán-Jacksson, C.M. and Bernal, G.R. published a study of 18 stations in this same seep field in 2024, in the Journal of South American Earth Sciences. The research, the sampling, the measurements and the results are theirs: they are cited and summarised here because they provide the local baseline the thesis lacked — settling the diversity question and supplying the first isotopes for the area — not because they form part of this work.",
           })}
         >
           <Sinu />
@@ -267,8 +267,8 @@ export default function Pagina() {
                 en: "A single sample. MSH-BC-21 is one core, with no replicates and no control sites of its own. The 2024 study in the same field supplies the 18 stations that were missing.",
               }),
               tx({
-                es: "Sin isótopos propios. La tesis no midió δ13C, que es la evidencia geoquímica directa de carbono derivado del metano. Los primeros valores para el área son los de Barragán y Bernal (2024).",
-                en: "No isotopes of its own. The thesis did not measure δ13C, the direct geochemical evidence of methane-derived carbon. The first values for the area are those of Barragán and Bernal (2024).",
+                es: "Sin isótopos propios. La tesis no midió δ13C, que es la evidencia geoquímica directa de carbono derivado del metano. Los primeros valores publicados para el área son los de Barragán-Jacksson y Bernal (2024), y son de ellas.",
+                en: "No isotopes of its own. The thesis did not measure δ13C, the direct geochemical evidence of methane-derived carbon. The first published values for the area are those of Barragán-Jacksson and Bernal (2024), and they are theirs.",
               }),
               tx({
                 es: "El registro mundial está sesgado. El 80% procede de más de 500 metros y tres de las cuatro bandas latitudinales no tienen ni un dato somero. Comparar una plataforma tropical con filtraciones profundas de latitudes altas tiene un límite.",

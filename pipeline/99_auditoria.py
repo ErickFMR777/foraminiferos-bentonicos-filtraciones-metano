@@ -12,6 +12,7 @@ código 1. Ejecutar después de cualquier cambio en el pipeline.
 from __future__ import annotations
 
 import json
+import re
 import math
 import os
 import sys
@@ -565,6 +566,33 @@ def main() -> int:
                     clavados.append(f"{f.name}:{i}")
         check("Ningún componente clava el separador decimal o de millar",
               not clavados, f"{clavados}")
+
+    # Crédito académico. «Barragán-Jacksson» es un apellido COMPUESTO y partirlo
+    # atribuye el trabajo a otra persona. El dashboard citaba «Barragán y
+    # Bernal» en la sección que resume entero su artículo de 2024, y el estudio
+    # ni siquiera aparecía en la lista de referencias. Verificado contra la
+    # portada de Puerres et al. (2022): Camila María Barragán-Jacksson.
+    partido = []
+    for f in sorted(ROOT.glob("*.md")) + sorted((ROOT / "src").rglob("*.tsx"))             + sorted((ROOT / "pipeline").glob("*.py")):
+        # Este archivo se excluye: para explicar la regla tiene que citar
+        # justamente la forma que prohíbe.
+        if f.name == "99_auditoria.py":
+            continue
+        for i, l in enumerate(f.read_text(encoding="utf-8").splitlines(), 1):
+            for m in re.finditer(r"Barrag[áa]n", l):
+                if not l[m.end():].startswith("-Jacksson"):
+                    partido.append(f"{f.name}:{i}")
+    check("El apellido Barragán-Jacksson nunca aparece partido",
+          not partido, f"{partido}")
+
+    # Y su estudio de 2024 tiene que estar en la lista de referencias, que es
+    # donde un lector busca las fuentes. Se mantiene fuera de estudios.json a
+    # propósito —no debe llenar la celda tropical somera—, pero eso es no
+    # analizarlo, no dejar de citarlo.
+    refs = (ROOT / "src" / "components" / "Referencias.tsx").read_text(encoding="utf-8")
+    check("El estudio de 2024 se cita en la lista de referencias",
+          "sinu_2024.json" in refs,
+          "Referencias.tsx debe leer sinu_2024.json")
 
     # ---------------------------------------------------------------------
     # Los Excel corregidos son un producto más del pipeline, y hasta ahora

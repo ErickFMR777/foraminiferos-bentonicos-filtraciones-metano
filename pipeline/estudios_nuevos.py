@@ -5,7 +5,7 @@ Datos extraídos de artículos que no formaban parte de la base original. Van
 marcados con origen='nuevo' para que el dashboard pueda mostrar la base tal
 como la construyó la tesis o la base actualizada.
 
-El primero es el más consecuente: Barragán y Bernal (2024) trabajan en la
+El primero es el más consecuente: Barragán-Jacksson y Bernal (2024) trabajan en la
 MISMA área que la tesis —la plataforma externa frente al Golfo de
 Morrosquillo, dentro del Cinturón del Sinú—, con la misma directora y dentro
 del mismo proyecto MSH. Publicado un año después, ocupa la celda de la
@@ -90,7 +90,7 @@ BARRAGAN_BERNAL_2024 = dict(
 # --- Diversidad medida en el mismo campo de filtración --------------------
 # Dato clave para interpretar MSH-BC-21. La tesis obtuvo H' = 3,43 y lo trató
 # como una anomalía frente a la literatura, que predice DIVERSIDAD BAJA en
-# filtraciones. Barragán y Bernal miden H' entre 3,0 y 3,8 en las 18
+# filtraciones. Barragán-Jacksson y Bernal miden H' entre 3,0 y 3,8 en las 18
 # estaciones del mismo campo, incluidas las de actividad alta: en esta
 # plataforma tropical la diversidad alta es lo normal Y es compatible con
 # filtración activa. El valor de la tesis deja de ser una anomalía.
