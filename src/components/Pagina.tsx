@@ -178,8 +178,8 @@ export default function Pagina() {
             en: "The 18 stations this thesis did not get to analyse",
           })}
           entradilla={tx({
-            es: "El proyecto MSH muestreó 18 estaciones en las campañas de mayo y junio de 2022. Esta tesis analizó una de ellas, el testigo MSH-BC-21, y se ocupó de las asociaciones de foraminíferos. Camila María Barragán-Jacksson, compañera de proyecto durante la tesis, terminó después el análisis de todas las muestras y lo publicó en 2024 junto a Gladys Bernal, la directora. No es una campaña posterior ni otro sitio: es el mismo muestreo, completo. Suyo es el trabajo que sigue, y suyos los isótopos que aquí faltaban.",
-            en: "The MSH project sampled 18 stations during the May and June 2022 surveys. This thesis analysed one of them, the MSH-BC-21 box core, and dealt with foraminiferal assemblages. Camila María Barragán-Jacksson, a colleague on the project while the thesis was under way, later completed the analysis of every sample and published it in 2024 with Gladys Bernal, the advisor. This is not a later survey or a different site: it is the same sampling, finished. The work that follows is hers, and so are the isotopes that were missing here.",
+            es: "El proyecto MSH muestreó 18 estaciones en las campañas de mayo y junio de 2022; esta tesis analizó una, el testigo MSH-BC-21. El análisis del muestreo completo se publicó después —Barragán-Jacksson y Bernal (2024)— y aporta las réplicas espaciales y los primeros isótopos del área, que es lo que aquí faltaba.",
+            en: "The MSH project sampled 18 stations during the May and June 2022 surveys; this thesis analysed one, the MSH-BC-21 box core. The analysis of the complete set was published later — Barragán-Jacksson and Bernal (2024) — and it supplies the spatial replicates and the first isotopes for the area, which is what was missing here.",
           })}
         >
           <Sinu />

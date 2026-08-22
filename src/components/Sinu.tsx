@@ -139,10 +139,7 @@ export default function Sinu() {
       </ComoSeLee>
 
       <Nota>
-        {tx({
-          es: "Todo lo de esta sección sale de un solo artículo, y no es nuestro: ",
-          en: "Everything in this section comes from one article, and it is not ours: ",
-        })}
+        {tx({ es: "Fuente: ", en: "Source: " })}
         <span className="text-(--ink-2)">
           Barragán-Jacksson, C.M. {tx({ es: "y", en: "and" })} Bernal, G.R. (2024).
           {" "}
@@ -161,8 +158,8 @@ export default function Sinu() {
           doi:{sinu.doi}
         </a>
         {tx({
-          es: " · Las estaciones, los isótopos y los índices los midieron ellas. Lo único que ponemos nosotros es la lectura de los 27 taxones desde el texto y su cotejo con WoRMS, porque el artículo da presencia y no abundancias por especie. Si usas alguno de estos datos, cita el artículo.",
-          en: " · They did the stations, the isotopes and the indices. All we add is reading the 27 taxa from the text and checking them against WoRMS, because the article gives presence rather than per-species abundances. If you use any of these figures, cite the article.",
+          es: " · Los 27 taxones se leyeron del texto del artículo y se cotejaron con WoRMS. El artículo reporta presencia por zona de actividad, no abundancias por especie, así que eso es lo que aquí se registra.",
+          en: " · The 27 taxa were read from the article text and checked against WoRMS. The article reports presence by activity zone rather than per-species abundances, so that is what is recorded here.",
         })}
       </Nota>
     </figure>

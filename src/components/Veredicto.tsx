@@ -134,8 +134,8 @@ export default function Veredicto() {
         explicacion={
           <>
             {tx({
-              es: "La tesis obtuvo un Shannon de 3,43 y lo trató como una anomalía, atribuyéndola a la ubicación tropical. Al terminarse el análisis del resto del muestreo, Barragán-Jacksson y Bernal (2024) publicaron ",
-              en: "The thesis obtained a Shannon of 3.43 and treated it as an anomaly, attributing it to the tropical setting. Once the rest of the sampling had been analysed, Barragán-Jacksson and Bernal (2024) published ",
+              es: "La tesis obtuvo un Shannon de 3,43 y lo trató como una anomalía, atribuyéndola a la ubicación tropical. Barragán-Jacksson y Bernal (2024) publicaron después, para el mismo campo, ",
+              en: "The thesis obtained a Shannon of 3.43 and treated it as an anomaly, attributing it to the tropical setting. Barragán-Jacksson and Bernal (2024) later published, for the same field, ",
             })}
             <strong className="font-semibold text-(--ink)">
               {tx({ es: "Shannon entre ", en: "Shannon between " })}
@@ -217,8 +217,8 @@ export default function Veredicto() {
 
       <Nota>
         {tx({
-          es: "El rango de diversidad y los valores de δ13C los midieron Barragán-Jacksson, C.M. y Bernal, G.R. (2024), Journal of South American Earth Sciences 148, 105103, doi:10.1016/j.jsames.2024.105103 — misma localidad que la tesis, que no midió ninguna de las dos cosas. Proporciones de pared de control: Chiang et al. (2015).",
-          en: "The diversity range and the δ13C values were measured by Barragán-Jacksson, C.M. and Bernal, G.R. (2024), Journal of South American Earth Sciences 148, 105103, doi:10.1016/j.jsames.2024.105103 — same locality as the thesis, which measured neither. Control wall proportions: Chiang et al. (2015).",
+          es: "Rango de diversidad y valores de δ13C: Barragán-Jacksson, C.M. y Bernal, G.R. (2024), Journal of South American Earth Sciences 148, 105103, doi:10.1016/j.jsames.2024.105103 — misma localidad, y las dos cosas que la tesis no midió. Proporciones de pared de control: Chiang et al. (2015).",
+          en: "Diversity range and δ13C values: Barragán-Jacksson, C.M. and Bernal, G.R. (2024), Journal of South American Earth Sciences 148, 105103, doi:10.1016/j.jsames.2024.105103 — same locality, and the two things the thesis did not measure. Control wall proportions: Chiang et al. (2015).",
         })}
       </Nota>
     </figure>
