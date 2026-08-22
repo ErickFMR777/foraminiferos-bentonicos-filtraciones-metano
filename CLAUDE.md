@@ -380,8 +380,9 @@ explica el caso concreto; esto es el índice.
   Barragán-Jacksson, C.M. y Bernal, G.R. (2024) —18 estaciones, δ13C, rango de
   Shannon— son de sus autoras; la tesis no participó en ese estudio. La
   entradilla decía «el mismo proyecto y la misma directora publicaron un
-  estudio» sin nombrarlas, se las citaba como «Barragán y Bernal» partiendo un
-  apellido compuesto, y el artículo **no aparecía en la lista de Referencias**,
+  estudio» sin nombrarlas, se citaba a la primera autora con el apellido
+  compuesto partido por la mitad —lo que atribuye el trabajo a otra persona—,
+  y el artículo **no aparecía en la lista de Referencias**,
   porque se mantiene fuera de `estudios.json` a propósito. Una cosa es no
   analizarlo con los demás —no debe llenar la celda tropical somera— y otra
   dejar de citarlo. Dos comprobaciones en `99_auditoria.py` lo vigilan.
