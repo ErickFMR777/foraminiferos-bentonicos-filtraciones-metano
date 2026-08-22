@@ -104,8 +104,8 @@ export default function Veredicto() {
           en: "Indicator taxa present",
         })}
         esperado={tx({
-          es: `Uvigerina (${gen("Uvigerina")} estudios), Bulimina (${gen("Bulimina")}), Bolivina (${gen("Bolivina")}), Cassidulina (${gen("Cassidulina")})`,
-          en: `Uvigerina (${gen("Uvigerina")} studies), Bulimina (${gen("Bulimina")}), Bolivina (${gen("Bolivina")}), Cassidulina (${gen("Cassidulina")})`,
+          es: `Uvigerina (${gen("Uvigerina")} estudios), Bulimina (${gen("Bulimina")}), Cassidulina (${gen("Cassidulina")}), Bolivina (${gen("Bolivina")})`,
+          en: `Uvigerina (${gen("Uvigerina")} studies), Bulimina (${gen("Bulimina")}), Cassidulina (${gen("Cassidulina")}), Bolivina (${gen("Bolivina")})`,
         })}
         observado={solape.generos.n_compartidos + "/" + solape.generos.n_msh}
         explicacion={
