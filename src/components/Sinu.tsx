@@ -140,8 +140,8 @@ export default function Sinu() {
 
       <Nota>
         {tx({
-          es: "Fuente de TODOS los datos de esta sección — autoría del estudio: ",
-          en: "Source of ALL the data in this section — authorship of the study: ",
+          es: "Todo lo de esta sección sale de un solo artículo, y no es nuestro: ",
+          en: "Everything in this section comes from one article, and it is not ours: ",
         })}
         <span className="text-(--ink-2)">
           Barragán-Jacksson, C.M. {tx({ es: "y", en: "and" })} Bernal, G.R. (2024).
@@ -161,8 +161,8 @@ export default function Sinu() {
           doi:{sinu.doi}
         </a>
         {tx({
-          es: " · Las 18 estaciones, las mediciones de δ13C y los índices de diversidad son trabajo de esas autoras; la tesis no participó en ese estudio ni lo reanaliza. Lo único aportado aquí es la lectura de los 27 taxones desde el texto del artículo y su validación contra WoRMS, porque el artículo no publica abundancias por especie y sólo puede registrarse presencia. Para citar estos resultados, cítese el artículo original, no este dashboard.",
-          en: " · The 18 stations, the δ13C measurements and the diversity indices are those authors' work; the thesis took no part in that study and does not reanalyse it. All that is added here is reading the 27 taxa from the article text and validating them against WoRMS, because the article does not publish per-species abundances and only presence can be recorded. To cite these results, cite the original article, not this dashboard.",
+          es: " · Las estaciones, los isótopos y los índices los midieron ellas. Lo único que ponemos nosotros es la lectura de los 27 taxones desde el texto y su cotejo con WoRMS, porque el artículo da presencia y no abundancias por especie. Si usas alguno de estos datos, cita el artículo.",
+          en: " · They did the stations, the isotopes and the indices. All we add is reading the 27 taxa from the text and checking them against WoRMS, because the article gives presence rather than per-species abundances. If you use any of these figures, cite the article.",
         })}
       </Nota>
     </figure>

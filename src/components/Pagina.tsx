@@ -172,14 +172,14 @@ export default function Pagina() {
 
         {/* ── 4 bis ─────────────────────────────────────────────── */}
         <Seccion
-          n={tx({ es: "05 · El estudio de 2024", en: "05 · The 2024 study" })}
+          n={tx({ es: "05 · Lo que vino después", en: "05 · What came next" })}
           titulo={tx({
-            es: "Barragán-Jacksson y Bernal (2024): el mismo campo, 18 estaciones",
-            en: "Barragán-Jacksson and Bernal (2024): the same field, 18 stations",
+            es: "Barragán-Jacksson y Bernal vuelven al mismo campo",
+            en: "Barragán-Jacksson and Bernal go back to the same field",
           })}
           entradilla={tx({
-            es: "Esta sección resume un trabajo ajeno a la tesis. Barragán-Jacksson, C.M. y Bernal, G.R. publicaron en 2024 un estudio de 18 estaciones en este mismo campo de filtración, en el Journal of South American Earth Sciences. La investigación, los muestreos, las mediciones y los resultados son de esas autoras: aquí se citan y se resumen porque aportan la línea base local que a la tesis le faltaba —resuelven la duda sobre la diversidad y aportan los primeros isótopos del área—, no porque formen parte de este trabajo.",
-            en: "This section summarises work that is not part of the thesis. Barragán-Jacksson, C.M. and Bernal, G.R. published a study of 18 stations in this same seep field in 2024, in the Journal of South American Earth Sciences. The research, the sampling, the measurements and the results are theirs: they are cited and summarised here because they provide the local baseline the thesis lacked — settling the diversity question and supplying the first isotopes for the area — not because they form part of this work.",
+            es: "La cifra más incómoda de la tesis era su propia diversidad: demasiado alta para lo que la literatura predice en una filtración. En 2024, Camila María Barragán-Jacksson y Gladys Bernal volvieron a este campo con 18 estaciones y midieron lo que aquí faltaba. El trabajo es de ellas —esta sección lo resume y lo cita, nada más—, y es lo mejor que le ha pasado a esta tesis desde que se entregó.",
+            en: "The most awkward figure in the thesis was its own diversity: too high for what the literature predicts at a seep. In 2024, Camila María Barragán-Jacksson and Gladys Bernal went back to this field with 18 stations and measured what was missing here. The work is theirs — this section only summarises and cites it — and it is the best thing that has happened to this thesis since it was submitted.",
           })}
         >
           <Sinu />
@@ -267,8 +267,8 @@ export default function Pagina() {
                 en: "A single sample. MSH-BC-21 is one core, with no replicates and no control sites of its own. The 2024 study in the same field supplies the 18 stations that were missing.",
               }),
               tx({
-                es: "Sin isótopos propios. La tesis no midió δ13C, que es la evidencia geoquímica directa de carbono derivado del metano. Los primeros valores publicados para el área son los de Barragán-Jacksson y Bernal (2024), y son de ellas.",
-                en: "No isotopes of its own. The thesis did not measure δ13C, the direct geochemical evidence of methane-derived carbon. The first published values for the area are those of Barragán-Jacksson and Bernal (2024), and they are theirs.",
+                es: "Sin isótopos propios. La tesis no midió δ13C, que es la evidencia geoquímica directa de carbono derivado del metano. Los primeros del área los publicaron Barragán-Jacksson y Bernal en 2024.",
+                en: "No isotopes of its own. The thesis did not measure δ13C, the direct geochemical evidence of methane-derived carbon. The first ones for the area were published by Barragán-Jacksson and Bernal in 2024.",
               }),
               tx({
                 es: "El registro mundial está sesgado. El 80% procede de más de 500 metros y tres de las cuatro bandas latitudinales no tienen ni un dato somero. Comparar una plataforma tropical con filtraciones profundas de latitudes altas tiene un límite.",

@@ -217,8 +217,8 @@ export default function Veredicto() {
 
       <Nota>
         {tx({
-          es: "Rango de diversidad y valores de δ13C: Barragán-Jacksson, C.M. y Bernal, G.R. (2024), Journal of South American Earth Sciences 148, 105103, doi:10.1016/j.jsames.2024.105103. Esas cifras son de sus autoras y se citan aquí como término de comparación; la tesis no las midió. Misma localidad que la tesis. Proporciones de pared de control: Chiang et al. (2015).",
-          en: "Diversity range and δ13C values: Barragán-Jacksson, C.M. and Bernal, G.R. (2024), Journal of South American Earth Sciences 148, 105103, doi:10.1016/j.jsames.2024.105103. Those figures belong to their authors and are cited here as a term of comparison; the thesis did not measure them. Same locality as the thesis. Control wall proportions: Chiang et al. (2015).",
+          es: "El rango de diversidad y los valores de δ13C los midieron Barragán-Jacksson, C.M. y Bernal, G.R. (2024), Journal of South American Earth Sciences 148, 105103, doi:10.1016/j.jsames.2024.105103 — misma localidad que la tesis, que no midió ninguna de las dos cosas. Proporciones de pared de control: Chiang et al. (2015).",
+          en: "The diversity range and the δ13C values were measured by Barragán-Jacksson, C.M. and Bernal, G.R. (2024), Journal of South American Earth Sciences 148, 105103, doi:10.1016/j.jsames.2024.105103 — same locality as the thesis, which measured neither. Control wall proportions: Chiang et al. (2015).",
         })}
       </Nota>
     </figure>
