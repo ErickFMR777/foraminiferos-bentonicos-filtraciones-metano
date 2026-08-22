@@ -130,7 +130,7 @@ export default function Pagina() {
             en: "The shell as a methane signal",
           })}
           entradilla={tx({
-            es: "Los foraminíferos aglutinados construyen su caparazón pegando granos del sedimento; los calcáreos lo segregan. En las filtraciones los aglutinados desaparecen, porque toleran mal el metano y el sulfuro de hidrógeno. La proporción entre unos y otros es, por eso, una de las señales más fiables.",
+            es: "Los foraminíferos aglutinados construyen su caparazón pegando granos del sedimento; los calcáreos lo segregan. En las filtraciones los aglutinados retroceden, porque toleran mal el metano y el sulfuro de hidrógeno: Chiang et al. (2015) publican 68 % de calcáreos frente a 32 % de aglutinados en filtración, y 24/76 en sus sitios de control. La proporción entre unos y otros es, por eso, una de las señales más fiables.",
             en: "Agglutinated foraminifera build their shell by cementing sediment grains; calcareous ones secrete it. At seeps the agglutinated forms retreat, tolerating methane and hydrogen sulphide poorly: Chiang et al. (2015) report 68% calcareous against 32% agglutinated at seeps, and 24/76 at their control sites. The ratio between them is therefore one of the most reliable signals.",
           })}
         >
