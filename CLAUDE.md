@@ -291,7 +291,7 @@ un componente de visualización en `<Seccion>`.
 | 02 | `ParedPorBanda` | La firma de la pared (calcáreo/aglutinado por banda) |
 | 03 | `Composicion` + `Testigo` | Fauna de seep o de plataforma tropical |
 | 04 | `Veredicto` | ¿Qué tan *seep* se ve MSH-BC-21? |
-| 05 | `Sinu` | El resto del mismo muestreo, publicado por Barragán-Jacksson y Bernal (2024) |
+| 05 | `Sinu` | Del testigo al campo: el resto del muestreo, publicado por Barragán-Jacksson y Bernal (2024) |
 | 06 | `Explorador` | Buscar, filtrar y ordenar los taxones |
 | 07 | `Caribe` | El contraste con la fauna de fondo regional |
 | 08 | *(inline)* + `Referencias` | Los límites declarados, y las referencias dentro de ellos |

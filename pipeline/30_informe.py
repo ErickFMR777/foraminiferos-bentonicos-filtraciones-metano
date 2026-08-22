@@ -119,7 +119,8 @@ def cargar():
         corr=corr["correcciones"], resumen=corr["resumen"],
         est=j("estudios.json"), tax=j("taxones_global.json"),
         mat=j("matriz_lat_prof.json"), msh=j("msh_bc21.json"),
-        sol=j("solape.json"),
+        sol=j("solape.json"), car=j("caribe_referencia.json"),
+        sinu=j("sinu_2024.json"),
         manif=json.loads((PRIV / "manifiesto_pdfs.json").read_text(encoding="utf-8"))
         if (PRIV / "manifiesto_pdfs.json").exists() else [],
     )
@@ -225,7 +226,7 @@ def main() -> int:
           "Francisco José de Caldas. Grupo de investigación OCEÁNICOS. Entidades "
           "ejecutoras y beneficiarias: UNAL, UPB, GMAS, GEOMARES y ACGGP. El "
           "autor participó mediante beca-pasantía del programa Jóvenes "
-          "Investigadores (2021-2024), bajo la tutoría de Gladys Rocío Bernal "
+          "Investigadores (2021-2024), bajo la asesoría de Gladys Rocío Bernal "
           "Franco.")
     pdf.p("Con sus dos anexos de datos:")
     pdf.item("«BD FORAMS AMBTE FILTRACION-filtros» — 9 hojas. Base bibliográfica "
@@ -373,9 +374,31 @@ def main() -> int:
 
     pdf.h2("Fauna de referencia del Caribe")
     pdf.p("Los porcentajes de las localidades caribeñas citadas en el capítulo 4.2 "
-          "de la tesis —Salmedina, Cispatá, Urabá, Islas del Rosario— sólo existían "
-          "en prosa. Se estructuraron por primera vez para poder contrastarlos con "
-          "MSH-BC-21.")
+          "de la tesis sólo existían en prosa. Se estructuraron por primera vez "
+          "para poder contrastarlos con MSH-BC-21, pero las cifras son de sus "
+          "autores y es a ellos a quien corresponde citar. Cada localidad se "
+          "publica con su fuente y con el lugar de la tesis donde se la cita:")
+    for l in d["car"]:
+        if l["id"] == "msh_bc21":
+            continue
+        pdf.item(f'{l["nombre"]}: {l["fuente"]} ({l.get("cita_en_tesis", "sin localizar")})')
+    pdf.nota("Son trabajos del grupo OCEÁNICOS que la tesis cita como fuentes "
+             "secundarias. Ninguna de estas localidades es un ambiente de "
+             "filtración: forman la fauna de fondo regional y NO se fusionan con "
+             "la base principal.")
+
+    pdf.h2("El análisis del muestreo completo")
+    sn = d["sinu"]
+    pdf.p("La tesis analizó un testigo, MSH-BC-21, de las 18 estaciones que el "
+          "proyecto muestreó en las campañas de mayo y junio de 2022. El análisis "
+          "del muestreo completo lo publicaron después sus autoras, y de ahí "
+          "proceden el rango de diversidad del campo y los primeros valores de "
+          "d13C del área, que la tesis no midió:")
+    pdf.item(f'{", ".join(sn["autores"])} ({sn["anio"]}). {sn["titulo"]}. '
+             f'{sn["revista"]} 148, 105103. doi:{sn["doi"]}')
+    pdf.nota("Se cita y se resume, pero NO se incorpora a la base principal: sus "
+             "estaciones caen en la banda tropical somera y llenarían con ellas "
+             "justamente la celda cuyo vacío sostiene el argumento del trabajo.")
 
     # ---------------------------------------------------------- 5
     pdf.add_page()

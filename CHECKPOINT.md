@@ -216,7 +216,7 @@ python pipeline/45_tablas_pdf.py     # TABLAS: d13C, abundancias, indices
 python pipeline/50_estadisticas.py   # -> taxones_completo.json
 python pipeline/30_informe.py    # -> Informe_curacion_datos.pdf
 python pipeline/60_excel.py      # -> los dos Excel corregidos (carpeta privada)
-python pipeline/99_auditoria.py  # 91 comprobaciones; código 1 si algo falla
+python pipeline/99_auditoria.py  # 98 comprobaciones; código 1 si algo falla
 # El orden completo, con 07/45, esta en CLAUDE.md y en el README.
 ```
 
@@ -824,3 +824,73 @@ La comprobación nueva falla si un componente vuelve a clavar el separador
 decimal o el de millar. Es la misma idea que la del hex de colores: los dos
 bugs venían de escribir a mano algo que depende del contexto —el tema en un
 caso, el idioma en el otro— y ninguno lo habría detectado un `tsc`.
+
+---
+
+## 19. Crédito y citación en toda la página (2026-08-22)
+
+El autor señaló que la sección del estudio de 2024 no daba crédito como
+corresponde, y de ahí salió una revisión de toda la página.
+
+### Lo que estaba mal en la sección 05
+
+1. **La entradilla no nombraba a las autoras.** Decía «el mismo proyecto y la
+   misma directora publicaron un estudio»: describía la obra por su relación
+   con la tesis, no por su autoría.
+2. **El apellido iba partido.** Se citaba a la primera autora sin la segunda
+   mitad de su apellido compuesto, lo que atribuye el trabajo a otra persona.
+   Verificado contra la portada de Puerres et al. (2022): Camila María
+   Barragán-Jacksson.
+3. **El artículo no estaba en la lista de Referencias**, porque se mantiene
+   fuera de `estudios.json` a propósito. Una cosa es no analizarlo con los
+   demás —no debe llenar la celda tropical somera— y otra dejar de citarlo.
+   Ahora son 41 referencias.
+4. **La relación estaba mal contada.** Se escribió que «volvieron al campo»:
+   falso. Es el MISMO proyecto y el MISMO muestreo, las campañas de mayo y
+   junio de 2022. La tesis analizó uno de los testigos; Camila María
+   Barragán-Jacksson terminó después el análisis de todas las muestras y lo
+   publicó con Gladys Bernal. Llamarlo «la continuación» de la tesis también
+   sobraba.
+5. **Y luego quedó demasiado formal.** Cuatro cláusulas de descargo en una
+   página cuya voz es editorial. Acreditar bien no es escribir formal: es
+   nombrar a quien corresponde y decir de dónde sale cada cifra. La cita
+   académica al uso hace ese trabajo sin meta-texto.
+
+### El resto de la página
+
+- **Sección 07.** Cada localidad caribeña muestra su fuente y el punto del
+  capítulo 4.2 donde la tesis la cita —dato que ya estaba en el JSON y que la
+  interfaz no usaba—, y la nota abre con la lista completa.
+- **Sección 02.** La afirmación sobre el retroceso de los aglutinados la
+  sostiene ahora Chiang et al. (2015) con sus cifras.
+- **Veredicto, criterio 2.** «Coherente con lo que la literatura describe» no
+  es una cita. Ahora cita a Panieri (2006): 3257-5874 ind/g en filtración
+  frente a 1760-3201 en sus controles, y los 4015 de MSH-BC-21 caen dentro.
+- **Veredicto, criterio 3.** Los géneros indicadores llevan el número de
+  estudios de esta base que los reporta, en vez de una lista sin respaldo.
+
+### La trampa del método, que casi cuesta una cita falsa
+
+Un párrafo de Basso et al. (2020) parecía sostener el criterio 2. Leído
+respetando las **dos columnas** de la página, hablaba de macrofauna y además
+citaba a Levin (2005) y Taviani (2014). Buscar la cita con una expresión
+regular sobre el texto extraído **no basta**: hay que leer la frase entera por
+columnas (`page.crop()` partiendo la página por la mitad) antes de escribirla.
+
+### Dos fallos propios que conviene recordar
+
+- Un `git push` salió con la auditoría en rojo porque encadené con `&&`
+  después de un `| tail`: el código de salida era el de `tail`. **Comprobar el
+  código de salida, no el texto.**
+- Un cambio quedó aplicado en una lengua y no en la otra: en el mismo script,
+  la sustitución en español se hizo en memoria, la del inglés falló y la
+  excepción abortó antes de escribir el archivo. Lo encontró comparar el HTML
+  servido con lo que se creía haber cambiado, no releer el código.
+
+### Estado
+
+Auditoría en **98 comprobaciones**, con seis nuevas sobre atribución: el
+apellido nunca partido, el estudio de 2024 citado en Referencias, y las tres
+que exigen fuente y localización en la tesis para cada localidad caribeña.
+El informe de curación se regeneró con las mismas citas y con «asesoría» en
+lugar de «tutoría».

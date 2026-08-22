@@ -50,9 +50,9 @@ Ocho secciones en scroll, todas bilingües y con su bloque «Cómo se lee».
 | 02 | **La firma de la pared** | Proporción calcáreo / aglutinado por banda, la señal más fiable de filtración |
 | 03 | **La muestra** | Qué hay dentro de MSH-BC-21: composición e interior del testigo |
 | 04 | **El veredicto** | Cuatro criterios de la literatura contrastados con lo que la muestra mide |
-| 05 | **El resto del proyecto** | Las otras 18 estaciones del mismo muestreo, que analizó y publicó Barragán-Jacksson con Bernal (2024) |
+| 05 | **Del testigo al campo** | Las otras 18 estaciones del mismo muestreo, analizadas y publicadas por Barragán-Jacksson y Bernal (2024) |
 | 06 | **El catálogo** | Explorador de los taxones: buscar, filtrar y ordenar |
-| 07 | **El Caribe contra sí mismo** | La muestra frente a la fauna de fondo regional |
+| 07 | **El Caribe contra sí mismo** | La muestra frente a la fauna de fondo regional, con la fuente de cada localidad |
 | 08 | **Límites** | Lo que estos datos **no** pueden decir |
 
 ### Los hallazgos que sostienen la narrativa
@@ -137,7 +137,7 @@ Data_nosubiralrepo/*.xlsx ──00──▶ data/private/*_raw.json
 | `50_estadisticas` | Rankings, asociaciones dominantes y estadísticas por estudio |
 | `30_informe` | Genera el informe de curación en PDF |
 | `60_excel` | Devuelve las correcciones a los Excel del autor |
-| `99_auditoria` | **92 comprobaciones independientes**; sale con código 1 si algo falla |
+| `99_auditoria` | **98 comprobaciones independientes**; sale con código 1 si algo falla |
 
 Los módulos sin número —`taxonomy`, `corrections`, `localidades`, `tipologia`,
 `caribe_referencia`, `estudios_nuevos`— son tablas de referencia **curadas a
@@ -264,9 +264,26 @@ no se multipliquen.
 `99_auditoria.py` **vuelve a leer los Excel originales** y verifica de forma
 independiente la conservación de registros, la aritmética recalculada desde
 cero, la coherencia entre datasets, los rangos físicos de lo extraído de las
-tablas y la ausencia de fugas de datos confidenciales. Son **92
-comprobaciones** y han atrapado errores reales, incluido uno introducido
-mientras se ampliaba el propio Excel.
+tablas, la atribución de lo que es de otros y la ausencia de fugas de datos
+confidenciales. Son **98 comprobaciones** y han atrapado errores reales,
+incluido uno introducido mientras se ampliaba el propio Excel.
+
+### Lo que es de otros se cita, y se cita lo que dicen
+
+Todo dato que no salga de la tesis lleva su fuente a la vista. Las cinco
+localidades caribeñas de la sección 07 muestran quién publicó cada cifra y en
+qué punto del capítulo 4.2 la cita la tesis; el análisis del muestreo completo
+—Barragán-Jacksson y Bernal (2024)— se resume con su referencia entera y su DOI
+enlazado, y figura en la lista de referencias aunque se mantenga **fuera** de la
+base analítica; y los cuatro criterios del veredicto declaran de dónde sale cada
+expectativa, incluidos los géneros indicadores, que se sostienen en el recuento
+de esta base y no en una lista heredada.
+
+Una advertencia de método que costó una cita errónea: **buscar la frase con una
+expresión regular sobre el texto del PDF no basta**. Un párrafo de Basso et al.
+(2020) parecía respaldar el criterio de abundancia y, leído respetando las dos
+columnas de la página, hablaba de macrofauna y además citaba a terceros. Las
+citas se comprueban leyendo la frase entera por columnas.
 
 ### Verificación inversa: ningún valor inventado
 
@@ -350,7 +367,7 @@ npm install
 npm run dev          # servidor de desarrollo
 npm run build        # build de producción
 npm run verificar    # comprobación de tipos — ESTE es el gate
-npm run auditoria    # las 91 comprobaciones del pipeline
+npm run auditoria    # las 98 comprobaciones del pipeline
 ```
 
 El pipeline necesita `openpyxl`, `pypdf`, `fpdf2` y `pdfplumber`, y lee los
