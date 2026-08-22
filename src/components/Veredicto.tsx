@@ -3,6 +3,7 @@
 import msh from "@datos/msh_bc21.json";
 import sinu from "@datos/sinu_2024.json";
 import solape from "@datos/solape.json";
+import completo from "@datos/taxones_completo.json";
 import { useT } from "@/lib/i18n";
 import { ComoSeLee, Nota, Taxon, useNum } from "@/lib/ui";
 
@@ -58,6 +59,10 @@ export default function Veredicto() {
   const num = useNum();
   const d = sinu.diversidad;
   const c = sinu.comparacion_msh;
+  // El recuento propio sustenta el criterio 3: en vez de afirmar que estos
+  // géneros son «indicadores», se dice en cuántos estudios aparecen.
+  const gen = (n: string) =>
+    completo.generos.find((g) => g.genero === n)?.n_estudios ?? 0;
 
   return (
     <figure className="m-0">
@@ -82,13 +87,13 @@ export default function Veredicto() {
         estado="cumple"
         titulo={tx({ es: "Abundancia alta", en: "High abundance" })}
         esperado={tx({
-          es: "Las filtraciones sostienen densidades elevadas por la oferta de alimento bacteriano",
-          en: "Seeps sustain high densities thanks to abundant bacterial food",
+          es: "Panieri (2006) mide 3257-5874 ind/g en filtración frente a 1760-3201 en sus controles",
+          en: "Panieri (2006) measures 3257-5874 ind/g at seeps against 1760-3201 at his controls",
         })}
         observado="4015"
         explicacion={tx({
-          es: "4015 y 3050 individuos por gramo en los dos centímetros analizados. Valores altos, coherentes con lo que la literatura describe para ambientes de filtración.",
-          en: "4015 and 3050 individuals per gram in the two centimetres analysed. High values, consistent with what the literature describes for seep environments.",
+          es: "4015 y 3050 individuos por gramo en los dos centímetros analizados. El valor superficial cae dentro del rango que Panieri (2006) midió en las muestras de filtración del Adriático y por encima de todos sus controles. Es la comparación más directa disponible, aunque son ambientes y profundidades distintos.",
+          en: "4015 and 3050 individuals per gram in the two centimetres analysed. The surface value falls inside the range Panieri (2006) measured in the Adriatic seep samples and above every one of his controls. It is the most direct comparison available, though the environments and depths differ.",
         })}
       />
 
@@ -99,8 +104,8 @@ export default function Veredicto() {
           en: "Indicator taxa present",
         })}
         esperado={tx({
-          es: "Uvigerina, Bolivina, Bulimina, Melonis, Chilostomella",
-          en: "Uvigerina, Bolivina, Bulimina, Melonis, Chilostomella",
+          es: `Uvigerina (${gen("Uvigerina")} estudios), Bulimina (${gen("Bulimina")}), Bolivina (${gen("Bolivina")}), Cassidulina (${gen("Cassidulina")})`,
+          en: `Uvigerina (${gen("Uvigerina")} studies), Bulimina (${gen("Bulimina")}), Bolivina (${gen("Bolivina")}), Cassidulina (${gen("Cassidulina")})`,
         })}
         observado={solape.generos.n_compartidos + "/" + solape.generos.n_msh}
         explicacion={
@@ -217,8 +222,8 @@ export default function Veredicto() {
 
       <Nota>
         {tx({
-          es: "Rango de diversidad y valores de δ13C: Barragán-Jacksson, C.M. y Bernal, G.R. (2024), Journal of South American Earth Sciences 148, 105103, doi:10.1016/j.jsames.2024.105103 — misma localidad, y las dos cosas que la tesis no midió. Proporciones de pared de control: Chiang et al. (2015).",
-          en: "Diversity range and δ13C values: Barragán-Jacksson, C.M. and Bernal, G.R. (2024), Journal of South American Earth Sciences 148, 105103, doi:10.1016/j.jsames.2024.105103 — same locality, and the two things the thesis did not measure. Control wall proportions: Chiang et al. (2015).",
+          es: "Fuentes de los cuatro criterios. Proporciones de pared: Chiang, M.-T. et al. (2015), EGU General Assembly. Densidades de filtración y control: Panieri, G. (2006), Marine Micropaleontology 60, 116-125. Géneros indicadores: recuento propio sobre los 40 estudios de esta base, no una lista tomada de otro trabajo. Rango de diversidad y δ13C: Barragán-Jacksson, C.M. y Bernal, G.R. (2024), Journal of South American Earth Sciences 148, 105103, doi:10.1016/j.jsames.2024.105103 — misma localidad, y las dos cosas que la tesis no midió. Las referencias completas están en «08 · Límites».",
+          en: "Sources for the four criteria. Wall proportions: Chiang, M.-T. et al. (2015), EGU General Assembly. Seep and control densities: Panieri, G. (2006), Marine Micropaleontology 60, 116-125. Indicator genera: this work's own count across the 40 studies in this base, not a list taken from elsewhere. Diversity range and δ13C: Barragán-Jacksson, C.M. and Bernal, G.R. (2024), Journal of South American Earth Sciences 148, 105103, doi:10.1016/j.jsames.2024.105103 — same locality, and the two things the thesis did not measure. Full references are in “08 · Limits”.",
         })}
       </Nota>
     </figure>

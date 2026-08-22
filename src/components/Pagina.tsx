@@ -131,7 +131,7 @@ export default function Pagina() {
           })}
           entradilla={tx({
             es: "Los foraminíferos aglutinados construyen su caparazón pegando granos del sedimento; los calcáreos lo segregan. En las filtraciones los aglutinados desaparecen, porque toleran mal el metano y el sulfuro de hidrógeno. La proporción entre unos y otros es, por eso, una de las señales más fiables.",
-            en: "Agglutinated foraminifera build their shell by cementing sediment grains; calcareous ones secrete it. At seeps the agglutinated forms vanish, tolerating methane and hydrogen sulphide poorly. The ratio between them is therefore one of the most reliable signals.",
+            en: "Agglutinated foraminifera build their shell by cementing sediment grains; calcareous ones secrete it. At seeps the agglutinated forms retreat, tolerating methane and hydrogen sulphide poorly: Chiang et al. (2015) report 68% calcareous against 32% agglutinated at seeps, and 24/76 at their control sites. The ratio between them is therefore one of the most reliable signals.",
           })}
         >
           <ParedPorBanda />
@@ -313,8 +313,8 @@ export default function Pagina() {
               Erick Francisco Mendoza Rivero
             </strong>
             {tx({
-              es: ", Ingeniero Geólogo, «Análisis de las asociaciones de foraminíferos bentónicos en filtraciones de metano: comparación entre distintas localidades y la plataforma continental del Caribe colombiano». Trabajo de grado presentado como requisito parcial para optar al título de Ingeniero Geólogo. Universidad Nacional de Colombia, sede Medellín, Facultad de Minas, Departamento de Geociencias y Medio Ambiente, 2023. Directora: Ph.D. Gladys Rocío Bernal Franco.",
-              en: ", Geological Engineer, “Analysis of benthic foraminiferal assemblages at methane seeps: a comparison between localities and the Colombian Caribbean continental shelf”. Undergraduate thesis submitted in partial fulfilment of the requirements for the degree of Geological Engineer. Universidad Nacional de Colombia, Medellín campus, Facultad de Minas, Department of Geosciences and Environment, 2023. Advisor: Ph.D. Gladys Rocío Bernal Franco.",
+              es: ", Ingeniero Geólogo, «Análisis de las asociaciones de foraminíferos bentónicos en filtraciones de metano: comparación entre distintas localidades y la plataforma continental del Caribe colombiano». Trabajo de grado presentado como requisito parcial para optar al título de Ingeniero Geólogo. Universidad Nacional de Colombia, sede Medellín, Facultad de Minas, Departamento de Geociencias y Medio Ambiente, 2023. Asesora: Ph.D. Gladys Rocío Bernal Franco.",
+              en: ", Geological Engineer, “Analysis of benthic foraminiferal assemblages at methane seeps: a comparison between localities and the Colombian Caribbean continental shelf”. Undergraduate thesis submitted in partial fulfilment of the requirements for the degree of Geological Engineer. Universidad Nacional de Colombia, Medellín campus, Facultad de Minas, Department of Geosciences and Environment, 2023. Adviser: Ph.D. Gladys Rocío Bernal Franco.",
             })}
           </p>
 

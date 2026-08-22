@@ -594,6 +594,21 @@ def main() -> int:
           "sinu_2024.json" in refs,
           "Referencias.tsx debe leer sinu_2024.json")
 
+    # Cada localidad caribeña son cifras de OTRO autor, tomadas de la prosa de
+    # la tesis. Sin `fuente` y sin la página donde la tesis las cita, el dato
+    # queda huérfano y el dashboard se lo estaría apropiando.
+    car = load(DERIV / "caribe_referencia.json")
+    sin_fuente = [l["id"] for l in car
+                  if l["id"] != "msh_bc21" and not l.get("fuente")]
+    sin_cita = [l["id"] for l in car
+                if l["id"] != "msh_bc21" and not l.get("cita_en_tesis")]
+    check("Toda localidad caribeña declara su fuente", not sin_fuente, f"{sin_fuente}")
+    check("Y dónde la cita la tesis", not sin_cita, f"{sin_cita}")
+    car_tsx = (ROOT / "src" / "components" / "Caribe.tsx").read_text(encoding="utf-8")
+    check("La sección 07 muestra esas fuentes",
+          "cita_en_tesis" in car_tsx and "s.fuente" in car_tsx,
+          "Caribe.tsx debe renderizar fuente y cita_en_tesis")
+
     # ---------------------------------------------------------------------
     # Los Excel corregidos son un producto más del pipeline, y hasta ahora
     # nadie los verificaba: se comprueban si existen. Que la hoja de

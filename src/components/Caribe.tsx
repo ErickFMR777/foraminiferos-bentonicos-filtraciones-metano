@@ -94,7 +94,13 @@ export default function Caribe() {
                 <span className="text-[0.74rem] text-(--muted)">
                   {tx(AMBIENTE[s.ambiente] ?? { es: s.ambiente, en: s.ambiente })}
                   {" · "}
-                  {s.fuente}
+                  <span className="text-(--ink-2)">{s.fuente}</span>
+                  {s.cita_en_tesis && !esMsh(s.id) && (
+                    <span className="ml-1 opacity-80">
+                      ({tx({ es: "citado en la tesis, ", en: "cited in the thesis, " })}
+                      {s.cita_en_tesis})
+                    </span>
+                  )}
                 </span>
               </div>
 
@@ -145,6 +151,22 @@ export default function Caribe() {
       </ComoSeLee>
 
       <Nota>
+        <span className="text-(--ink-2)">
+          {tx({ es: "Fuentes de las cifras caribeñas: ", en: "Sources of the Caribbean figures: " })}
+        </span>
+        {otros.map((s, i) => (
+          <span key={s.id}>
+            {i > 0 && "; "}
+            <span className="text-(--ink-2)">{s.fuente}</span>
+            {tx({ es: " para ", en: " for " })}
+            {s.nombre}
+            {s.cita_en_tesis && " (" + s.cita_en_tesis + ")"}
+          </span>
+        ))}
+        {tx({
+          es: ". Son trabajos del grupo OCEÁNICOS que la tesis cita en su capítulo 4.2; aquí se estructuran por primera vez para poder compararlos, pero las cifras son de esos autores y hay que citarlos a ellos. ",
+          en: ". These are OCEÁNICOS group works that the thesis cites in its chapter 4.2; they are structured here for the first time so they can be compared, but the figures belong to those authors and it is they who should be cited. ",
+        })}
         {tx({
           es: `Advertencia metodológica: estas cifras proceden de fuentes secundarias —la tesis citando a terceros— con métodos de muestreo, fracciones de tamaño y ambientes distintos entre sí y distintos de MSH-BC-21. La comparación es indicativa, no cuantitativamente estricta. Por esa misma razón estas localidades NO forman parte de la base principal: no son filtraciones, y sumarlas llenaría con fauna de manglar y arrecife justamente la celda tropical somera que el trabajo señala como vacía. MSH-BC-21: ${msh.indices.riqueza_S} especies, J′ = ${num(msh.indices.equidad_J, 4)}.`,
           en: `Methodological caveat: these figures come from secondary sources — the thesis citing third parties — with sampling methods, size fractions and environments that differ from one another and from MSH-BC-21. The comparison is indicative, not quantitatively strict. For that same reason these localities are NOT part of the main database: they are not seeps, and adding them would fill with mangrove and reef fauna precisely the shallow tropical cell this work reports as empty. MSH-BC-21: ${msh.indices.riqueza_S} species, J′ = ${num(msh.indices.equidad_J, 4)}.`,

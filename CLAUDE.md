@@ -376,6 +376,16 @@ explica el caso concreto; esto es el índice.
   los artículos: la presencia es señal sólida, el número de menciones es un
   proxy débil (un artículo repite un nombre al citar a otros) y sólo hay
   dominancia cuando el texto la afirma. El dashboard debe distinguirlas.
+- **Toda afirmación que venga de otro trabajo se cita, y se cita lo que el
+  artículo dice de verdad.** Buscar la cita con una expresión regular sobre el
+  texto del PDF **no basta**: al comprobar la densidad de las filtraciones, un
+  párrafo de Basso et al. (2020) parecía sostenerla y, leído respetando las dos
+  columnas, hablaba de macrofauna y además citaba a terceros. Citarlo habría
+  sido atribuirle algo que no afirma. La comprobación buena es leer la frase
+  entera, por columnas —`page.crop()` partiendo la página por la mitad—, antes
+  de escribir la cita. Donde no aparezca una fuente sólida, se dice con el dato
+  propio: los géneros «indicadores» del criterio 3 se sostienen ahora en el
+  recuento de esta base, no en una lista heredada.
 - **La sección 05 resume un trabajo AJENO, y contarlo mal es fácil.** No hubo
   segunda campaña: es el **mismo proyecto MSH y el mismo muestreo** —18
   estaciones de mayo-junio de 2022—. La tesis analizó uno de esos testigos
